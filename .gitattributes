@@ -1,0 +1,6 @@
+# This file is used to stop automatic diff and merge attempts on Simulink and Matlab files
+
+*.slx -crlf -diff -merge
+*.mdl -crlf -diff -merge
+*.mat -crlf -diff -merge
+*.mlx -crlf -diff -merge

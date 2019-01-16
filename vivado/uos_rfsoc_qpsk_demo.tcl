@@ -136,7 +136,7 @@ if {[string equal [get_filesets -quiet sources_1] ""]} {
 
 # Set IP repository paths
 set obj [get_filesets sources_1]
-set_property "ip_repo_paths" "[file normalize "$origin_dir/iprepo"]" $obj
+set_property "ip_repo_paths" "[file normalize "$origin_dir/../iprepo"]" $obj
 
 # Rebuild user ip_repo's index before adding any source files
 update_ip_catalog -rebuild
@@ -146,12 +146,12 @@ set obj [get_filesets sources_1]
 # Import local files from the original project
 set files [list \
  [file normalize "${origin_dir}/sources/design_1_v02_wrapper.vhd"]\
- [file normalize "${origin_dir}/iprepo/zcu111/rx/axi_qpsk_rx_blk_mem_gen_i0_vivado.coe"]\
- [file normalize "${origin_dir}/iprepo/zcu111/rx/axi_qpsk_rx_blk_mem_gen_i1_vivado.coe"]\
- [file normalize "${origin_dir}/iprepo/zcu111/rx/axi_qpsk_rx_blk_mem_gen_i2_vivado.coe"]\
- [file normalize "${origin_dir}/iprepo/zcu111/rx/axi_qpsk_rx_blk_mem_gen_i3_vivado.coe"]\
- [file normalize "${origin_dir}/iprepo/zcu111/rx/axi_qpsk_rx_blk_mem_gen_i4_vivado.coe"]\
- [file normalize "${origin_dir}/iprepo/zcu111/rx/axi_qpsk_rx_blk_mem_gen_i5_vivado.coe"]\
+ [file normalize "${origin_dir}/../iprepo/zcu111/rx/axi_qpsk_rx_blk_mem_gen_i0_vivado.coe"]\
+ [file normalize "${origin_dir}/../iprepo/zcu111/rx/axi_qpsk_rx_blk_mem_gen_i1_vivado.coe"]\
+ [file normalize "${origin_dir}/../iprepo/zcu111/rx/axi_qpsk_rx_blk_mem_gen_i2_vivado.coe"]\
+ [file normalize "${origin_dir}/../iprepo/zcu111/rx/axi_qpsk_rx_blk_mem_gen_i3_vivado.coe"]\
+ [file normalize "${origin_dir}/../iprepo/zcu111/rx/axi_qpsk_rx_blk_mem_gen_i4_vivado.coe"]\
+ [file normalize "${origin_dir}/../iprepo/zcu111/rx/axi_qpsk_rx_blk_mem_gen_i5_vivado.coe"]\
 ]
 set imported_files [import_files -fileset sources_1 $files]
 

@@ -1,3 +1,6 @@
 rfsoc_pynq_demo/
 vivado.jou
 vivado.log
+
+*.log
+*.htm
