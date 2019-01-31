@@ -1,4 +1,5 @@
 rfsoc_pynq_demo/
+.Xil
 vivado.jou
 vivado.log
 
