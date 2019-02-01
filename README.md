@@ -19,14 +19,15 @@ This repo contains the files for the RFSoC ZCU111 QPSK demonstrator we presented
 
 
 ### ToDo
-- Add Pynq files
 - Write short tutorial on how to set up hardware and run the demo
 - Remove second high performance port from PS IP and use a top-level AXI Interconnect IP to serve Rx and Tx hierarchies
 - Clean up IPI design
+- Profile Plotly client-side performance
 
 ### Known Issues
 #### Vivado
 #### System Generator
 - Large rate changes makes simulating current project incredibly slow.
 #### Pynq
+- Live plots are currently quite demanding of the client browser (but not the RFSoC). A hefty desktop helps a lot in the meantime!
 #### Other
