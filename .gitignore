@@ -5,3 +5,5 @@ vivado.log
 
 *.log
 *.htm
+
+.ipynb_checkpoints
