@@ -45,6 +45,9 @@ if { [info exists ::origin_dir_loc] } {
   set origin_dir $::origin_dir_loc
 }
 
+# Store a reference to the directory with board independent sources
+set src_dir $origin_dir/../ip/vivado
+
 # Set the project name
 set _xil_proj_name_ "rfsoc_pynq_demo"
 
@@ -157,7 +160,7 @@ if {[string equal [get_filesets -quiet sources_1] ""]} {
 
 # Set IP repository paths
 set obj [get_filesets sources_1]
-set_property "ip_repo_paths" "[file normalize "$origin_dir/iprepo"]" $obj
+set_property "ip_repo_paths" "[file normalize "$src_dir/iprepo"]" $obj
 
 # Rebuild user ip_repo's index before adding any source files
 update_ip_catalog -rebuild
@@ -165,52 +168,52 @@ update_ip_catalog -rebuild
 # Set 'sources_1' fileset object
 set obj [get_filesets sources_1]
 set files [list \
- [file normalize "${origin_dir}/sources/axi_qpsk_rx_blk_mem_gen_i0_vivado.coe"] \
- [file normalize "${origin_dir}/sources/axi_qpsk_rx_blk_mem_gen_i1_vivado.coe"] \
- [file normalize "${origin_dir}/sources/axi_qpsk_rx_blk_mem_gen_i2_vivado.coe"] \
- [file normalize "${origin_dir}/sources/axi_qpsk_rx_blk_mem_gen_i3_vivado.coe"] \
- [file normalize "${origin_dir}/sources/axi_qpsk_rx_blk_mem_gen_i4_vivado.coe"] \
- [file normalize "${origin_dir}/sources/axi_qpsk_rx_blk_mem_gen_i5_vivado.coe"] \
+ [file normalize "${src_dir}/sources/axi_qpsk_rx_blk_mem_gen_i0_vivado.coe"] \
+ [file normalize "${src_dir}/sources/axi_qpsk_rx_blk_mem_gen_i1_vivado.coe"] \
+ [file normalize "${src_dir}/sources/axi_qpsk_rx_blk_mem_gen_i2_vivado.coe"] \
+ [file normalize "${src_dir}/sources/axi_qpsk_rx_blk_mem_gen_i3_vivado.coe"] \
+ [file normalize "${src_dir}/sources/axi_qpsk_rx_blk_mem_gen_i4_vivado.coe"] \
+ [file normalize "${src_dir}/sources/axi_qpsk_rx_blk_mem_gen_i5_vivado.coe"] \
 ]
 add_files -norecurse -fileset $obj $files
 
 # Add local files from the original project (-no_copy_sources specified)
-set file "$origin_dir/sources/axi_qpsk_rx_blk_mem_gen_i0_vivado.coe"
+set file "$src_dir/sources/axi_qpsk_rx_blk_mem_gen_i0_vivado.coe"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "used_in" -value "" -objects $file_obj
 set_property -name "used_in_simulation" -value "0" -objects $file_obj
 set_property -name "used_in_synthesis" -value "0" -objects $file_obj
 
-set file "$origin_dir/sources/axi_qpsk_rx_blk_mem_gen_i1_vivado.coe"
+set file "$src_dir/sources/axi_qpsk_rx_blk_mem_gen_i1_vivado.coe"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "used_in" -value "" -objects $file_obj
 set_property -name "used_in_simulation" -value "0" -objects $file_obj
 set_property -name "used_in_synthesis" -value "0" -objects $file_obj
 
-set file "$origin_dir/sources/axi_qpsk_rx_blk_mem_gen_i2_vivado.coe"
+set file "$src_dir/sources/axi_qpsk_rx_blk_mem_gen_i2_vivado.coe"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "used_in" -value "" -objects $file_obj
 set_property -name "used_in_simulation" -value "0" -objects $file_obj
 set_property -name "used_in_synthesis" -value "0" -objects $file_obj
 
-set file "$origin_dir/sources/axi_qpsk_rx_blk_mem_gen_i3_vivado.coe"
+set file "$src_dir/sources/axi_qpsk_rx_blk_mem_gen_i3_vivado.coe"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "used_in" -value "" -objects $file_obj
 set_property -name "used_in_simulation" -value "0" -objects $file_obj
 set_property -name "used_in_synthesis" -value "0" -objects $file_obj
 
-set file "$origin_dir/sources/axi_qpsk_rx_blk_mem_gen_i4_vivado.coe"
+set file "$src_dir/sources/axi_qpsk_rx_blk_mem_gen_i4_vivado.coe"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "used_in" -value "" -objects $file_obj
 set_property -name "used_in_simulation" -value "0" -objects $file_obj
 set_property -name "used_in_synthesis" -value "0" -objects $file_obj
 
-set file "$origin_dir/sources/axi_qpsk_rx_blk_mem_gen_i5_vivado.coe"
+set file "$src_dir/sources/axi_qpsk_rx_blk_mem_gen_i5_vivado.coe"
 set file [file normalize $file]
 set file_obj [get_files -of_objects [get_filesets sources_1] [list "*$file"]]
 set_property -name "used_in" -value "" -objects $file_obj
@@ -465,7 +468,7 @@ set_property -name "steps.write_bitstream.args.readback_file" -value "0" -object
 set_property -name "steps.write_bitstream.args.verbose" -value "0" -objects $obj
 
 # Create block design
-source $origin_dir/sources/design_1_v02.tcl
+source $src_dir/sources/design_1_v02.tcl
 
 # Generate the wrapper
 set design_name [get_bd_designs]
