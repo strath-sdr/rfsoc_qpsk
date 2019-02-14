@@ -1,15 +1,7 @@
 import numpy as np
 import plotly.graph_objs as go
 import ipywidgets as ipw
-from dma_gen import DmaGen
 
-def GraphControls(dg):
-    start_button = ipw.Button(description=u'\u25B6')
-    start_button.on_click(lambda _: dg.start())
-    stop_button = ipw.Button(description=u'\u25A0')
-    stop_button.on_click(lambda _: dg.stop())
-    return [start_button, stop_button]
-    
 class noop():
     """Dummpy context manager to suppress debug output"""
     def __enter__(self): return self
@@ -80,7 +72,7 @@ class IQPlot():
             self._data = [{} for i in range(len(self.y))]
         else:
             self._data = [{} for i in range(len(self.y)*2)]
-        
+
         self.x = np.arange(0, self.L, self.spacing) + x_start
 
         # Add legend, if specified
@@ -91,7 +83,7 @@ class IQPlot():
                 self.legend = [legend]
             else:
                 self.legend = legend
-        
+
         layout={
             'xaxis': {
                 'rangeslider': {
@@ -103,9 +95,9 @@ class IQPlot():
             'width': w,
             'height': h
         }
-        
+
         self.data_regen()
-        
+
         # Create widget
         self._plot = go.FigureWidget(layout=layout, data=self._data)
 
@@ -116,16 +108,16 @@ class IQPlot():
         if y_range:
             self._plot.layout.yaxis.autorange = False
             self._plot.layout.yaxis.range = y_range
-            
+
         if self.debug:
             self._status = ipw.Output()
-    
-    
+
+
     def data_regen(self):
-        
+
         self.L = self.spacing * len(self.y[0])
         self.x = np.arange(0, self.L, self.spacing)
-        
+
         if self.resampling_fun:
             step = len(self.y[0])//self.w
             if step<1:
@@ -149,7 +141,7 @@ class IQPlot():
 
     def add_data(self, new_data, discard=True, scroll=True):
         """Add new data to plot.
-        
+
         Args:
             new_data (list): New complex data to add
             discard (bool): Discard an equal amount of old data. Implies `scroll`.
@@ -160,17 +152,17 @@ class IQPlot():
         self.y = np.concatenate((self.y,[new_data]),axis=1)
         if discard:
              self.y=np.delete(self.y, range(n), 1)
-                
+
         self.data_regen()
-        
+
         xaxis = self._plot.layout.xaxis
         full_width = self.L
         if xaxis.range[1] <= self.L:
             xwidth = xaxis.range[1] - xaxis.range[0]
             xaxis.range = (full_width - xwidth, full_width)
-        
+
         self._plot.update(data=self._data)
-                
+
     def resample(self, ignored_layout, x_range, plot_width):
         """Resample visible area from original data set.
 
@@ -318,33 +310,33 @@ class IQFreqPlot(IQPlot):
         #                 aggregate_fun=abs, vpu=len(data)//2/Fs,
         #                 xlabel='f [Hz]', *args, **kwargs)
         self._Fs = Fs
-        
+
         f_data = self.fft_from_raw(data)
-        
+
         self._ffts = [f_data for i in range(avg_n)]
-        
+
         yrange = [abs(min(f_data))*1.2,abs(max(f_data))*1.2]
-        
+
         super().__init__(data=self.avg_window(),
                          aggregate_fun=abs, vpu=len(data)/Fs,
                          xlabel='f [Hz]', ylabel='PSD [dB/Hz]', x_start =(-len(data)/2), y_range=yrange, *args, **kwargs)
-        
+
     def fft_from_raw(self, t_data):
         data = np.fft.fftshift(np.fft.fft(t_data))
         data = [y**2/(self._Fs*len(data)) for y in data]
         data = 20*np.log10(data)
         return data
-    
+
     def avg_window(self):
         return np.average(np.transpose(self._ffts),axis=1)
-    
+
     def add_frame(self, frame):
         self._ffts = np.roll(self._ffts, 1, axis=0)
         self._ffts[0] = self.fft_from_raw(frame)
-        
+
         self.y = [self.avg_window()]
         self.data_regen()
-        
+
         self._plot.update(data=self._data)
 
 class IQConstellationPlot():
@@ -362,12 +354,12 @@ class IQConstellationPlot():
 
         if not plotrange:
             plotrange = (0, len(data))
-            
+
         self.lo, self.hi = plotrange
-        
+
         maxaxis = max(np.absolute(data))
         self.axisrange = [-maxaxis, maxaxis]
-        
+
         self._plot = go.FigureWidget(
             layout={
                 'hovermode': 'closest',
@@ -388,14 +380,14 @@ class IQConstellationPlot():
                 }
         ])
         self.update_fade()
-        
+
 
     def update_fade(self):
         """Update marker opacity to fade out old data points"""
         n = len(self._plot.data[0].x)
         self._plot.data[0].marker.opacity = np.arange(0, 1, 1/n)
-        
-        
+
+
     def set_range(self, lo, hi):
         """Update plotrange"""
         # Observe bounds
@@ -407,10 +399,10 @@ class IQConstellationPlot():
             self._plot.data[0].y = [np.imag(x) for x in self._data[lo:hi]]
             if self.fade:
                 self.update_fade()
-                
+
     def add_data(self, new_data, discard=True, scroll=True):
         """Add new data to plot.
-        
+
         Args:
             new_data (list): New complex data to add
             discard (bool): Discard an equal amount of old data. Implies `scroll`.
@@ -446,14 +438,14 @@ class HWFreqPlot():
             data (sequence): Sequence of real FFT values
             (with 0-Fs/2 first, then (-Fs/2)-0)
         """
-        
+
         self._Fs = Fs
         y = self.psd_from_raw(data)
         self._y = [y for i in range(avg_n)]
         self._x_data = np.arange(0,1,1/len(self._y[0]))*self._Fs - self._Fs/2
-        
+
         self.data_regen()
-        
+
         self._plot = go.FigureWidget(
             layout={
                 'hovermode': 'closest',
@@ -476,7 +468,7 @@ class HWFreqPlot():
                     'y': self._data,
                 }
         ])
-        
+
     def psd_from_raw(self, raw):
         halfIndex = round(len(raw)/2)
         data = list(np.concatenate([raw[halfIndex:],raw[:halfIndex]]))
@@ -484,21 +476,21 @@ class HWFreqPlot():
         data = 20*np.log10(data)
         data = data - 180
         return data
-    
+
     def data_regen(self):
         self._data = np.average(np.transpose(self._y),axis=1)
         #self._data=self._y[0]
-    
+
     def add_frame(self, frame):
         self._y = np.roll(self._y, 1, axis=0)
         self._y[0] = self.psd_from_raw(frame)
         self.data_regen()
-        
+
         xaxis = self._plot.layout.xaxis
         xwidth = xaxis.range[1] - xaxis.range[0]
         axis_lo, axis_hi = xaxis.range
-        
-        
+
+
         self._plot.update(
             data=[
                 {
@@ -507,12 +499,12 @@ class HWFreqPlot():
                     'y': self._data,
                 }
         ])
-        
-        
+
+
         ##Assigment twice is a dirty hack to ensure we get a redraw
         #xaxis.range = (axis_lo+1/len(self._y[0]), axis_hi)
         #xaxis.range = (axis_lo, axis_hi)
-                
+
     def get_widget(self):
         """Return plot widget"""
         return self._plot

@@ -3,8 +3,9 @@ import threading
 import pynq.lib.dma
 from pynq import Xlnk
 import numpy as np
+import ipywidgets as ipw
 
-class DmaGen():
+class DmaTimer():
 
     def __init__(self, callback, gen, t):
         """Create new dma-based data generator.
@@ -24,21 +25,17 @@ class DmaGen():
 
         Should never be run directly. use `start()` instead.
         """
-        #file = open("/tmp/graph_periods.txt","w") 
         while not self.stopping:
             next_timer = time.time() + self.t
             self.callback(self.gen())
             sleep_time = next_timer - time.time()
-            #file.write("{0},\t".format(time.time()-start_timer))
             if sleep_time > 0:
                 time.sleep(sleep_time)
-            #file.write("{0}\n".format(time.time()-start_timer))
-        #file.close()
 
     def start(self):
         """Start the data generator thread."""
         self.stopping = False
-        
+
         thread = threading.Thread(target=self._do)
         thread.start()
 
@@ -48,3 +45,10 @@ class DmaGen():
         Does not need a lock, since the spawned timer thread will only read `self.stopping`.
         """
         self.stopping = True
+
+    def getControls(self):
+        start_button = ipw.Button(description=u'\u25B6')
+        start_button.on_click(lambda _: self.start())
+        stop_button = ipw.Button(description=u'\u25A0')
+        stop_button.on_click(lambda _: self.stop())
+        return [start_button, stop_button]

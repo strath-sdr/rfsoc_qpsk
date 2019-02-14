@@ -4,13 +4,13 @@ import jsonschema
 import ipywidgets
 import json
 
-class Configuration():
+class DictWidget():
     """Container class for configuration data
 
     Constructed from a JSON Schema. Use like a dictionary to store and retrieve configuration data.
     Will also create a ipywidget interactive representation via `gui()`. Also supports nested schemata
     (i.e. a schema tha contains `object` properties, which are themselves configuration containers."""
-    
+
     def __init__(self, schema):
         """Construct a Configuration object from a JSON schema definition"""
 
@@ -76,7 +76,7 @@ class Configuration():
         """Load configuration data from a dictionary.
 
         Will validate input against schema used in object construction."""
-        
+
         jsonschema.validate(dict_in, self.schema)
         for key, value in dict_in.items():
             if isinstance(value, dict):
@@ -84,52 +84,52 @@ class Configuration():
             else:
                 self[key] = value
 
-        
+
     def from_json(self, json_in):
         """Load configuration data from JSON."""
-        
+
         temp = json.loads(json_in)
         self.from_dict(temp)
 
-        
+
     def to_json(self):
         """Dump configuration data as JSON."""
-        
+
         if not self.data:
             return None
         return json.dumps(self.to_dict())
 
-    
+
     def to_dict(self):
         """Dump configuration data as dictionary."""
-        
+
         ret = dict(self.data)
         for name, child in self.children.items():
             ret[name] = child.to_dict()
         return ret
-    
-    
+
+
     def __repr__(self):
         return 'Configuration "' + self.schema['title'] + '" ' + str(self.data)
-    
-    
+
+
     def __getitem__(self, item):
         """Allow using dict syntax for object retrievel.
 
         Will first try to locate a child configuration object. If that's not found,
         it will then look for a data item."""
-        
+
         if item in self.children:
             return self.children[item]
         return self.data.__getitem__(item)
 
-    
+
     def __setitem__(self, item, value):
         """Allow using dict syntax for setting values.
 
         Will only allow setting values in accordance with schema used for object
         generation."""
-        
+
         if item not in self.schema['properties']:
             raise KeyError(f'"{item}" not in schema')
         temp = dict(self.data)
@@ -140,20 +140,20 @@ class Configuration():
         if item in self.widgets:
             self.widgets[item].value = value
 
-        
+
     def on_value_change(self, change):
         """Callback for GUI updates."""
-        
+
         key = change['owner'].description
         self[key] = change['new']
         if self.callback:
             self.callback(self.to_dict()) # TODO: expensive!
-        
+
     def interact(self, callback=None):
         """Return an interactive ipywidgets GUI for setting configuration values.
 
         Will call `callback` with a dictionary of data values on change."""
-        
+
         self.callback = callback
         # Update children's callbacks, too.
         for c in self.children.values():

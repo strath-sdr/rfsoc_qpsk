@@ -13,7 +13,7 @@ class QPSK_RX(DefaultHierarchy):
         transfer of exposed signals.
 
         """
-        
+
         super().__init__(description)
 
         xlnk = Xlnk()
@@ -41,23 +41,12 @@ class QPSK_RX(DefaultHierarchy):
         t_data = np.array(self.buf_out)
         c_data = t_data[::2] + 1j*t_data[1::2]
         return c_data
-    
+
     def getManyData(self, N=10):
         """Get N buffers of raw QPSK symbols
         """
         return np.concatenate([self.getData() for i in range(N)])
-    
-    def getStrobe(self):
-        """TEST FUNCTION TO GET STROBE BIT
-        """
-        self.axi_qpsk_rx.transfer_out = 1
-        self.axi_dma_rx.recvchannel.transfer(self.buf_out)
-        self.axi_dma_rx.recvchannel.wait()
-        self.axi_qpsk_rx.transfer_out = 0
-        t_data = np.array(self.buf_out)
-#         c_data = t_data[::2] + 1j*t_data[1::2]
-        return t_data
-    
+
     def getDecimated(self):
         """Get a single buffer of data
         """
@@ -68,12 +57,12 @@ class QPSK_RX(DefaultHierarchy):
         t_data = np.array(self.buf_dec)
         c_data = t_data[::2] + 1j*t_data[1::2]
         return c_data
-    
+
     def getManyDecimated(self, N=10):
         """Get N buffers of raw QPSK symbols
         """
         return np.concatenate([self.getDecimated() for i in range(N)])
-    
+
     def getCoarseSynced(self):
         """Get a single buffer of data
         """
@@ -84,13 +73,13 @@ class QPSK_RX(DefaultHierarchy):
         t_data = np.array(self.buf_sync)
         c_data = t_data[::2] + 1j*t_data[1::2]
         return c_data
-    
+
     def getManyCoarseSynced(self, N=10):
         """Get N buffers of raw QPSK symbols
         """
         return np.concatenate([self.getCoarseSynced() for i in range(N)])
-    
-    
+
+
     def getRRCed(self):
         """Get a single buffer of data
         """
@@ -101,12 +90,12 @@ class QPSK_RX(DefaultHierarchy):
         t_data = np.array(self.buf_rrc)
         c_data = t_data[::2] + 1j*t_data[1::2]
         return c_data
-    
+
     def getManyRRCed(self, N=10):
         """Get N buffers of raw QPSK symbols
         """
         return np.concatenate([self.getRRCed() for i in range(N)])
-    
+
     @staticmethod
     def checkhierarchy(description):
         if 'axi_dma_rx_rrc' in description['ip'] \
@@ -115,14 +104,11 @@ class QPSK_RX(DefaultHierarchy):
            and 'axi_qpsk_rx' in description['ip']:
             return True
         return False
-    
+
 class QPSK_RX_Core(DefaultIP):
     """Driver for QPSK RX's core logic IP
 
     Exposes all the configuration registers by name via data-driven properties
-
-    FIXME: Again, the automatic use via the bindto string has caused problems.
-    Look at this a bit closer soon.
     """
     def __init__(self, description):
         super().__init__(description=description)
@@ -132,19 +118,19 @@ class QPSK_RX_Core(DefaultIP):
 # LUT of property addresses for our data-driven properties
 _qpsk_props = [("reset", 28),
                ("enable", 32),
-               
+
                ("packetsize_out", 20),
                ("transfer_out", 40),
                ("autorestart_out", 36),
-               
+
                ("packetsize_dec", 44),
                ("transfer_dec", 52),
                ("autorestart_dec", 48),
-               
+
                ("packetsize_sync", 68),
                ("transfer_sync", 76),
                ("autorestart_sync", 72),
-               
+
                ("packetsize_rrc", 56),
                ("transfer_rrc", 64),
                ("autorestart_rrc", 60),

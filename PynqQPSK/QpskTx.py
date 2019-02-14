@@ -8,13 +8,13 @@ class QPSK_TX(DefaultHierarchy):
 
     def __init__(self, description, pkt_sym=16, pkt_time=128, pkt_fft=1024):
         """Driver for our QPSK TX IP hierarchy
-        
+
         This encompasses the qpsk tx logic and the DMAs for data
         transfer of exposed signals.
         """
-        
+
         super().__init__(description)
-        
+
         xlnk = Xlnk()
         self.buf_fft = xlnk.cma_array(shape=(pkt_fft,), dtype=np.uint32)
         self.buf_sym = xlnk.cma_array(shape=(pkt_sym,), dtype=np.uint8)
@@ -101,7 +101,7 @@ class QPSK_TX(DefaultHierarchy):
         """Get N buffers of raw QPSK symbols
         """
         return np.concatenate([self.getSymbols() for i in range(N)])
-    
+
     @staticmethod
     def checkhierarchy(description):
         if 'axi_dma_fft' in description['ip'] \
@@ -110,14 +110,11 @@ class QPSK_TX(DefaultHierarchy):
            and 'axi_qpsk_tx' in description['ip']:
             return True
         return False
-    
+
 class QPSK_TX_Core(DefaultIP):
     """Driver for QPSK TX's core logic IP
 
     Exposes all the configuration registers by name via data-driven properties
-
-    FIXME: Again, the automatic use via the bindto string has caused problems.
-    Look at this a bit closer soon.
     """
     def __init__(self, description):
         super().__init__(description=description)
