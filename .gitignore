@@ -1,4 +1,4 @@
-rfsoc_pynq_demo/
+boards/ZCU111/rfsoc_pynq_demo/
 .Xil
 vivado.jou
 vivado.log

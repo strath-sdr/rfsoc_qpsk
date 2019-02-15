@@ -1,0 +1,2 @@
+  memory_initialization_radix = 16;
+  memory_initialization_vector = 3244, CDBC, CDBC, 3244;
