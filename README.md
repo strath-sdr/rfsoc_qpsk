@@ -1,5 +1,5 @@
 # University of Strathclyde - SDR LAB
-## RFSoC ZCU111 QPSK Demo
+## RFSoC ZCU111 QPSK Transceiver Demo
 
 ### Introduction
 This repo contains the files for the RFSoC ZCU111 QPSK demonstrator we presented at both FPL and XDF conferences in 2018.
