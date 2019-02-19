@@ -1,5 +1,5 @@
 from pynq import Overlay
-from xrfclk import xrfclk_set_freq
+import xrfclk
 import xrfdc
 
 import PynqQPSK.QpskRx
@@ -28,7 +28,7 @@ class QpskOverlay(Overlay):
         self.adc_block = self.adc_tile.blocks[0]
 
         # Start up LMX clock
-        xrfclk_set_freq(204.8)
+        xrfclk.set_all_ref_clks(204.8)
 
         # Set sane DAC defaults
         self.dac_tile.ShutDown()
