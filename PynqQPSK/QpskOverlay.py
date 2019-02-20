@@ -33,11 +33,11 @@ class QpskOverlay(Overlay):
         self.adc_block = self.adc_tile.blocks[0]
 
         # Start up LMX clock
-        xrfclk.set_all_ref_clks(204.8)
+        xrfclk_set_freq(409.6)
 
         # Set sane DAC defaults
         self.dac_tile.ShutDown()
-        self.dac_tile.DynamicPLLConfig(xrfdc.XRF_CLK_SRC_PLL,204.8,204.8)
+        self.dac_tile.DynamicPLLConfig(xrfdc.XRF_CLK_SRC_PLL,409.6,1024)
         self.dac_block.MixerSettings = {
            "Freq": 84,
            "CoarseMixFreq": xrfdc.XRF_DC_COARSE_MIX_SAMPLE_FREQ_BY_TWO,
@@ -48,7 +48,7 @@ class QpskOverlay(Overlay):
 
         # Set sane ADC defaults
         self.adc_tile.ShutDown()
-        self.adc_tile.DynamicPLLConfig(xrfdc.XRF_CLK_SRC_PLL,204.8,1024)
+        self.adc_tile.DynamicPLLConfig(xrfdc.XRF_CLK_SRC_PLL,409.6,1024)
         self.adc_block.MixerSettings = {
            "Freq": 84.000,
            "CoarseMixFreq": xrfdc.XRF_DC_COARSE_MIX_SAMPLE_FREQ_BY_TWO,
