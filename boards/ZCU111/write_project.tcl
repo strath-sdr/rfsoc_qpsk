@@ -15,9 +15,6 @@
 #   run results please launch the synthesis/implementation runs as needed.
 #
 #*****************************************************************************************
-##################### This is a temp fix, will delete ###########################
-set_param board.repoPaths /proj/gsd/vivado/Vivado/2018.3/data/boards/board_files/
-################################################################################
 
 # # Set the reference directory for source file relative paths (by default the value is script directory path)
 set origin_dir "."
