@@ -16,6 +16,19 @@ This repo contains all the files needed to build and run the RFSoC ZCU111 QPSK d
 
 (All software builds have been Tested on Ubuntu 16.04)
 
+## HowTo
+### System Generator
+The Tx and Rx IPs are in separate directories in `rfsoc_qpsk_demo/board/sysgen/` that can be opened using the appropriate System Generator dialogue. Due to the large amount of decimation and interpolation in both IPs, simulating the output can take an extraordinarily long time. A less extreme multirate system would simulate much faster! 
+
+### Vivado
+The project can be built with Vivado from the command line:
+```sh
+cd rfsoc_qpsk_demo/board/ZCU111/
+source <Xilinx_dir>/Vivado/2018.2/settings64.sh
+vivado -mode batch -nojournal -nolog -source write_project.tcl
+```
+Your ZCU111 board file must be in a place Vivado knows about (e.g. `<Vivado_dir>/2018.2/data/boards/board_files/`) otherwise Vivado will throw an error and stop building the project. The tcl file creates a new project and builds the IPI block design, but does not generate a bitstream as there is already a valid one in the repo.
+
 ## ToDo
 - Write short tutorial on how to set up hardware and run the demo
 - Remove second high performance port from PS IP and use a top-level AXI Interconnect IP to serve Rx and Tx hierarchies
