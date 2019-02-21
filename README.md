@@ -6,6 +6,7 @@ This repo contains all the files needed to build and run the RFSoC ZCU111 QPSK d
 ## Requirements
 ### Hardware
 - Xilinx ZCU111 development board Rev-1.0
+- HW-FMC-XM500 Daughter Board
 - Minimum 8GB Micro SD Card
 - SMA connector
 ### Software
