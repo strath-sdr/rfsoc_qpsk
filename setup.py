@@ -69,7 +69,7 @@ copy_overlays()
 copy_notebooks()
 
 setup(
-    name="pynq-rfsoc-qpsk",
+    name="rfsoc_qpsk",
     version='1.0',
     install_requires=['pynq>=2.3'],
     url='https://github.com/strath-sdr/rfsoc_qpsk_demo.git',

@@ -7,3 +7,4 @@ vivado.log
 *.htm
 
 .ipynb_checkpoints
+.idea
