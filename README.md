@@ -5,7 +5,9 @@
 ## Introduction
 This repo contains all the files needed to build and run the RFSoC QPSK demonstrator that was presented at both [FPL](https://fpl2018.org/) and [XDF](http://www.xilinx.com/xdf) conferences in 2018. The design is a full QPSK transceiver, which transmits and receives randomly-generated pulse-shaped symbols with full carrier and timing synchronisation. [PYNQ](https://github.com/xilinx/pynq) is used to visualise the data at both the DAC and ADC side of the RFSoC data converters, as well as visualising various DSP stages throughout the transmit and receive signal path.
 
-<img src="https://github.com/strath-sdr/rfsoc_qpsk_demo/blob/master/img/constellation_small.gif" width="300" height="300" />
+<p align="center">
+  <img src="https://github.com/strath-sdr/rfsoc_qpsk_demo/blob/master/img/constellation_small.gif" width="400" height="400" />
+<p/>
 
 ## Quick Start
 Open a terminal in Jupyter Labs and run:
@@ -23,11 +25,9 @@ Use Chrome if possible — the rendering performance is important.
 ## ZCU111 Setup
 We use DAC2 from tile 229 to transmit and ADC0 from tile 224 to receive. These correspond to connections J5 and J4 on the HW-FMC-XM500 daughter board respectively. SW6 on the ZCU111 must be set to read from SD card (as shown in the image below).
 
-<p float="left">
-  <img src="https://github.com/strath-sdr/rfsoc_qpsk_demo/blob/master/img/board_top_view.png" width="450">
-  <img src="https://github.com/jogomojo/rfsoc_qpsk_demo/blob/master/img/daughter_board.png" width="300">
-  <img src="https://github.com/jogomojo/rfsoc_qpsk_demo/blob/master/img/sw6.png" width="150">
-</p>
+<p align="center">
+<img src="https://github.com/jogomojo/rfsoc_qpsk_demo/blob/master/img/rfsoc_setup.png" width="800">
+<p/>
 
 ## HowTo Build Project Files
 All software builds have been Tested on Ubuntu 16.04
