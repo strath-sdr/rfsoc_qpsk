@@ -1,287 +1,940 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="841.89px" height="595.275px" viewBox="0 0 841.89 595.275" enable-background="new 0 0 841.89 595.275"
-	 xml:space="preserve">
-<path fill="#00A14B" fill-opacity="0.25" stroke="#6D6E71" stroke-width="3" stroke-miterlimit="10" d="M786.945,272.638H721.59
-	c-6.601,0-12-5.4-12-12v-41.333c0-6.6,5.399-12,12-12h65.354c6.6,0,12,5.4,12,12v41.333
-	C798.945,267.238,793.544,272.638,786.945,272.638z"/>
-<text transform="matrix(1 0 0 1 242.1265 65.8599)" font-family="'Arial-BoldMT'" font-size="30">RF-DAC Data Converter</text>
-<g>
-	<g>
-		<path fill="none" stroke="#7F3F98" stroke-width="4.4868" stroke-miterlimit="10" stroke-dasharray="8.9735,8.9735" d="
-			M752.214,488.629c15.463,1.117,30.255-8.053,43.336-19.064"/>
-		<g>
-			<polygon fill="#7F3F98" points="801.244,479.352 806.279,457.558 784.886,464.093 			"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xml:space="preserve"
+   enable-background="new 0 0 841.89 595.275"
+   viewBox="0 0 841.89 499.99998"
+   height="500"
+   width="841.89001"
+   y="0px"
+   x="0px"
+   id="Layer_1"
+   version="1.1"><metadata
+   id="metadata1551"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs1549" />
+<path
+   style="fill:#00a14b;fill-opacity:0.25;stroke:#6d6e71;stroke-width:3;stroke-miterlimit:10"
+   id="path1184"
+   d="M 786.945,177.36298 H 721.59 c -6.601,0 -12,-5.4 -12,-12 v -41.333 c 0,-6.6 5.399,-12 12,-12 h 65.354 c 6.6,0 12,5.4 12,12 v 41.333 c 0.001,6.6 -5.4,12 -11.999,12 z"
+   stroke-miterlimit="10" />
+
+<g
+   transform="translate(0,-95.27502)"
+   id="g1196">
+	<g
+   id="g1194">
+		<path
+   style="fill:none;stroke:#7f3f98;stroke-width:4.48680019;stroke-miterlimit:10;stroke-dasharray:8.9735, 8.9735"
+   id="path1188"
+   d="m 752.214,488.629 c 15.463,1.117 30.255,-8.053 43.336,-19.064"
+   stroke-miterlimit="10" />
+		<g
+   id="g1192">
+			<polygon
+   style="fill:#7f3f98"
+   id="polygon1190"
+   points="806.279,457.558 784.886,464.093 801.244,479.352 " />
 		</g>
 	</g>
 </g>
-<rect x="191.945" y="174.638" fill="#E6E7E8" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="488.646" height="386"/>
-<path fill="#21409A" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
-	M194.573,533.25h-3.871c-4.841,0-8.801-3.961-8.801-8.801v-78.663c0-4.841,3.96-8.802,8.801-8.802h3.871
-	c4.841,0,8.801,3.961,8.801,8.802v78.663C203.374,529.289,199.414,533.25,194.573,533.25z"/>
-<g>
+<rect
+   style="fill:#e6e7e8;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+   id="rect1198"
+   height="386"
+   width="488.646"
+   stroke-miterlimit="10"
+   y="79.362976"
+   x="191.94501" />
+<path
+   style="fill:#21409a;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+   id="path1200"
+   d="m 194.573,437.97498 h -3.871 c -4.841,0 -8.801,-3.961 -8.801,-8.801 v -78.663 c 0,-4.841 3.96,-8.802 8.801,-8.802 h 3.871 c 4.841,0 8.801,3.961 8.801,8.802 v 78.663 c 0,4.84 -3.96,8.801 -8.801,8.801 z"
+   stroke-miterlimit="10" />
+<g
+   transform="translate(0,-95.27502)"
+   id="g1208">
 	
-		<circle fill="#FFFFFF" stroke="#000000" stroke-width="2.7903" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="536.177" cy="460.348" r="15.631"/>
+		<circle
+   style="fill:#ffffff;stroke:#000000;stroke-width:2.79029989;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+   id="circle1202"
+   r="15.631"
+   cy="460.34799"
+   cx="536.177"
+   stroke-miterlimit="10" />
 	
-		<line fill="none" stroke="#000000" stroke-width="2.7903" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="525.125" y1="471.4" x2="547.23" y2="449.295"/>
+		<line
+   style="fill:none;stroke:#000000;stroke-width:2.79029989;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+   id="line1204"
+   y2="449.29501"
+   x2="547.22998"
+   y1="471.39999"
+   x1="525.125"
+   stroke-miterlimit="10" />
 	
-		<line fill="none" stroke="#000000" stroke-width="2.7903" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="547.23" y1="471.4" x2="525.125" y2="449.295"/>
+		<line
+   style="fill:none;stroke:#000000;stroke-width:2.79029989;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+   id="line1206"
+   y2="449.29501"
+   x2="525.125"
+   y1="471.39999"
+   x1="547.22998"
+   stroke-miterlimit="10" />
 </g>
-<g>
-	<g>
+<g
+   transform="translate(0,-95.27502)"
+   id="g1218">
+	<g
+   id="g1216">
 		
-			<line fill="none" stroke="#1C75BC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x1="536.177" y1="401.555" x2="536.177" y2="432.791"/>
-		<g>
-			<polygon fill="#1C75BC" points="528.699,430.603 536.176,443.555 543.656,430.603 			"/>
+			<line
+   style="fill:none;stroke:#1c75bc;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+   id="line1210"
+   y2="432.79099"
+   x2="536.177"
+   y1="401.55499"
+   x1="536.177" />
+		<g
+   id="g1214">
+			<polygon
+   style="fill:#1c75bc"
+   id="polygon1212"
+   points="536.176,443.555 543.656,430.603 528.699,430.603 " />
 		</g>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 573.2466 434.0547)"><tspan x="0" y="0" fill="#1C75BC" font-family="'Arial-ItalicMT'" font-size="30.6933">f</tspan><tspan x="8.527" y="0" fill="#1C75BC" font-family="'Arial-ItalicMT'" font-size="22">c</tspan></text>
-<g>
-	<g>
-		<g>
+<text
+   y="338.77966"
+   x="573.24658"
+   id="text1224"><tspan
+     style="font-size:30.69330025px;font-family:Arial-ItalicMT;fill:#1c75bc"
+     id="tspan1220"
+     font-size="30.6933"
+     y="338.77966"
+     x="573.24658">f</tspan><tspan
+     style="font-size:22px;font-family:Arial-ItalicMT;fill:#1c75bc"
+     id="tspan1222"
+     font-size="22"
+     y="338.77966"
+     x="581.77362">c</tspan></text>
+
+<g
+   transform="translate(0,-95.27502)"
+   id="g1246">
+	<g
+   id="g1234">
+		<g
+   id="g1232">
 			
-				<line fill="none" stroke="#000000" stroke-width="2.79" stroke-miterlimit="10" x1="204.374" y1="461.305" x2="240.268" y2="461.305"/>
-			<g>
-				<polygon points="238.233,468.26 250.278,461.306 238.233,454.35 				"/>
+				<line
+   style="fill:none;stroke:#000000;stroke-width:2.78999996;stroke-miterlimit:10"
+   id="line1226"
+   y2="461.30499"
+   x2="240.26801"
+   y1="461.30499"
+   x1="204.37399"
+   stroke-miterlimit="10" />
+			<g
+   id="g1230">
+				<polygon
+   id="polygon1228"
+   points="250.278,461.306 238.233,454.35 238.233,468.26 " />
 			</g>
 		</g>
 	</g>
-	<g>
-		<g>
+	<g
+   id="g1244">
+		<g
+   id="g1242">
 			
-				<line fill="none" stroke="#000000" stroke-width="2.79" stroke-miterlimit="10" x1="204.374" y1="509.305" x2="240.268" y2="509.305"/>
-			<g>
-				<polygon points="238.233,516.26 250.278,509.306 238.233,502.35 				"/>
+				<line
+   style="fill:none;stroke:#000000;stroke-width:2.78999996;stroke-miterlimit:10"
+   id="line1236"
+   y2="509.30499"
+   x2="240.26801"
+   y1="509.30499"
+   x1="204.37399"
+   stroke-miterlimit="10" />
+			<g
+   id="g1240">
+				<polygon
+   id="polygon1238"
+   points="250.278,509.306 238.233,502.35 238.233,516.26 " />
 			</g>
 		</g>
 	</g>
 </g>
-<g>
-	<g>
+<g
+   transform="translate(0,-95.27502)"
+   id="g1256">
+	<g
+   id="g1254">
 		
-			<line fill="none" stroke="#000000" stroke-width="2.79" stroke-miterlimit="10" x1="461.612" y1="461.305" x2="508.715" y2="461.305"/>
-		<g>
-			<polygon points="506.679,468.26 518.725,461.306 506.679,454.35 			"/>
+			<line
+   style="fill:none;stroke:#000000;stroke-width:2.78999996;stroke-miterlimit:10"
+   id="line1248"
+   y2="461.30499"
+   x2="508.715"
+   y1="461.30499"
+   x1="461.612"
+   stroke-miterlimit="10" />
+		<g
+   id="g1252">
+			<polygon
+   id="polygon1250"
+   points="518.725,461.306 506.679,454.35 506.679,468.26 " />
 		</g>
 	</g>
 </g>
-<g>
-	<g>
+<g
+   transform="translate(0,-95.27502)"
+   id="g1266">
+	<g
+   id="g1264">
 		
-			<line fill="none" stroke="#000000" stroke-width="2.79" stroke-miterlimit="10" x1="461.612" y1="509.117" x2="538.858" y2="509.117"/>
-		<g>
-			<polygon points="536.823,516.072 548.869,509.118 536.823,502.162 			"/>
+			<line
+   style="fill:none;stroke:#000000;stroke-width:2.78999996;stroke-miterlimit:10"
+   id="line1258"
+   y2="509.117"
+   x2="538.85797"
+   y1="509.117"
+   x1="461.612"
+   stroke-miterlimit="10" />
+		<g
+   id="g1262">
+			<polygon
+   id="polygon1260"
+   points="548.869,509.118 536.823,502.162 536.823,516.072 " />
 		</g>
 	</g>
 </g>
-<g>
-	<g>
-		<g>
+<g
+   transform="translate(0,-95.27502)"
+   id="g1278">
+	<g
+   id="g1276">
+		<g
+   id="g1274">
 			
-				<line fill="none" stroke="#000000" stroke-width="2.79" stroke-miterlimit="10" x1="625.157" y1="483.638" x2="654.156" y2="483.638"/>
-			<g>
-				<polygon points="652.121,490.594 664.166,483.639 652.121,476.683 				"/>
+				<line
+   style="fill:none;stroke:#000000;stroke-width:2.78999996;stroke-miterlimit:10"
+   id="line1268"
+   y2="483.638"
+   x2="654.15601"
+   y1="483.638"
+   x1="625.15698"
+   stroke-miterlimit="10" />
+			<g
+   id="g1272">
+				<polygon
+   id="polygon1270"
+   points="664.166,483.639 652.121,476.683 652.121,490.594 " />
 			</g>
 		</g>
 	</g>
 </g>
-<g>
+<g
+   transform="translate(0,-95.27502)"
+   id="g1288">
 	
-		<rect x="251.611" y="428.638" fill="#FFFFFF" stroke="#27AAE1" stroke-width="3" stroke-miterlimit="10" width="210" height="110"/>
-	<text transform="matrix(1 0 0 1 291.2324 473.1172)"><tspan x="0" y="0" font-family="'ArialMT'" font-size="24">interpolation</tspan><tspan x="-13.313" y="28.8" font-family="'ArialMT'" font-size="24">(1x, 2x, 4x, 8x)</tspan></text>
+		<rect
+   style="fill:#ffffff;stroke:#27aae1;stroke-width:3;stroke-miterlimit:10"
+   id="rect1280"
+   height="110"
+   width="210"
+   stroke-miterlimit="10"
+   y="428.638"
+   x="251.61099" />
+	<text
+   id="text1286"
+   transform="translate(291.2324,473.1172)"><tspan
+     style="font-size:24px;font-family:ArialMT"
+     id="tspan1282"
+     font-size="24"
+     y="0"
+     x="0">interpolation</tspan><tspan
+     style="font-size:24px;font-family:ArialMT"
+     id="tspan1284"
+     font-size="24"
+     y="28.799999"
+     x="-13.313">(1x, 2x, 4x, 8x)</tspan></text>
+
 </g>
-<line opacity="0.5" fill="none" stroke="#EC008C" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="10,6" x1="324.354" y1="396.449" x2="324.354" y2="371.429"/>
-<g opacity="0.5">
-	<g>
+<line
+   style="opacity:0.5;fill:none;stroke:#ec008c;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:10, 6"
+   id="line1290"
+   y2="276.15396"
+   x2="324.354"
+   y1="301.17398"
+   x1="324.354"
+   stroke-miterlimit="10" />
+<g
+   transform="translate(0,-95.27502)"
+   style="opacity:0.5"
+   id="g1300">
+	<g
+   id="g1298">
 		
-			<line fill="none" stroke="#EC008C" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="10,6" x1="324.354" y1="396.449" x2="343.944" y2="420.317"/>
-		<g>
-			<polygon fill="#EC008C" points="336.774,423.371 350.771,428.639 348.336,413.882 			"/>
+			<line
+   style="fill:none;stroke:#ec008c;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:10, 6"
+   id="line1292"
+   y2="420.31699"
+   x2="343.944"
+   y1="396.44901"
+   x1="324.354"
+   stroke-miterlimit="10" />
+		<g
+   id="g1296">
+			<polygon
+   style="fill:#ec008c"
+   id="polygon1294"
+   points="350.771,428.639 348.336,413.882 336.774,423.371 " />
 		</g>
 	</g>
 </g>
-<g>
+<g
+   transform="translate(0,-95.27502)"
+   id="g1306">
 	
-		<rect x="664.166" y="445.812" fill="#BCBEC0" stroke="#000000" stroke-width="2.6242" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="84.849" height="72.612"/>
-	<text transform="matrix(0.866 -0.5 0.5 0.866 683.0366 512.0898)" font-family="'Arial-BoldItalicMT'" font-size="31.5819">DAC</text>
+		<rect
+   style="fill:#bcbec0;stroke:#000000;stroke-width:2.62420011;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+   id="rect1302"
+   height="72.612"
+   width="84.848999"
+   stroke-miterlimit="10"
+   y="445.81201"
+   x="664.16602" />
+	<text
+   style="font-size:31.58189964px;font-family:Arial-BoldItalicMT"
+   id="text1304"
+   font-size="31.5819"
+   transform="matrix(0.866,-0.5,0.5,0.866,683.0366,512.0898)">DAC</text>
+
 </g>
-<g>
-	<g>
-		<g>
+<g
+   transform="translate(0,-95.27502)"
+   id="g1328">
+	<g
+   id="g1316">
+		<g
+   id="g1314">
 			
-				<line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="147.611" y1="461.117" x2="171.137" y2="461.117"/>
-			<g>
-				<polygon points="168.948,468.597 181.9,461.118 168.948,453.639 				"/>
+				<line
+   style="fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10"
+   id="line1308"
+   y2="461.117"
+   x2="171.13699"
+   y1="461.117"
+   x1="147.61099"
+   stroke-miterlimit="10" />
+			<g
+   id="g1312">
+				<polygon
+   id="polygon1310"
+   points="181.9,461.118 168.948,453.639 168.948,468.597 " />
 			</g>
 		</g>
 	</g>
-	<g>
-		<g>
+	<g
+   id="g1326">
+		<g
+   id="g1324">
 			
-				<line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="147.611" y1="509.117" x2="171.137" y2="509.117"/>
-			<g>
-				<polygon points="168.948,516.597 181.9,509.118 168.948,501.639 				"/>
+				<line
+   style="fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10"
+   id="line1318"
+   y2="509.117"
+   x2="171.13699"
+   y1="509.117"
+   x1="147.61099"
+   stroke-miterlimit="10" />
+			<g
+   id="g1322">
+				<polygon
+   id="polygon1320"
+   points="181.9,509.118 168.948,501.639 168.948,516.597 " />
 			</g>
 		</g>
 	</g>
 </g>
-<line fill="none" stroke="#EC008C" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="10,6" x1="411.316" y1="328.305" x2="150.922" y2="328.305"/>
-<text transform="matrix(1 0 0 1 53.2305 322.3047)"><tspan x="0" y="0" fill="#EC008C" font-family="'ArialMT'" font-size="18">Functional</tspan><tspan x="-24.021" y="21.6" fill="#EC008C" font-family="'ArialMT'" font-size="18">Configuration</tspan><tspan x="-16.98" y="43.2" fill="#EC008C" font-family="'ArialMT'" font-size="18">from Jupyter</tspan><tspan x="5.994" y="64.8" fill="#EC008C" font-family="'ArialMT'" font-size="18">Notebook</tspan></text>
-<text transform="matrix(1 0 0 1 99.6089 469.2891)"><tspan x="0" y="0" font-family="'ArialMT'" font-size="18">I/Q</tspan><tspan x="-52.031" y="21.601" font-family="'ArialMT'" font-size="18">data from</tspan><tspan x="-66.015" y="43.201" font-family="'ArialMT'" font-size="18">AXI-stream</tspan></text>
-<g>
+<line
+   style="fill:none;stroke:#ec008c;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:10, 6"
+   id="line1330"
+   y2="233.02997"
+   x2="150.922"
+   y1="233.02997"
+   x1="411.31601"
+   stroke-miterlimit="10" />
+<text
+   y="227.02968"
+   x="53.230499"
+   id="text1340"><tspan
+     style="font-size:18px;font-family:ArialMT;fill:#ec008c"
+     id="tspan1332"
+     font-size="18"
+     y="227.02968"
+     x="53.230499">Functional</tspan><tspan
+     style="font-size:18px;font-family:ArialMT;fill:#ec008c"
+     id="tspan1334"
+     font-size="18"
+     y="248.62967"
+     x="29.209499">Configuration</tspan><tspan
+     style="font-size:18px;font-family:ArialMT;fill:#ec008c"
+     id="tspan1336"
+     font-size="18"
+     y="270.22968"
+     x="36.2505">from Jupyter</tspan><tspan
+     style="font-size:18px;font-family:ArialMT;fill:#ec008c"
+     id="tspan1338"
+     font-size="18"
+     y="291.82968"
+     x="59.224499">Notebook</tspan></text>
+
+<text
+   y="374.01407"
+   x="99.608902"
+   id="text1348"><tspan
+     style="font-size:18px;font-family:ArialMT"
+     id="tspan1342"
+     font-size="18"
+     y="374.01407"
+     x="99.608902">I/Q</tspan><tspan
+     style="font-size:18px;font-family:ArialMT"
+     id="tspan1344"
+     font-size="18"
+     y="395.61508"
+     x="47.5779">data from</tspan><tspan
+     style="font-size:18px;font-family:ArialMT"
+     id="tspan1346"
+     font-size="18"
+     y="417.21509"
+     x="33.593899">AXI-stream</tspan></text>
+
+<g
+   transform="translate(0,-95.27502)"
+   id="g1354">
 	
-		<path fill="#8DC63F" fill-opacity="0.5" stroke="#00A14B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
-		M607.804,282.971h-54.491c-6.923,0-12.588-5.665-12.588-12.588v-62.491c0-6.923,5.665-12.588,12.588-12.588h54.491
-		c6.923,0,12.588,5.665,12.588,12.588v62.491C620.392,277.307,614.727,282.971,607.804,282.971z"/>
-	<text transform="matrix(1 0 0 1 558.5952 244.3042)" font-family="'ArialMT'" font-size="24">PLL</text>
+		<path
+   style="fill:#8dc63f;fill-opacity:0.5;stroke:#00a14b;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+   id="path1350"
+   d="m 607.804,282.971 h -54.491 c -6.923,0 -12.588,-5.665 -12.588,-12.588 v -62.491 c 0,-6.923 5.665,-12.588 12.588,-12.588 h 54.491 c 6.923,0 12.588,5.665 12.588,12.588 v 62.491 c 0,6.924 -5.665,12.588 -12.588,12.588 z"
+   stroke-miterlimit="10" />
+	<text
+   style="font-size:24px;font-family:ArialMT"
+   id="text1352"
+   font-size="24"
+   transform="translate(558.5952,244.3042)">PLL</text>
+
 </g>
-<polyline fill="none" stroke="#27AAE1" stroke-width="2.7903" stroke-miterlimit="10" points="451.278,428.638 442.612,445.812 
-	432.695,428.638 "/>
-<g>
-	<g>
+<polyline
+   transform="translate(0,-95.27502)"
+   style="fill:none;stroke:#27aae1;stroke-width:2.79029989;stroke-miterlimit:10"
+   id="polyline1356"
+   points="451.278,428.638 442.612,445.812   432.695,428.638 "
+   stroke-miterlimit="10" />
+<g
+   transform="translate(0,-95.27502)"
+   id="g1366">
+	<g
+   id="g1364">
 		
-			<line fill="none" stroke="#006838" stroke-width="3" stroke-miterlimit="10" x1="709.59" y1="240.638" x2="632.037" y2="240.638"/>
-		<g>
-			<polygon fill="#006838" points="634.225,233.159 621.273,240.637 634.225,248.117 			"/>
+			<line
+   style="fill:none;stroke:#006838;stroke-width:3;stroke-miterlimit:10"
+   id="line1358"
+   y2="240.638"
+   x2="632.03699"
+   y1="240.638"
+   x1="709.59003"
+   stroke-miterlimit="10" />
+		<g
+   id="g1362">
+			<polygon
+   style="fill:#006838"
+   id="polygon1360"
+   points="621.273,240.637 634.225,248.117 634.225,233.159 " />
 		</g>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 722.2485 234.3047)"><tspan x="0" y="0" font-family="'ArialMT'" font-size="18">external</tspan><tspan x="11.514" y="21.6" font-family="'ArialMT'" font-size="18">clock</tspan></text>
-<g>
-	<g>
+<text
+   y="139.02968"
+   x="722.24847"
+   id="text1372"><tspan
+     style="font-size:18px;font-family:ArialMT"
+     id="tspan1368"
+     font-size="18"
+     y="139.02968"
+     x="722.24847">external</tspan><tspan
+     style="font-size:18px;font-family:ArialMT"
+     id="tspan1370"
+     font-size="18"
+     y="160.62967"
+     x="733.76251">clock</tspan></text>
+
+<g
+   transform="translate(0,-95.27502)"
+   id="g1382">
+	<g
+   id="g1380">
 		
-			<line fill="none" stroke="#39B54A" stroke-width="3" stroke-miterlimit="10" x1="540.273" y1="264.971" x2="158.375" y2="264.971"/>
-		<g>
-			<polygon fill="#39B54A" points="160.563,257.493 147.611,264.971 160.563,272.45 			"/>
+			<line
+   style="fill:none;stroke:#39b54a;stroke-width:3;stroke-miterlimit:10"
+   id="line1374"
+   y2="264.97101"
+   x2="158.375"
+   y1="264.97101"
+   x1="540.27301"
+   stroke-miterlimit="10" />
+		<g
+   id="g1378">
+			<polygon
+   style="fill:#39b54a"
+   id="polygon1376"
+   points="147.611,264.971 160.563,272.45 160.563,257.493 " />
 		</g>
 	</g>
 </g>
-<g>
-	<g>
+<g
+   transform="translate(0,-95.27502)"
+   id="g1392">
+	<g
+   id="g1390">
 		
-			<line fill="none" stroke="#39B54A" stroke-width="3" stroke-miterlimit="10" x1="579.273" y1="282.971" x2="579.273" y2="326.874"/>
-		<g>
-			<polygon fill="#39B54A" points="571.793,324.686 579.272,337.638 586.751,324.686 			"/>
+			<line
+   style="fill:none;stroke:#39b54a;stroke-width:3;stroke-miterlimit:10"
+   id="line1384"
+   y2="326.87399"
+   x2="579.27301"
+   y1="282.97101"
+   x1="579.27301"
+   stroke-miterlimit="10" />
+		<g
+   id="g1388">
+			<polygon
+   style="fill:#39b54a"
+   id="polygon1386"
+   points="579.272,337.638 586.751,324.686 571.793,324.686 " />
 		</g>
 	</g>
 </g>
-<line fill="none" stroke="#39B54A" stroke-width="3" stroke-miterlimit="10" x1="442.278" y1="305.972" x2="650.945" y2="305.972"/>
-<g>
-	<g>
+<line
+   style="fill:none;stroke:#39b54a;stroke-width:3;stroke-miterlimit:10"
+   id="line1394"
+   y2="210.69696"
+   x2="650.94501"
+   y1="210.69696"
+   x1="442.27802"
+   stroke-miterlimit="10" />
+<g
+   transform="translate(0,-95.27502)"
+   id="g1404">
+	<g
+   id="g1402">
 		
-			<line fill="none" stroke="#39B54A" stroke-width="3" stroke-miterlimit="10" x1="442.278" y1="417.874" x2="442.278" y2="305.972"/>
-		<g>
-			<polygon fill="#39B54A" points="449.757,415.686 442.279,428.638 434.799,415.686 			"/>
+			<line
+   style="fill:none;stroke:#39b54a;stroke-width:3;stroke-miterlimit:10"
+   id="line1396"
+   y2="305.97198"
+   x2="442.27802"
+   y1="417.87399"
+   x1="442.27802"
+   stroke-miterlimit="10" />
+		<g
+   id="g1400">
+			<polygon
+   style="fill:#39b54a"
+   id="polygon1398"
+   points="442.279,428.638 434.799,415.686 449.757,415.686 " />
 		</g>
 	</g>
 </g>
-<circle fill="#39B54A" stroke="#39B54A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="579.273" cy="306.18" r="7.375"/>
-<line fill="none" stroke="#39B54A" stroke-width="3" stroke-miterlimit="10" x1="650.695" y1="424.055" x2="650.695" y2="305.972"/>
-<g>
-	<g>
+<circle
+   style="fill:#39b54a;stroke:#39b54a;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+   id="circle1406"
+   r="7.375"
+   cy="210.90497"
+   cx="579.27301"
+   stroke-miterlimit="10" />
+<line
+   style="fill:none;stroke:#39b54a;stroke-width:3;stroke-miterlimit:10"
+   id="line1408"
+   y2="210.69696"
+   x2="650.69501"
+   y1="328.77997"
+   x1="650.69501"
+   stroke-miterlimit="10" />
+<g
+   transform="translate(0,-95.27502)"
+   id="g1418">
+	<g
+   id="g1416">
 		
-			<line fill="none" stroke="#39B54A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x1="650.695" y1="424.055" x2="663.287" y2="436.491"/>
-		<g>
-			<polygon fill="#39B54A" points="656.474,440.274 670.945,444.055 666.985,429.632 			"/>
+			<line
+   style="fill:none;stroke:#39b54a;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+   id="line1410"
+   y2="436.491"
+   x2="663.28699"
+   y1="424.05499"
+   x1="650.69501" />
+		<g
+   id="g1414">
+			<polygon
+   style="fill:#39b54a"
+   id="polygon1412"
+   points="670.945,444.055 666.985,429.632 656.474,440.274 " />
 		</g>
 	</g>
 </g>
-<line fill="none" stroke="#EC008C" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="10,6" x1="411.316" y1="363.21" x2="411.316" y2="328.305"/>
-<g>
-	<g>
+<line
+   style="fill:none;stroke:#ec008c;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:10, 6"
+   id="line1420"
+   y2="233.02997"
+   x2="411.31601"
+   y1="267.93497"
+   x1="411.31601"
+   stroke-miterlimit="10" />
+<g
+   transform="translate(0,-95.27502)"
+   id="g1430">
+	<g
+   id="g1428">
 		
-			<line fill="none" stroke="#EC008C" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="10,6" x1="411.316" y1="362.429" x2="507.509" y2="362.429"/>
-		<g>
-			<polygon fill="#EC008C" points="505.321,369.907 518.273,362.429 505.321,354.949 			"/>
+			<line
+   style="fill:none;stroke:#ec008c;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:10, 6"
+   id="line1422"
+   y2="362.42899"
+   x2="507.509"
+   y1="362.42899"
+   x1="411.31601"
+   stroke-miterlimit="10" />
+		<g
+   id="g1426">
+			<polygon
+   style="fill:#ec008c"
+   id="polygon1424"
+   points="518.273,362.429 505.321,354.949 505.321,369.907 " />
 		</g>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 65.2627 261.3047)"><tspan x="0" y="0" font-family="'ArialMT'" font-size="18">Clock for</tspan><tspan x="-22.043" y="21.6" font-family="'ArialMT'" font-size="18">user design</tspan></text>
-<text transform="matrix(1 0 0 1 264.9575 319.3047)" font-family="'Consolas'" font-size="16">MixerSettings()</text>
-<line opacity="0.5" fill="none" stroke="#EC008C" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="10,6" x1="324.354" y1="372.21" x2="150.922" y2="372.21"/>
-<g>
-	<g>
+<text
+   y="166.02968"
+   x="65.262703"
+   id="text1436"><tspan
+     style="font-size:18px;font-family:ArialMT"
+     id="tspan1432"
+     font-size="18"
+     y="166.02968"
+     x="65.262703">Clock for</tspan><tspan
+     style="font-size:18px;font-family:ArialMT"
+     id="tspan1434"
+     font-size="18"
+     y="187.62967"
+     x="43.2197">user design</tspan></text>
+
+<text
+   y="224.02968"
+   x="264.95749"
+   style="font-size:16px;font-family:Consolas"
+   id="text1438"
+   font-size="16">MixerSettings()</text>
+
+<line
+   style="opacity:0.5;fill:none;stroke:#ec008c;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:10, 6"
+   id="line1440"
+   y2="276.93497"
+   x2="150.922"
+   y1="276.93497"
+   x1="324.354"
+   stroke-miterlimit="10" />
+<g
+   transform="translate(0,-95.27502)"
+   id="g1450">
+	<g
+   id="g1448">
 		
-			<line fill="none" stroke="#EC008C" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="10,6" x1="749.892" y1="196.541" x2="749.892" y2="152.788"/>
-		<g>
-			<polygon fill="#EC008C" points="757.371,194.353 749.892,207.305 742.413,194.353 			"/>
+			<line
+   style="fill:none;stroke:#ec008c;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:10, 6"
+   id="line1442"
+   y2="152.78799"
+   x2="749.89203"
+   y1="196.541"
+   x1="749.89203"
+   stroke-miterlimit="10" />
+		<g
+   id="g1446">
+			<polygon
+   style="fill:#ec008c"
+   id="polygon1444"
+   points="749.892,207.305 742.413,194.353 757.371,194.353 " />
 		</g>
 	</g>
 </g>
-<line fill="none" stroke="#EC008C" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="10,6" x1="749.892" y1="153.57" x2="150.922" y2="153.57"/>
-<text transform="matrix(1 0 0 1 361.4941 144.7573)" font-family="'Consolas'" font-size="16">xrfclk_set_freq()</text>
-<g>
-	<g>
+<line
+   style="fill:none;stroke:#ec008c;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:10, 6"
+   id="line1452"
+   y2="58.294983"
+   x2="150.922"
+   y1="58.294983"
+   x1="749.89203"
+   stroke-miterlimit="10" />
+<text
+   y="49.482277"
+   x="361.49411"
+   style="font-size:16px;font-family:Consolas"
+   id="text1454"
+   font-size="16">xrfclk_set_freq()</text>
+
+<g
+   transform="translate(0,-95.27502)"
+   id="g1464">
+	<g
+   id="g1462">
 		
-			<line fill="none" stroke="#EC008C" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="10,6" x1="528.319" y1="216.305" x2="148.802" y2="216.305"/>
-		<g>
-			<polygon fill="#EC008C" points="526.13,208.826 539.083,216.304 526.13,223.784 			"/>
+			<line
+   style="fill:none;stroke:#ec008c;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:10, 6"
+   id="line1456"
+   y2="216.30499"
+   x2="148.802"
+   y1="216.30499"
+   x1="528.31897"
+   stroke-miterlimit="10" />
+		<g
+   id="g1460">
+			<polygon
+   style="fill:#ec008c"
+   id="polygon1458"
+   points="539.083,216.304 526.13,223.784 526.13,208.826 " />
 		</g>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 67.2485 157.6382)"><tspan x="0" y="0" fill="#EC008C" font-family="'ArialMT'" font-size="18">Clocking</tspan><tspan x="-38.039" y="21.6" fill="#EC008C" font-family="'ArialMT'" font-size="18">Configuration</tspan><tspan x="-30.999" y="43.2" fill="#EC008C" font-family="'ArialMT'" font-size="18">from Jupyter</tspan><tspan x="-8.024" y="64.8" fill="#EC008C" font-family="'ArialMT'" font-size="18">Notebook</tspan></text>
-<text transform="matrix(1 0 0 1 299.7622 207.3047)" font-family="'Consolas'" font-size="16">DynamicPLLConfig()</text>
-<text transform="matrix(1 0 0 1 252.9204 389.6387)" opacity="0.5" fill="#EC008C" font-family="'Arial-ItalicMT'" font-size="16">not used</text>
-<g>
+<text
+   y="62.363174"
+   x="67.248497"
+   id="text1474"><tspan
+     style="font-size:18px;font-family:ArialMT;fill:#ec008c"
+     id="tspan1466"
+     font-size="18"
+     y="62.363174"
+     x="67.248497">Clocking</tspan><tspan
+     style="font-size:18px;font-family:ArialMT;fill:#ec008c"
+     id="tspan1468"
+     font-size="18"
+     y="83.963181"
+     x="29.209499">Configuration</tspan><tspan
+     style="font-size:18px;font-family:ArialMT;fill:#ec008c"
+     id="tspan1470"
+     font-size="18"
+     y="105.56318"
+     x="36.2495">from Jupyter</tspan><tspan
+     style="font-size:18px;font-family:ArialMT;fill:#ec008c"
+     id="tspan1472"
+     font-size="18"
+     y="127.16318"
+     x="59.224499">Notebook</tspan></text>
+
+<text
+   y="112.02968"
+   x="299.76221"
+   style="font-size:16px;font-family:Consolas"
+   id="text1476"
+   font-size="16">DynamicPLLConfig()</text>
+
+<text
+   y="294.36368"
+   x="252.92039"
+   style="font-size:16px;font-family:Arial-ItalicMT;opacity:0.5;fill:#ec008c"
+   id="text1478"
+   font-size="16">not used</text>
+
+<g
+   transform="translate(0,-95.27502)"
+   id="g1486">
 	
-		<circle fill="#FFFFFF" stroke="#000000" stroke-width="2.7903" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="564.499" cy="509.305" r="15.631"/>
+		<circle
+   style="fill:#ffffff;stroke:#000000;stroke-width:2.79029989;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+   id="circle1480"
+   r="15.631"
+   cy="509.30499"
+   cx="564.49902"
+   stroke-miterlimit="10" />
 	
-		<line fill="none" stroke="#000000" stroke-width="2.7903" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="553.447" y1="520.357" x2="575.551" y2="498.252"/>
+		<line
+   style="fill:none;stroke:#000000;stroke-width:2.79029989;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+   id="line1482"
+   y2="498.25201"
+   x2="575.55103"
+   y1="520.35699"
+   x1="553.44702"
+   stroke-miterlimit="10" />
 	
-		<line fill="none" stroke="#000000" stroke-width="2.7903" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="575.551" y1="520.357" x2="553.447" y2="498.252"/>
+		<line
+   style="fill:none;stroke:#000000;stroke-width:2.79029989;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+   id="line1484"
+   y2="498.25201"
+   x2="553.44702"
+   y1="520.35699"
+   x1="575.55103"
+   stroke-miterlimit="10" />
 </g>
-<g>
-	<g>
+<g
+   transform="translate(0,-95.27502)"
+   id="g1496">
+	<g
+   id="g1494">
 		
-			<line fill="none" stroke="#1C75BC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x1="564.671" y1="401.555" x2="564.671" y2="481.216"/>
-		<g>
-			<polygon fill="#1C75BC" points="557.193,479.027 564.67,491.979 572.15,479.027 			"/>
+			<line
+   style="fill:none;stroke:#1c75bc;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+   id="line1488"
+   y2="481.216"
+   x2="564.67102"
+   y1="401.55499"
+   x1="564.67102" />
+		<g
+   id="g1492">
+			<polygon
+   style="fill:#1c75bc"
+   id="polygon1490"
+   points="564.67,491.979 572.15,479.027 557.193,479.027 " />
 		</g>
 	</g>
 </g>
-<g>
-	<path fill="#27AAE1" fill-opacity="0.5" stroke="#1C75BC" stroke-width="3" stroke-miterlimit="10" d="M585.208,401.555h-55.872
-		c-6.085,0-11.063-4.979-11.063-11.064v-40.455c0-6.085,4.979-11.063,11.063-11.063h55.872c6.085,0,11.064,4.979,11.064,11.063
-		v40.455C596.273,396.576,591.293,401.555,585.208,401.555z"/>
-	<text transform="matrix(1 0 0 1 531.8921 376.9707)" font-family="'ArialMT'" font-size="24">NCO</text>
+<g
+   transform="translate(0,-95.27502)"
+   id="g1502">
+	<path
+   style="fill:#27aae1;fill-opacity:0.5;stroke:#1c75bc;stroke-width:3;stroke-miterlimit:10"
+   id="path1498"
+   d="m 585.208,401.555 h -55.872 c -6.085,0 -11.063,-4.979 -11.063,-11.064 v -40.455 c 0,-6.085 4.979,-11.063 11.063,-11.063 h 55.872 c 6.085,0 11.064,4.979 11.064,11.063 v 40.455 c 10e-4,6.085 -4.979,11.064 -11.064,11.064 z"
+   stroke-miterlimit="10" />
+	<text
+   style="font-size:24px;font-family:ArialMT"
+   id="text1500"
+   font-size="24"
+   transform="translate(531.8921,376.9707)">NCO</text>
+
 </g>
-<g>
+<g
+   transform="translate(0,-95.27502)"
+   id="g1510">
 	
-		<path fill="#FFFFFF" stroke="#000000" stroke-width="2.7903" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
-		M620.855,522.643h-2.886c-7.919,0-14.397-6.479-14.397-14.397V459.03c0-7.918,6.479-14.397,14.397-14.397h2.886
-		c7.918,0,14.397,6.479,14.397,14.397v49.215C635.252,516.164,628.773,522.643,620.855,522.643z"/>
+		<path
+   style="fill:#ffffff;stroke:#000000;stroke-width:2.79029989;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+   id="path1504"
+   d="m 620.855,522.643 h -2.886 c -7.919,0 -14.397,-6.479 -14.397,-14.397 V 459.03 c 0,-7.918 6.479,-14.397 14.397,-14.397 h 2.886 c 7.918,0 14.397,6.479 14.397,14.397 v 49.215 c 0,7.919 -6.479,14.398 -14.397,14.398 z"
+   stroke-miterlimit="10" />
 	
-		<line fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" x1="619.412" y1="475.297" x2="619.412" y2="491.979"/>
+		<line
+   style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10"
+   id="line1506"
+   y2="491.979"
+   x2="619.41199"
+   y1="475.297"
+   x1="619.41199"
+   stroke-miterlimit="10" />
 	
-		<line fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" x1="611.071" y1="483.638" x2="627.753" y2="483.638"/>
+		<line
+   style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10"
+   id="line1508"
+   y2="483.638"
+   x2="627.75299"
+   y1="483.638"
+   x1="611.07098"
+   stroke-miterlimit="10" />
 </g>
-<g>
-	<g>
+<g
+   transform="translate(0,-95.27502)"
+   id="g1520">
+	<g
+   id="g1518">
 		
-			<line fill="none" stroke="#000000" stroke-width="2.79" stroke-miterlimit="10" x1="552.001" y1="461.305" x2="593.562" y2="461.305"/>
-		<g>
-			<polygon points="591.526,468.26 603.572,461.306 591.526,454.35 			"/>
+			<line
+   style="fill:none;stroke:#000000;stroke-width:2.78999996;stroke-miterlimit:10"
+   id="line1512"
+   y2="461.30499"
+   x2="593.56201"
+   y1="461.30499"
+   x1="552.00098"
+   stroke-miterlimit="10" />
+		<g
+   id="g1516">
+			<polygon
+   id="polygon1514"
+   points="603.572,461.306 591.526,454.35 591.526,468.26 " />
 		</g>
 	</g>
 </g>
-<g>
-	<g>
+<g
+   transform="translate(0,-95.27502)"
+   id="g1530">
+	<g
+   id="g1528">
 		
-			<line fill="none" stroke="#000000" stroke-width="2.79" stroke-miterlimit="10" x1="580.558" y1="509.117" x2="593.603" y2="509.224"/>
-		<g>
-			<polygon points="591.511,516.162 603.613,509.306 591.624,502.252 			"/>
+			<line
+   style="fill:none;stroke:#000000;stroke-width:2.78999996;stroke-miterlimit:10"
+   id="line1522"
+   y2="509.224"
+   x2="593.60303"
+   y1="509.117"
+   x1="580.55798"
+   stroke-miterlimit="10" />
+		<g
+   id="g1526">
+			<polygon
+   id="polygon1524"
+   points="603.613,509.306 591.624,502.252 591.511,516.162 " />
 		</g>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 560.4995 396.4492)" font-family="'Arial-ItalicMT'" font-size="16">s</text>
-<text transform="matrix(1 0 0 1 532.1772 396.4492)" font-family="'Arial-ItalicMT'" font-size="16">c</text>
-<polyline fill="none" stroke="#1C75BC" stroke-width="2" stroke-miterlimit="10" points="585.367,339.466 579.273,351.555 
-	571.898,338.972 "/>
-<text transform="matrix(1 0 0 1 225.1035 450.6387)" fill="#21409A" font-family="'ArialMT'" font-size="16">I</text>
-<text transform="matrix(1 0 0 1 221.104 501.6387)" fill="#21409A" font-family="'ArialMT'" font-size="16">Q</text>
-<text transform="matrix(1 0 0 1 474.437 450.4785)" fill="#21409A" font-family="'ArialMT'" font-size="16">I</text>
-<text transform="matrix(1 0 0 1 470.437 501.4785)" fill="#21409A" font-family="'ArialMT'" font-size="16">Q</text>
+<text
+   y="301.17419"
+   x="560.49951"
+   style="font-size:16px;font-family:Arial-ItalicMT"
+   id="text1532"
+   font-size="16">s</text>
+
+<text
+   y="301.17419"
+   x="532.17719"
+   style="font-size:16px;font-family:Arial-ItalicMT"
+   id="text1534"
+   font-size="16">c</text>
+
+<polyline
+   transform="translate(0,-95.27502)"
+   style="fill:none;stroke:#1c75bc;stroke-width:2;stroke-miterlimit:10"
+   id="polyline1536"
+   points="585.367,339.466 579.273,351.555   571.898,338.972 "
+   stroke-miterlimit="10" />
+<text
+   y="355.36368"
+   x="225.1035"
+   style="font-size:16px;font-family:ArialMT;fill:#21409a"
+   id="text1538"
+   font-size="16">I</text>
+
+<text
+   y="406.36368"
+   x="221.104"
+   style="font-size:16px;font-family:ArialMT;fill:#21409a"
+   id="text1540"
+   font-size="16">Q</text>
+
+<text
+   y="355.20349"
+   x="474.43701"
+   style="font-size:16px;font-family:ArialMT;fill:#21409a"
+   id="text1542"
+   font-size="16">I</text>
+
+<text
+   y="406.20346"
+   x="470.43701"
+   style="font-size:16px;font-family:ArialMT;fill:#21409a"
+   id="text1544"
+   font-size="16">Q</text>
+
 </svg>
