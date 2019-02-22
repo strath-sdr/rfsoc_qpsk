@@ -102,7 +102,7 @@ class QPSKRx(DefaultHierarchy):
         return False
 
 
-class QPSK_RX_Core(DefaultIP):
+class QPSKRxCore(DefaultIP):
     """Driver for QPSK RX's core logic IP
 
     Exposes all the configuration registers by name via data-driven properties
@@ -146,4 +146,4 @@ def _create_mmio_property(addr):
 
 # Generate getters and setters based on _qpsk_props
 for (name, addr) in _qpsk_props:
-    setattr(QPSK_RX_Core, name, _create_mmio_property(addr))
+    setattr(QPSKRxCore, name, _create_mmio_property(addr))

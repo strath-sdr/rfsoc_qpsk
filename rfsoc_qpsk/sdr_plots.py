@@ -368,7 +368,7 @@ class IQFreqPlot(IQPlot):
 
         self._ffts = [f_data for i in range(avg_n)]
 
-        yrange = [abs(min(f_data)) * 1.2, abs(max(f_data)) * 1.2]
+        #yrange = [abs(min(f_data)) *0.8, abs(max(f_data)) * 1.2]
 
         super().__init__(
             data=self._avg_window(),
@@ -377,7 +377,7 @@ class IQFreqPlot(IQPlot):
             xlabel='f [Hz]',
             ylabel='PSD [dB/Hz]',
             x_start=(-len(data) / 2),
-            y_range=yrange,
+            #y_range=yrange,
             *args,
             **kwargs)
 
@@ -552,7 +552,6 @@ class HWFreqPlot():
                 'yaxis': {
                     'title': ylabel,
                     #'range': [min(self._data), max(self._data)]
-                    'range': [-100, 10]
                 }
             },
             data=[{

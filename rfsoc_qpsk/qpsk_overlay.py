@@ -1,6 +1,10 @@
 from pynq import Overlay
 import xrfclk
+import xrfdc
 import os
+
+import rfsoc_qpsk.qpsk_rx
+import rfsoc_qpsk.qpsk_tx
 
 
 class QpskOverlay(Overlay):

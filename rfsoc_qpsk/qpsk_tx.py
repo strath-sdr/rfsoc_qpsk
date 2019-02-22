@@ -99,7 +99,7 @@ class QPSKTx(DefaultHierarchy):
     def get_many_symbols(self, N=10):
         """Get N buffers of raw QPSK symbols
         """
-        return np.concatenate([self.getSymbols() for i in range(N)])
+        return np.concatenate([self.get_symbols() for i in range(N)])
 
     @staticmethod
     def checkhierarchy(description):
@@ -146,4 +146,4 @@ def _create_mmio_property(addr):
 
 # Generate getters and setters based on _qpsk_props
 for (name, addr) in _qpsk_props:
-    setattr(QPSK_TX_Core, name, _create_mmio_property(addr))
+    setattr(QPSKTxCore, name, _create_mmio_property(addr))

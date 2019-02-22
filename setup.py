@@ -35,7 +35,7 @@ from setuptools import find_packages, setup
 
 # global variables
 board = os.environ['BOARD']
-repo_board_folder = f'boards/{board}/'
+repo_board_folder = f'boards/{board}/rfsoc_qpsk'
 board_notebooks_dir = os.environ['PYNQ_JUPYTER_NOTEBOOKS']
 hw_data_files = []
 
@@ -74,7 +74,7 @@ copy_notebooks()
 setup(
     name="rfsoc_qpsk",
     version='1.0',
-    install_requires=['pynq>=2.3'],
+    install_requires=['pynq>=2.4'],
     url='https://github.com/strath-sdr/rfsoc_qpsk_demo.git',
     license='BSD 3-Clause License',
     author="Craig Ramsay",
