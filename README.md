@@ -26,7 +26,7 @@ Use Chrome if possible — the rendering performance is important.
 We use DAC2 from tile 229 to transmit and ADC0 from tile 224 to receive. These correspond to connections J5 and J4 on the HW-FMC-XM500 daughter board respectively. SW6 on the ZCU111 must be set to boot from SD card (as shown in the image below).
 
 <p align="center">
-<img src="https://github.com/jogomojo/rfsoc_qpsk_demo/blob/master/img/rfsoc_setup.png" width="800">
+<img src="https://github.com/strath-sdr/rfsoc_qpsk_demo/blob/master/img/rfsoc_setup.png" width="800">
 <p/>
 
 ## Using the Project Files
