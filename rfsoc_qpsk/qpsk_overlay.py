@@ -59,6 +59,14 @@ class QpskOverlay(Overlay):
             'MixerType':      xrfdc.MIXER_TYPE_FINE,
             'PhaseOffset':    0.0
         }
+        self.dac_block.QMCSettings = {
+            'EnableGain': 1,
+            'EnablePhase': 0,
+            'EventSource': xrfdc.EVNT_SRC_IMMEDIATE,
+            'GainCorrectionFactor': 1.8,
+            'OffsetCorrectionFactor': 0,
+            'PhaseCorrectionFactor': 0.0
+        }
         self.dac_tile.SetupFIFO(True)
         self.dac_tile.StartUp()
 
@@ -73,6 +81,14 @@ class QpskOverlay(Overlay):
             'MixerMode':      xrfdc.MIXER_MODE_R2C,
             'MixerType':      xrfdc.MIXER_TYPE_FINE,
             'PhaseOffset':    0.0
+        }
+        self.adc_block.QMCSettings = {
+            'EnableGain': 1,
+            'EnablePhase': 0,
+            'EventSource': xrfdc.EVNT_SRC_TILE,
+            'GainCorrectionFactor': 1.8,
+            'OffsetCorrectionFactor': 0,
+            'PhaseCorrectionFactor': 0.0
         }
         self.adc_tile.SetupFIFO(True)
         self.adc_tile.StartUp()
