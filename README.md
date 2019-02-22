@@ -29,7 +29,7 @@ We use DAC2 from tile 229 to transmit and ADC0 from tile 224 to receive. These c
 <img src="https://github.com/jogomojo/rfsoc_qpsk_demo/blob/master/img/rfsoc_setup.png" width="800">
 <p/>
 
-## HowTo Build Project Files
+## Using The Project Files
 All software builds have been Tested on Ubuntu 16.04
 #### Requirements
 - Vivado Design Suite 2018.3
@@ -40,7 +40,7 @@ All software builds have been Tested on Ubuntu 16.04
 The Tx and Rx IPs are in separate directories in `rfsoc_qpsk_demo/board/sysgen/` that can be opened using the appropriate System Generator dialogue. Due to the large amount of decimation and interpolation in both IPs, simulating the output can take an extraordinarily long time. A less extreme multirate system would simulate much faster! 
 
 ### Vivado
-The project can be built with Vivado from the command line:
+This project can be built with Vivado from the command line:
 ```sh
 cd rfsoc_qpsk_demo/board/ZCU111/
 source <Xilinx_dir>/Vivado/2018.3/settings64.sh
