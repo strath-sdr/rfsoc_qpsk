@@ -29,8 +29,8 @@ We use DAC2 from tile 229 to transmit and ADC0 from tile 224 to receive. These c
 <img src="https://github.com/jogomojo/rfsoc_qpsk_demo/blob/master/img/rfsoc_setup.png" width="800">
 <p/>
 
-## Using The Project Files
-All software builds have been Tested on Ubuntu 16.04
+## Using the Project Files
+All software builds have been tested on Ubuntu 16.04
 #### Requirements
 - Vivado Design Suite 2018.3
 - System Generator for DSP
