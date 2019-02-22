@@ -50,6 +50,7 @@ The tcl file creates a new project and builds the IPI block design, but does not
 
 ## Known Issues
 - Live plots are currently quite demanding of the client browser (but not the RFSoC). A hefty desktop helps a lot in the meantime!
+- There is a large drop in gain between the ADC and the final output
 
 ## License 
 [BSD 3-Clause](github.com/strath-sdr/rfsoc_qpsk_demo/LICENSE)
