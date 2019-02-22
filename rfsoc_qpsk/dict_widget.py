@@ -1,8 +1,10 @@
 """Configuration data container with interactive ipywidgets GUI"""
 
-import jsonschema
-import ipywidgets
 import json
+
+import ipywidgets
+import jsonschema
+
 
 class DictWidget():
     """Container class for configuration data

@@ -5,20 +5,26 @@ from pynq import Xlnk
 import numpy as np
 import ipywidgets as ipw
 
+
 class DmaTimer():
+    """Class for scheduling periodic callbacks.
+
+    Timer class for periodically passing new data from a generator to a
+    callback function. Useful for passing data from DMA transfers back to a
+    visualisation function.
+    """
 
     def __init__(self, callback, gen, t):
-        """Create new dma-based data generator.
+        """Create new dma-based data timer.
 
         callback: function to call with data chunk
         gen: function to call to return data chunk
-             (usually a dma channel's transfer function
+             (usually a dma channel's transfer function)
         t: time between each generated data chunk
         """
         self.callback = callback
         self.gen = gen
         self.t = t
-
 
     def _do(self):
         """Generate new data and restart timer thread.
@@ -46,7 +52,8 @@ class DmaTimer():
         """
         self.stopping = True
 
-    def getControls(self):
+    def get_widget(self):
+        """Get ipywidget controls to stop and start the generator thread."""
         start_button = ipw.Button(description=u'\u25B6')
         start_button.on_click(lambda _: self.start())
         stop_button = ipw.Button(description=u'\u25A0')
