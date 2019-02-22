@@ -1,3 +1,7 @@
+
+--  Signal Join
+--  Copyright (C) 2019 Josh Goldsmith
+
 library ieee;
 use ieee.std_logic_1164.all;
 
