@@ -4717,13 +4717,7 @@ begin
   clk_net <= clk_1;
   ce_net_x0 <= ce_1;
   ce_net <= ce_1600;
-  constant_x0 : entity xil_defaultlib.sysgen_constant_4a1c0a5c6e 
-  port map (
-    clk => '0',
-    ce => '0',
-    clr => '0',
-    op => constant_op_net
-  );
+  constant_op_net <= "00000111111";
   convert : entity xil_defaultlib.axi_qpsk_rx_xlconvert 
   generic map (
     bool_conversion => 0,
