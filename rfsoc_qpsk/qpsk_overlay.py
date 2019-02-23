@@ -16,7 +16,7 @@ class QpskOverlay(Overlay):
     def __init__(self, bitfile_name=None, **kwargs):
         """Construct a new QpskOverlay
 
-        bitfile_name: Optional. If left None, the 'base.bit' bundled with this
+        bitfile_name: Optional. If left None, the 'rfsoc_qpsk.bit' bundled with this
                       rfsoc-qpsk package will be used.
 
         """
@@ -24,7 +24,7 @@ class QpskOverlay(Overlay):
         # Generate default bitfile name
         if bitfile_name is None:
             this_dir = os.path.dirname(__file__)
-            bitfile_name = os.path.join(this_dir, 'bitstream', 'base.bit')
+            bitfile_name = os.path.join(this_dir, 'bitstream', 'rfsoc_qpsk.bit')
 
         # Set FPD and LPD interface widths
         from pynq import MMIO
