@@ -18,7 +18,7 @@ set src_dir $origin_dir/../ip/sysgen/iprepo/zcu111
 set iprepo_dir $origin_dir/../ip
 
 # Set the project name
-set _xil_proj_name_ "rfsoc_pynq_demo"
+set _xil_proj_name_ "rfsoc_pynq"
 
 # Use project name variable, if specified in the tcl shell
 if { [info exists ::user_project_name] } {
@@ -74,7 +74,7 @@ if { $::argc > 0 } {
 }
 
 # Set the directory path for the original project from where this script was exported
-# set orig_proj_dir "[file normalize "$origin_dir/../Documents/git/rfsoc_qpsk_demo/vivado/rfsoc_pynq_demo"]"
+# set orig_proj_dir "[file normalize "$origin_dir/../Documents/git/rfsoc_qpsk/vivado/rfsoc_pynq"]"
 
 # Create project
 create_project ${_xil_proj_name_} ./${_xil_proj_name_} -part xczu28dr-ffvg1517-2-e
