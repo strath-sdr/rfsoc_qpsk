@@ -10,7 +10,9 @@ This repo contains all the files needed to build and run the RFSoC QPSK demonstr
 <p/>
 
 ## Quick Start
-Open a terminal in Jupyter Labs and run:
+Connect to the board with **Jupyter Lab** in a browser (not Jupyter Notebook) @ `192.168.2.99:9000/lab`. 
+
+Open a terminal in Jupyter Lab and run:
 ```sh
 pip3 install --upgrade git+https://github.com/strath-sdr/rfsoc_qpsk.git
 
