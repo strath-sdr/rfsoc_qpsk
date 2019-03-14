@@ -10,7 +10,7 @@ This repo contains all the files needed to build and run the RFSoC QPSK demonstr
 <p/>
 
 ## Quick Start
-Connect to the board with **Jupyter Lab** in a browser (not Jupyter Notebook) @ `192.168.2.99:9000/lab`. 
+Connect to the board with **Jupyter Lab** in a browser (not Jupyter Notebook) @ `192.168.2.99:9090/lab`. 
 
 Open a terminal in Jupyter Lab and run:
 ```sh
@@ -55,4 +55,4 @@ The tcl file creates a new project and builds the IPI block design, but does not
 - There is a large drop in gain between the ADC and the final output
 
 ## License 
-[BSD 3-Clause](github.com/strath-sdr/rfsoc_qpsk/LICENSE)
+[BSD 3-Clause](https://github.com/strath-sdr/rfsoc_qpsk/blob/master/LICENSE)
