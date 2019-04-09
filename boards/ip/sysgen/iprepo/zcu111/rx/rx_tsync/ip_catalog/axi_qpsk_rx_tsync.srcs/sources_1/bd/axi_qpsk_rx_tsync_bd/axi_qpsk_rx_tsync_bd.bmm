@@ -1,0 +1,11 @@
+WORKFLOW_OPERATION simulation,dialog;
+
+DEFINE_MEMORY_TYPE microblaze_1_local_memory_lmb_bram_MEM_DEVICE [0x00002000] 32;
+
+ADDRESS_MAP microblaze_1 MICROBLAZE-LE 100 microblaze_1
+   ADDRESS_SPACE microblaze_1_local_memory_lmb_bram_ADDR_SPACE microblaze_1_local_memory_lmb_bram_MEM_DEVICE  [0x00000000:0x00001FFF] microblaze_1_local_memory/dlmb_bram_if_cntlr
+     BUS_BLOCK
+      microblaze_1_local_memory_lmb_bram_BUS_BLK [31:0] INPUT = "axi_qpsk_rx_tsync_bd_lmb_bram_0.mem";
+     END_BUS_BLOCK;
+   END_ADDRESS_SPACE;
+END_ADDRESS_MAP;

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:design xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>xci</spirit:library>
+  <spirit:name>unknown</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:componentInstances>
+    <spirit:componentInstance>
+      <spirit:instanceName>qpsk_tx_symbol_gen_0</spirit:instanceName>
+      <spirit:componentRef spirit:vendor="User_Company" spirit:library="SysGen" spirit:name="qpsk_tx_symbol_gen" spirit:version="1.0"/>
+      <spirit:configurableElementValues>
+        <spirit:configurableElementValue spirit:referenceId="ADDRBLOCK_BASE_ADDRESS.QPSK_TX_SYMBOL_GEN_S_AXI.reg0">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.CLK.CLK_DOMAIN"/>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.CLK.FREQ_HZ">100000000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.CLK.INSERT_VIP">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.CLK.PHASE">0.000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS.CLK_DOMAIN"/>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS.FREQ_HZ">100000000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS.HAS_TKEEP">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS.HAS_TLAST">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS.HAS_TREADY">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS.HAS_TSTRB">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS.INSERT_VIP">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS.LAYERED_METADATA">xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} signed {attribs {resolve_type im
+mediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS.PHASE">0.000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS.TDATA_NUM_BYTES">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS.TDEST_WIDTH">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS.TID_WIDTH">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS.TUSER_WIDTH">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS_X0.CLK_DOMAIN"/>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS_X0.FREQ_HZ">100000000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS_X0.HAS_TKEEP">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS_X0.HAS_TLAST">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS_X0.HAS_TREADY">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS_X0.HAS_TSTRB">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS_X0.INSERT_VIP">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS_X0.LAYERED_METADATA">undef</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS_X0.PHASE">0.000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS_X0.TDATA_NUM_BYTES">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS_X0.TDEST_WIDTH">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS_X0.TID_WIDTH">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.M_SYMBOL_AXIS_X0.TUSER_WIDTH">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_ARESETN.INSERT_VIP">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.ADDR_WIDTH">32</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.ARUSER_WIDTH">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.AWUSER_WIDTH">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.BUSER_WIDTH">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.CLK_DOMAIN"/>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.DATA_WIDTH">32</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.FREQ_HZ">100000000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.HAS_BRESP">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.HAS_BURST">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.HAS_CACHE">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.HAS_LOCK">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.HAS_PROT">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.HAS_QOS">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.HAS_REGION">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.HAS_RRESP">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.HAS_WSTRB">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.ID_WIDTH">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.INSERT_VIP">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.MAX_BURST_LENGTH">256</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.NUM_READ_OUTSTANDING">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.NUM_READ_THREADS">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.NUM_WRITE_OUTSTANDING">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.NUM_WRITE_THREADS">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.PHASE">0.000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.PROTOCOL">AXI4</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.READ_WRITE_MODE">READ_WRITE</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.RUSER_BITS_PER_BYTE">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.RUSER_WIDTH">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.SUPPORTS_NARROW_BURST">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.WUSER_BITS_PER_BYTE">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.QPSK_TX_SYMBOL_GEN_S_AXI.WUSER_WIDTH">0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.Component_Name">qpsk_tx_symbol_gen_0</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.ARCHITECTURE">zynquplusRFSOC</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.BASE_BOARD_PART"/>
+        <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.BOARD_CONNECTIONS"/>
+        <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.DEVICE">xczu28dr</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.PACKAGE">ffvg1517</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.PREFHDL">VHDL</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.SILICON_REVISION"/>
+        <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.SIMULATOR_LANGUAGE">MIXED</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.SPEEDGRADE">-2</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.TEMPERATURE_GRADE">E</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.USE_RDI_CUSTOMIZATION">TRUE</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.USE_RDI_GENERATION">TRUE</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPCONTEXT">IP_Flow</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.IPREVISION">185643067</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.MANAGED">TRUE</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.OUTPUTDIR">.</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.SELECTEDSIMMODEL"/>
+        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.SHAREDDIR">.</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.SWVERSION">2018.3</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.SYNTHESISFLOW">OUT_OF_CONTEXT</spirit:configurableElementValue>
+      </spirit:configurableElementValues>
+    </spirit:componentInstance>
+  </spirit:componentInstances>
+</spirit:design>

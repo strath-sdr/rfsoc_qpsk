@@ -1,0 +1,1203 @@
+{
+  'Line_100' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/determine_frequency_correction_term/rom',
+    'Instance' => 'rom',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Determine Frequency
+Correction Term/ROM'
+  },
+  'Line_1004' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_0/addsub3',
+    'Instance' => 'addsub3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 0/AddSub3'
+  },
+  'Line_1014' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_0/inverter',
+    'Instance' => 'inverter',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 0/Inverter'
+  },
+  'Line_1022' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_0/logical',
+    'Instance' => 'logical',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 0/Logical'
+  },
+  'Line_1031' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_0/shift',
+    'Instance' => 'shift',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 0/Shift'
+  },
+  'Line_1039' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_0/shift1',
+    'Instance' => 'shift1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 0/Shift1'
+  },
+  'Line_1047' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_0/slice',
+    'Instance' => 'slice',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 0/Slice'
+  },
+  'Line_1058' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_0/slice1',
+    'Instance' => 'slice1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 0/Slice1'
+  },
+  'Line_1105' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_1/addsub2',
+    'Instance' => 'addsub2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 1/AddSub2'
+  },
+  'Line_1115' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_1/addsub3',
+    'Instance' => 'addsub3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 1/AddSub3'
+  },
+  'Line_1125' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_1/inverter',
+    'Instance' => 'inverter',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 1/Inverter'
+  },
+  'Line_1133' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_1/logical',
+    'Instance' => 'logical',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 1/Logical'
+  },
+  'Line_1142' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_1/shift',
+    'Instance' => 'shift',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 1/Shift'
+  },
+  'Line_115' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/determine_frequency_correction_term/register_x_coeff',
+    'Instance' => 'register_x_coeff',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Determine Frequency
+Correction Term/Register_X_coeff'
+  },
+  'Line_1150' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_1/shift1',
+    'Instance' => 'shift1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 1/Shift1'
+  },
+  'Line_1158' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_1/slice',
+    'Instance' => 'slice',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 1/Slice'
+  },
+  'Line_1169' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_1/slice1',
+    'Instance' => 'slice1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 1/Slice1'
+  },
+  'Line_1235' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_2',
+    'Instance' => 'vectoring_cell_2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency Synchroniser/Scaled Mag Squared FFT/CORDIC vector magnitude1/Vectoring Cell 2'
+  },
+  'Line_1244' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_3',
+    'Instance' => 'vectoring_cell_3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency Synchroniser/Scaled Mag Squared FFT/CORDIC vector magnitude1/Vectoring Cell 3'
+  },
+  'Line_1253' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_4',
+    'Instance' => 'vectoring_cell_4',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency Synchroniser/Scaled Mag Squared FFT/CORDIC vector magnitude1/Vectoring Cell 4'
+  },
+  'Line_1262' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_5',
+    'Instance' => 'vectoring_cell_5',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency Synchroniser/Scaled Mag Squared FFT/CORDIC vector magnitude1/Vectoring Cell 5'
+  },
+  'Line_1271' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_6',
+    'Instance' => 'vectoring_cell_6',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency Synchroniser/Scaled Mag Squared FFT/CORDIC vector magnitude1/Vectoring Cell 6'
+  },
+  'Line_128' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/determine_frequency_correction_term/register_x_val',
+    'Instance' => 'register_x_val',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Determine Frequency
+Correction Term/Register_X_val'
+  },
+  'Line_1280' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_7',
+    'Instance' => 'vectoring_cell_7',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency Synchroniser/Scaled Mag Squared FFT/CORDIC vector magnitude1/Vectoring Cell 7'
+  },
+  'Line_1288' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_0',
+    'Instance' => 'vectoring_cell_0',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency Synchroniser/Scaled Mag Squared FFT/CORDIC vector magnitude1/Vectoring  Cell 0'
+  },
+  'Line_1297' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_1',
+    'Instance' => 'vectoring_cell_1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency Synchroniser/Scaled Mag Squared FFT/CORDIC vector magnitude1/Vectoring  Cell 1'
+  },
+  'Line_1306' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/delay10',
+    'Instance' => 'delay10',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Delay10'
+  },
+  'Line_1321' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/delay12',
+    'Instance' => 'delay12',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Delay12'
+  },
+  'Line_1336' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/delay13',
+    'Instance' => 'delay13',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Delay13'
+  },
+  'Line_1351' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/delay15',
+    'Instance' => 'delay15',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Delay15'
+  },
+  'Line_1366' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/delay16',
+    'Instance' => 'delay16',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Delay16'
+  },
+  'Line_1381' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/delay18',
+    'Instance' => 'delay18',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Delay18'
+  },
+  'Line_1396' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/delay19',
+    'Instance' => 'delay19',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Delay19'
+  },
+  'Line_141' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/determine_frequency_correction_term/relational2',
+    'Instance' => 'relational2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Determine Frequency
+Correction Term/Relational2'
+  },
+  'Line_1411' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/delay2',
+    'Instance' => 'delay2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Delay2'
+  },
+  'Line_1426' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/delay22',
+    'Instance' => 'delay22',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Delay22'
+  },
+  'Line_1441' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/delay3',
+    'Instance' => 'delay3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Delay3'
+  },
+  'Line_1456' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/delay5',
+    'Instance' => 'delay5',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Delay5'
+  },
+  'Line_1471' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/delay6',
+    'Instance' => 'delay6',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Delay6'
+  },
+  'Line_1486' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/delay8',
+    'Instance' => 'delay8',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Delay8'
+  },
+  'Line_150' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/determine_frequency_correction_term/relational3',
+    'Instance' => 'relational3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Determine Frequency
+Correction Term/Relational3'
+  },
+  'Line_1501' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/delay9',
+    'Instance' => 'delay9',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Delay9'
+  },
+  'Line_1566' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1',
+    'Instance' => 'cordic_vector_magnitude1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency Synchroniser/Scaled Mag Squared FFT/CORDIC vector magnitude1'
+  },
+  'Line_1574' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/convert9',
+    'Instance' => 'convert9',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/Convert9'
+  },
+  'Line_1595' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/delay1',
+    'Instance' => 'delay1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/Delay1'
+  },
+  'Line_1610' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/delay2',
+    'Instance' => 'delay2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/Delay2'
+  },
+  'Line_1625' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/delay3',
+    'Instance' => 'delay3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/Delay3'
+  },
+  'Line_1640' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/delay4',
+    'Instance' => 'delay4',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/Delay4'
+  },
+  'Line_1655' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/delay5',
+    'Instance' => 'delay5',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/Delay5'
+  },
+  'Line_1670' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/delay6',
+    'Instance' => 'delay6',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/Delay6'
+  },
+  'Line_1685' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/delay7',
+    'Instance' => 'delay7',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/Delay7'
+  },
+  'Line_1700' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/delay8',
+    'Instance' => 'delay8',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/Delay8'
+  },
+  'Line_1715' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/delay9',
+    'Instance' => 'delay9',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/Delay9'
+  },
+  'Line_1730' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/mult1',
+    'Instance' => 'mult1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/Mult1'
+  },
+  'Line_1767' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/shift',
+    'Instance' => 'shift',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/Shift'
+  },
+  'Line_1776' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/shift1',
+    'Instance' => 'shift1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/Shift1'
+  },
+  'Line_1868' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/determine_frequency_correction_term',
+    'Instance' => 'determine_frequency_correction_term',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency Synchroniser/Determine Frequency Correction Term'
+  },
+  'Line_1878' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/nco',
+    'Instance' => 'nco',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency Synchroniser/NCO'
+  },
+  'Line_1887' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft',
+    'Instance' => 'scaled_mag_squared_fft',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency Synchroniser/Scaled Mag Squared FFT'
+  },
+  'Line_1899' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/constant2',
+    'Instance' => 'constant2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Constant2'
+  },
+  'Line_1906' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/constant3',
+    'Instance' => 'constant3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Constant3'
+  },
+  'Line_1913' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/constant4',
+    'Instance' => 'constant4',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Constant4'
+  },
+  'Line_1920' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/convert',
+    'Instance' => 'convert',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Convert'
+  },
+  'Line_193' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/nco/addsub',
+    'Instance' => 'addsub',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/NCO/AddSub'
+  },
+  'Line_1941' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/convert1',
+    'Instance' => 'convert1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Convert1'
+  },
+  'Line_1962' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/convert2',
+    'Instance' => 'convert2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Convert2'
+  },
+  'Line_1983' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/convert3',
+    'Instance' => 'convert3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Convert3'
+  },
+  'Line_2004' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/convert4',
+    'Instance' => 'convert4',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Convert4'
+  },
+  'Line_2025' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/convert5',
+    'Instance' => 'convert5',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Convert5'
+  },
+  'Line_2046' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/delay',
+    'Instance' => 'delay',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Delay'
+  },
+  'Line_2061' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/delay1',
+    'Instance' => 'delay1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Delay1'
+  },
+  'Line_2076' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/delay2',
+    'Instance' => 'delay2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Delay2'
+  },
+  'Line_2091' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/fft',
+    'Instance' => 'fft',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/FFT'
+  },
+  'Line_2116' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/product',
+    'Instance' => 'product',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Product'
+  },
+  'Line_2129' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/product1',
+    'Instance' => 'product1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Product1'
+  },
+  'Line_2142' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/product2',
+    'Instance' => 'product2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Product2'
+  },
+  'Line_2226' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/constant_x0',
+    'Instance' => 'constant_x0',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Constant'
+  },
+  'Line_2233' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/convert',
+    'Instance' => 'convert',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Convert'
+  },
+  'Line_224' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/nco/cmult',
+    'Instance' => 'cmult',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/NCO/CMult'
+  },
+  'Line_2254' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/convert1',
+    'Instance' => 'convert1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Convert1'
+  },
+  'Line_2275' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/convert2',
+    'Instance' => 'convert2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Convert2'
+  },
+  'Line_2296' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/convert3',
+    'Instance' => 'convert3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Convert3'
+  },
+  'Line_2317' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/convert5',
+    'Instance' => 'convert5',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Convert5'
+  },
+  'Line_2338' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/counter',
+    'Instance' => 'counter',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Counter'
+  },
+  'Line_2352' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/fifo',
+    'Instance' => 'fifo',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/FIFO'
+  },
+  'Line_2378' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/inverter',
+    'Instance' => 'inverter',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Inverter'
+  },
+  'Line_2386' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/inverter1',
+    'Instance' => 'inverter1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Inverter1'
+  },
+  'Line_2394' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/logical',
+    'Instance' => 'logical',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Logical'
+  },
+  'Line_2403' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/logical1',
+    'Instance' => 'logical1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Logical1'
+  },
+  'Line_2412' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/logical2',
+    'Instance' => 'logical2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Logical2'
+  },
+  'Line_2421' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/logical3',
+    'Instance' => 'logical3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Logical3'
+  },
+  'Line_2430' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/mcode',
+    'Instance' => 'mcode',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/MCode'
+  },
+  'Line_2441' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/register3',
+    'Instance' => 'register3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Register3'
+  },
+  'Line_2454' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/register4',
+    'Instance' => 'register4',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Register4'
+  },
+  'Line_2467' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/register5',
+    'Instance' => 'register5',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Register5'
+  },
+  'Line_2480' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/relational',
+    'Instance' => 'relational',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Relational'
+  },
+  'Line_2489' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/relational1',
+    'Instance' => 'relational1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Relational1'
+  },
+  'Line_2556' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface',
+    'Instance' => 'axi_write_interface',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface'
+  },
+  'Line_257' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/nco/convert4',
+    'Instance' => 'convert4',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/NCO/Convert4'
+  },
+  'Line_2572' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/concat',
+    'Instance' => 'concat',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/Concat'
+  },
+  'Line_2581' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/convert4',
+    'Instance' => 'convert4',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/Convert4'
+  },
+  'Line_2602' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/reinterpret',
+    'Instance' => 'reinterpret',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/Reinterpret'
+  },
+  'Line_2610' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl/reinterpret1',
+    'Instance' => 'reinterpret1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL/Reinterpret1'
+  },
+  'Line_2672' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector/m_axis_symbol_ctrl',
+    'Instance' => 'm_axis_symbol_ctrl',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector/M_AXIS_SYMBOL_CTRL'
+  },
+  'Line_278' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/nco/delay2',
+    'Instance' => 'delay2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/NCO/Delay2'
+  },
+  'Line_2806' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser',
+    'Instance' => 'coarse_frequency_synchroniser',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency Synchroniser'
+  },
+  'Line_2821' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/data_inspector',
+    'Instance' => 'data_inspector',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Data Inspector'
+  },
+  'Line_2838' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/m_axis_tap',
+    'Instance' => 'm_axis_tap',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/M_AXIS_TAP'
+  },
+  'Line_2845' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/concat',
+    'Instance' => 'concat',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Concat'
+  },
+  'Line_2854' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/delay',
+    'Instance' => 'delay',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Delay'
+  },
+  'Line_2869' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/delay1',
+    'Instance' => 'delay1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Delay1'
+  },
+  'Line_2884' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/delay2',
+    'Instance' => 'delay2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Delay2'
+  },
+  'Line_2899' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/down_sample',
+    'Instance' => 'down_sample',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Down Sample'
+  },
+  'Line_2923' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/logical',
+    'Instance' => 'logical',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Logical'
+  },
+  'Line_293' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/nco/sin_rom',
+    'Instance' => 'sin_rom',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/NCO/Sin_ROM'
+  },
+  'Line_2932' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/reinterpret',
+    'Instance' => 'reinterpret',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Reinterpret'
+  },
+  'Line_2940' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/reinterpret1',
+    'Instance' => 'reinterpret1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Reinterpret1'
+  },
+  'Line_2948' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/reinterpret2',
+    'Instance' => 'reinterpret2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Reinterpret2'
+  },
+  'Line_2956' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/reinterpret3',
+    'Instance' => 'reinterpret3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Reinterpret3'
+  },
+  'Line_2964' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/reinterpret4',
+    'Instance' => 'reinterpret4',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Reinterpret4'
+  },
+  'Line_2972' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/reinterpret5',
+    'Instance' => 'reinterpret5',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Reinterpret5'
+  },
+  'Line_2980' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/shift',
+    'Instance' => 'shift',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Shift'
+  },
+  'Line_2988' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/shift1',
+    'Instance' => 'shift1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Shift1'
+  },
+  'Line_2996' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/slice',
+    'Instance' => 'slice',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Slice'
+  },
+  'Line_3007' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/slice1',
+    'Instance' => 'slice1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Slice1'
+  },
+  'Line_3018' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/slice2',
+    'Instance' => 'slice2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Slice2'
+  },
+  'Line_3029' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/slice3',
+    'Instance' => 'slice3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Slice3'
+  },
+  'Line_3040' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/i_samples',
+    'Instance' => 'i_samples',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/i_samples'
+  },
+  'Line_3051' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/q_samples',
+    'Instance' => 'q_samples',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/q_samples'
+  },
+  'Line_308' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/nco/cos_rom',
+    'Instance' => 'cos_rom',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/NCO/cos_ROM'
+  },
+  'Line_3083' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_default_clock_driver/clockdriver_x1',
+    'Instance' => 'clockdriver_x1',
+    'SimulinkInstance' => ''
+  },
+  'Line_3095' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_default_clock_driver/clockdriver_x0',
+    'Instance' => 'clockdriver_x0',
+    'SimulinkInstance' => ''
+  },
+  'Line_3107' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_default_clock_driver/clockdriver',
+    'Instance' => 'clockdriver',
+    'SimulinkInstance' => ''
+  },
+  'Line_3173' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_axi_lite_interface',
+    'Instance' => 'axi_qpsk_rx_csync_axi_lite_interface',
+    'SimulinkInstance' => ''
+  },
+  'Line_3201' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_default_clock_driver',
+    'Instance' => 'axi_qpsk_rx_csync_default_clock_driver',
+    'SimulinkInstance' => ''
+  },
+  'Line_3213' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct',
+    'Instance' => 'axi_qpsk_rx_csync_struct',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync'
+  },
+  'Line_359' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_2/addsub2',
+    'Instance' => 'addsub2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 2/AddSub2'
+  },
+  'Line_369' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_2/addsub3',
+    'Instance' => 'addsub3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 2/AddSub3'
+  },
+  'Line_379' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_2/inverter',
+    'Instance' => 'inverter',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 2/Inverter'
+  },
+  'Line_387' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_2/logical',
+    'Instance' => 'logical',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 2/Logical'
+  },
+  'Line_396' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_2/shift',
+    'Instance' => 'shift',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 2/Shift'
+  },
+  'Line_404' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_2/shift1',
+    'Instance' => 'shift1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 2/Shift1'
+  },
+  'Line_41' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/determine_frequency_correction_term/capture_max_x_val_index',
+    'Instance' => 'capture_max_x_val_index',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Determine Frequency
+Correction Term/Capture_max_X_val_index'
+  },
+  'Line_412' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_2/slice',
+    'Instance' => 'slice',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 2/Slice'
+  },
+  'Line_423' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_2/slice1',
+    'Instance' => 'slice1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 2/Slice1'
+  },
+  'Line_470' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_3/addsub2',
+    'Instance' => 'addsub2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 3/AddSub2'
+  },
+  'Line_480' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_3/addsub3',
+    'Instance' => 'addsub3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 3/AddSub3'
+  },
+  'Line_490' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_3/inverter',
+    'Instance' => 'inverter',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 3/Inverter'
+  },
+  'Line_498' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_3/logical',
+    'Instance' => 'logical',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 3/Logical'
+  },
+  'Line_507' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_3/shift',
+    'Instance' => 'shift',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 3/Shift'
+  },
+  'Line_515' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_3/shift1',
+    'Instance' => 'shift1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 3/Shift1'
+  },
+  'Line_523' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_3/slice',
+    'Instance' => 'slice',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 3/Slice'
+  },
+  'Line_534' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_3/slice1',
+    'Instance' => 'slice1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 3/Slice1'
+  },
+  'Line_54' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/determine_frequency_correction_term/constant5',
+    'Instance' => 'constant5',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Determine Frequency
+Correction Term/Constant5'
+  },
+  'Line_581' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_4/addsub2',
+    'Instance' => 'addsub2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 4/AddSub2'
+  },
+  'Line_591' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_4/addsub3',
+    'Instance' => 'addsub3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 4/AddSub3'
+  },
+  'Line_601' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_4/inverter',
+    'Instance' => 'inverter',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 4/Inverter'
+  },
+  'Line_609' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_4/logical',
+    'Instance' => 'logical',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 4/Logical'
+  },
+  'Line_61' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/determine_frequency_correction_term/delay1',
+    'Instance' => 'delay1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Determine Frequency
+Correction Term/Delay1'
+  },
+  'Line_618' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_4/shift',
+    'Instance' => 'shift',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 4/Shift'
+  },
+  'Line_626' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_4/shift1',
+    'Instance' => 'shift1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 4/Shift1'
+  },
+  'Line_634' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_4/slice',
+    'Instance' => 'slice',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 4/Slice'
+  },
+  'Line_645' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_4/slice1',
+    'Instance' => 'slice1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 4/Slice1'
+  },
+  'Line_692' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_5/addsub2',
+    'Instance' => 'addsub2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 5/AddSub2'
+  },
+  'Line_702' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_5/addsub3',
+    'Instance' => 'addsub3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 5/AddSub3'
+  },
+  'Line_712' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_5/inverter',
+    'Instance' => 'inverter',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 5/Inverter'
+  },
+  'Line_720' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_5/logical',
+    'Instance' => 'logical',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 5/Logical'
+  },
+  'Line_729' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_5/shift',
+    'Instance' => 'shift',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 5/Shift'
+  },
+  'Line_737' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_5/shift1',
+    'Instance' => 'shift1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 5/Shift1'
+  },
+  'Line_745' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_5/slice',
+    'Instance' => 'slice',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 5/Slice'
+  },
+  'Line_756' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_5/slice1',
+    'Instance' => 'slice1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 5/Slice1'
+  },
+  'Line_76' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/determine_frequency_correction_term/delay6',
+    'Instance' => 'delay6',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Determine Frequency
+Correction Term/Delay6'
+  },
+  'Line_803' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_6/addsub2',
+    'Instance' => 'addsub2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 6/AddSub2'
+  },
+  'Line_813' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_6/addsub3',
+    'Instance' => 'addsub3',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 6/AddSub3'
+  },
+  'Line_823' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_6/inverter',
+    'Instance' => 'inverter',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 6/Inverter'
+  },
+  'Line_831' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_6/logical',
+    'Instance' => 'logical',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 6/Logical'
+  },
+  'Line_840' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_6/shift',
+    'Instance' => 'shift',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 6/Shift'
+  },
+  'Line_848' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_6/shift1',
+    'Instance' => 'shift1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 6/Shift1'
+  },
+  'Line_856' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_6/slice',
+    'Instance' => 'slice',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 6/Slice'
+  },
+  'Line_867' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_6/slice1',
+    'Instance' => 'slice1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 6/Slice1'
+  },
+  'Line_909' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_7/addsub2',
+    'Instance' => 'addsub2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 7/AddSub2'
+  },
+  'Line_91' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/determine_frequency_correction_term/logical',
+    'Instance' => 'logical',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Determine Frequency
+Correction Term/Logical'
+  },
+  'Line_919' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_7/logical',
+    'Instance' => 'logical',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 7/Logical'
+  },
+  'Line_928' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_7/shift1',
+    'Instance' => 'shift1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 7/Shift1'
+  },
+  'Line_936' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_7/slice',
+    'Instance' => 'slice',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 7/Slice'
+  },
+  'Line_947' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_7/slice1',
+    'Instance' => 'slice1',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring
+Cell 7/Slice1'
+  },
+  'Line_994' => {
+    'CodeInstance' => 'axi_qpsk_rx_csync_struct/coarse_frequency_synchroniser/scaled_mag_squared_fft/cordic_vector_magnitude1/vectoring_cell_0/addsub2',
+    'Instance' => 'addsub2',
+    'SimulinkInstance' => 'axi_qpsk_rx_csync/Coarse Frequency
+Synchroniser/Scaled Mag Squared FFT/CORDIC vector
+magnitude1/Vectoring 
+Cell 0/AddSub2'
+  }
+}
