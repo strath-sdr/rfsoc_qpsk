@@ -1,8 +1,5 @@
 import time
 import threading
-import pynq.lib.dma
-from pynq import Xlnk
-import numpy as np
 import ipywidgets as ipw
 
 
@@ -25,6 +22,7 @@ class DmaTimer():
         self.callback = callback
         self.gen = gen
         self.t = t
+        self.stopping = True
 
     def _do(self):
         """Generate new data and restart timer thread.
@@ -40,10 +38,11 @@ class DmaTimer():
 
     def start(self):
         """Start the data generator thread."""
-        self.stopping = False
-
-        thread = threading.Thread(target=self._do)
-        thread.start()
+        
+        if self.stopping:
+            self.stopping = False
+            thread = threading.Thread(target=self._do)
+            thread.start()
 
     def stop(self):
         """Stop a running data generator thread.
@@ -54,8 +53,9 @@ class DmaTimer():
 
     def get_widget(self):
         """Get ipywidget controls to stop and start the generator thread."""
-        start_button = ipw.Button(description=u'\u25B6')
+        button_layout = ipw.Layout(margin='auto')
+        start_button = ipw.Button(description=u'\u25B6', layout=button_layout)
         start_button.on_click(lambda _: self.start())
-        stop_button = ipw.Button(description=u'\u25A0')
+        stop_button = ipw.Button(description=u'\u25A0', layout=button_layout)
         stop_button.on_click(lambda _: self.stop())
-        return [start_button, stop_button]
+        return ipw.HBox([start_button, stop_button])

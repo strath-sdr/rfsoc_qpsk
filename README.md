@@ -15,11 +15,17 @@ Connect to the board with **Jupyter Lab** in a browser (not Jupyter Notebook) @ 
 Open a terminal in Jupyter Lab and run:
 ```sh
 pip3 install --upgrade git+https://github.com/strath-sdr/rfsoc_qpsk.git
+pip3 install --upgrade plotly==3.8.1
 
 jupyter labextension install @jupyter-widgets/jupyterlab-manager@0.38
-jupyter labextension install plotlywidget@0.7.1
+jupyter labextension install plotlywidget@0.9.1
 jupyter labextension install @jupyterlab/plotly-extension@0.18
+
+systemctl restart jupyter
 ```
+
+Now refresh the Jupyter Lab tab in your browser.
+
 This repository is only compatible with [PYNQ image v2.4](https://github.com/Xilinx/PYNQ/releases) for [ZCU111](https://www.xilinx.com/products/boards-and-kits/zcu111.html) 
 
 Use Chrome if possible — the rendering performance is important.
@@ -48,11 +54,6 @@ cd rfsoc_qpsk/board/ZCU111/
 source <Xilinx_dir>/Vivado/2018.3/settings64.sh
 vivado -mode batch -nojournal -nolog -source write_project.tcl
 ```
-The tcl file creates a new project and builds the IPI block design, but does not generate a bitstream as there is already a valid one in the repo.
-
-## Known Issues
-- Live plots are currently quite demanding of the client browser (but not the RFSoC). A hefty desktop helps a lot in the meantime!
-- There is a large drop in gain between the ADC and the final output
 
 ## License 
 [BSD 3-Clause](https://github.com/strath-sdr/rfsoc_qpsk/blob/master/LICENSE)

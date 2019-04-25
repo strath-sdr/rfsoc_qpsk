@@ -20,46 +20,50 @@ class QPSKTx(DefaultHierarchy):
         self.buf_time = xlnk.cma_array(shape=(pkt_time * 2, ), dtype=np.int16)
 
         # QPSK IP General Config
-        self.axi_qpsk_tx.lfsr_rst = 1
-        self.axi_qpsk_tx.enable = 1
-        self.axi_qpsk_tx.packetsize_rf = 1024
-        self.axi_qpsk_tx.lfsr_rst = 0
-        self.axi_qpsk_tx.output_gain = 2**32 - 1
+        self.qpsk_tx.lfsr_rst = 1
+        self.qpsk_tx.enable = 1
+        self.qpsk_tx.packetsize_rf = 1024
+        self.set_gain(1)
+        self.qpsk_tx.lfsr_rst = 0
 
         # QPSK IP Symbol Config
-        self.axi_qpsk_tx.reset_symbol = 1
-        self.axi_qpsk_tx.packetsize_symbol = pkt_sym - 1
-        self.axi_qpsk_tx.reset_symbol = 0
-        self.axi_qpsk_tx.autorestart_symbol = 0
+        self.qpsk_tx.reset_symbol = 1
+        self.qpsk_tx.packetsize_symbol = pkt_sym - 1
+        self.qpsk_tx.reset_symbol = 0
+        self.qpsk_tx.autorestart_symbol = 0
 
         # QPSK IP FFT Config
-        self.axi_qpsk_tx.reset_fft = 1
-        self.axi_qpsk_tx.packetsize_fft = pkt_fft - 1
-        self.axi_qpsk_tx.reset_fft = 0
-        self.axi_qpsk_tx.autorestart_fft = 0
+        self.qpsk_tx.reset_fft = 1
+        self.qpsk_tx.packetsize_fft = pkt_fft - 1
+        self.qpsk_tx.reset_fft = 0
+        self.qpsk_tx.autorestart_fft = 0
 
         ## QPSK IP Time Config
-        self.axi_qpsk_tx.reset_time = 1
-        self.axi_qpsk_tx.packetsize_time = pkt_time - 1
-        self.axi_qpsk_tx.reset_time = 0
-        self.axi_qpsk_tx.autorestart_time = 0
+        self.qpsk_tx.reset_time = 1
+        self.qpsk_tx.packetsize_time = pkt_time - 1
+        self.qpsk_tx.reset_time = 0
+        self.qpsk_tx.autorestart_time = 0
 
+    def set_gain(self, normalized_gain):
+        scaling_factor = 0.65
+        self.qpsk_tx.output_gain = round(normalized_gain * scaling_factor * (2**32 - 1))
+        
     def get_shaped_fft(self):
         """Get a single buffer of FFT data from the pulse shaped signal
         """
-        self.axi_qpsk_tx.transfer_fft = 1
-        self.axi_dma_fft.recvchannel.transfer(self.buf_fft)
-        self.axi_dma_fft.recvchannel.wait()
-        self.axi_qpsk_tx.transfer_fft = 0
+        self.qpsk_tx.transfer_fft = 1
+        self.dma_tx_fft.recvchannel.transfer(self.buf_fft)
+        self.dma_tx_fft.recvchannel.wait()
+        self.qpsk_tx.transfer_fft = 0
         return np.array(self.buf_fft)
 
     def get_shaped_time(self):
         """Get a single buffer of time domain data from the pulse shaped signal
         """
-        self.axi_qpsk_tx.transfer_time = 1
-        self.axi_dma_time.recvchannel.transfer(self.buf_time)
-        self.axi_dma_time.recvchannel.wait()
-        self.axi_qpsk_tx.transfer_time = 0
+        self.qpsk_tx.transfer_time = 1
+        self.dma_tx_time.recvchannel.transfer(self.buf_time)
+        self.dma_tx_time.recvchannel.wait()
+        self.qpsk_tx.transfer_time = 0
         t_data = np.array(self.buf_time)
         c_data = t_data[::2] + 1j * t_data[1::2]
         return c_data
@@ -87,13 +91,13 @@ class QPSKTx(DefaultHierarchy):
             else:
                 return 1
 
-        self.axi_qpsk_tx.transfer_symbol = 1
-        self.axi_dma_symbol.recvchannel.transfer(self.buf_sym)
-        self.axi_dma_symbol.recvchannel.wait()
-        self.axi_qpsk_tx.transfer_symbol = 0
+        self.qpsk_tx.transfer_symbol = 1
+        self.dma_tx_symbol.recvchannel.transfer(self.buf_sym)
+        self.dma_tx_symbol.recvchannel.wait()
+        self.qpsk_tx.transfer_symbol = 0
 
         raw_data = np.array(self.buf_sym)
-        c_data = [raw_to_i(e) + 1j * raw_to_q(e) for e in raw_data]
+        c_data = np.array([raw_to_i(e) + 1j * raw_to_q(e) for e in raw_data])
         return c_data
 
     def get_many_symbols(self, N=10):
@@ -103,10 +107,10 @@ class QPSKTx(DefaultHierarchy):
 
     @staticmethod
     def checkhierarchy(description):
-        if 'axi_dma_fft' in description['ip'] \
-           and 'axi_dma_time' in description['ip'] \
-           and 'axi_dma_symbol' in description['ip'] \
-           and 'axi_qpsk_tx' in description['ip']:
+        if 'dma_tx_fft' in description['ip'] \
+           and 'dma_tx_time' in description['ip'] \
+           and 'dma_tx_symbol' in description['ip'] \
+           and 'qpsk_tx' in description['ip']:
             return True
         return False
 

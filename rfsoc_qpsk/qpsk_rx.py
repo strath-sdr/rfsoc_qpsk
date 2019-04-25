@@ -4,133 +4,66 @@ from pynq import Xlnk
 
 import numpy as np
 
+from rfsoc_qpsk.dma_timer import DmaTimer
+
 
 class QPSKRx(DefaultHierarchy):
-    def __init__(self,
-                 description,
-                 pkt_dec=32,
-                 pkt_sync=128,
-                 pkt_rrc=512,
-                 pkt_out=16):
-        """Driver for our QPSK RX IP hierarchy.
-
-        This encompasses the qpsk rx logic ("qpsk_core") and the DMAs for data
-        transfer of exposed signals.
-        """
-
+    def __init__(self, description):
         super().__init__(description)
-
-        xlnk = Xlnk()
-        self.buf_out = xlnk.cma_array(shape=(pkt_out * 2, ), dtype=np.int16)
-        self.buf_dec = xlnk.cma_array(shape=(pkt_dec * 2, ), dtype=np.int16)
-        self.buf_sync = xlnk.cma_array(shape=(pkt_sync * 2, ), dtype=np.int16)
-        self.buf_rrc = xlnk.cma_array(shape=(pkt_rrc * 2, ), dtype=np.int16)
-
-        # QPSK IP General Config
-        self.axi_qpsk_rx.reset = 1
-        self.axi_qpsk_rx.enable = 1
-        self.axi_qpsk_rx.packetsize_out = pkt_out - 1
-        self.axi_qpsk_rx.packetsize_dec = pkt_dec - 1
-        self.axi_qpsk_rx.packetsize_sync = pkt_sync - 1
-        self.axi_qpsk_rx.packetsize_rrc = pkt_rrc - 1
-        self.axi_qpsk_rx.reset = 0
-
-    def get_data(self):
-        """Get a single buffer of final output data"""
-        self.axi_qpsk_rx.transfer_out = 1
-        self.axi_dma_rx.recvchannel.transfer(self.buf_out)
-        self.axi_dma_rx.recvchannel.wait()
-        self.axi_qpsk_rx.transfer_out = 0
-        t_data = np.array(self.buf_out)
-        c_data = t_data[::2] + 1j * t_data[1::2]
-        return c_data
-
-    def get_many_data(self, N=10):
-        """Get N buffers of final output data"""
-        return np.concatenate([self.get_data() for i in range(N)])
-
+    
     def get_decimated(self):
-        """Get a single buffer of samples after decimation"""
-        self.axi_qpsk_rx.transfer_dec = 1
-        self.axi_dma_rx_dec.recvchannel.transfer(self.buf_dec)
-        self.axi_dma_rx_dec.recvchannel.wait()
-        self.axi_qpsk_rx.transfer_dec = 0
-        t_data = np.array(self.buf_dec)
-        c_data = t_data[::2] + 1j * t_data[1::2]
-        return c_data
-
-    def get_many_decimated(self, N=10):
-        """Get N buffers of samples after decimation"""
-        return np.concatenate([self.get_decimated() for i in range(N)])
-
+        return self.qpsk_rx_dec.get_frame(self.dma_rx_dec)
+        
     def get_coarse_synced(self):
-        """Get a single buffer of samples after coarse synchronisation"""
-        self.axi_qpsk_rx.transfer_sync = 1
-        self.axi_dma_rx_sync.recvchannel.transfer(self.buf_sync)
-        self.axi_dma_rx_sync.recvchannel.wait()
-        self.axi_qpsk_rx.transfer_sync = 0
-        t_data = np.array(self.buf_sync)
-        c_data = t_data[::2] + 1j * t_data[1::2]
-        return c_data
-
-    def get_many_coarse_synced(self, N=10):
-        """Get N buffers of samples after coarse synchronisation"""
-        return np.concatenate([self.get_coarse_synced() for i in range(N)])
-
+        return self.qpsk_rx_csync.get_frame(self.dma_rx_csync)
+    
     def get_rrced(self):
-        """Get a single buffer of samples after RRC filtering"""
-        self.axi_qpsk_rx.transfer_rrc = 1
-        self.axi_dma_rx_rrc.recvchannel.transfer(self.buf_rrc)
-        self.axi_dma_rx_rrc.recvchannel.wait()
-        self.axi_qpsk_rx.transfer_rrc = 0
-        t_data = np.array(self.buf_rrc)
-        c_data = t_data[::2] + 1j * t_data[1::2]
-        return c_data
-
-    def get_many_rrced(self, N=10):
-        """Get N buffers of samples after RRC filtering"""
-        return np.concatenate([self.get_rrced() for i in range(N)])
-
+        return self.qpsk_rx_rrc.get_frame(self.dma_rx_rrc)
+    
+    def get_data(self):
+        return self.qpsk_rx_tsync.get_frame(self.dma_rx_tsync)
+        
     @staticmethod
     def checkhierarchy(description):
-        if 'axi_dma_rx_rrc' in description['ip'] \
-           and 'axi_dma_rx_sync' in description['ip'] \
-           and 'axi_dma_rx_dec' in description['ip'] \
-           and 'axi_dma_rx' in description['ip'] \
-           and 'axi_qpsk_rx' in description['ip']:
+        if     'dma_rx_dec'    in description['ip'] \
+           and 'qpsk_rx_dec'   in description['ip'] \
+           and 'dma_rx_csync'   in description['ip'] \
+           and 'qpsk_rx_csync' in description['ip'] \
+           and 'dma_rx_rrc'   in description['ip'] \
+           and 'qpsk_rx_rrc' in description['ip'] \
+           and 'dma_rx_tsync'   in description['ip'] \
+           and 'qpsk_rx_tsync' in description['ip']:
             return True
         return False
 
+    
+class DataInspector(DefaultIP):
 
-class QPSKRxCore(DefaultIP):
-    """Driver for QPSK RX's core logic IP
-
-    Exposes all the configuration registers by name via data-driven properties
-    """
-
-    def __init__(self, description):
-        super().__init__(description=description)
-
-    bindto = ['UoS:RFSoC:axi_qpsk_rx:5.1']
-
-
-# LUT of property addresses for our data-driven properties
-_qpsk_props = [
-    ("reset", 28),
-    ("enable", 32),
-    ("packetsize_out", 20),
-    ("transfer_out", 40),
-    ("autorestart_out", 36),
-    ("packetsize_dec", 44),
-    ("transfer_dec", 52),
-    ("autorestart_dec", 48),
-    ("packetsize_sync", 68),
-    ("transfer_sync", 76),
-    ("autorestart_sync", 72),
-    ("packetsize_rrc", 56),
-    ("transfer_rrc", 64),
-    ("autorestart_rrc", 60),
-]
+    def __init__(self, description, pkt_size, buf_dtype=np.int16, buf_words_per_pkt=2):
+        super().__init__(description)
+        
+        # Init config register
+        self.reset = 1
+        self.enable = 1
+        self.pkt_size = pkt_size-1
+        self.auto_restart = 0
+        self.reset = 0
+        
+        # Init buffer
+        xlnk = Xlnk()
+        self.buf = xlnk.cma_array(shape=(pkt_size * buf_words_per_pkt, ), dtype=np.int16)
+    
+    def _process_frame(self, frame):
+        # By default treat frame as interleaved IQ stream.
+        return frame[::2] + 1j * frame[1::2]
+    
+    def get_frame(self, dma):
+        self.transfer = 1
+        dma.recvchannel.transfer(self.buf)
+        dma.recvchannel.wait()
+        self.transfer = 0
+        frame = self._process_frame(np.array(self.buf))
+        return frame
 
 
 # Func to return a MMIO getter and setter based on a relative addr
@@ -143,7 +76,53 @@ def _create_mmio_property(addr):
 
     return property(_get, _set)
 
+    
+# LUT of property addresses for our data-driven properties
+_data_inspector_props = [
+    ("reset",        0 ),
+    ("pkt_size",     4 ),
+    ("enable",       8 ),
+    ("auto_restart", 12),
+    ("transfer",     16)
+]
 
-# Generate getters and setters based on _qpsk_props
-for (name, addr) in _qpsk_props:
-    setattr(QPSKRxCore, name, _create_mmio_property(addr))
+
+# Generate getters and setters based on _data_inspector_props
+for (name, addr) in _data_inspector_props:
+    setattr(DataInspector, name, _create_mmio_property(addr))
+
+    
+class RxDecimator(DataInspector):
+    def __init__(self, description):
+        super().__init__(description, 32)
+    
+    bindto = ['UoS:SysGen:axi_qpsk_rx_dec:1.0']
+
+    
+class RxCSync(DataInspector):
+    def __init__(self, description):
+        super().__init__(description, 128)
+    
+    bindto = ['UoS:SysGen:axi_qpsk_rx_csync:1.0']
+    
+    
+class RxRRC(DataInspector):
+    def __init__(self, description):
+        super().__init__(description, 512)
+    
+    bindto = ['UoS:SysGen:axi_qpsk_rx_rrc:1.0']
+    
+    
+class RxTSync(DataInspector):
+    def __init__(self, description):
+        super().__init__(description, 16)
+        periodic_reset = DmaTimer(lambda _:0, self.reset_sync, 1)
+        periodic_reset.start()
+
+    def reset_sync(self):
+        self.sync_reset=1
+        self.sync_reset=0
+    
+    bindto = ['UoS:SysGen:axi_qpsk_rx_tsync:1.0']
+setattr(RxTSync, 'sync_reset', _create_mmio_property(20))
+
