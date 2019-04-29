@@ -3,7 +3,9 @@
 import numpy as np
 import plotly.graph_objs as go
 import ipywidgets as ipw
+from contextlib import contextmanager
 
+np.seterr(divide = 'ignore') 
 
 class noop():
     """Dummpy context manager to suppress debug output"""
@@ -34,6 +36,35 @@ def resample_median(data, step):
     """Resample by computing the median over every `step` values."""
     return [np.median(data[i:i + step]) for i in range(0, len(data), step)]
 
+class FastFigureWidget(go.FigureWidget):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        
+    @contextmanager
+    def _fast_batch_anim(self, duration=0, easing="linear"):
+        """Our own copy of basedatatypes.py batch_animate"""
+        duration = self._animation_duration_validator.validate_coerce(duration)
+        easing = self._animation_easing_validator.validate_coerce(easing)
+
+        if self._in_batch_mode is True:
+            yield
+        else:
+            try:
+                self._in_batch_mode = True
+                yield
+            finally:
+                self._in_batch_mode = False
+                self._perform_batch_animate({
+                    'transition': {
+                        'duration': duration,
+                        'easing': easing
+                    },
+                    'frame': {
+                        'duration': duration,
+                        'redraw': False, # This is our addition
+                    },
+                    'mode': 'immediate'
+                })
 
 class IQPlot():
     """I/Q signal plot.
@@ -53,7 +84,10 @@ class IQPlot():
                  h=500,
                  debug=False,
                  legend=None,
+                 scaling=(250/32768),
                  x_start=0,
+                 autosize=True,
+                 x_range=None,
                  y_range=None):
         """Create new plot.
 
@@ -79,9 +113,12 @@ class IQPlot():
         self.w = w
         self.resampling_fun = resampling_fun
         self.aggregate_fun = aggregate_fun
+        self.scaling = scaling
+        self.autosize = autosize
 
         self.vpu = vpu if vpu else 1
         self.spacing = 1 / vpu  # spacing between two values in unit
+        self.x_start = x_start
 
         # Find out if data is iterable
         if not hasattr(data, '__iter__'):
@@ -90,19 +127,17 @@ class IQPlot():
         # Check if data is a complex list
         if isinstance(data[0], complex):
             self.L = self.spacing * len(data)  # signal lenght in units
-            self.y = [data]
+            self.y = [data*self.scaling]
         # Otherwise assume it's a list of complex lists
         else:
             self.L = self.spacing * len(data[0])
-            self.y = data
+            self.y = [trace*self.scaling for trace in data]
 
         # Set up _data structure
         if aggregate_fun:
             self._data = [{} for i in range(len(self.y))]
         else:
             self._data = [{} for i in range(len(self.y) * 2)]
-
-        self.x = np.arange(0, self.L, self.spacing) + x_start
 
         # Add legend, if specified
         if not legend:
@@ -123,19 +158,28 @@ class IQPlot():
             'yaxis': {
                 'title': ylabel
             },
-            'width': w,
-            'height': h
+            'height': h,
+            'legend': dict(orientation='h',yanchor='top',xanchor='center',y=1.1,x=0.5)
         }
+        if autosize:
+            layout['autosize'] = True
+        else:
+            layout['width'] = w
+        
 
         self._data_regen()
 
         # Create widget
-        self._plot = go.FigureWidget(layout=layout, data=self._data)
+        self._plot = FastFigureWidget(layout=layout, data=self._data)
 
         # register resampling handler on zoom/pan
         if self.resampling_fun:
             self._plot.layout.on_change(self.resample, 'xaxis.range', 'width')
-
+        
+        if x_range:
+            self._plot.layout.xaxis.autorange = False
+            self._plot.layout.xaxis.range = x_range
+            
         if y_range:
             self._plot.layout.yaxis.autorange = False
             self._plot.layout.yaxis.range = y_range
@@ -147,8 +191,8 @@ class IQPlot():
         """Regenerate structures for plots from raw input"""
 
         self.L = self.spacing * len(self.y[0])
-        self.x = np.arange(0, self.L, self.spacing)
-
+        self.x = np.arange(0, self.L, self.spacing) + self.x_start
+        
         if self.resampling_fun:
             step = len(self.y[0]) // self.w
             if step < 1:
@@ -174,15 +218,15 @@ class IQPlot():
                 self._data[i] = {
                     'x': x,
                     'y': np.real(e),
-                    'name': f'{self.legend[i]} I'
+                    'name': f'{self.legend[i]} In-phase'
                 }
                 self._data[i + 1] = {
                     'x': x,
                     'y': np.imag(e),
-                    'name': f'{self.legend[i]} Q'
+                    'name': f'{self.legend[i]} Quadrature'
                 }
 
-    def add_data(self, new_data, discard=True, scroll=True):
+    def add_data(self, new_data, discard=True, scroll=False):
         """Add new data to plot.
 
         Args:
@@ -192,19 +236,22 @@ class IQPlot():
                 of the new data.
         """
         n = len(new_data)
-        self.y = np.concatenate((self.y, [new_data]), axis=1)
+        self.y = np.concatenate((self.y, [new_data*self.scaling]), axis=1)
         if discard:
             self.y = np.delete(self.y, range(n), 1)
 
         self._data_regen()
 
-        xaxis = self._plot.layout.xaxis
-        full_width = self.L
-        if xaxis.range[1] <= self.L:
-            xwidth = xaxis.range[1] - xaxis.range[0]
-            xaxis.range = (full_width - xwidth, full_width)
+        with self._plot._fast_batch_anim():
+            xaxis = self._plot.layout.xaxis
+            full_width = self.L
+            if xaxis.range and xaxis.range[1] <= self.L:
+                xwidth = xaxis.range[1] - xaxis.range[0]
+                xaxis.range = (full_width - xwidth, full_width)
 
-        self._plot.update(data=self._data)
+            for i, trace in enumerate(self._data):
+                self._plot.data[i].x=trace['x']
+                self._plot.data[i].y=trace['y']
 
     def resample(self, ignored_layout, x_range, plot_width):
         """Resample visible area from original data set.
@@ -272,7 +319,7 @@ class IQPlot():
                     self._plot.data[2 * i + 1].y = np.imag(signal)
 
         # autorange will mess up due to rounding errors
-            self._plot.layout.xaxis.autorange = False
+        self._plot.layout.xaxis.autorange = False
 
         # Dump some debug data
         with output:
@@ -306,7 +353,7 @@ class IQPlot():
                            self.selected_range()[1] * self.spacing),
                           self._plot.layout.width)
 
-    def set_line_mode(self, markers=False, lines=True, signal=-1):
+    def set_line_mode(self, markers=False, lines=True, shape=None, signal=-1):
         """Show or hide sample point markers.
 
         Args:
@@ -319,8 +366,10 @@ class IQPlot():
         if signal < 0:
             for trace in self._plot.data:
                 trace.mode = mode
+                trace.line = dict(shape=shape)
         else:
             self._plot.data[signal].mode = mode
+            self._plot.data[signal].line = dict(shape=shape)
 
     def set_color(self, color, signal):
         """Set trace color.
@@ -342,9 +391,10 @@ class IQPlot():
 class IQTimePlot(IQPlot):
     """Plot an I/Q signal versus time."""
 
-    def __init__(self, data, Fs, *args, **kwargs):
+    def __init__(self, data, Fs, ylabel='Voltage (mV)', *args, **kwargs):
         """Create a new plot object parametrized for I/Q time series data."""
-        super().__init__(data=data, vpu=Fs, xlabel='t [s]', *args, **kwargs)
+        super().__init__(data=data, vpu=Fs, xlabel='Time (s)', ylabel=ylabel, *args, **kwargs)
+        self.set_line_mode(lines=True, markers=True)
 
 
 class IQFreqPlot(IQPlot):
@@ -353,8 +403,8 @@ class IQFreqPlot(IQPlot):
     def __init__(self,
                  data,
                  Fs,
-                 avg_n=4,
-                 ylabel='PSD [dB/Hz]',
+                 ylabel='Power Spectral Density (dB/Hz)',
+                 animation_period=250,
                  *args,
                  **kwargs):
         """Create a new plot object parametrized for I/Q spectrum data."""
@@ -363,20 +413,23 @@ class IQFreqPlot(IQPlot):
         #                 aggregate_fun=abs, vpu=len(data)//2/Fs,
         #                 xlabel='f [Hz]', *args, **kwargs)
         self._Fs = Fs
+        self.animation_period = animation_period
 
-        f_data = self._fft_from_raw(data)
+        self._ffts = [self._fft_from_raw(frame) for frame in data]
+        init_data = self._avg_window()
+        self._y_offset = -max(abs(self._avg_window()))
 
-        self._ffts = [f_data for i in range(avg_n)]
-
-        #yrange = [abs(min(f_data)) *0.8, abs(max(f_data)) * 1.2]
+        def normalised_abs(c):
+            return abs(c)+self._y_offset
 
         super().__init__(
-            data=self._avg_window(),
-            aggregate_fun=abs,
-            vpu=len(data) / Fs,
-            xlabel='f [Hz]',
-            ylabel='PSD [dB/Hz]',
-            x_start=(-len(data) / 2),
+            data=init_data,
+            aggregate_fun=normalised_abs,
+            vpu=len(init_data) / Fs,
+            xlabel='Frequency (Hz)',
+            ylabel=ylabel,
+            x_start=(-Fs / 2),
+            scaling=1,
             #y_range=yrange,
             *args,
             **kwargs)
@@ -386,14 +439,18 @@ class IQFreqPlot(IQPlot):
 
             t_data (list): time domain data to FFT
         """
+        # Remember that fft output here is complex
         data = np.fft.fftshift(np.fft.fft(t_data))
-        data = [y**2 / (self._Fs * len(data)) for y in data]
-        data = 20 * np.log10(data)
+        data = np.array([abs(y)**2 / (self._Fs * len(data)) for y in data])
+        # Be careful zeros in the data here with log functions
+        data = 10 * np.where(data>0, np.log10(data), 0)
         return data
 
     def _avg_window(self):
         """Calculate sample-wise average of all FFTs in buffer"""
-        return np.average(np.transpose(self._ffts), axis=1)
+
+        avg_fft = np.average(np.transpose(self._ffts), axis=1)
+        return avg_fft+1j*0
 
     def add_frame(self, frame):
         """Add a new frame (based on time domain data) to the averaged plot
@@ -406,7 +463,10 @@ class IQFreqPlot(IQPlot):
         self.y = [self._avg_window()]
         self._data_regen()
 
-        self._plot.update(data=self._data)
+        with self._plot._fast_batch_anim(duration=self.animation_period):
+            for i, trace in enumerate(self._data):
+                self._plot.data[i].x=trace['x']
+                self._plot.data[i].y=trace['y']
 
 
 class IQConstellationPlot():
@@ -418,6 +478,8 @@ class IQConstellationPlot():
                  fade=False,
                  w=700,
                  h=700,
+                 autosize = True,
+                 scaling=(250/32768),
                  debug=False):
         """Create new plot.
 
@@ -428,29 +490,40 @@ class IQConstellationPlot():
             w (int): width of plot in pixels
             h (int): height of plot in pixels
         """
-        self._data = list(data)
         self.fade = fade
-
+        self.scaling = scaling
+        self._data = list(data*self.scaling)
+        self.autosize = autosize
+        
         if not plotrange:
             plotrange = (0, len(data))
 
         self.lo, self.hi = plotrange
 
-        maxaxis = max(np.absolute(data))
+        maxaxis = max(np.absolute(self._data))
         self.axisrange = [-maxaxis, maxaxis]
-
-        self._plot = go.FigureWidget(
-            layout={
-                'hovermode': 'closest',
-                'width': w,
-                'height': h,
-                'xaxis': {
-                    'range': self.axisrange
-                },
-                'yaxis': {
-                    'range': self.axisrange
-                }
-            },
+        
+        layout = {
+            'hovermode': 'closest',
+            'height': h,
+            'autosize': autosize,
+            'xaxis': {
+                'range': self.axisrange,
+                'title': 'In-phase (mV)'
+             },
+            'yaxis': {
+                'range': self.axisrange,
+                'title': 'Quadrature (mV)'
+            }
+        }
+        
+        if autosize:
+            layout['autosize'] = True
+        else:
+            layout['width'] = w
+            
+        self._plot = FastFigureWidget(
+            layout=layout,
             data=[{
                 'mode':
                 'markers',
@@ -472,7 +545,7 @@ class IQConstellationPlot():
         lo = max(0, lo)
         hi = min(len(self._data), hi)
         self.lo, self.hi = lo, hi
-        with self._plot.batch_update():
+        with self._plot._fast_batch_anim(duration=0):
             self._plot.data[0].x = [np.real(x) for x in self._data[lo:hi]]
             self._plot.data[0].y = [np.imag(x) for x in self._data[lo:hi]]
             if self.fade:
@@ -488,16 +561,15 @@ class IQConstellationPlot():
                 of the new data.
         """
         n = len(new_data)
-        self._data = np.concatenate((self._data, new_data))
+        self._data = np.concatenate((self._data, new_data*self.scaling))
         if discard:
             self._data = np.delete(self._data, range(n))
             #self.set_range(self.lo, self.hi)
-            self._plot.update(
-                data=[{
-                    'mode': 'markers',
-                    'x': [np.real(x) for x in self._data[self.lo:self.hi]],
-                    'y': [np.imag(x) for x in self._data[self.lo:self.hi]]
-                }])
+            with self._plot._fast_batch_anim(duration=0):
+                self._plot.data[0].x = [np.real(x) for x in self._data[self.lo:self.hi]]
+                self._plot.data[0].y = [np.imag(x) for x in self._data[self.lo:self.hi]]
+                if self.fade:
+                    self.update_fade()
         elif scroll:
             self.set_range(self.lo + n, self.hi + n)
 
@@ -512,11 +584,12 @@ class HWFreqPlot():
     def __init__(self,
                  data,
                  Fs,
-                 avg_n=1,
-                 xlabel='f [Hz]',
-                 ylabel='PSD [dB/Hz]',
+                 animation_period=250,
+                 xlabel='Frequency (Hz)',
+                 ylabel='Power Spectral Density (dB/Hz)',
                  w=700,
                  h=500,
+                 autosize=True,
                  debug=False):
         """Create new plot.
 
@@ -532,18 +605,19 @@ class HWFreqPlot():
         """
 
         self._Fs = Fs
-        y = self._psd_from_raw(data)
-        self._y = [y for i in range(avg_n)]
+        self.animation_period = animation_period
+        self._y = [self._psd_from_raw(frame) for frame in data]
+        self._y_offset = -max(abs(np.average(np.transpose(self._y), axis=1)))
         self._x_data = np.arange(0, 1,
                                  1 / len(self._y[0])) * self._Fs - self._Fs / 2
-
+        self.autosize = autosize
+        
         self._data_regen()
 
-        self._plot = go.FigureWidget(
-            layout={
+        layout={
                 'hovermode': 'closest',
-                'width': w,
                 'height': h,
+                'autosize': autosize,
                 'xaxis': {
                     'title': xlabel,
                     'range': [min(self._x_data),
@@ -553,7 +627,15 @@ class HWFreqPlot():
                     'title': ylabel,
                     #'range': [min(self._data), max(self._data)]
                 }
-            },
+        }
+        
+        if autosize:
+            layout['autosize'] = True
+        else:
+            layout['width'] = w
+        
+        self._plot = FastFigureWidget(
+            layout=layout,
             data=[{
                 #'mode': 'markers',
                 'x': self._x_data,
@@ -563,15 +645,15 @@ class HWFreqPlot():
     def _psd_from_raw(self, raw):
         """Create ordered PSD data from unordered FFT data"""
         halfIndex = round(len(raw) / 2)
-        data = list(np.concatenate([raw[halfIndex:], raw[:halfIndex]]))
-        #data = [y**2/(self._Fs*len(data)) for y in data]
-        data = 20 * np.log10(data)
-        data = data - 180
+        data = np.concatenate([raw[halfIndex:], raw[:halfIndex]])
+        data = np.array([y**2/(self._Fs*len(data)) for y in data])
+        # Be careful with input data containing zeros when using log!
+        data = 10 * np.where(data>0, np.log10(data), 0)
         return data
 
     def _data_regen(self):
         """Regenerate averaged plot data"""
-        self._data = np.average(np.transpose(self._y), axis=1)
+        self._data = np.average(np.transpose(self._y), axis=1) + self._y_offset
 
     def add_frame(self, frame):
         """Add a frame of FFT data to the plot
@@ -586,11 +668,9 @@ class HWFreqPlot():
         xwidth = xaxis.range[1] - xaxis.range[0]
         axis_lo, axis_hi = xaxis.range
 
-        self._plot.update(data=[{
-            #'mode': 'markers',
-            'x': self._x_data,
-            'y': self._data,
-        }])
+        with self._plot._fast_batch_anim(duration=self.animation_period):
+            self._plot.data[0].x = self._x_data
+            self._plot.data[0].y = self._data
 
     def get_widget(self):
         """Return plot widget"""

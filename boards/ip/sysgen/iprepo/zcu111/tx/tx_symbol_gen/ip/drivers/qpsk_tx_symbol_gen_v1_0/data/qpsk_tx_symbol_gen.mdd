@@ -1,0 +1,8 @@
+OPTION psf_version = 2.1;
+BEGIN driver qpsk_tx_symbol_gen
+ OPTION supported_peripherals = (qpsk_tx_symbol_gen_v1_0);
+ OPTION driver_state = ACTIVE;
+ OPTION copyfiles = all;
+ OPTION name = qpsk_tx_symbol_gen;
+ OPTION version = 1.0;
+END driver
