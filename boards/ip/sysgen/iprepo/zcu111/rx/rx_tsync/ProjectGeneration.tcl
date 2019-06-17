@@ -24,7 +24,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set IP_LifeCycle_Menu {2}
 	set IP_Logo {sysgen_icon_100.png}
 	set IP_Name {axi_qpsk_rx_coarse_sync}
-	set IP_Revision {185725696}
+	set IP_Revision {190228282}
 	set IP_Socket_IP {0}
 	set IP_Socket_IP_Proj_Path {}
 	set IP_Vendor_Text {UoS}
@@ -71,7 +71,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set SynthesisTool {Vivado}
 	set TargetDir {Y:/git/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/rx/rx_tsync}
 	set TopLevelModule {axi_qpsk_rx_tsync}
-	set TopLevelSimulinkHandle 2.09753
+	set TopLevelSimulinkHandle 2.00024
 	set VHDLLib {xil_defaultlib}
 	set TopLevelPortInterface {}
 	dict set TopLevelPortInterface m_axis_tap_tready Name {m_axis_tap_tready}
