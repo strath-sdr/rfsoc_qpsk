@@ -116,13 +116,10 @@ class RxRRC(DataInspector):
 class RxTSync(DataInspector):
     def __init__(self, description):
         super().__init__(description, 16)
-        periodic_reset = DmaTimer(lambda _:0, self.reset_sync, 1)
-        periodic_reset.start()
+        # Set loop filter reset counter to 1 second
+        # (@ 16kHz)
+        self.sync_reset=16000
 
-    def reset_sync(self):
-        self.sync_reset=1
-        self.sync_reset=0
-    
     bindto = ['UoS:SysGen:axi_qpsk_rx_tsync:1.0']
 setattr(RxTSync, 'sync_reset', _create_mmio_property(20))
 

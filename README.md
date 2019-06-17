@@ -15,11 +15,11 @@ Connect to the board with **Jupyter Lab** in a browser (not Jupyter Notebook) @ 
 Open a terminal in Jupyter Lab and run:
 ```sh
 pip3 install --upgrade git+https://github.com/strath-sdr/rfsoc_qpsk.git
-pip3 install --upgrade plotly==3.8.1
 
-jupyter labextension install @jupyter-widgets/jupyterlab-manager@0.38
-jupyter labextension install plotlywidget@0.9.1
-jupyter labextension install @jupyterlab/plotly-extension@0.18
+jupyter labextension install @jupyter-widgets/jupyterlab-manager@0.38 --no-build
+jupyter labextension install plotlywidget@0.10.0 --no-build
+jupyter labextension install @jupyterlab/plotly-extension@0.18 --no-build
+jupyter lab build
 
 systemctl restart jupyter
 ```
