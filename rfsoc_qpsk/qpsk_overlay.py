@@ -39,7 +39,7 @@ class QpskOverlay(Overlay):
     Performs initialisation (including RF components) and exposes them with
     more friendly names in a flatter hierarchy. Less typing for everyone.
     """
-    def __init__(self, bitfile_name=None, init_rf_clks=True, presentation_mode=False, **kwargs):
+    def __init__(self, bitfile_name=None, init_rf_clks=True, dark_theme=False, presentation_mode=False, **kwargs):
         """Construct a new QpskOverlay
 
         bitfile_name: Optional. If left None, the 'rfsoc_qpsk.bit' bundled with this
@@ -48,6 +48,8 @@ class QpskOverlay(Overlay):
         init_rf_clks: If true (default), the reference clocks are configured
                       for all tiles. If the clocks are already configured, set
                       to false for faster execution.
+
+        dark_theme: Flat to enable a dark theme for plots
 
         presentation_mode: Flag to enable a dark theme with thick lines and
                            bigger font
@@ -58,6 +60,19 @@ class QpskOverlay(Overlay):
         if bitfile_name is None:
             this_dir = os.path.dirname(__file__)
             bitfile_name = os.path.join(this_dir, 'bitstream', 'rfsoc_qpsk.bit')
+
+        # Set optional theming for dark mode
+        if dark_theme:
+            from IPython.display import display, HTML
+            import plotly.io as pio
+
+            # Apply plotly theming
+            dark_template = pio.templates['plotly_dark']
+            dark_template.layout.paper_bgcolor = 'rgb(0,0,0,0)'
+            dark_template.layout.plot_bgcolor  = 'rgb(0,0,0,0)'
+            dark_template.layout.legend.bgcolor = 'rgb(0,0,0,0)'
+            pio.templates['dark_plot'] = dark_template
+            pio.templates.default = 'dark_plot'
 
         # Set optional theming for presentation mode
         if presentation_mode:
