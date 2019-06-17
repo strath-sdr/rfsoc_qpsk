@@ -827,6 +827,10 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>axi_qpsk_rx_tsync_c_counter_binary_v12_0_i1/axi_qpsk_rx_tsync_c_counter_binary_v12_0_i1.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>axi_qpsk_rx_tsync_fifo_generator_i0/axi_qpsk_rx_tsync_fifo_generator_i0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
@@ -1004,6 +1008,10 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
       </spirit:file>
       <spirit:file>
         <spirit:name>axi_qpsk_rx_tsync_c_counter_binary_v12_0_i0/axi_qpsk_rx_tsync_c_counter_binary_v12_0_i0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>axi_qpsk_rx_tsync_c_counter_binary_v12_0_i1/axi_qpsk_rx_tsync_c_counter_binary_v12_0_i1.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
@@ -1212,8 +1220,8 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
       </xilinx:taxonomies>
       <xilinx:displayName>axi_qpsk_rx_tsync</xilinx:displayName>
       <xilinx:definitionSource>sysgen</xilinx:definitionSource>
-      <xilinx:coreRevision>185725696</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-04-09T20:31:07Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>190228282</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2019-05-31T23:14:07Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>

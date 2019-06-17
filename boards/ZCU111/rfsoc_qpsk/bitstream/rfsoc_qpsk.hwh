@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Apr 25 15:52:11 2019" VIVADOVERSION="2018.3">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jun 17 15:17:51 2019" VIVADOVERSION="2018.3">
 
   <SYSTEMINFO ARCH="zynquplusRFSOC" BOARD="xilinx.com:zcu111:part0:1.1" DEVICE="xczu28dr" NAME="block_design" PACKAGE="ffvg1517" SPEEDGRADE="-2"/>
 
@@ -11572,7 +11572,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="185725696" FULLNAME="/qpsk_rx/qpsk_rx_tsync" HWVERSION="1.0" INSTANCE="qpsk_rx_qpsk_rx_tsync" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_qpsk_rx_tsync" VLNV="UoS:SysGen:axi_qpsk_rx_tsync:1.0">
+    <MODULE COREREVISION="190228282" FULLNAME="/qpsk_rx/qpsk_rx_tsync" HWVERSION="1.0" INSTANCE="qpsk_rx_qpsk_rx_tsync" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_qpsk_rx_tsync" VLNV="UoS:SysGen:axi_qpsk_rx_tsync:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="axi_qpsk_rx_tsync_s_axi" NAME="reg0" RANGE="4096" USAGE="register"/>

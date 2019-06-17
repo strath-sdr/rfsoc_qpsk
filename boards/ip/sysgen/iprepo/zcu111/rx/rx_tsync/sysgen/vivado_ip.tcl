@@ -35,6 +35,34 @@
 #-----------------------------------------------------------------
 
 set existingipslist [get_ips]
+if {[lsearch $existingipslist axi_qpsk_rx_tsync_c_counter_binary_v12_0_i0] < 0} {
+create_ip -name c_counter_binary -version 12.0 -vendor xilinx.com -library ip -module_name axi_qpsk_rx_tsync_c_counter_binary_v12_0_i0
+set params_list [list]
+lappend params_list CONFIG.Component_Name {axi_qpsk_rx_tsync_c_counter_binary_v12_0_i0}
+lappend params_list CONFIG.ainit_value {1}
+lappend params_list CONFIG.ce {true}
+lappend params_list CONFIG.count_mode {UP}
+lappend params_list CONFIG.fb_latency {0}
+lappend params_list CONFIG.final_count_value {1}
+lappend params_list CONFIG.implementation {Fabric}
+lappend params_list CONFIG.increment_value {1}
+lappend params_list CONFIG.latency {1}
+lappend params_list CONFIG.load {false}
+lappend params_list CONFIG.output_width {32}
+lappend params_list CONFIG.restrict_count {false}
+lappend params_list CONFIG.sclr {false}
+lappend params_list CONFIG.sinit {true}
+lappend params_list CONFIG.sinit_value {1}
+lappend params_list CONFIG.sset {false}
+lappend params_list CONFIG.sync_ce_priority {Sync_Overrides_CE}
+lappend params_list CONFIG.sync_threshold_output {false}
+lappend params_list CONFIG.syncctrlpriority {Reset_Overrides_Set}
+
+set_property -dict $params_list [get_ips axi_qpsk_rx_tsync_c_counter_binary_v12_0_i0]
+}
+
+
+set existingipslist [get_ips]
 if {[lsearch $existingipslist axi_qpsk_rx_tsync_c_addsub_v12_0_i0] < 0} {
 create_ip -name c_addsub -version 12.0 -vendor xilinx.com -library ip -module_name axi_qpsk_rx_tsync_c_addsub_v12_0_i0
 set params_list [list]
@@ -440,10 +468,10 @@ set_property -dict $params_list [get_ips axi_qpsk_rx_tsync_blk_mem_gen_i2]
 
 
 set existingipslist [get_ips]
-if {[lsearch $existingipslist axi_qpsk_rx_tsync_c_counter_binary_v12_0_i0] < 0} {
-create_ip -name c_counter_binary -version 12.0 -vendor xilinx.com -library ip -module_name axi_qpsk_rx_tsync_c_counter_binary_v12_0_i0
+if {[lsearch $existingipslist axi_qpsk_rx_tsync_c_counter_binary_v12_0_i1] < 0} {
+create_ip -name c_counter_binary -version 12.0 -vendor xilinx.com -library ip -module_name axi_qpsk_rx_tsync_c_counter_binary_v12_0_i1
 set params_list [list]
-lappend params_list CONFIG.Component_Name {axi_qpsk_rx_tsync_c_counter_binary_v12_0_i0}
+lappend params_list CONFIG.Component_Name {axi_qpsk_rx_tsync_c_counter_binary_v12_0_i1}
 lappend params_list CONFIG.ainit_value {0}
 lappend params_list CONFIG.ce {true}
 lappend params_list CONFIG.count_mode {UP}
@@ -463,7 +491,7 @@ lappend params_list CONFIG.sync_ce_priority {Sync_Overrides_CE}
 lappend params_list CONFIG.sync_threshold_output {false}
 lappend params_list CONFIG.syncctrlpriority {Reset_Overrides_Set}
 
-set_property -dict $params_list [get_ips axi_qpsk_rx_tsync_c_counter_binary_v12_0_i0]
+set_property -dict $params_list [get_ips axi_qpsk_rx_tsync_c_counter_binary_v12_0_i1]
 }
 
 

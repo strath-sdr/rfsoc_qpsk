@@ -410,6 +410,33 @@ end  behavior;
 library xil_defaultlib;
 use xil_defaultlib.conv_pkg.all;
 
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+entity sysgen_relational_4b283eb8ab is
+  port (
+    a : in std_logic_vector((32 - 1) downto 0);
+    b : in std_logic_vector((32 - 1) downto 0);
+    op : out std_logic_vector((1 - 1) downto 0);
+    clk : in std_logic;
+    ce : in std_logic;
+    clr : in std_logic);
+end sysgen_relational_4b283eb8ab;
+architecture behavior of sysgen_relational_4b283eb8ab
+is
+  signal a_1_31: unsigned((32 - 1) downto 0);
+  signal b_1_34: unsigned((32 - 1) downto 0);
+  signal result_12_3_rel: boolean;
+begin
+  a_1_31 <= std_logic_vector_to_unsigned(a);
+  b_1_34 <= std_logic_vector_to_unsigned(b);
+  result_12_3_rel <= a_1_31 = b_1_34;
+  op <= boolean_to_vector(result_12_3_rel);
+end behavior;
+
+library xil_defaultlib;
+use xil_defaultlib.conv_pkg.all;
+
 ---------------------------------------------------------------------
 --
 --  Filename      : xlregister.vhd
@@ -2940,6 +2967,15 @@ entity axi_qpsk_rx_tsync_xlcounter_free is
  		  ); 
  end component;
 
+ component axi_qpsk_rx_tsync_c_counter_binary_v12_0_i1
+    port ( 
+      clk: in std_logic;
+      ce: in std_logic;
+      SINIT: in std_logic;
+      q: out std_logic_vector(op_width - 1 downto 0) 
+ 		  ); 
+ end component;
+
 -- synthesis translate_off
    constant zeroVec: std_logic_vector(op_width - 1 downto 0) := (others => '0');
    constant oneVec: std_logic_vector(op_width - 1 downto 0) := (others => '1');
@@ -2960,6 +2996,16 @@ entity axi_qpsk_rx_tsync_xlcounter_free is
 
  comp0: if ((core_name0 = "axi_qpsk_rx_tsync_c_counter_binary_v12_0_i0")) generate 
   core_instance0:axi_qpsk_rx_tsync_c_counter_binary_v12_0_i0
+   port map ( 
+        clk => clk,
+        ce => core_ce,
+        SINIT => core_sinit,
+        q => op_net
+  ); 
+   end generate;
+
+ comp1: if ((core_name0 = "axi_qpsk_rx_tsync_c_counter_binary_v12_0_i1")) generate 
+  core_instance1:axi_qpsk_rx_tsync_c_counter_binary_v12_0_i1
    port map ( 
         clk => clk,
         ce => core_ce,
