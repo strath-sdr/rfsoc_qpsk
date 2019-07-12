@@ -10,24 +10,17 @@ This repo contains all the files needed to build and run the RFSoC QPSK demonstr
 <p/>
 
 ## Quick Start
-Connect to the board with **Jupyter Lab** in a browser (not Jupyter Notebook) @ `192.168.2.99:9090/lab`. 
+
+This repository is only compatible with [PYNQ image v2.4.1](https://github.com/Xilinx/PYNQ/releases) for [ZCU111](https://www.xilinx.com/products/boards-and-kits/zcu111.html).
+
+Connect to the board with **Jupyter Lab** in a browser (not Jupyter Notebook) @ `http://<IP address>/lab`. 
 
 Open a terminal in Jupyter Lab and run:
 ```sh
 pip3 install --upgrade git+https://github.com/strath-sdr/rfsoc_qpsk.git
-
-jupyter labextension install @jupyter-widgets/jupyterlab-manager@0.38 --no-build
-jupyter labextension install plotlywidget@0.10.0 --no-build
-jupyter labextension install @jupyterlab/plotly-extension@0.18 --no-build
-jupyter lab build
-
-systemctl restart jupyter
 ```
 
-Now refresh the Jupyter Lab tab in your browser.
-
-This repository is only compatible with [PYNQ image v2.4](https://github.com/Xilinx/PYNQ/releases) for [ZCU111](https://www.xilinx.com/products/boards-and-kits/zcu111.html) 
-
+The notebook should now be available in the `rfsoc_qpsk/` folder.
 Use Chrome if possible — the rendering performance is important.
 
 ## ZCU111 Setup
