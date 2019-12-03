@@ -38,7 +38,7 @@ All software builds have been tested on Ubuntu 16.04
 - MATLAB 2017b
 
 ### System Generator
-The Tx and Rx IPs are in separate directories in `rfsoc_qpsk/board/sysgen/` that can be opened using the appropriate System Generator dialogue. Due to the large amount of decimation and interpolation in both IPs, simulating the output can take an extraordinarily long time. A less extreme multirate system would simulate much faster! 
+The Tx and Rx IPs are in separate directories in `rfsoc_qpsk/boards/sysgen/` that can be opened using the appropriate System Generator dialogue. Due to the large amount of decimation and interpolation in both IPs, simulating the output can take an extraordinarily long time. A less extreme multirate system would simulate much faster! 
 
 ### Vivado
 This project can be built with Vivado from the command line:
