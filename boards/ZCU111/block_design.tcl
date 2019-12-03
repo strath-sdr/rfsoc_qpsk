@@ -2360,13 +2360,13 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net zynq_ultra_ps_e_0_M_AXI_HPM1_FPD [get_bd_intf_pins qpsk_rx/S00_AXI] [get_bd_intf_pins zynq_ultra_ps_e_0/M_AXI_HPM1_FPD]
 
   # Create port connections
-  connect_bd_net -net axi_dma_0_s2mm_introut -boundary_type upper [get_bd_pins qpsk_rx/s2mm_introut]
   connect_bd_net -net axi_dma_fft_s2mm_introut [get_bd_pins qpsk_tx/s2mm_introut] [get_bd_pins xlconcat_0/In1]
   connect_bd_net -net axi_intc_0_irq [get_bd_pins axi_intc_0/irq] [get_bd_pins zynq_ultra_ps_e_0/pl_ps_irq0]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins qpsk_rx/clk_128] [get_bd_pins usp_rf_data_converter_0/m0_axis_aclk]
   connect_bd_net -net dac0_bufg_BUFG_O [get_bd_pins qpsk_tx/dac_clk_128] [get_bd_pins usp_rf_data_converter_0/clk_dac1]
   connect_bd_net -net qpsk_rx_clk_out2 [get_bd_pins qpsk_rx/clk_25_6] [get_bd_pins zynq_ultra_ps_e_0/saxihp1_fpd_aclk]
   connect_bd_net -net qpsk_rx_peripheral_aresetn [get_bd_pins qpsk_rx/reset_128] [get_bd_pins usp_rf_data_converter_0/m0_axis_aresetn]
+  connect_bd_net -net qpsk_rx_s2mm_introut [get_bd_pins qpsk_rx/s2mm_introut] [get_bd_pins xlconcat_0/In2]
   connect_bd_net -net qpsk_tx_clk_out1 [get_bd_pins qpsk_tx/clk_out_25_6] [get_bd_pins zynq_ultra_ps_e_0/saxihp2_fpd_aclk]
   connect_bd_net -net qpsk_tx_clk_out2 [get_bd_pins qpsk_tx/clk_out_128] [get_bd_pins usp_rf_data_converter_0/s1_axis_aclk]
   connect_bd_net -net qpsk_tx_peripheral_aresetn1 [get_bd_pins qpsk_tx/reset_128] [get_bd_pins usp_rf_data_converter_0/s1_axis_aresetn]
