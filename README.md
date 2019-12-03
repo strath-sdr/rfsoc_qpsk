@@ -43,7 +43,7 @@ The Tx and Rx IPs are in separate directories in `rfsoc_qpsk/board/sysgen/` that
 ### Vivado
 This project can be built with Vivado from the command line:
 ```sh
-cd rfsoc_qpsk/board/ZCU111/
+cd rfsoc_qpsk/boards/ZCU111/
 source <Xilinx_dir>/Vivado/2018.3/settings64.sh
 vivado -mode batch -nojournal -nolog -source write_project.tcl
 ```
