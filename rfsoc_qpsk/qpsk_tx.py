@@ -46,8 +46,9 @@ class QPSKTx(DefaultHierarchy):
 
     def set_gain(self, normalized_gain):
         scaling_factor = 0.65
-        self.qpsk_tx.output_gain = round(normalized_gain * scaling_factor * (2**32 - 1))
-        
+        gain = np.uint32( round(normalized_gain * scaling_factor * (2**32 - 1)) )
+        self.qpsk_tx.mmio.array[44>>2] = gain
+
     def get_shaped_fft(self):
         """Get a single buffer of FFT data from the pulse shaped signal
         """
