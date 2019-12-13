@@ -239,7 +239,7 @@ class QpskOverlay(Overlay):
         for i, title in enumerate(titles):
             tab_widget.set_title(i, title)
         
-        QpskOverlay._tab_load_resizer_callback(tab_widget)
+        #QpskOverlay._tab_load_resizer_callback(tab_widget)
 
         return tab_widget
 
