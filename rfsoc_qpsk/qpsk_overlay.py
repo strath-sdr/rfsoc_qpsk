@@ -239,15 +239,14 @@ class QpskOverlay(Overlay):
         for i, title in enumerate(titles):
             tab_widget.set_title(i, title)
         
-        #QpskOverlay._tab_load_resizer_callback(tab_widget)
+        QpskOverlay._tab_load_resizer_callback(tab_widget)
 
         return tab_widget
 
     @staticmethod
     def _tab_load_resizer_callback(tabs):
         """Helper function to handle relative widths for plots in hidden tabs"""
-        display(tabs)
-
+        
         out = ipw.Output()
         display(out)
 
