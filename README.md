@@ -11,7 +11,7 @@ This repo contains all the files needed to build and run the RFSoC QPSK demonstr
 
 ## Quick Start
 
-This repository is only compatible with [PYNQ image v2.4.1](https://github.com/Xilinx/PYNQ/releases) for [ZCU111](https://www.xilinx.com/products/boards-and-kits/zcu111.html).
+This repository is only compatible with [PYNQ images v2.4 and greater](https://github.com/Xilinx/PYNQ/releases) for [ZCU111](https://www.xilinx.com/products/boards-and-kits/zcu111.html).
 
 Connect to the board with **Jupyter Lab** in a browser (not Jupyter Notebook) @ `http://<IP address>/lab`. 
 
@@ -19,6 +19,8 @@ Open a terminal in Jupyter Lab and run:
 ```sh
 pip3 install --upgrade git+https://github.com/strath-sdr/rfsoc_qpsk.git
 ```
+
+**Note:** If using PYNQ image v2.5, include `--no-dependencies` as this image already has all the neccessary packages. 
 
 The notebook should now be available in the `rfsoc_qpsk/` folder.
 Use Chrome if possible — the rendering performance is important.
