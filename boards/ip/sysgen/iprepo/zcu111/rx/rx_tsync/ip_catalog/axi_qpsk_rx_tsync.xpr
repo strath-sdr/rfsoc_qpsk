@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="39" Path="Y:/git/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/rx/rx_tsync/ip_catalog/axi_qpsk_rx_tsync.xpr">
+<Project Version="7" Minor="39" Path="/home/josh/git/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/rx/rx_tsync/ip_catalog/axi_qpsk_rx_tsync.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="f81b139a029e46f78f106bcae1891b1e"/>
+    <Option Name="Id" Val="e28f3e81f58b4502a46a232b7b079771"/>
     <Option Name="Part" Val="xczu28dr-ffvg1517-2-e"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -71,7 +71,7 @@
       <File Path="$PSRCDIR/sources_1/imports/hdl/axi_qpsk_rx_tsync_bd_wrapper.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/bd/axi_qpsk_rx_tsync_bd/hdl/axi_qpsk_rx_tsync_bd_wrapper.vhd"/>
-          <Attr Name="ImportTime" Val="1559344551"/>
+          <Attr Name="ImportTime" Val="1583159570"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -88,7 +88,7 @@
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../sysgen/axi_qpsk_rx_tsync_mod.vhd"/>
-          <Attr Name="ImportTime" Val="1559344463"/>
+          <Attr Name="ImportTime" Val="1583159537"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -103,7 +103,7 @@
       <File Path="$PSRCDIR/constrs_1/imports/sysgen/axi_qpsk_rx_tsync_clock.xdc">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../sysgen/axi_qpsk_rx_tsync_clock.xdc"/>
-          <Attr Name="ImportTime" Val="1559344313"/>
+          <Attr Name="ImportTime" Val="1583159490"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
@@ -111,7 +111,7 @@
       <File Path="$PSRCDIR/constrs_1/imports/sysgen/axi_qpsk_rx_tsync.xdc">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../sysgen/axi_qpsk_rx_tsync.xdc"/>
-          <Attr Name="ImportTime" Val="1559344313"/>
+          <Attr Name="ImportTime" Val="1583159490"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
@@ -150,11 +150,17 @@
     <Simulator Name="Questa">
       <Option Name="Description" Val="Questa Advanced Simulator"/>
     </Simulator>
+    <Simulator Name="IES">
+      <Option Name="Description" Val="Incisive Enterprise Simulator (IES)"/>
+    </Simulator>
+    <Simulator Name="Xcelium">
+      <Option Name="Description" Val="Xcelium Parallel Simulator"/>
+    </Simulator>
+    <Simulator Name="VCS">
+      <Option Name="Description" Val="Verilog Compiler Simulator (VCS)"/>
+    </Simulator>
     <Simulator Name="Riviera">
       <Option Name="Description" Val="Riviera-PRO Simulator"/>
-    </Simulator>
-    <Simulator Name="ActiveHDL">
-      <Option Name="Description" Val="Active-HDL Simulator"/>
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">

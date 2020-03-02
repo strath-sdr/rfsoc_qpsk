@@ -188,7 +188,7 @@ lappend params_list CONFIG.Blank_Output {false}
 lappend params_list CONFIG.Channel_Sequence {Basic}
 lappend params_list CONFIG.Clock_Frequency {300.0}
 lappend params_list CONFIG.CoefficientSource {Vector}
-lappend params_list CONFIG.CoefficientVector {binary:BB3C9359911E62BFD0BDF8C7D25856BF620BD3C5B622703FE46EB97E3C3168BFC8FCD96C8DAE6DBFFED8B5024338853F6855B0891B8A7EBFD3C757A7CF3380BFDA8F9FC719B8973F40B71FD7486292BF308B0B485D2E8CBFCA5473816E79A83F1EC65A19D7B4A5BF6EB6134C9F7B96BFB101703DDA43BB3F2EE42DE6F9E0BDBFEC836E91C0B5AFBF5735AC0C2267E33F5735AC0C2267E33FEC836E91C0B5AFBF2EE42DE6F9E0BDBFB101703DDA43BB3F6EB6134C9F7B96BF1EC65A19D7B4A5BFCA5473816E79A83F308B0B485D2E8CBF40B71FD7486292BFDA8F9FC719B8973FD3C757A7CF3380BF6855B0891B8A7EBFFED8B5024338853FC8FCD96C8DAE6DBFE46EB97E3C3168BF620BD3C5B622703FD0BDF8C7D25856BFBB3C9359911E62BF}
+lappend params_list CONFIG.CoefficientVector {binary:DD3C9359911E62BFDDBDF8C7D25856BF760BD3C5B622703FF66EB97E3C3168BF99FCD96C8DAE6DBF0DD9B5024338853F7A55B0891B8A7EBFD0C757A7CF3380BFDC8F9FC719B8973F45B71FD7486292BF268B0B485D2E8CBFCA5473816E79A83F20C65A19D7B4A5BF6AB6134C9F7B96BFB001703DDA43BB3F2EE42DE6F9E0BDBFE8836E91C0B5AFBF5735AC0C2267E33F5735AC0C2267E33FE8836E91C0B5AFBF2EE42DE6F9E0BDBFB001703DDA43BB3F6AB6134C9F7B96BF20C65A19D7B4A5BFCA5473816E79A83F268B0B485D2E8CBF45B71FD7486292BFDC8F9FC719B8973FD0C757A7CF3380BF7A55B0891B8A7EBF0DD9B5024338853F99FCD96C8DAE6DBFF66EB97E3C3168BF760BD3C5B622703FDDBDF8C7D25856BFDD3C9359911E62BF}
 lappend params_list CONFIG.Coefficient_Buffer_Type {Automatic}
 lappend params_list CONFIG.Coefficient_File {no_coe_file_loaded}
 lappend params_list CONFIG.Coefficient_Fractional_Bits {15}
@@ -265,7 +265,7 @@ lappend params_list CONFIG.Blank_Output {false}
 lappend params_list CONFIG.Channel_Sequence {Basic}
 lappend params_list CONFIG.Clock_Frequency {300.0}
 lappend params_list CONFIG.CoefficientSource {Vector}
-lappend params_list CONFIG.CoefficientVector {binary:BB3C9359911E62BFD0BDF8C7D25856BF620BD3C5B622703FE46EB97E3C3168BFC8FCD96C8DAE6DBFFED8B5024338853F6855B0891B8A7EBFD3C757A7CF3380BFDA8F9FC719B8973F40B71FD7486292BF308B0B485D2E8CBFCA5473816E79A83F1EC65A19D7B4A5BF6EB6134C9F7B96BFB101703DDA43BB3F2EE42DE6F9E0BDBFEC836E91C0B5AFBF5735AC0C2267E33F5735AC0C2267E33FEC836E91C0B5AFBF2EE42DE6F9E0BDBFB101703DDA43BB3F6EB6134C9F7B96BF1EC65A19D7B4A5BFCA5473816E79A83F308B0B485D2E8CBF40B71FD7486292BFDA8F9FC719B8973FD3C757A7CF3380BF6855B0891B8A7EBFFED8B5024338853FC8FCD96C8DAE6DBFE46EB97E3C3168BF620BD3C5B622703FD0BDF8C7D25856BFBB3C9359911E62BF}
+lappend params_list CONFIG.CoefficientVector {binary:DD3C9359911E62BFDDBDF8C7D25856BF760BD3C5B622703FF66EB97E3C3168BF99FCD96C8DAE6DBF0DD9B5024338853F7A55B0891B8A7EBFD0C757A7CF3380BFDC8F9FC719B8973F45B71FD7486292BF268B0B485D2E8CBFCA5473816E79A83F20C65A19D7B4A5BF6AB6134C9F7B96BFB001703DDA43BB3F2EE42DE6F9E0BDBFE8836E91C0B5AFBF5735AC0C2267E33F5735AC0C2267E33FE8836E91C0B5AFBF2EE42DE6F9E0BDBFB001703DDA43BB3F6AB6134C9F7B96BF20C65A19D7B4A5BFCA5473816E79A83F268B0B485D2E8CBF45B71FD7486292BFDC8F9FC719B8973FD0C757A7CF3380BF7A55B0891B8A7EBF0DD9B5024338853F99FCD96C8DAE6DBFF66EB97E3C3168BF760BD3C5B622703FDDBDF8C7D25856BFDD3C9359911E62BF}
 lappend params_list CONFIG.Coefficient_Buffer_Type {Automatic}
 lappend params_list CONFIG.Coefficient_File {no_coe_file_loaded}
 lappend params_list CONFIG.Coefficient_Fractional_Bits {15}
@@ -329,160 +329,6 @@ lappend params_list CONFIG.Stopband_Min {0.50000000}
 lappend params_list CONFIG.Zero_Pack_Factor {1}
 
 set_property -dict $params_list [get_ips axi_qpsk_rx_dec_fir_compiler_v7_2_i1]
-}
-
-
-set existingipslist [get_ips]
-if {[lsearch $existingipslist axi_qpsk_rx_dec_fir_compiler_v7_2_i2] < 0} {
-create_ip -name fir_compiler -version 7.2 -vendor xilinx.com -library ip -module_name axi_qpsk_rx_dec_fir_compiler_v7_2_i2
-set params_list [list]
-lappend params_list CONFIG.Component_Name {axi_qpsk_rx_dec_fir_compiler_v7_2_i2}
-lappend params_list CONFIG.BestPrecision {true}
-lappend params_list CONFIG.Blank_Output {false}
-lappend params_list CONFIG.Channel_Sequence {Basic}
-lappend params_list CONFIG.Clock_Frequency {300.0}
-lappend params_list CONFIG.CoefficientSource {Vector}
-lappend params_list CONFIG.CoefficientVector {binary:6616AAF46CE529BF000000000000000067223EE06DE0423F0000000000000000D665E45F672256BF0000000000000000017930360458663F0000000000000000B39AD3F93E6C74BF000000000000000017F5CB22DC66813F000000000000000078914769BF3B8CBF0000000000000000B405175B433B963F00000000000000005A68BCE78165A1BF00000000000000009A9E90387921AC3F000000000000000092C930E698C4B9BF0000000000000000E526E892D440D43F000000000000E03FE526E892D440D43F000000000000000092C930E698C4B9BF00000000000000009A9E90387921AC3F00000000000000005A68BCE78165A1BF0000000000000000B405175B433B963F000000000000000078914769BF3B8CBF000000000000000017F5CB22DC66813F0000000000000000B39AD3F93E6C74BF0000000000000000017930360458663F0000000000000000D665E45F672256BF000000000000000067223EE06DE0423F00000000000000006616AAF46CE529BF}
-lappend params_list CONFIG.Coefficient_Buffer_Type {Automatic}
-lappend params_list CONFIG.Coefficient_File {no_coe_file_loaded}
-lappend params_list CONFIG.Coefficient_Fractional_Bits {15}
-lappend params_list CONFIG.Coefficient_Reload {false}
-lappend params_list CONFIG.Coefficient_Sets {1}
-lappend params_list CONFIG.Coefficient_Sign {Signed}
-lappend params_list CONFIG.Coefficient_Structure {Inferred}
-lappend params_list CONFIG.Coefficient_Width {16}
-lappend params_list CONFIG.ColumnConfig {1}
-lappend params_list CONFIG.DATA_Has_TLAST {Not_Required}
-lappend params_list CONFIG.DATA_TUSER_Width {1}
-lappend params_list CONFIG.Data_Buffer_Type {Automatic}
-lappend params_list CONFIG.Data_Fractional_Bits {14}
-lappend params_list CONFIG.Data_Sign {Signed}
-lappend params_list CONFIG.Data_Width {16}
-lappend params_list CONFIG.Decimation_Rate {2}
-lappend params_list CONFIG.DisplayReloadOrder {false}
-lappend params_list CONFIG.Filter_Architecture {Systolic_Multiply_Accumulate}
-lappend params_list CONFIG.Filter_Selection {1}
-lappend params_list CONFIG.Filter_Type {Decimation}
-lappend params_list CONFIG.GUI_Behaviour {Sysgen_uUPP}
-lappend params_list CONFIG.Gen_MIF_Files {false}
-lappend params_list CONFIG.Gen_MIF_from_COE {false}
-lappend params_list CONFIG.Gen_MIF_from_Spec {false}
-lappend params_list CONFIG.HardwareOversamplingRate {1}
-lappend params_list CONFIG.Has_ACLKEN {true}
-lappend params_list CONFIG.Has_ARESETn {false}
-lappend params_list CONFIG.Input_Buffer_Type {Automatic}
-lappend params_list CONFIG.Inter_Column_Pipe_Length {4}
-lappend params_list CONFIG.Interpolation_Rate {1}
-lappend params_list CONFIG.M_DATA_Has_TREADY {false}
-lappend params_list CONFIG.M_DATA_Has_TUSER {Not_Required}
-lappend params_list CONFIG.Multi_Column_Support {Automatic}
-lappend params_list CONFIG.Num_Reload_Slots {1}
-lappend params_list CONFIG.Number_Channels {1}
-lappend params_list CONFIG.Number_Paths {1}
-lappend params_list CONFIG.Optimization_Goal {Area}
-lappend params_list CONFIG.Optimization_List {None}
-lappend params_list CONFIG.Optimization_Selection {None}
-lappend params_list CONFIG.Output_Buffer_Type {Automatic}
-lappend params_list CONFIG.Output_Rounding_Mode {Full_Precision}
-lappend params_list CONFIG.Output_Width {32}
-lappend params_list CONFIG.Passband_Max {0.50000000}
-lappend params_list CONFIG.Passband_Min {0.00000000}
-lappend params_list CONFIG.Pattern_List {P4-0,P4-1,P4-2,P4-3,P4-4}
-lappend params_list CONFIG.Preference_For_Other_Storage {Automatic}
-lappend params_list CONFIG.Quantization {Quantize_Only}
-lappend params_list CONFIG.RateSpecification {Maximum_Possible}
-lappend params_list CONFIG.Rate_Change_Type {Integer}
-lappend params_list CONFIG.Reload_File {no_coe_file_loaded}
-lappend params_list CONFIG.Reset_Data_Vector {true}
-lappend params_list CONFIG.S_CONFIG_Method {Single}
-lappend params_list CONFIG.S_CONFIG_Sync_Mode {On_Vector}
-lappend params_list CONFIG.S_DATA_Has_FIFO {false}
-lappend params_list CONFIG.S_DATA_Has_TUSER {Not_Required}
-lappend params_list CONFIG.SamplePeriod {6400}
-lappend params_list CONFIG.Sample_Frequency {0.001}
-lappend params_list CONFIG.Select_Pattern {All}
-lappend params_list CONFIG.Stopband_Max {1.00000000}
-lappend params_list CONFIG.Stopband_Min {0.50000000}
-lappend params_list CONFIG.Zero_Pack_Factor {1}
-
-set_property -dict $params_list [get_ips axi_qpsk_rx_dec_fir_compiler_v7_2_i2]
-}
-
-
-set existingipslist [get_ips]
-if {[lsearch $existingipslist axi_qpsk_rx_dec_fir_compiler_v7_2_i3] < 0} {
-create_ip -name fir_compiler -version 7.2 -vendor xilinx.com -library ip -module_name axi_qpsk_rx_dec_fir_compiler_v7_2_i3
-set params_list [list]
-lappend params_list CONFIG.Component_Name {axi_qpsk_rx_dec_fir_compiler_v7_2_i3}
-lappend params_list CONFIG.BestPrecision {true}
-lappend params_list CONFIG.Blank_Output {false}
-lappend params_list CONFIG.Channel_Sequence {Basic}
-lappend params_list CONFIG.Clock_Frequency {300.0}
-lappend params_list CONFIG.CoefficientSource {Vector}
-lappend params_list CONFIG.CoefficientVector {binary:6616AAF46CE529BF000000000000000067223EE06DE0423F0000000000000000D665E45F672256BF0000000000000000017930360458663F0000000000000000B39AD3F93E6C74BF000000000000000017F5CB22DC66813F000000000000000078914769BF3B8CBF0000000000000000B405175B433B963F00000000000000005A68BCE78165A1BF00000000000000009A9E90387921AC3F000000000000000092C930E698C4B9BF0000000000000000E526E892D440D43F000000000000E03FE526E892D440D43F000000000000000092C930E698C4B9BF00000000000000009A9E90387921AC3F00000000000000005A68BCE78165A1BF0000000000000000B405175B433B963F000000000000000078914769BF3B8CBF000000000000000017F5CB22DC66813F0000000000000000B39AD3F93E6C74BF0000000000000000017930360458663F0000000000000000D665E45F672256BF000000000000000067223EE06DE0423F00000000000000006616AAF46CE529BF}
-lappend params_list CONFIG.Coefficient_Buffer_Type {Automatic}
-lappend params_list CONFIG.Coefficient_File {no_coe_file_loaded}
-lappend params_list CONFIG.Coefficient_Fractional_Bits {15}
-lappend params_list CONFIG.Coefficient_Reload {false}
-lappend params_list CONFIG.Coefficient_Sets {1}
-lappend params_list CONFIG.Coefficient_Sign {Signed}
-lappend params_list CONFIG.Coefficient_Structure {Inferred}
-lappend params_list CONFIG.Coefficient_Width {16}
-lappend params_list CONFIG.ColumnConfig {1}
-lappend params_list CONFIG.DATA_Has_TLAST {Not_Required}
-lappend params_list CONFIG.DATA_TUSER_Width {1}
-lappend params_list CONFIG.Data_Buffer_Type {Automatic}
-lappend params_list CONFIG.Data_Fractional_Bits {14}
-lappend params_list CONFIG.Data_Sign {Signed}
-lappend params_list CONFIG.Data_Width {16}
-lappend params_list CONFIG.Decimation_Rate {2}
-lappend params_list CONFIG.DisplayReloadOrder {false}
-lappend params_list CONFIG.Filter_Architecture {Systolic_Multiply_Accumulate}
-lappend params_list CONFIG.Filter_Selection {1}
-lappend params_list CONFIG.Filter_Type {Decimation}
-lappend params_list CONFIG.GUI_Behaviour {Sysgen_uUPP}
-lappend params_list CONFIG.Gen_MIF_Files {false}
-lappend params_list CONFIG.Gen_MIF_from_COE {false}
-lappend params_list CONFIG.Gen_MIF_from_Spec {false}
-lappend params_list CONFIG.HardwareOversamplingRate {1}
-lappend params_list CONFIG.Has_ACLKEN {true}
-lappend params_list CONFIG.Has_ARESETn {false}
-lappend params_list CONFIG.Input_Buffer_Type {Automatic}
-lappend params_list CONFIG.Inter_Column_Pipe_Length {4}
-lappend params_list CONFIG.Interpolation_Rate {1}
-lappend params_list CONFIG.M_DATA_Has_TREADY {false}
-lappend params_list CONFIG.M_DATA_Has_TUSER {Not_Required}
-lappend params_list CONFIG.Multi_Column_Support {Automatic}
-lappend params_list CONFIG.Num_Reload_Slots {1}
-lappend params_list CONFIG.Number_Channels {1}
-lappend params_list CONFIG.Number_Paths {1}
-lappend params_list CONFIG.Optimization_Goal {Area}
-lappend params_list CONFIG.Optimization_List {None}
-lappend params_list CONFIG.Optimization_Selection {None}
-lappend params_list CONFIG.Output_Buffer_Type {Automatic}
-lappend params_list CONFIG.Output_Rounding_Mode {Full_Precision}
-lappend params_list CONFIG.Output_Width {32}
-lappend params_list CONFIG.Passband_Max {0.50000000}
-lappend params_list CONFIG.Passband_Min {0.00000000}
-lappend params_list CONFIG.Pattern_List {P4-0,P4-1,P4-2,P4-3,P4-4}
-lappend params_list CONFIG.Preference_For_Other_Storage {Automatic}
-lappend params_list CONFIG.Quantization {Quantize_Only}
-lappend params_list CONFIG.RateSpecification {Maximum_Possible}
-lappend params_list CONFIG.Rate_Change_Type {Integer}
-lappend params_list CONFIG.Reload_File {no_coe_file_loaded}
-lappend params_list CONFIG.Reset_Data_Vector {true}
-lappend params_list CONFIG.S_CONFIG_Method {Single}
-lappend params_list CONFIG.S_CONFIG_Sync_Mode {On_Vector}
-lappend params_list CONFIG.S_DATA_Has_FIFO {false}
-lappend params_list CONFIG.S_DATA_Has_TUSER {Not_Required}
-lappend params_list CONFIG.SamplePeriod {12800}
-lappend params_list CONFIG.Sample_Frequency {0.001}
-lappend params_list CONFIG.Select_Pattern {All}
-lappend params_list CONFIG.Stopband_Max {1.00000000}
-lappend params_list CONFIG.Stopband_Min {0.50000000}
-lappend params_list CONFIG.Zero_Pack_Factor {1}
-
-set_property -dict $params_list [get_ips axi_qpsk_rx_dec_fir_compiler_v7_2_i3]
 }
 
 

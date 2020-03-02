@@ -14,7 +14,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set FPGAClockPeriod 39.0625
 	set GenerateTestBench 0
 	set HDLLanguage {vhdl}
-	set IPOOCCacheRootPath {C:/Users/jgoldsmi/AppData/Local/Xilinx/Sysgen/SysgenVivado/win64.o/ip}
+	set IPOOCCacheRootPath {/home/josh/.Xilinx/Sysgen/SysgenVivado/lnx64.o/ip}
 	set IP_Auto_Infer {1}
 	set IP_Categories_Text {System Generator for DSP}
 	set IP_Common_Repos {0}
@@ -24,7 +24,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set IP_LifeCycle_Menu {2}
 	set IP_Logo {sysgen_icon_100.png}
 	set IP_Name {axi_qpsk_rx_coarse_sync}
-	set IP_Revision {190228282}
+	set IP_Revision {214065087}
 	set IP_Socket_IP {0}
 	set IP_Socket_IP_Proj_Path {}
 	set IP_Vendor_Text {UoS}
@@ -69,9 +69,9 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set SimulationTime {10000000239.06249809 ns}
 	set SynthStrategyName {Vivado Synthesis Defaults}
 	set SynthesisTool {Vivado}
-	set TargetDir {Y:/git/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/rx/rx_tsync}
+	set TargetDir {/home/josh/git/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/rx/rx_tsync}
 	set TopLevelModule {axi_qpsk_rx_tsync}
-	set TopLevelSimulinkHandle 2.00024
+	set TopLevelSimulinkHandle 2174
 	set VHDLLib {xil_defaultlib}
 	set TopLevelPortInterface {}
 	dict set TopLevelPortInterface m_axis_tap_tready Name {m_axis_tap_tready}

@@ -636,7 +636,7 @@ set params_list [list]
 lappend params_list CONFIG.Component_Name {axi_qpsk_rx_tsync_mult_gen_v12_0_i5}
 lappend params_list CONFIG.ccmimp {Distributed_Memory}
 lappend params_list CONFIG.clockenable {false}
-lappend params_list CONFIG.constvalue {166}
+lappend params_list CONFIG.constvalue {115}
 lappend params_list CONFIG.internaluser {0}
 lappend params_list CONFIG.multtype {Constant_Coefficient_Multiplier}
 lappend params_list CONFIG.outputwidthhigh {37}

@@ -1,4 +1,4 @@
--- Generated from Simulink block axi_qpsk_rx_tsync/Carrier Synch/De-Rotate Constellation
+-- Generated from Simulink block De-Rotate Constellation
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -17,19 +17,19 @@ entity axi_qpsk_rx_tsync_de_rotate_constellation is
   );
 end axi_qpsk_rx_tsync_de_rotate_constellation;
 architecture structural of axi_qpsk_rx_tsync_de_rotate_constellation is 
-  signal clk_net : std_logic;
-  signal addsub_s_net : std_logic_vector( 19-1 downto 0 );
-  signal ce_net : std_logic;
-  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
-  signal addsub1_s_net : std_logic_vector( 19-1 downto 0 );
-  signal delay2_q_net : std_logic_vector( 16-1 downto 0 );
   signal register2_q_net : std_logic_vector( 16-1 downto 0 );
   signal register3_q_net : std_logic_vector( 16-1 downto 0 );
-  signal delay3_q_net : std_logic_vector( 16-1 downto 0 );
-  signal mult2_p_net : std_logic_vector( 18-1 downto 0 );
-  signal mult3_p_net : std_logic_vector( 18-1 downto 0 );
+  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
+  signal delay2_q_net : std_logic_vector( 16-1 downto 0 );
+  signal clk_net : std_logic;
   signal mult1_p_net : std_logic_vector( 18-1 downto 0 );
+  signal mult3_p_net : std_logic_vector( 18-1 downto 0 );
+  signal mult2_p_net : std_logic_vector( 18-1 downto 0 );
   signal mult4_p_net : std_logic_vector( 18-1 downto 0 );
+  signal ce_net : std_logic;
+  signal addsub_s_net : std_logic_vector( 19-1 downto 0 );
+  signal delay3_q_net : std_logic_vector( 16-1 downto 0 );
+  signal addsub1_s_net : std_logic_vector( 19-1 downto 0 );
 begin
   x_out <= addsub1_s_net;
   y_out <= addsub_s_net;
@@ -251,7 +251,7 @@ begin
     p => mult4_p_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Carrier Synch/Generate Angle Error/Vectoring Cell 2
+-- Generated from Simulink block Vectoring Cell 2
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -269,21 +269,21 @@ entity axi_qpsk_rx_tsync_vectoring_cell_2 is
   );
 end axi_qpsk_rx_tsync_vectoring_cell_2;
 architecture structural of axi_qpsk_rx_tsync_vectoring_cell_2 is 
-  signal inverter_op_net : std_logic_vector( 1-1 downto 0 );
-  signal shift_op_net : std_logic_vector( 15-1 downto 0 );
-  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
-  signal shift1_op_net : std_logic_vector( 15-1 downto 0 );
-  signal constant_op_net : std_logic_vector( 20-1 downto 0 );
-  signal ce_net : std_logic;
-  signal delay4_q_net : std_logic_vector( 15-1 downto 0 );
   signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
-  signal delay5_q_net : std_logic_vector( 20-1 downto 0 );
-  signal delay3_q_net : std_logic_vector( 15-1 downto 0 );
+  signal ce_net : std_logic;
+  signal constant_op_net : std_logic_vector( 20-1 downto 0 );
+  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
   signal clk_net : std_logic;
+  signal delay5_q_net : std_logic_vector( 20-1 downto 0 );
+  signal shift1_op_net : std_logic_vector( 15-1 downto 0 );
   signal addsub2_s_net : std_logic_vector( 15-1 downto 0 );
   signal addsub3_s_net : std_logic_vector( 15-1 downto 0 );
+  signal shift_op_net : std_logic_vector( 15-1 downto 0 );
+  signal delay4_q_net : std_logic_vector( 15-1 downto 0 );
+  signal inverter_op_net : std_logic_vector( 1-1 downto 0 );
   signal slice_y_net : std_logic_vector( 1-1 downto 0 );
   signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
+  signal delay3_q_net : std_logic_vector( 15-1 downto 0 );
 begin
   x_out <= addsub2_s_net;
   y_out <= addsub3_s_net;
@@ -386,7 +386,7 @@ begin
     y => slice1_y_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Carrier Synch/Generate Angle Error/Vectoring Cell 3
+-- Generated from Simulink block Vectoring Cell 3
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -404,21 +404,21 @@ entity axi_qpsk_rx_tsync_vectoring_cell_3 is
   );
 end axi_qpsk_rx_tsync_vectoring_cell_3;
 architecture structural of axi_qpsk_rx_tsync_vectoring_cell_3 is 
+  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
+  signal delay7_q_net : std_logic_vector( 15-1 downto 0 );
+  signal clk_net : std_logic;
+  signal ce_net : std_logic;
+  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
+  signal delay6_q_net : std_logic_vector( 15-1 downto 0 );
+  signal constant1_op_net : std_logic_vector( 20-1 downto 0 );
+  signal delay8_q_net : std_logic_vector( 20-1 downto 0 );
+  signal shift1_op_net : std_logic_vector( 15-1 downto 0 );
+  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
   signal shift_op_net : std_logic_vector( 15-1 downto 0 );
   signal inverter_op_net : std_logic_vector( 1-1 downto 0 );
   signal addsub2_s_net : std_logic_vector( 15-1 downto 0 );
-  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
-  signal clk_net : std_logic;
-  signal constant1_op_net : std_logic_vector( 20-1 downto 0 );
-  signal delay8_q_net : std_logic_vector( 20-1 downto 0 );
-  signal delay7_q_net : std_logic_vector( 15-1 downto 0 );
   signal addsub3_s_net : std_logic_vector( 15-1 downto 0 );
-  signal ce_net : std_logic;
-  signal delay6_q_net : std_logic_vector( 15-1 downto 0 );
   signal logical_y_net : std_logic_vector( 1-1 downto 0 );
-  signal shift1_op_net : std_logic_vector( 15-1 downto 0 );
-  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
-  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
 begin
   x_out <= addsub2_s_net;
   y_out <= addsub3_s_net;
@@ -521,7 +521,7 @@ begin
     y => slice1_y_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Carrier Synch/Generate Angle Error/Vectoring Cell 4
+-- Generated from Simulink block Vectoring Cell 4
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -539,20 +539,20 @@ entity axi_qpsk_rx_tsync_vectoring_cell_4 is
   );
 end axi_qpsk_rx_tsync_vectoring_cell_4;
 architecture structural of axi_qpsk_rx_tsync_vectoring_cell_4 is 
-  signal shift1_op_net : std_logic_vector( 15-1 downto 0 );
-  signal shift_op_net : std_logic_vector( 15-1 downto 0 );
-  signal inverter_op_net : std_logic_vector( 1-1 downto 0 );
-  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
-  signal ce_net : std_logic;
+  signal addsub3_s_net : std_logic_vector( 15-1 downto 0 );
   signal addsub2_s_net : std_logic_vector( 15-1 downto 0 );
+  signal shift1_op_net : std_logic_vector( 15-1 downto 0 );
+  signal clk_net : std_logic;
+  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
+  signal delay10_q_net : std_logic_vector( 15-1 downto 0 );
+  signal ce_net : std_logic;
+  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
   signal delay9_q_net : std_logic_vector( 15-1 downto 0 );
   signal delay11_q_net : std_logic_vector( 20-1 downto 0 );
-  signal clk_net : std_logic;
-  signal addsub3_s_net : std_logic_vector( 15-1 downto 0 );
+  signal shift_op_net : std_logic_vector( 15-1 downto 0 );
+  signal inverter_op_net : std_logic_vector( 1-1 downto 0 );
   signal constant_op_net : std_logic_vector( 20-1 downto 0 );
-  signal delay10_q_net : std_logic_vector( 15-1 downto 0 );
   signal logical_y_net : std_logic_vector( 1-1 downto 0 );
-  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
   signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
 begin
   x_out <= addsub2_s_net;
@@ -656,7 +656,7 @@ begin
     y => slice1_y_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Carrier Synch/Generate Angle Error/Vectoring Cell 5
+-- Generated from Simulink block Vectoring Cell 5
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -674,21 +674,21 @@ entity axi_qpsk_rx_tsync_vectoring_cell_5 is
   );
 end axi_qpsk_rx_tsync_vectoring_cell_5;
 architecture structural of axi_qpsk_rx_tsync_vectoring_cell_5 is 
-  signal addsub2_s_net : std_logic_vector( 15-1 downto 0 );
-  signal delay12_q_net : std_logic_vector( 15-1 downto 0 );
-  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
-  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
-  signal constant1_op_net : std_logic_vector( 20-1 downto 0 );
-  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
-  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
-  signal delay13_q_net : std_logic_vector( 15-1 downto 0 );
   signal clk_net : std_logic;
-  signal ce_net : std_logic;
   signal delay14_q_net : std_logic_vector( 20-1 downto 0 );
+  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
+  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
+  signal inverter_op_net : std_logic_vector( 1-1 downto 0 );
   signal addsub3_s_net : std_logic_vector( 15-1 downto 0 );
+  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
+  signal delay13_q_net : std_logic_vector( 15-1 downto 0 );
   signal shift1_op_net : std_logic_vector( 15-1 downto 0 );
   signal shift_op_net : std_logic_vector( 15-1 downto 0 );
-  signal inverter_op_net : std_logic_vector( 1-1 downto 0 );
+  signal constant1_op_net : std_logic_vector( 20-1 downto 0 );
+  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
+  signal addsub2_s_net : std_logic_vector( 15-1 downto 0 );
+  signal ce_net : std_logic;
+  signal delay12_q_net : std_logic_vector( 15-1 downto 0 );
 begin
   x_out <= addsub2_s_net;
   y_out <= addsub3_s_net;
@@ -791,7 +791,7 @@ begin
     y => slice1_y_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Carrier Synch/Generate Angle Error/Vectoring Cell 6
+-- Generated from Simulink block Vectoring Cell 6
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -809,21 +809,21 @@ entity axi_qpsk_rx_tsync_vectoring_cell_6 is
   );
 end axi_qpsk_rx_tsync_vectoring_cell_6;
 architecture structural of axi_qpsk_rx_tsync_vectoring_cell_6 is 
-  signal addsub2_s_net : std_logic_vector( 15-1 downto 0 );
-  signal inverter_op_net : std_logic_vector( 1-1 downto 0 );
-  signal addsub3_s_net : std_logic_vector( 15-1 downto 0 );
-  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
   signal clk_net : std_logic;
+  signal addsub2_s_net : std_logic_vector( 15-1 downto 0 );
+  signal delay16_q_net : std_logic_vector( 15-1 downto 0 );
   signal shift1_op_net : std_logic_vector( 15-1 downto 0 );
   signal delay17_q_net : std_logic_vector( 20-1 downto 0 );
-  signal delay16_q_net : std_logic_vector( 15-1 downto 0 );
-  signal ce_net : std_logic;
-  signal delay15_q_net : std_logic_vector( 15-1 downto 0 );
-  signal shift_op_net : std_logic_vector( 15-1 downto 0 );
-  signal constant1_op_net : std_logic_vector( 20-1 downto 0 );
-  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
   signal slice_y_net : std_logic_vector( 1-1 downto 0 );
   signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
+  signal shift_op_net : std_logic_vector( 15-1 downto 0 );
+  signal inverter_op_net : std_logic_vector( 1-1 downto 0 );
+  signal addsub3_s_net : std_logic_vector( 15-1 downto 0 );
+  signal ce_net : std_logic;
+  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
+  signal delay15_q_net : std_logic_vector( 15-1 downto 0 );
+  signal constant1_op_net : std_logic_vector( 20-1 downto 0 );
+  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
 begin
   x_out <= addsub2_s_net;
   y_out <= addsub3_s_net;
@@ -926,7 +926,7 @@ begin
     y => slice1_y_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Carrier Synch/Generate Angle Error/Vectoring Cell 7
+-- Generated from Simulink block Vectoring Cell 7
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -942,16 +942,16 @@ entity axi_qpsk_rx_tsync_vectoring_cell_7 is
   );
 end axi_qpsk_rx_tsync_vectoring_cell_7;
 architecture structural of axi_qpsk_rx_tsync_vectoring_cell_7 is 
-  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
+  signal ce_net : std_logic;
   signal delay18_q_net : std_logic_vector( 15-1 downto 0 );
   signal delay19_q_net : std_logic_vector( 15-1 downto 0 );
+  signal delay20_q_net : std_logic_vector( 20-1 downto 0 );
+  signal constant_op_net : std_logic_vector( 20-1 downto 0 );
   signal logical_y_net : std_logic_vector( 1-1 downto 0 );
-  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
+  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
   signal clk_net : std_logic;
   signal slice_y_net : std_logic_vector( 1-1 downto 0 );
-  signal constant_op_net : std_logic_vector( 20-1 downto 0 );
-  signal delay20_q_net : std_logic_vector( 20-1 downto 0 );
-  signal ce_net : std_logic;
+  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
 begin
   z_out <= addsub1_s_net;
   delay18_q_net <= x_in;
@@ -1008,7 +1008,7 @@ begin
     y => slice1_y_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Carrier Synch/Generate Angle Error/Vectoring  Cell 0
+-- Generated from Simulink block Vectoring  Cell 0
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -1026,21 +1026,21 @@ entity axi_qpsk_rx_tsync_vectoring_cell_0 is
   );
 end axi_qpsk_rx_tsync_vectoring_cell_0;
 architecture structural of axi_qpsk_rx_tsync_vectoring_cell_0 is 
-  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
-  signal constant_op_net : std_logic_vector( 16-1 downto 0 );
-  signal constant_op_net_x0 : std_logic_vector( 20-1 downto 0 );
   signal addsub2_s_net : std_logic_vector( 15-1 downto 0 );
-  signal clk_net : std_logic;
-  signal register4_q_net : std_logic_vector( 19-1 downto 0 );
-  signal addsub3_s_net : std_logic_vector( 15-1 downto 0 );
-  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
-  signal register5_q_net : std_logic_vector( 19-1 downto 0 );
-  signal ce_net : std_logic;
-  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
+  signal constant_op_net_x0 : std_logic_vector( 20-1 downto 0 );
+  signal shift1_op_net : std_logic_vector( 15-1 downto 0 );
+  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
   signal shift_op_net : std_logic_vector( 15-1 downto 0 );
   signal inverter_op_net : std_logic_vector( 1-1 downto 0 );
-  signal shift1_op_net : std_logic_vector( 15-1 downto 0 );
   signal slice_y_net : std_logic_vector( 1-1 downto 0 );
+  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
+  signal addsub3_s_net : std_logic_vector( 15-1 downto 0 );
+  signal ce_net : std_logic;
+  signal register4_q_net : std_logic_vector( 19-1 downto 0 );
+  signal register5_q_net : std_logic_vector( 19-1 downto 0 );
+  signal constant_op_net : std_logic_vector( 16-1 downto 0 );
+  signal clk_net : std_logic;
+  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
 begin
   x_out <= addsub2_s_net;
   y_out <= addsub3_s_net;
@@ -1143,7 +1143,7 @@ begin
     y => slice1_y_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Carrier Synch/Generate Angle Error/Vectoring  Cell 1
+-- Generated from Simulink block Vectoring  Cell 1
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -1161,21 +1161,21 @@ entity axi_qpsk_rx_tsync_vectoring_cell_1 is
   );
 end axi_qpsk_rx_tsync_vectoring_cell_1;
 architecture structural of axi_qpsk_rx_tsync_vectoring_cell_1 is 
-  signal addsub3_s_net : std_logic_vector( 15-1 downto 0 );
-  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
-  signal clk_net : std_logic;
-  signal delay_q_net : std_logic_vector( 15-1 downto 0 );
-  signal delay1_q_net : std_logic_vector( 15-1 downto 0 );
-  signal addsub2_s_net : std_logic_vector( 15-1 downto 0 );
-  signal delay2_q_net : std_logic_vector( 20-1 downto 0 );
-  signal ce_net : std_logic;
-  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
-  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
-  signal inverter_op_net : std_logic_vector( 1-1 downto 0 );
-  signal shift1_op_net : std_logic_vector( 15-1 downto 0 );
-  signal shift_op_net : std_logic_vector( 15-1 downto 0 );
-  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
   signal constant_op_net : std_logic_vector( 20-1 downto 0 );
+  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
+  signal clk_net : std_logic;
+  signal delay2_q_net : std_logic_vector( 20-1 downto 0 );
+  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
+  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
+  signal delay1_q_net : std_logic_vector( 15-1 downto 0 );
+  signal addsub3_s_net : std_logic_vector( 15-1 downto 0 );
+  signal addsub2_s_net : std_logic_vector( 15-1 downto 0 );
+  signal shift1_op_net : std_logic_vector( 15-1 downto 0 );
+  signal delay_q_net : std_logic_vector( 15-1 downto 0 );
+  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
+  signal ce_net : std_logic;
+  signal shift_op_net : std_logic_vector( 15-1 downto 0 );
+  signal inverter_op_net : std_logic_vector( 1-1 downto 0 );
 begin
   x_out <= addsub2_s_net;
   y_out <= addsub3_s_net;
@@ -1278,7 +1278,7 @@ begin
     y => slice1_y_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Carrier Synch/Generate Angle Error
+-- Generated from Simulink block Generate Angle Error
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -1297,63 +1297,63 @@ entity axi_qpsk_rx_tsync_generate_angle_error is
   );
 end axi_qpsk_rx_tsync_generate_angle_error;
 architecture structural of axi_qpsk_rx_tsync_generate_angle_error is 
-  signal addsub2_s_net_x6 : std_logic_vector( 15-1 downto 0 );
-  signal addsub3_s_net_x4 : std_logic_vector( 15-1 downto 0 );
-  signal addsub3_s_net_x2 : std_logic_vector( 15-1 downto 0 );
-  signal delay8_q_net : std_logic_vector( 20-1 downto 0 );
-  signal delay11_q_net : std_logic_vector( 20-1 downto 0 );
-  signal delay5_q_net : std_logic_vector( 20-1 downto 0 );
-  signal delay3_q_net : std_logic_vector( 15-1 downto 0 );
-  signal delay13_q_net : std_logic_vector( 15-1 downto 0 );
-  signal addsub3_s_net_x3 : std_logic_vector( 15-1 downto 0 );
-  signal delay_q_net_x0 : std_logic_vector( 1-1 downto 0 );
-  signal addsub1_s_net_x2 : std_logic_vector( 20-1 downto 0 );
-  signal delay19_q_net : std_logic_vector( 15-1 downto 0 );
-  signal constant_op_net : std_logic_vector( 16-1 downto 0 );
-  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
-  signal delay2_q_net : std_logic_vector( 20-1 downto 0 );
-  signal addsub1_s_net_x6 : std_logic_vector( 20-1 downto 0 );
-  signal delay22_q_net : std_logic_vector( 16-1 downto 0 );
-  signal addsub1_s_net_x4 : std_logic_vector( 20-1 downto 0 );
-  signal ce_net : std_logic;
-  signal addsub1_s_net_x5 : std_logic_vector( 20-1 downto 0 );
-  signal delay6_q_net : std_logic_vector( 15-1 downto 0 );
-  signal delay10_q_net : std_logic_vector( 15-1 downto 0 );
-  signal addsub2_s_net_x3 : std_logic_vector( 15-1 downto 0 );
-  signal addsub1_s_net_x3 : std_logic_vector( 20-1 downto 0 );
-  signal delay15_q_net : std_logic_vector( 15-1 downto 0 );
-  signal delay16_q_net : std_logic_vector( 15-1 downto 0 );
-  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
-  signal addsub3_s_net_x6 : std_logic_vector( 15-1 downto 0 );
-  signal addsub3_s_net_x5 : std_logic_vector( 15-1 downto 0 );
-  signal delay7_q_net : std_logic_vector( 15-1 downto 0 );
-  signal delay9_q_net : std_logic_vector( 15-1 downto 0 );
-  signal clk_net : std_logic;
-  signal delay12_q_net : std_logic_vector( 15-1 downto 0 );
-  signal delay17_q_net : std_logic_vector( 20-1 downto 0 );
-  signal delay18_q_net : std_logic_vector( 15-1 downto 0 );
-  signal register5_q_net : std_logic_vector( 19-1 downto 0 );
-  signal addsub2_s_net_x0 : std_logic_vector( 15-1 downto 0 );
-  signal delay4_q_net : std_logic_vector( 15-1 downto 0 );
-  signal delay14_q_net : std_logic_vector( 20-1 downto 0 );
-  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
-  signal addsub1_s_net_x1 : std_logic_vector( 20-1 downto 0 );
-  signal addsub3_s_net_x0 : std_logic_vector( 15-1 downto 0 );
-  signal addsub1_s_net_x0 : std_logic_vector( 20-1 downto 0 );
-  signal addsub2_s_net : std_logic_vector( 15-1 downto 0 );
-  signal addsub3_s_net : std_logic_vector( 15-1 downto 0 );
-  signal addsub2_s_net_x5 : std_logic_vector( 15-1 downto 0 );
   signal delay20_q_net : std_logic_vector( 20-1 downto 0 );
+  signal addsub2_s_net_x3 : std_logic_vector( 15-1 downto 0 );
+  signal addsub3_s_net_x4 : std_logic_vector( 15-1 downto 0 );
+  signal delay13_q_net : std_logic_vector( 15-1 downto 0 );
+  signal delay14_q_net : std_logic_vector( 20-1 downto 0 );
+  signal addsub3_s_net_x2 : std_logic_vector( 15-1 downto 0 );
+  signal addsub1_s_net_x6 : std_logic_vector( 20-1 downto 0 );
+  signal delay6_q_net : std_logic_vector( 15-1 downto 0 );
   signal delay1_q_net : std_logic_vector( 15-1 downto 0 );
-  signal delay_q_net : std_logic_vector( 15-1 downto 0 );
+  signal delay2_q_net : std_logic_vector( 20-1 downto 0 );
+  signal addsub3_s_net_x0 : std_logic_vector( 15-1 downto 0 );
+  signal addsub1_s_net_x1 : std_logic_vector( 20-1 downto 0 );
+  signal delay12_q_net : std_logic_vector( 15-1 downto 0 );
+  signal delay4_q_net : std_logic_vector( 15-1 downto 0 );
+  signal delay5_q_net : std_logic_vector( 20-1 downto 0 );
   signal addsub2_s_net_x4 : std_logic_vector( 15-1 downto 0 );
-  signal addsub2_s_net_x2 : std_logic_vector( 15-1 downto 0 );
-  signal concat_y_net : std_logic_vector( 2-1 downto 0 );
-  signal addsub_s_net : std_logic_vector( 21-1 downto 0 );
-  signal delay23_q_net : std_logic_vector( 1-1 downto 0 );
   signal register4_q_net : std_logic_vector( 19-1 downto 0 );
+  signal addsub3_s_net_x1 : std_logic_vector( 15-1 downto 0 );
+  signal addsub1_s_net_x3 : std_logic_vector( 20-1 downto 0 );
+  signal delay9_q_net : std_logic_vector( 15-1 downto 0 );
+  signal delay10_q_net : std_logic_vector( 15-1 downto 0 );
   signal delay21_q_net : std_logic_vector( 2-1 downto 0 );
+  signal addsub1_s_net_x4 : std_logic_vector( 20-1 downto 0 );
+  signal constant_op_net : std_logic_vector( 16-1 downto 0 );
+  signal addsub_s_net : std_logic_vector( 21-1 downto 0 );
+  signal ce_net : std_logic;
+  signal addsub1_s_net : std_logic_vector( 20-1 downto 0 );
+  signal delay18_q_net : std_logic_vector( 15-1 downto 0 );
+  signal delay19_q_net : std_logic_vector( 15-1 downto 0 );
+  signal delay22_q_net : std_logic_vector( 16-1 downto 0 );
+  signal delay11_q_net : std_logic_vector( 20-1 downto 0 );
+  signal addsub2_s_net_x2 : std_logic_vector( 15-1 downto 0 );
+  signal addsub2_s_net_x6 : std_logic_vector( 15-1 downto 0 );
+  signal addsub3_s_net_x6 : std_logic_vector( 15-1 downto 0 );
+  signal addsub1_s_net_x5 : std_logic_vector( 20-1 downto 0 );
+  signal delay3_q_net : std_logic_vector( 15-1 downto 0 );
+  signal delay16_q_net : std_logic_vector( 15-1 downto 0 );
+  signal delay17_q_net : std_logic_vector( 20-1 downto 0 );
+  signal addsub2_s_net_x1 : std_logic_vector( 15-1 downto 0 );
+  signal addsub3_s_net : std_logic_vector( 15-1 downto 0 );
+  signal addsub1_s_net_x0 : std_logic_vector( 20-1 downto 0 );
+  signal delay15_q_net : std_logic_vector( 15-1 downto 0 );
+  signal delay_q_net_x0 : std_logic_vector( 1-1 downto 0 );
+  signal clk_net : std_logic;
+  signal register5_q_net : std_logic_vector( 19-1 downto 0 );
+  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
   signal rom_data_net : std_logic_vector( 16-1 downto 0 );
+  signal concat_y_net : std_logic_vector( 2-1 downto 0 );
+  signal delay23_q_net : std_logic_vector( 1-1 downto 0 );
+  signal delay7_q_net : std_logic_vector( 15-1 downto 0 );
+  signal delay8_q_net : std_logic_vector( 20-1 downto 0 );
+  signal addsub2_s_net : std_logic_vector( 15-1 downto 0 );
+  signal addsub2_s_net_x5 : std_logic_vector( 15-1 downto 0 );
+  signal addsub3_s_net_x5 : std_logic_vector( 15-1 downto 0 );
+  signal addsub1_s_net_x2 : std_logic_vector( 20-1 downto 0 );
+  signal delay_q_net : std_logic_vector( 15-1 downto 0 );
+  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
 begin
   angle_error <= addsub_s_net;
   en_out <= delay23_q_net;
@@ -1373,7 +1373,7 @@ begin
     ce_1600 => ce_net,
     x_out => addsub2_s_net_x6,
     y_out => addsub3_s_net_x6,
-    z_out => addsub1_s_net_x6
+    z_out => addsub1_s_net_x5
   );
   vectoring_cell_3 : entity xil_defaultlib.axi_qpsk_rx_tsync_vectoring_cell_3 
   port map (
@@ -1382,9 +1382,9 @@ begin
     z_in => delay8_q_net,
     clk_1600 => clk_net,
     ce_1600 => ce_net,
-    x_out => addsub2_s_net_x5,
-    y_out => addsub3_s_net_x5,
-    z_out => addsub1_s_net_x5
+    x_out => addsub2_s_net_x4,
+    y_out => addsub3_s_net_x2,
+    z_out => addsub1_s_net_x6
   );
   vectoring_cell_4 : entity xil_defaultlib.axi_qpsk_rx_tsync_vectoring_cell_4 
   port map (
@@ -1393,9 +1393,9 @@ begin
     z_in => delay11_q_net,
     clk_1600 => clk_net,
     ce_1600 => ce_net,
-    x_out => addsub2_s_net_x4,
-    y_out => addsub3_s_net_x4,
-    z_out => addsub1_s_net_x4
+    x_out => addsub2_s_net,
+    y_out => addsub3_s_net_x1,
+    z_out => addsub1_s_net_x3
   );
   vectoring_cell_5 : entity xil_defaultlib.axi_qpsk_rx_tsync_vectoring_cell_5 
   port map (
@@ -1404,9 +1404,9 @@ begin
     z_in => delay14_q_net,
     clk_1600 => clk_net,
     ce_1600 => ce_net,
-    x_out => addsub2_s_net_x3,
-    y_out => addsub3_s_net_x3,
-    z_out => addsub1_s_net_x3
+    x_out => addsub2_s_net_x2,
+    y_out => addsub3_s_net_x0,
+    z_out => addsub1_s_net_x1
   );
   vectoring_cell_6 : entity xil_defaultlib.axi_qpsk_rx_tsync_vectoring_cell_6 
   port map (
@@ -1415,9 +1415,9 @@ begin
     z_in => delay17_q_net,
     clk_1600 => clk_net,
     ce_1600 => ce_net,
-    x_out => addsub2_s_net_x2,
-    y_out => addsub3_s_net_x2,
-    z_out => addsub1_s_net_x2
+    x_out => addsub2_s_net_x1,
+    y_out => addsub3_s_net,
+    z_out => addsub1_s_net_x0
   );
   vectoring_cell_7 : entity xil_defaultlib.axi_qpsk_rx_tsync_vectoring_cell_7 
   port map (
@@ -1426,7 +1426,7 @@ begin
     z_in => delay20_q_net,
     clk_1600 => clk_net,
     ce_1600 => ce_net,
-    z_out => addsub1_s_net_x1
+    z_out => addsub1_s_net
   );
   vectoring_cell_0 : entity xil_defaultlib.axi_qpsk_rx_tsync_vectoring_cell_0 
   port map (
@@ -1435,9 +1435,9 @@ begin
     z_in => constant_op_net,
     clk_1600 => clk_net,
     ce_1600 => ce_net,
-    x_out => addsub2_s_net_x0,
-    y_out => addsub3_s_net_x0,
-    z_out => addsub1_s_net_x0
+    x_out => addsub2_s_net_x3,
+    y_out => addsub3_s_net_x4,
+    z_out => addsub1_s_net_x4
   );
   vectoring_cell_1 : entity xil_defaultlib.axi_qpsk_rx_tsync_vectoring_cell_1 
   port map (
@@ -1446,9 +1446,9 @@ begin
     z_in => delay2_q_net,
     clk_1600 => clk_net,
     ce_1600 => ce_net,
-    x_out => addsub2_s_net,
-    y_out => addsub3_s_net,
-    z_out => addsub1_s_net
+    x_out => addsub2_s_net_x5,
+    y_out => addsub3_s_net_x5,
+    z_out => addsub1_s_net_x2
   );
   addsub : entity xil_defaultlib.axi_qpsk_rx_tsync_xladdsub 
   generic map (
@@ -1475,7 +1475,7 @@ begin
   port map (
     clr => '0',
     en => "1",
-    a => addsub1_s_net_x1,
+    a => addsub1_s_net,
     b => delay22_q_net,
     clk => clk_net,
     ce => ce_net,
@@ -1507,7 +1507,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub2_s_net_x0,
+    d => addsub2_s_net_x3,
     clk => clk_net,
     ce => ce_net,
     q => delay_q_net
@@ -1522,7 +1522,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub3_s_net_x0,
+    d => addsub3_s_net_x4,
     clk => clk_net,
     ce => ce_net,
     q => delay1_q_net
@@ -1537,7 +1537,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub3_s_net_x5,
+    d => addsub3_s_net_x2,
     clk => clk_net,
     ce => ce_net,
     q => delay10_q_net
@@ -1552,7 +1552,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub1_s_net_x5,
+    d => addsub1_s_net_x6,
     clk => clk_net,
     ce => ce_net,
     q => delay11_q_net
@@ -1567,7 +1567,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub2_s_net_x4,
+    d => addsub2_s_net,
     clk => clk_net,
     ce => ce_net,
     q => delay12_q_net
@@ -1582,7 +1582,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub3_s_net_x4,
+    d => addsub3_s_net_x1,
     clk => clk_net,
     ce => ce_net,
     q => delay13_q_net
@@ -1597,7 +1597,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub1_s_net_x4,
+    d => addsub1_s_net_x3,
     clk => clk_net,
     ce => ce_net,
     q => delay14_q_net
@@ -1612,7 +1612,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub2_s_net_x3,
+    d => addsub2_s_net_x2,
     clk => clk_net,
     ce => ce_net,
     q => delay15_q_net
@@ -1627,7 +1627,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub3_s_net_x3,
+    d => addsub3_s_net_x0,
     clk => clk_net,
     ce => ce_net,
     q => delay16_q_net
@@ -1642,7 +1642,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub1_s_net_x3,
+    d => addsub1_s_net_x1,
     clk => clk_net,
     ce => ce_net,
     q => delay17_q_net
@@ -1657,7 +1657,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub2_s_net_x2,
+    d => addsub2_s_net_x1,
     clk => clk_net,
     ce => ce_net,
     q => delay18_q_net
@@ -1672,7 +1672,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub3_s_net_x2,
+    d => addsub3_s_net,
     clk => clk_net,
     ce => ce_net,
     q => delay19_q_net
@@ -1687,7 +1687,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub1_s_net_x0,
+    d => addsub1_s_net_x4,
     clk => clk_net,
     ce => ce_net,
     q => delay2_q_net
@@ -1702,7 +1702,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub1_s_net_x2,
+    d => addsub1_s_net_x0,
     clk => clk_net,
     ce => ce_net,
     q => delay20_q_net
@@ -1762,7 +1762,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub2_s_net,
+    d => addsub2_s_net_x5,
     clk => clk_net,
     ce => ce_net,
     q => delay3_q_net
@@ -1777,7 +1777,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub3_s_net,
+    d => addsub3_s_net_x5,
     clk => clk_net,
     ce => ce_net,
     q => delay4_q_net
@@ -1792,7 +1792,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub1_s_net,
+    d => addsub1_s_net_x2,
     clk => clk_net,
     ce => ce_net,
     q => delay5_q_net
@@ -1837,7 +1837,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub1_s_net_x6,
+    d => addsub1_s_net_x5,
     clk => clk_net,
     ce => ce_net,
     q => delay8_q_net
@@ -1852,7 +1852,7 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => addsub2_s_net_x5,
+    d => addsub2_s_net_x4,
     clk => clk_net,
     ce => ce_net,
     q => delay9_q_net
@@ -1873,7 +1873,7 @@ begin
     data => rom_data_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Carrier Synch/Loop Filter
+-- Generated from Simulink block Loop Filter
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -1890,19 +1890,19 @@ entity axi_qpsk_rx_tsync_loop_filter_x0 is
   );
 end axi_qpsk_rx_tsync_loop_filter_x0;
 architecture structural of axi_qpsk_rx_tsync_loop_filter_x0 is 
-  signal clk_net : std_logic;
-  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
-  signal delay1_q_net : std_logic_vector( 1-1 downto 0 );
-  signal register1_q_net : std_logic_vector( 21-1 downto 0 );
-  signal ce_net : std_logic;
-  signal addsub3_s_net : std_logic_vector( 39-1 downto 0 );
   signal delay_q_net : std_logic_vector( 1-1 downto 0 );
-  signal cmult_p_net : std_logic_vector( 36-1 downto 0 );
-  signal addsub4_s_net : std_logic_vector( 38-1 downto 0 );
-  signal register1_q_net_x0 : std_logic_vector( 38-1 downto 0 );
-  signal mux_y_net : std_logic_vector( 38-1 downto 0 );
+  signal addsub3_s_net : std_logic_vector( 39-1 downto 0 );
   signal constant_op_net : std_logic_vector( 16-1 downto 0 );
   signal cmult1_p_net : std_logic_vector( 39-1 downto 0 );
+  signal register1_q_net_x0 : std_logic_vector( 38-1 downto 0 );
+  signal addsub4_s_net : std_logic_vector( 38-1 downto 0 );
+  signal mux_y_net : std_logic_vector( 38-1 downto 0 );
+  signal clk_net : std_logic;
+  signal ce_net : std_logic;
+  signal register1_q_net : std_logic_vector( 21-1 downto 0 );
+  signal delay1_q_net : std_logic_vector( 1-1 downto 0 );
+  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
+  signal cmult_p_net : std_logic_vector( 36-1 downto 0 );
 begin
   error_filt <= addsub3_s_net;
   en_out <= delay_q_net;
@@ -2085,7 +2085,7 @@ begin
     q => register1_q_net_x0
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Carrier Synch/NCO
+-- Generated from Simulink block NCO
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -2103,24 +2103,24 @@ entity axi_qpsk_rx_tsync_nco is
 end axi_qpsk_rx_tsync_nco;
 architecture structural of axi_qpsk_rx_tsync_nco is 
   signal delay_q_net : std_logic_vector( 1-1 downto 0 );
-  signal delay_q_net_x0 : std_logic_vector( 1-1 downto 0 );
+  signal addsub4_s_net : std_logic_vector( 22-1 downto 0 );
+  signal cmult1_p_net : std_logic_vector( 22-1 downto 0 );
+  signal register1_q_net : std_logic_vector( 22-1 downto 0 );
   signal clk_net : std_logic;
   signal ce_net : std_logic;
-  signal cos_rom_data_net : std_logic_vector( 16-1 downto 0 );
-  signal neg_sin_rom_data_net : std_logic_vector( 16-1 downto 0 );
-  signal addsub3_s_net : std_logic_vector( 39-1 downto 0 );
-  signal mux_y_net : std_logic_vector( 22-1 downto 0 );
   signal constant_op_net : std_logic_vector( 16-1 downto 0 );
-  signal register1_q_net : std_logic_vector( 22-1 downto 0 );
-  signal cmult1_p_net : std_logic_vector( 22-1 downto 0 );
-  signal addsub4_s_net : std_logic_vector( 22-1 downto 0 );
+  signal delay_q_net_x0 : std_logic_vector( 1-1 downto 0 );
+  signal addsub3_s_net : std_logic_vector( 39-1 downto 0 );
   signal convert1_dout_net : std_logic_vector( 8-1 downto 0 );
+  signal cos_rom_data_net : std_logic_vector( 16-1 downto 0 );
+  signal mux_y_net : std_logic_vector( 22-1 downto 0 );
+  signal neg_sin_rom_data_net : std_logic_vector( 16-1 downto 0 );
 begin
   cos <= cos_rom_data_net;
   neg_sin <= neg_sin_rom_data_net;
-  en_out <= delay_q_net;
+  en_out <= delay_q_net_x0;
   addsub3_s_net <= step_size;
-  delay_q_net_x0 <= en_in;
+  delay_q_net <= en_in;
   clk_net <= clk_1600;
   ce_net <= ce_1600;
   addsub4 : entity xil_defaultlib.axi_qpsk_rx_tsync_xladdsub 
@@ -2240,17 +2240,17 @@ begin
   port map (
     en => '1',
     rst => '1',
-    d => delay_q_net_x0,
+    d => delay_q_net,
     clk => clk_net,
     ce => ce_net,
-    q => delay_q_net
+    q => delay_q_net_x0
   );
   mux : entity xil_defaultlib.sysgen_mux_7842e69b1c 
   port map (
     clk => '0',
     ce => '0',
     clr => '0',
-    sel => delay_q_net_x0,
+    sel => delay_q_net,
     d0 => constant_op_net,
     d1 => addsub4_s_net,
     y => mux_y_net
@@ -2278,13 +2278,13 @@ begin
   port map (
     rst => "0",
     d => mux_y_net,
-    en => delay_q_net_x0,
+    en => delay_q_net,
     clk => clk_net,
     ce => ce_net,
     q => register1_q_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Carrier Synch
+-- Generated from Simulink block Carrier Synch
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -2303,32 +2303,32 @@ entity axi_qpsk_rx_tsync_carrier_synch is
   );
 end axi_qpsk_rx_tsync_carrier_synch;
 architecture structural of axi_qpsk_rx_tsync_carrier_synch is 
-  signal delay1_q_net : std_logic_vector( 1-1 downto 0 );
-  signal delay23_q_net : std_logic_vector( 1-1 downto 0 );
-  signal neg_sin_rom_data_net : std_logic_vector( 16-1 downto 0 );
-  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
-  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
-  signal register4_q_net : std_logic_vector( 19-1 downto 0 );
-  signal addsub_s_net_x0 : std_logic_vector( 19-1 downto 0 );
-  signal cos_rom_data_net : std_logic_vector( 16-1 downto 0 );
   signal logical_y_net : std_logic_vector( 1-1 downto 0 );
-  signal delay2_q_net : std_logic_vector( 16-1 downto 0 );
-  signal delay3_q_net : std_logic_vector( 16-1 downto 0 );
-  signal addsub3_s_net : std_logic_vector( 39-1 downto 0 );
-  signal delay_q_net : std_logic_vector( 1-1 downto 0 );
-  signal register1_q_net : std_logic_vector( 21-1 downto 0 );
-  signal delay_q_net_x0 : std_logic_vector( 1-1 downto 0 );
-  signal clk_net : std_logic;
-  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
-  signal addsub_s_net : std_logic_vector( 21-1 downto 0 );
   signal ce_net : std_logic;
   signal addsub1_s_net : std_logic_vector( 19-1 downto 0 );
+  signal cos_rom_data_net : std_logic_vector( 16-1 downto 0 );
+  signal neg_sin_rom_data_net : std_logic_vector( 16-1 downto 0 );
+  signal delay_q_net_x0 : std_logic_vector( 1-1 downto 0 );
+  signal delay3_q_net : std_logic_vector( 16-1 downto 0 );
+  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
+  signal clk_net : std_logic;
+  signal delay2_q_net : std_logic_vector( 16-1 downto 0 );
+  signal addsub3_s_net : std_logic_vector( 39-1 downto 0 );
+  signal delay_q_net_x1 : std_logic_vector( 1-1 downto 0 );
+  signal register1_q_net : std_logic_vector( 21-1 downto 0 );
+  signal delay1_q_net : std_logic_vector( 1-1 downto 0 );
+  signal addsub_s_net : std_logic_vector( 21-1 downto 0 );
+  signal delay23_q_net : std_logic_vector( 1-1 downto 0 );
+  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
+  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
+  signal register4_q_net : std_logic_vector( 19-1 downto 0 );
+  signal register5_q_net : std_logic_vector( 19-1 downto 0 );
+  signal delay_q_net : std_logic_vector( 1-1 downto 0 );
+  signal addsub_s_net_x0 : std_logic_vector( 19-1 downto 0 );
   signal register2_q_net : std_logic_vector( 16-1 downto 0 );
   signal register3_q_net : std_logic_vector( 16-1 downto 0 );
-  signal delay_q_net_x1 : std_logic_vector( 1-1 downto 0 );
-  signal register5_q_net : std_logic_vector( 19-1 downto 0 );
 begin
-  symbol_strobe <= delay_q_net_x0;
+  symbol_strobe <= delay_q_net;
   i_out <= register4_q_net;
   q_out <= register5_q_net;
   logical_y_net <= sample_strobe;
@@ -2355,7 +2355,7 @@ begin
     y_out => register5_q_net,
     x_out_q => slice_y_net,
     y_out_q => slice1_y_net,
-    en_in => delay_q_net_x0,
+    en_in => delay_q_net,
     clk_1600 => clk_net,
     ce_1600 => ce_net,
     angle_error => addsub_s_net,
@@ -2369,17 +2369,17 @@ begin
     clk_1600 => clk_net,
     ce_1600 => ce_net,
     error_filt => addsub3_s_net,
-    en_out => delay_q_net
+    en_out => delay_q_net_x1
   );
   nco : entity xil_defaultlib.axi_qpsk_rx_tsync_nco 
   port map (
     step_size => addsub3_s_net,
-    en_in => delay_q_net,
+    en_in => delay_q_net_x1,
     clk_1600 => clk_net,
     ce_1600 => ce_net,
     cos => cos_rom_data_net,
     neg_sin => neg_sin_rom_data_net,
-    en_out => delay_q_net_x1
+    en_out => delay_q_net_x0
   );
   delay : entity xil_defaultlib.axi_qpsk_rx_tsync_xldelay 
   generic map (
@@ -2394,7 +2394,7 @@ begin
     d => logical_y_net,
     clk => clk_net,
     ce => ce_net,
-    q => delay_q_net_x0
+    q => delay_q_net
   );
   delay1 : entity xil_defaultlib.axi_qpsk_rx_tsync_xldelay 
   generic map (
@@ -2432,7 +2432,7 @@ begin
   port map (
     rst => "0",
     d => cos_rom_data_net,
-    en => delay_q_net_x1,
+    en => delay_q_net_x0,
     clk => clk_net,
     ce => ce_net,
     q => register2_q_net
@@ -2445,7 +2445,7 @@ begin
   port map (
     rst => "0",
     d => neg_sin_rom_data_net,
-    en => delay_q_net_x1,
+    en => delay_q_net_x0,
     clk => clk_net,
     ce => ce_net,
     q => register3_q_net
@@ -2499,7 +2499,7 @@ begin
     y => slice1_y_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface
+-- Generated from Simulink block AXI_Write_Interface
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -2522,39 +2522,39 @@ entity axi_qpsk_rx_tsync_axi_write_interface is
   );
 end axi_qpsk_rx_tsync_axi_write_interface;
 architecture structural of axi_qpsk_rx_tsync_axi_write_interface is 
-  signal fifo_dout_net : std_logic_vector( 32-1 downto 0 );
-  signal convert1_dout_net : std_logic_vector( 1-1 downto 0 );
+  signal inverter_op_net : std_logic_vector( 1-1 downto 0 );
+  signal clk_net : std_logic;
   signal logical2_y_net : std_logic;
-  signal convert_dout_net : std_logic_vector( 1-1 downto 0 );
+  signal ce_net : std_logic;
+  signal constant_op_net : std_logic_vector( 11-1 downto 0 );
+  signal register4_q_net : std_logic_vector( 1-1 downto 0 );
   signal convert5_dout_net : std_logic_vector( 1-1 downto 0 );
-  signal convert2_dout_net : std_logic_vector( 1-1 downto 0 );
   signal mcode_re_net : std_logic_vector( 1-1 downto 0 );
-  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
-  signal logical1_y_net : std_logic_vector( 1-1 downto 0 );
-  signal counter_op_net : std_logic_vector( 32-1 downto 0 );
-  signal convert3_dout_net : std_logic_vector( 1-1 downto 0 );
+  signal fifo_dout_net : std_logic_vector( 32-1 downto 0 );
+  signal fifo_empty_net : std_logic;
   signal fifo_full_net : std_logic;
   signal fifo_dcount_net : std_logic_vector( 8-1 downto 0 );
-  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
-  signal fifo_empty_net : std_logic;
-  signal logical3_y_net : std_logic_vector( 1-1 downto 0 );
-  signal inverter_op_net : std_logic_vector( 1-1 downto 0 );
-  signal relational1_op_net : std_logic_vector( 1-1 downto 0 );
+  signal convert3_dout_net : std_logic_vector( 1-1 downto 0 );
   signal inverter1_op_net : std_logic_vector( 1-1 downto 0 );
-  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
+  signal relational1_op_net : std_logic_vector( 1-1 downto 0 );
+  signal packetsizerf_net : std_logic_vector( 32-1 downto 0 );
+  signal convert1_dout_net : std_logic_vector( 1-1 downto 0 );
   signal delay_q_net : std_logic_vector( 1-1 downto 0 );
   signal m_axis_tap_tready_net : std_logic_vector( 1-1 downto 0 );
+  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
+  signal logical1_y_net : std_logic_vector( 1-1 downto 0 );
+  signal ce_net_x0 : std_logic;
+  signal logical3_y_net : std_logic_vector( 1-1 downto 0 );
+  signal concat_y_net : std_logic_vector( 32-1 downto 0 );
+  signal slice2_y_net : std_logic_vector( 1-1 downto 0 );
+  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
   signal register5_q_net : std_logic_vector( 32-1 downto 0 );
   signal register3_q_net : std_logic_vector( 1-1 downto 0 );
-  signal ce_net : std_logic;
-  signal concat_y_net : std_logic_vector( 32-1 downto 0 );
-  signal register4_q_net : std_logic_vector( 1-1 downto 0 );
-  signal constant_op_net : std_logic_vector( 11-1 downto 0 );
-  signal ce_net_x0 : std_logic;
-  signal slice2_y_net : std_logic_vector( 1-1 downto 0 );
+  signal convert_dout_net : std_logic_vector( 1-1 downto 0 );
+  signal convert2_dout_net : std_logic_vector( 1-1 downto 0 );
+  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
+  signal counter_op_net : std_logic_vector( 32-1 downto 0 );
   signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
-  signal clk_net : std_logic;
-  signal packetsizerf_net : std_logic_vector( 32-1 downto 0 );
 begin
   tdata_out <= register5_q_net;
   tlast_out <= register3_q_net;
@@ -2567,8 +2567,8 @@ begin
   delay_q_net <= tvalid_in;
   m_axis_tap_tready_net <= tready;
   clk_net <= clk_1;
-  ce_net <= ce_1;
-  ce_net_x0 <= ce_1600;
+  ce_net_x0 <= ce_1;
+  ce_net <= ce_1600;
   constant_x0 : entity xil_defaultlib.sysgen_constant_c58a18529d 
   port map (
     clk => '0',
@@ -2594,7 +2594,7 @@ begin
     en => "1",
     din => slice2_y_net,
     clk => clk_net,
-    ce => ce_net,
+    ce => ce_net_x0,
     dout => convert_dout_net
   );
   convert1 : entity xil_defaultlib.axi_qpsk_rx_tsync_xlconvert 
@@ -2615,7 +2615,7 @@ begin
     en => "1",
     din => register3_q_net,
     clk => clk_net,
-    ce => ce_net,
+    ce => ce_net_x0,
     dout => convert1_dout_net
   );
   convert2 : entity xil_defaultlib.axi_qpsk_rx_tsync_xlconvert 
@@ -2636,7 +2636,7 @@ begin
     en => "1",
     din => relational_op_net,
     clk => clk_net,
-    ce => ce_net,
+    ce => ce_net_x0,
     dout => convert2_dout_net
   );
   convert3 : entity xil_defaultlib.axi_qpsk_rx_tsync_xlconvert 
@@ -2657,7 +2657,7 @@ begin
     en => "1",
     din => slice_y_net,
     clk => clk_net,
-    ce => ce_net,
+    ce => ce_net_x0,
     dout => convert3_dout_net
   );
   convert5 : entity xil_defaultlib.axi_qpsk_rx_tsync_xlconvert 
@@ -2678,7 +2678,7 @@ begin
     en => "1",
     din => mcode_re_net,
     clk => clk_net,
-    ce => ce_net,
+    ce => ce_net_x0,
     dout => convert5_dout_net
   );
   counter : entity xil_defaultlib.axi_qpsk_rx_tsync_xlcounter_free 
@@ -2692,7 +2692,7 @@ begin
     rst => logical_y_net,
     en => logical1_y_net,
     clk => clk_net,
-    ce => ce_net,
+    ce => ce_net_x0,
     op => counter_op_net
   );
   fifo : entity xil_defaultlib.axi_qpsk_rx_tsync_xlfifogen_u 
@@ -2713,9 +2713,9 @@ begin
     re => logical2_y_net,
     rst => slice1_y_net(0),
     clk => clk_net,
-    ce => ce_net,
-    we_ce => ce_net_x0,
-    re_ce => ce_net,
+    ce => ce_net_x0,
+    we_ce => ce_net,
+    re_ce => ce_net_x0,
     dout => fifo_dout_net,
     empty => fifo_empty_net,
     full => fifo_full_net,
@@ -2726,7 +2726,7 @@ begin
     clr => '0',
     ip => convert5_dout_net,
     clk => clk_net,
-    ce => ce_net,
+    ce => ce_net_x0,
     op => inverter_op_net
   );
   inverter1 : entity xil_defaultlib.sysgen_inverter_ffa53b05ba 
@@ -2734,7 +2734,7 @@ begin
     clr => '0',
     ip => relational1_op_net,
     clk => clk_net,
-    ce => ce_net,
+    ce => ce_net_x0,
     op => inverter1_op_net
   );
   logical : entity xil_defaultlib.sysgen_logical_ad36c2ea6e 
@@ -2781,7 +2781,7 @@ begin
     dcount => convert2_dout_net,
     axiauto => convert3_dout_net,
     clk => clk_net,
-    ce => ce_net,
+    ce => ce_net_x0,
     re => mcode_re_net
   );
   register3 : entity xil_defaultlib.axi_qpsk_rx_tsync_xlregister 
@@ -2794,7 +2794,7 @@ begin
     rst => slice1_y_net,
     en => m_axis_tap_tready_net,
     clk => clk_net,
-    ce => ce_net,
+    ce => ce_net_x0,
     q => register3_q_net
   );
   register4 : entity xil_defaultlib.axi_qpsk_rx_tsync_xlregister 
@@ -2807,7 +2807,7 @@ begin
     rst => slice1_y_net,
     en => m_axis_tap_tready_net,
     clk => clk_net,
-    ce => ce_net,
+    ce => ce_net_x0,
     q => register4_q_net
   );
   register5 : entity xil_defaultlib.axi_qpsk_rx_tsync_xlregister 
@@ -2820,7 +2820,7 @@ begin
     rst => slice1_y_net,
     en => m_axis_tap_tready_net,
     clk => clk_net,
-    ce => ce_net,
+    ce => ce_net_x0,
     q => register5_q_net
   );
   relational : entity xil_defaultlib.sysgen_relational_f0e5fbf8fc 
@@ -2842,7 +2842,7 @@ begin
     op => relational1_op_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Data Inspector/M_AXIS_SYMBOL_CTRL
+-- Generated from Simulink block M_AXIS_SYMBOL_CTRL
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -2867,43 +2867,43 @@ entity axi_qpsk_rx_tsync_m_axis_symbol_ctrl is
   );
 end axi_qpsk_rx_tsync_m_axis_symbol_ctrl;
 architecture structural of axi_qpsk_rx_tsync_m_axis_symbol_ctrl is 
-  signal clk_net : std_logic;
-  signal ce_net_x0 : std_logic;
-  signal reinterpret1_output_port_net : std_logic_vector( 16-1 downto 0 );
-  signal convert1_dout_net : std_logic_vector( 16-1 downto 0 );
-  signal register4_q_net : std_logic_vector( 1-1 downto 0 );
-  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
-  signal convert4_dout_net : std_logic_vector( 32-1 downto 0 );
-  signal packetsizerf_net : std_logic_vector( 32-1 downto 0 );
-  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
-  signal ce_net : std_logic;
   signal slice2_y_net : std_logic_vector( 1-1 downto 0 );
+  signal clk_net : std_logic;
+  signal ce_net : std_logic;
   signal reinterpret_output_port_net : std_logic_vector( 16-1 downto 0 );
-  signal convert_dout_net : std_logic_vector( 16-1 downto 0 );
-  signal register3_q_net : std_logic_vector( 1-1 downto 0 );
-  signal delay_q_net : std_logic_vector( 1-1 downto 0 );
-  signal register5_q_net : std_logic_vector( 32-1 downto 0 );
-  signal register4_q_net_x0 : std_logic_vector( 19-1 downto 0 );
-  signal m_axis_tap_tready_net : std_logic_vector( 1-1 downto 0 );
+  signal reinterpret1_output_port_net : std_logic_vector( 16-1 downto 0 );
+  signal ce_net_x0 : std_logic;
+  signal register4_q_net : std_logic_vector( 1-1 downto 0 );
+  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
   signal clk_net_x0 : std_logic;
-  signal register5_q_net_x0 : std_logic_vector( 19-1 downto 0 );
+  signal convert_dout_net : std_logic_vector( 16-1 downto 0 );
+  signal register5_q_net_x0 : std_logic_vector( 32-1 downto 0 );
   signal concat_y_net : std_logic_vector( 32-1 downto 0 );
+  signal delay_q_net : std_logic_vector( 1-1 downto 0 );
+  signal convert4_dout_net : std_logic_vector( 32-1 downto 0 );
+  signal register3_q_net : std_logic_vector( 1-1 downto 0 );
+  signal register4_q_net_x0 : std_logic_vector( 19-1 downto 0 );
+  signal register5_q_net : std_logic_vector( 19-1 downto 0 );
+  signal m_axis_tap_tready_net : std_logic_vector( 1-1 downto 0 );
+  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
+  signal packetsizerf_net : std_logic_vector( 32-1 downto 0 );
+  signal convert1_dout_net : std_logic_vector( 16-1 downto 0 );
 begin
   tdata_out <= convert4_dout_net;
   tvalid_out <= register4_q_net;
   tlast_out <= register3_q_net;
   register4_q_net_x0 <= i_data;
   delay_q_net <= tvalid_in;
-  register5_q_net_x0 <= q_data;
+  register5_q_net <= q_data;
   slice1_y_net <= reset;
   packetsizerf_net <= packet_size;
   m_axis_tap_tready_net <= tready_in;
   slice2_y_net <= transfer;
   slice_y_net <= auto_restart;
-  clk_net <= clk_1;
-  ce_net_x0 <= ce_1;
-  clk_net_x0 <= clk_1600;
-  ce_net <= ce_1600;
+  clk_net_x0 <= clk_1;
+  ce_net <= ce_1;
+  clk_net <= clk_1600;
+  ce_net_x0 <= ce_1600;
   axi_write_interface : entity xil_defaultlib.axi_qpsk_rx_tsync_axi_write_interface 
   port map (
     int_reset => slice1_y_net,
@@ -2913,10 +2913,10 @@ begin
     tdata_in => concat_y_net,
     tvalid_in => delay_q_net,
     tready => m_axis_tap_tready_net,
-    clk_1 => clk_net,
-    ce_1 => ce_net_x0,
-    ce_1600 => ce_net,
-    tdata_out => register5_q_net,
+    clk_1 => clk_net_x0,
+    ce_1 => ce_net,
+    ce_1600 => ce_net_x0,
+    tdata_out => register5_q_net_x0,
     tlast_out => register3_q_net,
     tvalid_out => register4_q_net
   );
@@ -2945,9 +2945,9 @@ begin
   port map (
     clr => '0',
     en => "1",
-    din => register5_q_net_x0,
-    clk => clk_net_x0,
-    ce => ce_net,
+    din => register5_q_net,
+    clk => clk_net,
+    ce => ce_net_x0,
     dout => convert_dout_net
   );
   convert1 : entity xil_defaultlib.axi_qpsk_rx_tsync_xlconvert 
@@ -2967,8 +2967,8 @@ begin
     clr => '0',
     en => "1",
     din => register4_q_net_x0,
-    clk => clk_net_x0,
-    ce => ce_net,
+    clk => clk_net,
+    ce => ce_net_x0,
     dout => convert1_dout_net
   );
   convert4 : entity xil_defaultlib.axi_qpsk_rx_tsync_xlconvert 
@@ -2987,9 +2987,9 @@ begin
   port map (
     clr => '0',
     en => "1",
-    din => register5_q_net,
-    clk => clk_net,
-    ce => ce_net_x0,
+    din => register5_q_net_x0,
+    clk => clk_net_x0,
+    ce => ce_net,
     dout => convert4_dout_net
   );
   reinterpret : entity xil_defaultlib.sysgen_reinterpret_981fb3effc 
@@ -3009,7 +3009,7 @@ begin
     output_port => reinterpret1_output_port_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Data Inspector
+-- Generated from Simulink block Data Inspector
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -3034,21 +3034,21 @@ entity axi_qpsk_rx_tsync_data_inspector is
   );
 end axi_qpsk_rx_tsync_data_inspector;
 architecture structural of axi_qpsk_rx_tsync_data_inspector is 
-  signal slice2_y_net : std_logic_vector( 1-1 downto 0 );
+  signal m_axis_tap_tready_net : std_logic_vector( 1-1 downto 0 );
+  signal clk_net : std_logic;
+  signal clk_net_x0 : std_logic;
+  signal ce_net : std_logic;
   signal register3_q_net : std_logic_vector( 1-1 downto 0 );
-  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
-  signal convert4_dout_net : std_logic_vector( 32-1 downto 0 );
   signal register4_q_net_x0 : std_logic_vector( 19-1 downto 0 );
+  signal ce_net_x0 : std_logic;
+  signal register4_q_net : std_logic_vector( 1-1 downto 0 );
+  signal slice2_y_net : std_logic_vector( 1-1 downto 0 );
+  signal convert4_dout_net : std_logic_vector( 32-1 downto 0 );
+  signal register5_q_net : std_logic_vector( 19-1 downto 0 );
+  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
+  signal delay_q_net : std_logic_vector( 1-1 downto 0 );
   signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
   signal packetsizerf_net : std_logic_vector( 32-1 downto 0 );
-  signal m_axis_tap_tready_net : std_logic_vector( 1-1 downto 0 );
-  signal ce_net : std_logic;
-  signal clk_net : std_logic;
-  signal delay_q_net : std_logic_vector( 1-1 downto 0 );
-  signal ce_net_x0 : std_logic;
-  signal register5_q_net : std_logic_vector( 19-1 downto 0 );
-  signal clk_net_x0 : std_logic;
-  signal register4_q_net : std_logic_vector( 1-1 downto 0 );
 begin
   tdata_out <= convert4_dout_net;
   tvalid_out <= register4_q_net;
@@ -3084,7 +3084,7 @@ begin
     tlast_out => register3_q_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/M_AXIS_TAP
+-- Generated from Simulink block M_AXIS_TAP
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -3100,15 +3100,15 @@ end axi_qpsk_rx_tsync_m_axis_tap;
 architecture structural of axi_qpsk_rx_tsync_m_axis_tap is 
   signal register4_q_net : std_logic_vector( 1-1 downto 0 );
   signal m_axis_tap_tready_net : std_logic_vector( 1-1 downto 0 );
-  signal convert4_dout_net : std_logic_vector( 32-1 downto 0 );
   signal register3_q_net : std_logic_vector( 1-1 downto 0 );
+  signal convert4_dout_net : std_logic_vector( 32-1 downto 0 );
 begin
   convert4_dout_net <= tdata_in;
   register4_q_net <= tvalid_in;
   register3_q_net <= tlast_in;
   m_axis_tap_tready_net <= m_axis_tap_tready;
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Timing Synch/Loop Filter
+-- Generated from Simulink block Loop Filter
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -3124,18 +3124,18 @@ entity axi_qpsk_rx_tsync_loop_filter is
   );
 end axi_qpsk_rx_tsync_loop_filter;
 architecture structural of axi_qpsk_rx_tsync_loop_filter is 
-  signal delay10_q_net : std_logic_vector( 1-1 downto 0 );
-  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
-  signal register_q_net : std_logic_vector( 20-1 downto 0 );
-  signal addsub3_s_net : std_logic_vector( 39-1 downto 0 );
-  signal addsub4_s_net : std_logic_vector( 38-1 downto 0 );
-  signal register1_q_net : std_logic_vector( 38-1 downto 0 );
-  signal constant_op_net : std_logic_vector( 16-1 downto 0 );
-  signal ce_net : std_logic;
-  signal mux_y_net : std_logic_vector( 38-1 downto 0 );
-  signal cmult_p_net : std_logic_vector( 35-1 downto 0 );
   signal clk_net : std_logic;
+  signal ce_net : std_logic;
+  signal addsub3_s_net : std_logic_vector( 39-1 downto 0 );
+  signal register_q_net : std_logic_vector( 20-1 downto 0 );
+  signal delay10_q_net : std_logic_vector( 1-1 downto 0 );
+  signal cmult_p_net : std_logic_vector( 35-1 downto 0 );
+  signal addsub4_s_net : std_logic_vector( 38-1 downto 0 );
+  signal constant_op_net : std_logic_vector( 16-1 downto 0 );
   signal cmult1_p_net : std_logic_vector( 38-1 downto 0 );
+  signal register1_q_net : std_logic_vector( 38-1 downto 0 );
+  signal mux_y_net : std_logic_vector( 38-1 downto 0 );
+  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
 begin
   error_filt <= addsub3_s_net;
   register_q_net <= signal_x0;
@@ -3302,7 +3302,7 @@ begin
     q => register1_q_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Timing Synch/NCC
+-- Generated from Simulink block NCC
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -3318,19 +3318,19 @@ entity axi_qpsk_rx_tsync_ncc is
   );
 end axi_qpsk_rx_tsync_ncc;
 architecture structural of axi_qpsk_rx_tsync_ncc is 
-  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
-  signal addsub1_s_net : std_logic_vector( 29-1 downto 0 );
-  signal logical1_y_net : std_logic_vector( 1-1 downto 0 );
-  signal register_q_net : std_logic_vector( 30-1 downto 0 );
-  signal addsub5_s_net : std_logic_vector( 30-1 downto 0 );
-  signal relational1_op_net : std_logic_vector( 1-1 downto 0 );
   signal constant1_op_net : std_logic_vector( 26-1 downto 0 );
-  signal constant2_op_net : std_logic_vector( 30-1 downto 0 );
   signal addsub6_s_net : std_logic_vector( 26-1 downto 0 );
-  signal mux_y_net : std_logic_vector( 29-1 downto 0 );
-  signal addsub3_s_net : std_logic_vector( 39-1 downto 0 );
-  signal clk_net : std_logic;
+  signal addsub1_s_net : std_logic_vector( 29-1 downto 0 );
+  signal register_q_net : std_logic_vector( 30-1 downto 0 );
+  signal constant2_op_net : std_logic_vector( 30-1 downto 0 );
+  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
   signal ce_net : std_logic;
+  signal clk_net : std_logic;
+  signal relational1_op_net : std_logic_vector( 1-1 downto 0 );
+  signal addsub3_s_net : std_logic_vector( 39-1 downto 0 );
+  signal logical1_y_net : std_logic_vector( 1-1 downto 0 );
+  signal addsub5_s_net : std_logic_vector( 30-1 downto 0 );
+  signal mux_y_net : std_logic_vector( 29-1 downto 0 );
 begin
   strobe <= relational_op_net;
   adj_step <= addsub6_s_net;
@@ -3487,7 +3487,7 @@ begin
     op => relational1_op_net
   );
 end structural;
--- Generated from Simulink block axi_qpsk_rx_tsync/Timing Synch
+-- Generated from Simulink block Timing Synch
 library IEEE;
 use IEEE.std_logic_1164.all;
 library xil_defaultlib;
@@ -3504,40 +3504,40 @@ entity axi_qpsk_rx_tsync_timing_synch is
   );
 end axi_qpsk_rx_tsync_timing_synch;
 architecture structural of axi_qpsk_rx_tsync_timing_synch is 
-  signal delay10_q_net : std_logic_vector( 1-1 downto 0 );
-  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
-  signal mult2_p_net : std_logic_vector( 18-1 downto 0 );
-  signal addsub_s_net : std_logic_vector( 19-1 downto 0 );
-  signal delay1_q_net : std_logic_vector( 18-1 downto 0 );
-  signal ce_net : std_logic;
-  signal reinterpret_output_port_net : std_logic_vector( 16-1 downto 0 );
-  signal relational_op_net_x0 : std_logic_vector( 1-1 downto 0 );
-  signal addsub3_s_net : std_logic_vector( 39-1 downto 0 );
+  signal delay12_q_net : std_logic_vector( 1-1 downto 0 );
   signal reinterpret1_output_port_net : std_logic_vector( 16-1 downto 0 );
   signal register_q_net : std_logic_vector( 20-1 downto 0 );
-  signal addsub6_s_net : std_logic_vector( 26-1 downto 0 );
-  signal mult1_p_net : std_logic_vector( 18-1 downto 0 );
-  signal clk_net : std_logic;
-  signal logical1_y_net : std_logic_vector( 1-1 downto 0 );
-  signal addsub2_s_net : std_logic_vector( 20-1 downto 0 );
-  signal addsub1_s_net : std_logic_vector( 19-1 downto 0 );
-  signal delay12_q_net : std_logic_vector( 1-1 downto 0 );
-  signal delay_q_net : std_logic_vector( 18-1 downto 0 );
-  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
+  signal delay10_q_net : std_logic_vector( 1-1 downto 0 );
+  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
   signal delay11_q_net : std_logic_vector( 1-1 downto 0 );
+  signal ce_net : std_logic;
+  signal addsub3_s_net : std_logic_vector( 39-1 downto 0 );
+  signal logical1_y_net : std_logic_vector( 1-1 downto 0 );
+  signal relational_op_net_x0 : std_logic_vector( 1-1 downto 0 );
+  signal addsub2_s_net : std_logic_vector( 20-1 downto 0 );
+  signal addsub_s_net : std_logic_vector( 19-1 downto 0 );
+  signal mult2_p_net : std_logic_vector( 18-1 downto 0 );
+  signal delay_q_net : std_logic_vector( 18-1 downto 0 );
+  signal reinterpret_output_port_net : std_logic_vector( 16-1 downto 0 );
+  signal addsub1_s_net : std_logic_vector( 19-1 downto 0 );
+  signal mult1_p_net : std_logic_vector( 18-1 downto 0 );
+  signal delay1_q_net : std_logic_vector( 18-1 downto 0 );
+  signal clk_net : std_logic;
+  signal addsub6_s_net : std_logic_vector( 26-1 downto 0 );
+  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
 begin
   sample_valid <= delay12_q_net;
   reinterpret_output_port_net <= i_in;
   reinterpret1_output_port_net <= q_in;
   logical1_y_net <= valid_in;
-  relational_op_net <= reset;
+  relational_op_net_x0 <= reset;
   clk_net <= clk_1600;
   ce_net <= ce_1600;
   loop_filter : entity xil_defaultlib.axi_qpsk_rx_tsync_loop_filter 
   port map (
     signal_x0 => register_q_net,
     en => delay10_q_net,
-    reset => relational_op_net,
+    reset => relational_op_net_x0,
     clk_1600 => clk_net,
     ce_1600 => ce_net,
     error_filt => addsub3_s_net
@@ -3548,7 +3548,7 @@ begin
     en => logical1_y_net,
     clk_1600 => clk_net,
     ce_1600 => ce_net,
-    strobe => relational_op_net_x0,
+    strobe => relational_op_net,
     adj_step => addsub6_s_net
   );
   addsub : entity xil_defaultlib.axi_qpsk_rx_tsync_xladdsub 
@@ -3724,7 +3724,7 @@ begin
     clk => '0',
     ce => '0',
     clr => '0',
-    d0 => relational_op_net_x0,
+    d0 => relational_op_net,
     d1 => logical1_y_net,
     y => logical_y_net
   );
@@ -3842,46 +3842,46 @@ entity axi_qpsk_rx_tsync_struct is
   );
 end axi_qpsk_rx_tsync_struct;
 architecture structural of axi_qpsk_rx_tsync_struct is 
-  signal ce_net : std_logic;
-  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
-  signal clk_net : std_logic;
-  signal register4_q_net_x0 : std_logic_vector( 19-1 downto 0 );
-  signal reinterpret1_output_port_net : std_logic_vector( 16-1 downto 0 );
+  signal delay1_q_net : std_logic_vector( 16-1 downto 0 );
+  signal rxreset_net : std_logic_vector( 32-1 downto 0 );
+  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
   signal delay_q_net : std_logic_vector( 16-1 downto 0 );
-  signal slice2_y_net : std_logic_vector( 1-1 downto 0 );
+  signal ce_net : std_logic;
+  signal delay6_q_net : std_logic_vector( 1-1 downto 0 );
   signal delay2_q_net : std_logic_vector( 16-1 downto 0 );
   signal delay3_q_net : std_logic_vector( 16-1 downto 0 );
-  signal syncreset_net : std_logic_vector( 32-1 downto 0 );
-  signal auto_restart_net : std_logic_vector( 32-1 downto 0 );
-  signal ce_net_x0 : std_logic;
-  signal logical1_y_net : std_logic_vector( 1-1 downto 0 );
-  signal delay1_q_net : std_logic_vector( 16-1 downto 0 );
-  signal packetsizerf_net : std_logic_vector( 32-1 downto 0 );
-  signal register5_q_net : std_logic_vector( 19-1 downto 0 );
-  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
-  signal enable_net : std_logic_vector( 32-1 downto 0 );
-  signal register3_q_net : std_logic_vector( 1-1 downto 0 );
-  signal rxreset_net : std_logic_vector( 32-1 downto 0 );
+  signal relational_op_net : std_logic_vector( 1-1 downto 0 );
   signal s_axis_tvalid_net : std_logic_vector( 1-1 downto 0 );
+  signal down_sample_q_net : std_logic_vector( 1-1 downto 0 );
+  signal slice3_y_net : std_logic_vector( 1-1 downto 0 );
+  signal down_sample1_q_net : std_logic_vector( 32-1 downto 0 );
+  signal enable_net : std_logic_vector( 32-1 downto 0 );
+  signal counter_op_net : std_logic_vector( 32-1 downto 0 );
+  signal delay_q_net_x0 : std_logic_vector( 1-1 downto 0 );
+  signal register4_q_net_x0 : std_logic_vector( 19-1 downto 0 );
+  signal register5_q_net : std_logic_vector( 19-1 downto 0 );
+  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
+  signal delay5_q_net : std_logic_vector( 32-1 downto 0 );
+  signal slice1_y_net : std_logic_vector( 1-1 downto 0 );
+  signal slice2_y_net : std_logic_vector( 1-1 downto 0 );
+  signal auto_restart_net : std_logic_vector( 32-1 downto 0 );
+  signal s_axis_tdata_net : std_logic_vector( 32-1 downto 0 );
+  signal clk_net_x0 : std_logic;
+  signal packetsizerf_net : std_logic_vector( 32-1 downto 0 );
+  signal ce_net_x0 : std_logic;
+  signal clk_net : std_logic;
+  signal syncreset_net : std_logic_vector( 32-1 downto 0 );
+  signal i_samples_y_net : std_logic_vector( 16-1 downto 0 );
   signal m_axis_tap_tready_net : std_logic_vector( 1-1 downto 0 );
   signal register4_q_net : std_logic_vector( 1-1 downto 0 );
-  signal logical_y_net : std_logic_vector( 1-1 downto 0 );
-  signal clk_net_x0 : std_logic;
-  signal slice_y_net : std_logic_vector( 1-1 downto 0 );
-  signal delay12_q_net : std_logic_vector( 1-1 downto 0 );
-  signal s_axis_tdata_net : std_logic_vector( 32-1 downto 0 );
-  signal delay_q_net_x0 : std_logic_vector( 1-1 downto 0 );
-  signal reinterpret_output_port_net : std_logic_vector( 16-1 downto 0 );
-  signal convert4_dout_net : std_logic_vector( 32-1 downto 0 );
-  signal transfer_net : std_logic_vector( 32-1 downto 0 );
-  signal down_sample1_q_net : std_logic_vector( 32-1 downto 0 );
-  signal delay6_q_net : std_logic_vector( 1-1 downto 0 );
-  signal down_sample_q_net : std_logic_vector( 1-1 downto 0 );
-  signal delay5_q_net : std_logic_vector( 32-1 downto 0 );
-  signal i_samples_y_net : std_logic_vector( 16-1 downto 0 );
-  signal slice3_y_net : std_logic_vector( 1-1 downto 0 );
   signal q_samples_y_net : std_logic_vector( 16-1 downto 0 );
-  signal counter_op_net : std_logic_vector( 32-1 downto 0 );
+  signal delay12_q_net : std_logic_vector( 1-1 downto 0 );
+  signal reinterpret_output_port_net : std_logic_vector( 16-1 downto 0 );
+  signal reinterpret1_output_port_net : std_logic_vector( 16-1 downto 0 );
+  signal logical1_y_net : std_logic_vector( 1-1 downto 0 );
+  signal register3_q_net : std_logic_vector( 1-1 downto 0 );
+  signal transfer_net : std_logic_vector( 32-1 downto 0 );
+  signal convert4_dout_net : std_logic_vector( 32-1 downto 0 );
 begin
   enable_net <= enable;
   packetsizerf_net <= packetsizerf;
@@ -3895,18 +3895,18 @@ begin
   m_axis_tap_tlast <= register3_q_net;
   m_axis_tap_tready_net <= m_axis_tap_tready;
   m_axis_tap_tvalid <= register4_q_net;
-  clk_net <= clk_1;
-  ce_net <= ce_1;
-  clk_net_x0 <= clk_1600;
-  ce_net_x0 <= ce_1600;
+  clk_net_x0 <= clk_1;
+  ce_net_x0 <= ce_1;
+  clk_net <= clk_1600;
+  ce_net <= ce_1600;
   carrier_synch : entity xil_defaultlib.axi_qpsk_rx_tsync_carrier_synch 
   port map (
     sample_strobe => logical_y_net,
     x_in => delay2_q_net,
     y_in => delay3_q_net,
     reset => relational_op_net,
-    clk_1600 => clk_net_x0,
-    ce_1600 => ce_net_x0,
+    clk_1600 => clk_net,
+    ce_1600 => ce_net,
     symbol_strobe => delay_q_net_x0,
     i_out => register4_q_net_x0,
     q_out => register5_q_net
@@ -3921,10 +3921,10 @@ begin
     transfer => slice2_y_net,
     auto_restart => slice_y_net,
     tready_in => m_axis_tap_tready_net,
-    clk_1 => clk_net,
-    ce_1 => ce_net,
-    clk_1600 => clk_net_x0,
-    ce_1600 => ce_net_x0,
+    clk_1 => clk_net_x0,
+    ce_1 => ce_net_x0,
+    clk_1600 => clk_net,
+    ce_1600 => ce_net,
     tdata_out => convert4_dout_net,
     tvalid_out => register4_q_net,
     tlast_out => register3_q_net
@@ -3942,9 +3942,23 @@ begin
     q_in => reinterpret1_output_port_net,
     valid_in => logical1_y_net,
     reset => relational_op_net,
-    clk_1600 => clk_net_x0,
-    ce_1600 => ce_net_x0,
+    clk_1600 => clk_net,
+    ce_1600 => ce_net,
     sample_valid => delay12_q_net
+  );
+  counter : entity xil_defaultlib.axi_qpsk_rx_tsync_xlcounter_free 
+  generic map (
+    core_name0 => "axi_qpsk_rx_tsync_c_counter_binary_v12_0_i0",
+    op_arith => xlUnsigned,
+    op_width => 32
+  )
+  port map (
+    en => "1",
+    clr => '0',
+    rst => relational_op_net,
+    clk => clk_net,
+    ce => ce_net,
+    op => counter_op_net
   );
   delay : entity xil_defaultlib.axi_qpsk_rx_tsync_xldelay 
   generic map (
@@ -3957,8 +3971,8 @@ begin
     en => '1',
     rst => '1',
     d => reinterpret_output_port_net,
-    clk => clk_net_x0,
-    ce => ce_net_x0,
+    clk => clk_net,
+    ce => ce_net,
     q => delay_q_net
   );
   delay1 : entity xil_defaultlib.axi_qpsk_rx_tsync_xldelay 
@@ -3972,8 +3986,8 @@ begin
     en => '1',
     rst => '1',
     d => reinterpret1_output_port_net,
-    clk => clk_net_x0,
-    ce => ce_net_x0,
+    clk => clk_net,
+    ce => ce_net,
     q => delay1_q_net
   );
   delay2 : entity xil_defaultlib.axi_qpsk_rx_tsync_xldelay 
@@ -3987,8 +4001,8 @@ begin
     en => '1',
     rst => '1',
     d => delay_q_net,
-    clk => clk_net_x0,
-    ce => ce_net_x0,
+    clk => clk_net,
+    ce => ce_net,
     q => delay2_q_net
   );
   delay3 : entity xil_defaultlib.axi_qpsk_rx_tsync_xldelay 
@@ -4002,8 +4016,8 @@ begin
     en => '1',
     rst => '1',
     d => delay1_q_net,
-    clk => clk_net_x0,
-    ce => ce_net_x0,
+    clk => clk_net,
+    ce => ce_net,
     q => delay3_q_net
   );
   delay5 : entity xil_defaultlib.axi_qpsk_rx_tsync_xldelay 
@@ -4017,8 +4031,8 @@ begin
     en => '1',
     rst => '1',
     d => s_axis_tdata_net,
-    clk => clk_net_x0,
-    ce => ce_net_x0,
+    clk => clk_net,
+    ce => ce_net,
     q => delay5_q_net
   );
   delay6 : entity xil_defaultlib.axi_qpsk_rx_tsync_xldelay 
@@ -4032,8 +4046,8 @@ begin
     en => '1',
     rst => '1',
     d => s_axis_tvalid_net,
-    clk => clk_net_x0,
-    ce => ce_net_x0,
+    clk => clk_net,
+    ce => ce_net,
     q => delay6_q_net
   );
   down_sample : entity xil_defaultlib.axi_qpsk_rx_tsync_xldsamp 
@@ -4054,10 +4068,10 @@ begin
     en => "1",
     rst => "0",
     d => slice3_y_net,
-    src_clk => clk_net,
-    src_ce => ce_net,
-    dest_clk => clk_net_x0,
-    dest_ce => ce_net_x0,
+    src_clk => clk_net_x0,
+    src_ce => ce_net_x0,
+    dest_clk => clk_net,
+    dest_ce => ce_net,
     q => down_sample_q_net
   );
   down_sample1 : entity xil_defaultlib.axi_qpsk_rx_tsync_xldsamp 
@@ -4078,10 +4092,10 @@ begin
     en => "1",
     rst => "0",
     d => syncreset_net,
-    src_clk => clk_net,
-    src_ce => ce_net,
-    dest_clk => clk_net_x0,
-    dest_ce => ce_net_x0,
+    src_clk => clk_net_x0,
+    src_ce => ce_net_x0,
+    dest_clk => clk_net,
+    dest_ce => ce_net,
     q => down_sample1_q_net
   );
   logical : entity xil_defaultlib.sysgen_logical_eca05ff97b 
@@ -4117,6 +4131,15 @@ begin
     clr => '0',
     input_port => q_samples_y_net,
     output_port => reinterpret1_output_port_net
+  );
+  relational : entity xil_defaultlib.sysgen_relational_4b283eb8ab 
+  port map (
+    clk => '0',
+    ce => '0',
+    clr => '0',
+    a => counter_op_net,
+    b => down_sample1_q_net,
+    op => relational_op_net
   );
   slice : entity xil_defaultlib.axi_qpsk_rx_tsync_xlslice 
   generic map (
@@ -4183,29 +4206,6 @@ begin
   port map (
     x => delay5_q_net,
     y => q_samples_y_net
-  );
-  counter : entity xil_defaultlib.axi_qpsk_rx_tsync_xlcounter_free 
-  generic map (
-    core_name0 => "axi_qpsk_rx_tsync_c_counter_binary_v12_0_i0",
-    op_arith => xlUnsigned,
-    op_width => 32
-  )
-  port map (
-    en => "1",
-    clr => '0',
-    rst => relational_op_net,
-    clk => clk_net_x0,
-    ce => ce_net_x0,
-    op => counter_op_net
-  );
-  relational : entity xil_defaultlib.sysgen_relational_4b283eb8ab 
-  port map (
-    clk => '0',
-    ce => '0',
-    clr => '0',
-    a => counter_op_net,
-    b => down_sample1_q_net,
-    op => relational_op_net
   );
 end structural;
 -- Generated from Simulink block 
@@ -4288,17 +4288,17 @@ end axi_qpsk_rx_tsync;
 architecture structural of axi_qpsk_rx_tsync is 
   attribute core_generation_info : string;
   attribute core_generation_info of structural : architecture is "axi_qpsk_rx_tsync,sysgen_core_2018_3,{,compilation=IP Catalog,block_icon_display=Default,family=zynquplusRFSOC,part=xczu28dr,speed=-2-e,package=ffvg1517,synthesis_language=vhdl,hdl_library=xil_defaultlib,synthesis_strategy=Vivado Synthesis Defaults,implementation_strategy=Vivado Implementation Defaults,testbench=0,interface_doc=0,ce_clr=0,clock_period=39.0625,system_simulink_period=3.90625e-08,waveform_viewer=0,axilite_interface=1,ip_catalog_plugin=0,hwcosim_burst_mode=0,simulation_time=10,addsub=38,cmult=5,concat=2,constant=15,convert=9,counter=2,delay=41,dsamp=2,fifo=1,inv=10,logical=15,mcode=1,mult=6,mux=4,register=15,reinterpret=4,relational=5,shift=16,slice=24,sprom=3,}";
+  signal rxreset : std_logic_vector( 32-1 downto 0 );
   signal ce_1_net : std_logic;
   signal syncreset : std_logic_vector( 32-1 downto 0 );
-  signal rxreset : std_logic_vector( 32-1 downto 0 );
-  signal enable : std_logic_vector( 32-1 downto 0 );
-  signal packetsizerf : std_logic_vector( 32-1 downto 0 );
-  signal transfer : std_logic_vector( 32-1 downto 0 );
   signal clk_1_net : std_logic;
+  signal transfer : std_logic_vector( 32-1 downto 0 );
   signal clk_1600_net : std_logic;
-  signal auto_restart : std_logic_vector( 32-1 downto 0 );
   signal ce_1600_net : std_logic;
   signal clk_net : std_logic;
+  signal enable : std_logic_vector( 32-1 downto 0 );
+  signal packetsizerf : std_logic_vector( 32-1 downto 0 );
+  signal auto_restart : std_logic_vector( 32-1 downto 0 );
 begin
   axi_qpsk_rx_tsync_axi_lite_interface : entity xil_defaultlib.axi_qpsk_rx_tsync_axi_lite_interface 
   port map (

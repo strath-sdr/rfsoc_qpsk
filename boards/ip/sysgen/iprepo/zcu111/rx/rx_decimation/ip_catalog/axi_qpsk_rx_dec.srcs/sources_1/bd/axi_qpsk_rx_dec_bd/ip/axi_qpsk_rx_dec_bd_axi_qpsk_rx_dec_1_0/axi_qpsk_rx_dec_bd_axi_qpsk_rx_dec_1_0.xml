@@ -1642,7 +1642,7 @@ immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spi
     <xilinx:coreExtensions>
       <xilinx:displayName>axi_qpsk_rx_dec</xilinx:displayName>
       <xilinx:definitionSource>sysgen</xilinx:definitionSource>
-      <xilinx:coreRevision>185723763</xilinx:coreRevision>
+      <xilinx:coreRevision>214065219</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_QPSK_RX_DEC_S_AXI.ADDR_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_QPSK_RX_DEC_S_AXI.ARUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>

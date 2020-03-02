@@ -1195,7 +1195,7 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
       <spirit:file>
         <spirit:name>xgui/axi_qpsk_rx_csync_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_f64a5dae</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_f92e9879</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1225,8 +1225,8 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
       </xilinx:taxonomies>
       <xilinx:displayName>axi_qpsk_rx_csync</xilinx:displayName>
       <xilinx:definitionSource>sysgen</xilinx:definitionSource>
-      <xilinx:coreRevision>185723387</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-04-09T19:52:37Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>214064858</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2020-03-02T14:28:57Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
