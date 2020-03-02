@@ -374,6 +374,33 @@ end behavior;
 library xil_defaultlib;
 use xil_defaultlib.conv_pkg.all;
 
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+entity sysgen_relational_4b283eb8ab is
+  port (
+    a : in std_logic_vector((32 - 1) downto 0);
+    b : in std_logic_vector((32 - 1) downto 0);
+    op : out std_logic_vector((1 - 1) downto 0);
+    clk : in std_logic;
+    ce : in std_logic;
+    clr : in std_logic);
+end sysgen_relational_4b283eb8ab;
+architecture behavior of sysgen_relational_4b283eb8ab
+is
+  signal a_1_31: unsigned((32 - 1) downto 0);
+  signal b_1_34: unsigned((32 - 1) downto 0);
+  signal result_12_3_rel: boolean;
+begin
+  a_1_31 <= std_logic_vector_to_unsigned(a);
+  b_1_34 <= std_logic_vector_to_unsigned(b);
+  result_12_3_rel <= a_1_31 = b_1_34;
+  op <= boolean_to_vector(result_12_3_rel);
+end behavior;
+
+library xil_defaultlib;
+use xil_defaultlib.conv_pkg.all;
+
 ---------------------------------------------------------------------
 --
 --  Filename      : xlslice.vhd
@@ -406,33 +433,6 @@ architecture behavior of axi_qpsk_rx_tsync_xlslice is
 begin
     y <= x(new_msb downto new_lsb);
 end  behavior;
-
-library xil_defaultlib;
-use xil_defaultlib.conv_pkg.all;
-
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
-entity sysgen_relational_4b283eb8ab is
-  port (
-    a : in std_logic_vector((32 - 1) downto 0);
-    b : in std_logic_vector((32 - 1) downto 0);
-    op : out std_logic_vector((1 - 1) downto 0);
-    clk : in std_logic;
-    ce : in std_logic;
-    clr : in std_logic);
-end sysgen_relational_4b283eb8ab;
-architecture behavior of sysgen_relational_4b283eb8ab
-is
-  signal a_1_31: unsigned((32 - 1) downto 0);
-  signal b_1_34: unsigned((32 - 1) downto 0);
-  signal result_12_3_rel: boolean;
-begin
-  a_1_31 <= std_logic_vector_to_unsigned(a);
-  b_1_34 <= std_logic_vector_to_unsigned(b);
-  result_12_3_rel <= a_1_31 = b_1_34;
-  op <= boolean_to_vector(result_12_3_rel);
-end behavior;
 
 library xil_defaultlib;
 use xil_defaultlib.conv_pkg.all;

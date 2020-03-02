@@ -3023,186 +3023,6 @@ use IEEE.numeric_std.all;
 library xil_defaultlib;
 use xil_defaultlib.conv_pkg.all;
 
-entity xlaxi_qpsk_rx_csync_cmpy_v6_0_i0_d4df45f10555148f1bc97124f5a651f0 is 
-  port(
-    a_im:in std_logic_vector(15 downto 0);
-    a_re:in std_logic_vector(15 downto 0);
-    b_im:in std_logic_vector(15 downto 0);
-    b_re:in std_logic_vector(15 downto 0);
-    ce:in std_logic;
-    ce_25600:in std_logic;
-    clk:in std_logic;
-    clk_25600:in std_logic;
-    p_im:out std_logic_vector(32 downto 0);
-    p_re:out std_logic_vector(32 downto 0)
-  );
-end xlaxi_qpsk_rx_csync_cmpy_v6_0_i0_d4df45f10555148f1bc97124f5a651f0; 
-
-architecture behavior of xlaxi_qpsk_rx_csync_cmpy_v6_0_i0_d4df45f10555148f1bc97124f5a651f0  is
-  component axi_qpsk_rx_csync_cmpy_v6_0_i0
-    port(
-      aclk:in std_logic;
-      aclken:in std_logic;
-      m_axis_dout_tdata:out std_logic_vector(79 downto 0);
-      m_axis_dout_tvalid:out std_logic;
-      s_axis_a_tdata:in std_logic_vector(31 downto 0);
-      s_axis_a_tvalid:in std_logic;
-      s_axis_b_tdata:in std_logic_vector(31 downto 0);
-      s_axis_b_tvalid:in std_logic
-    );
-end component;
-signal m_axis_dout_tdata_net: std_logic_vector(79 downto 0) := (others=>'0');
-signal p_im_ps_net: std_logic_vector(32 downto 0) := (others=>'0');
-signal p_re_ps_net: std_logic_vector(32 downto 0) := (others=>'0');
-signal m_axis_dout_tvalid: std_logic := '0';
-signal s_axis_a_tdata_net: std_logic_vector(31 downto 0) := (others=>'0');
-signal s_axis_b_tdata_net: std_logic_vector(31 downto 0) := (others=>'0');
-begin
-  p_im_ps_net <= m_axis_dout_tdata_net(72 downto 40);
-  p_re_ps_net <= m_axis_dout_tdata_net(32 downto 0);
-  s_axis_a_tdata_net(31 downto 16) <= a_im;
-  s_axis_a_tdata_net(15 downto 0) <= a_re;
-  s_axis_b_tdata_net(31 downto 16) <= b_im;
-  s_axis_b_tdata_net(15 downto 0) <= b_re;
-  p_im_ps_net_synchronizer : entity work.synth_reg_w_init
-    generic map(
-        width => 33,
-        init_index => 0,
-        init_value => "0",
-        latency => 1
-    )
-    port map (
-        i => p_im_ps_net,
-        ce => ce_25600,
-        clr => '0',
-        clk => clk_25600, 
-        o => p_im
-    );
-  p_re_ps_net_synchronizer : entity work.synth_reg_w_init
-    generic map(
-        width => 33,
-        init_index => 0,
-        init_value => "0",
-        latency => 1
-    )
-    port map (
-        i => p_re_ps_net,
-        ce => ce_25600,
-        clr => '0',
-        clk => clk_25600, 
-        o => p_re
-    );
-  axi_qpsk_rx_csync_cmpy_v6_0_i0_instance : axi_qpsk_rx_csync_cmpy_v6_0_i0
-    port map(
-      aclk=>clk,
-      aclken=>ce,
-      m_axis_dout_tdata=>m_axis_dout_tdata_net,
-      m_axis_dout_tvalid=>m_axis_dout_tvalid,
-      s_axis_a_tdata=>s_axis_a_tdata_net,
-      s_axis_a_tvalid=>ce,
-      s_axis_b_tdata=>s_axis_b_tdata_net,
-      s_axis_b_tvalid=>ce
-    );
-end behavior;
-
-
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
-
-library xil_defaultlib;
-use xil_defaultlib.conv_pkg.all;
-
-entity xlaxi_qpsk_rx_csync_cmpy_v6_0_i1_c73f94df2cde07643235f0dccf6e8a54 is 
-  port(
-    a_im:in std_logic_vector(18 downto 0);
-    a_re:in std_logic_vector(18 downto 0);
-    b_im:in std_logic_vector(18 downto 0);
-    b_re:in std_logic_vector(18 downto 0);
-    ce:in std_logic;
-    ce_25600:in std_logic;
-    clk:in std_logic;
-    clk_25600:in std_logic;
-    p_im:out std_logic_vector(38 downto 0);
-    p_re:out std_logic_vector(38 downto 0)
-  );
-end xlaxi_qpsk_rx_csync_cmpy_v6_0_i1_c73f94df2cde07643235f0dccf6e8a54; 
-
-architecture behavior of xlaxi_qpsk_rx_csync_cmpy_v6_0_i1_c73f94df2cde07643235f0dccf6e8a54  is
-  component axi_qpsk_rx_csync_cmpy_v6_0_i1
-    port(
-      aclk:in std_logic;
-      aclken:in std_logic;
-      m_axis_dout_tdata:out std_logic_vector(79 downto 0);
-      m_axis_dout_tvalid:out std_logic;
-      s_axis_a_tdata:in std_logic_vector(47 downto 0);
-      s_axis_a_tvalid:in std_logic;
-      s_axis_b_tdata:in std_logic_vector(47 downto 0);
-      s_axis_b_tvalid:in std_logic
-    );
-end component;
-signal m_axis_dout_tdata_net: std_logic_vector(79 downto 0) := (others=>'0');
-signal p_im_ps_net: std_logic_vector(38 downto 0) := (others=>'0');
-signal p_re_ps_net: std_logic_vector(38 downto 0) := (others=>'0');
-signal m_axis_dout_tvalid: std_logic := '0';
-signal s_axis_a_tdata_net: std_logic_vector(47 downto 0) := (others=>'0');
-signal s_axis_b_tdata_net: std_logic_vector(47 downto 0) := (others=>'0');
-begin
-  p_im_ps_net <= m_axis_dout_tdata_net(78 downto 40);
-  p_re_ps_net <= m_axis_dout_tdata_net(38 downto 0);
-  s_axis_a_tdata_net(42 downto 24) <= a_im;
-  s_axis_a_tdata_net(18 downto 0) <= a_re;
-  s_axis_b_tdata_net(42 downto 24) <= b_im;
-  s_axis_b_tdata_net(18 downto 0) <= b_re;
-  p_im_ps_net_synchronizer : entity work.synth_reg_w_init
-    generic map(
-        width => 39,
-        init_index => 0,
-        init_value => "0",
-        latency => 1
-    )
-    port map (
-        i => p_im_ps_net,
-        ce => ce_25600,
-        clr => '0',
-        clk => clk_25600, 
-        o => p_im
-    );
-  p_re_ps_net_synchronizer : entity work.synth_reg_w_init
-    generic map(
-        width => 39,
-        init_index => 0,
-        init_value => "0",
-        latency => 1
-    )
-    port map (
-        i => p_re_ps_net,
-        ce => ce_25600,
-        clr => '0',
-        clk => clk_25600, 
-        o => p_re
-    );
-  axi_qpsk_rx_csync_cmpy_v6_0_i1_instance : axi_qpsk_rx_csync_cmpy_v6_0_i1
-    port map(
-      aclk=>clk,
-      aclken=>ce,
-      m_axis_dout_tdata=>m_axis_dout_tdata_net,
-      m_axis_dout_tvalid=>m_axis_dout_tvalid,
-      s_axis_a_tdata=>s_axis_a_tdata_net,
-      s_axis_a_tvalid=>ce,
-      s_axis_b_tdata=>s_axis_b_tdata_net,
-      s_axis_b_tvalid=>ce
-    );
-end behavior;
-
-
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
-
-library xil_defaultlib;
-use xil_defaultlib.conv_pkg.all;
-
 entity xlaxi_qpsk_rx_csync_cmpy_v6_0_i0_152106942e580a70937a347604186697 is 
   port(
     a_im:in std_logic_vector(15 downto 0);
@@ -3273,6 +3093,96 @@ begin
         o => p_re
     );
   axi_qpsk_rx_csync_cmpy_v6_0_i0_instance : axi_qpsk_rx_csync_cmpy_v6_0_i0
+    port map(
+      aclk=>clk,
+      aclken=>ce,
+      m_axis_dout_tdata=>m_axis_dout_tdata_net,
+      m_axis_dout_tvalid=>m_axis_dout_tvalid,
+      s_axis_a_tdata=>s_axis_a_tdata_net,
+      s_axis_a_tvalid=>ce,
+      s_axis_b_tdata=>s_axis_b_tdata_net,
+      s_axis_b_tvalid=>ce
+    );
+end behavior;
+
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+library xil_defaultlib;
+use xil_defaultlib.conv_pkg.all;
+
+entity xlaxi_qpsk_rx_csync_cmpy_v6_0_i1_7cee748c1baeb2f328794d1f881a2e3c is 
+  port(
+    a_im:in std_logic_vector(18 downto 0);
+    a_re:in std_logic_vector(18 downto 0);
+    b_im:in std_logic_vector(18 downto 0);
+    b_re:in std_logic_vector(18 downto 0);
+    ce:in std_logic;
+    ce_6400:in std_logic;
+    clk:in std_logic;
+    clk_6400:in std_logic;
+    p_im:out std_logic_vector(38 downto 0);
+    p_re:out std_logic_vector(38 downto 0)
+  );
+end xlaxi_qpsk_rx_csync_cmpy_v6_0_i1_7cee748c1baeb2f328794d1f881a2e3c; 
+
+architecture behavior of xlaxi_qpsk_rx_csync_cmpy_v6_0_i1_7cee748c1baeb2f328794d1f881a2e3c  is
+  component axi_qpsk_rx_csync_cmpy_v6_0_i1
+    port(
+      aclk:in std_logic;
+      aclken:in std_logic;
+      m_axis_dout_tdata:out std_logic_vector(79 downto 0);
+      m_axis_dout_tvalid:out std_logic;
+      s_axis_a_tdata:in std_logic_vector(47 downto 0);
+      s_axis_a_tvalid:in std_logic;
+      s_axis_b_tdata:in std_logic_vector(47 downto 0);
+      s_axis_b_tvalid:in std_logic
+    );
+end component;
+signal m_axis_dout_tdata_net: std_logic_vector(79 downto 0) := (others=>'0');
+signal p_im_ps_net: std_logic_vector(38 downto 0) := (others=>'0');
+signal p_re_ps_net: std_logic_vector(38 downto 0) := (others=>'0');
+signal m_axis_dout_tvalid: std_logic := '0';
+signal s_axis_a_tdata_net: std_logic_vector(47 downto 0) := (others=>'0');
+signal s_axis_b_tdata_net: std_logic_vector(47 downto 0) := (others=>'0');
+begin
+  p_im_ps_net <= m_axis_dout_tdata_net(78 downto 40);
+  p_re_ps_net <= m_axis_dout_tdata_net(38 downto 0);
+  s_axis_a_tdata_net(42 downto 24) <= a_im;
+  s_axis_a_tdata_net(18 downto 0) <= a_re;
+  s_axis_b_tdata_net(42 downto 24) <= b_im;
+  s_axis_b_tdata_net(18 downto 0) <= b_re;
+  p_im_ps_net_synchronizer : entity work.synth_reg_w_init
+    generic map(
+        width => 39,
+        init_index => 0,
+        init_value => "0",
+        latency => 1
+    )
+    port map (
+        i => p_im_ps_net,
+        ce => ce_6400,
+        clr => '0',
+        clk => clk_6400, 
+        o => p_im
+    );
+  p_re_ps_net_synchronizer : entity work.synth_reg_w_init
+    generic map(
+        width => 39,
+        init_index => 0,
+        init_value => "0",
+        latency => 1
+    )
+    port map (
+        i => p_re_ps_net,
+        ce => ce_6400,
+        clr => '0',
+        clk => clk_6400, 
+        o => p_re
+    );
+  axi_qpsk_rx_csync_cmpy_v6_0_i1_instance : axi_qpsk_rx_csync_cmpy_v6_0_i1
     port map(
       aclk=>clk,
       aclken=>ce,

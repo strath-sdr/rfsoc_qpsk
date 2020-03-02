@@ -1447,7 +1447,7 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
     <xilinx:coreExtensions>
       <xilinx:displayName>axi_qpsk_rx_csync</xilinx:displayName>
       <xilinx:definitionSource>sysgen</xilinx:definitionSource>
-      <xilinx:coreRevision>185723387</xilinx:coreRevision>
+      <xilinx:coreRevision>214064858</xilinx:coreRevision>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>

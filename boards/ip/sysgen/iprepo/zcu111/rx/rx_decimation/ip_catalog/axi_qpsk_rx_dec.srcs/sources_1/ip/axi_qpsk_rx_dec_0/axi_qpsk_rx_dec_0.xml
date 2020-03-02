@@ -1642,7 +1642,7 @@ immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}</spi
     <xilinx:coreExtensions>
       <xilinx:displayName>axi_qpsk_rx_dec</xilinx:displayName>
       <xilinx:definitionSource>sysgen</xilinx:definitionSource>
-      <xilinx:coreRevision>185723763</xilinx:coreRevision>
+      <xilinx:coreRevision>214065219</xilinx:coreRevision>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>

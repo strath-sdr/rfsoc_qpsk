@@ -118,7 +118,7 @@ class RxTSync(DataInspector):
         super().__init__(description, 16)
         # Set loop filter reset counter to 1 second
         # (@ 16kHz)
-        self.sync_reset=16000
+        self.sync_reset=0
 
     bindto = ['UoS:SysGen:axi_qpsk_rx_tsync:1.0']
 setattr(RxTSync, 'sync_reset', _create_mmio_property(20))
