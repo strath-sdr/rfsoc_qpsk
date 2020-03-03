@@ -94,7 +94,7 @@ for (name, addr) in _data_inspector_props:
     
 class RxDecimator(DataInspector):
     def __init__(self, description):
-        super().__init__(description, 32)
+        super().__init__(description, 128)
     
     bindto = ['UoS:SysGen:axi_qpsk_rx_dec:1.0']
 
