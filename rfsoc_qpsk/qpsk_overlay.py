@@ -60,7 +60,7 @@ class QpskOverlay(Overlay):
         if bitfile_name is None:
             this_dir = os.path.dirname(__file__)
             bitfile_name = os.path.join(this_dir, 'bitstream', 'rfsoc_qpsk.bit')
-
+        
         # Set optional theming for dark mode
         if dark_theme:
             from IPython.display import display, HTML
@@ -100,6 +100,10 @@ class QpskOverlay(Overlay):
 
         # Create Overlay
         super().__init__(bitfile_name, **kwargs)
+
+        # Initialise I2C control drivers
+        if os.getenv('BOARD')=='XUPRFSOC':
+            self.init_i2c()
 
         # Extact in-use dataconverter objects with friendly names
         self.rf = self.usp_rf_data_converter_0
@@ -151,6 +155,28 @@ class QpskOverlay(Overlay):
         self.qpsk_rx.qpsk_rx_tsync.enable=1
 
         self.timers = TimerRegistry()
+
+    def init_i2c(self):
+        """Initialize the I2C control drivers on XUPRFSOC.
+        This should happen after a bitstream is loaded since I2C reset
+        is connected to PL pins. The I2C-related drivers are made loadable
+        modules so they can be removed or inserted.
+        """
+        module_list = ['i2c_dev', 'i2c_mux_pca954x', 'i2c_mux']
+        for module in module_list:
+            cmd = "if lsmod | grep {0}; then rmmod {0}; fi".format(module)
+            ret = os.system(cmd)
+            if ret:
+                raise RuntimeError(
+                    'Removing kernel module {} failed.'.format(module))
+
+        module_list.reverse()
+        for module in module_list:
+            cmd = "modprobe {}".format(module)
+            ret = os.system(cmd)
+            if ret:
+                raise RuntimeError(
+                    'Inserting kernel module {} failed.'.format(module))
 
     def plot_group(self, group_name, domains, get_time_data, fs, get_freq_data=None, get_const_data=None):
         """Create a group of plots for a given set of data generators.
