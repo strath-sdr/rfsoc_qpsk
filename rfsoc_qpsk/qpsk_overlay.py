@@ -91,13 +91,6 @@ class QpskOverlay(Overlay):
             </style>
             """))
 
-        # Set FPD and LPD interface widths
-        from pynq import MMIO
-        fpd_cfg = MMIO(0xfd615000, 4)
-        fpd_cfg.write(0, 0x00000A00)
-        lpd_cfg = MMIO(0xff419000, 4)
-        lpd_cfg.write(0, 0x00000000)
-
         # Create Overlay
         super().__init__(bitfile_name, **kwargs)
 
