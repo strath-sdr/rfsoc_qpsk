@@ -363,6 +363,10 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
           <spirit:name>ASSOCIATED_RESET</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.CLK.ASSOCIATED_RESET">axi_qpsk_tx_aresetn</spirit:value>
         </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.CLK.FREQ_HZ">25600000</spirit:value>
+        </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
     <spirit:busInterface>
@@ -383,7 +387,7 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>POLARITY</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_QPSK_TX_ARESETN.POLARITY" spirit:choiceRef="choice_list_74b5137e">ACTIVE_LOW</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_QPSK_TX_ARESETN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -421,6 +425,12 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
         <spirit:fileSetRef>
           <spirit:localName>xilinx_vhdlsynthesis_view_fileset</spirit:localName>
         </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>5904516e</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
       </spirit:view>
       <spirit:view>
         <spirit:name>xilinx_vhdlbehavioralsimulation</spirit:name>
@@ -431,6 +441,12 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
         <spirit:fileSetRef>
           <spirit:localName>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:localName>
         </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>b148a04e</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
       </spirit:view>
       <spirit:view>
         <spirit:name>xilinx_softwaredriver</spirit:name>
@@ -439,6 +455,12 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
         <spirit:fileSetRef>
           <spirit:localName>xilinx_softwaredriver_view_fileset</spirit:localName>
         </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>dca43f86</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
       </spirit:view>
       <spirit:view>
         <spirit:name>xilinx_xpgui</spirit:name>
@@ -447,6 +469,12 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
         <spirit:fileSetRef>
           <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
         </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>f92e9879</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
       </spirit:view>
       <spirit:view>
         <spirit:name>xilinx_utilityxitfiles</spirit:name>
@@ -455,6 +483,12 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
         <spirit:fileSetRef>
           <spirit:localName>xilinx_utilityxitfiles_view_fileset</spirit:localName>
         </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>67cf41f3</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
       </spirit:view>
     </spirit:views>
     <spirit:ports>
@@ -1048,7 +1082,7 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
   </spirit:model>
   <spirit:choices>
     <spirit:choice>
-      <spirit:name>choice_list_74b5137e</spirit:name>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
       <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
       <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
     </spirit:choice>
@@ -1429,11 +1463,27 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
       </xilinx:taxonomies>
       <xilinx:displayName>axi_qpsk_tx</xilinx:displayName>
       <xilinx:definitionSource>sysgen</xilinx:definitionSource>
-      <xilinx:coreRevision>174317293</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-11-28T13:28:36Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>174317294</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2020-08-04T00:11:01Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20866874_ARCHIVE_LOCATION">/group/xlabs-co/lewisd/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/tx</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54d0f856_ARCHIVE_LOCATION">/group/xlabs-co/lewisd/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/tx</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@670ceb7_ARCHIVE_LOCATION">/group/xlabs-co/lewisd/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/tx</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@149741c2_ARCHIVE_LOCATION">/group/xlabs-co/lewisd/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/tx</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@dd38af0_ARCHIVE_LOCATION">/group/xlabs-co/lewisd/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/tx</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@604a709f_ARCHIVE_LOCATION">/group/xlabs-co/lewisd/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/tx</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3eee5bfb_ARCHIVE_LOCATION">/group/xlabs-co/lewisd/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/tx</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f03767b_ARCHIVE_LOCATION">/group/xlabs-co/lewisd/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/tx</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f4324d5_ARCHIVE_LOCATION">/group/xlabs-co/lewisd/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/tx</xilinx:tag>
+      </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2018.2</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="01a6d658"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="518a6b32"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="11e9b193"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="c16f5c49"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="ab41d490"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

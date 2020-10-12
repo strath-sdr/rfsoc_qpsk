@@ -1,4 +1,4 @@
-# Vivado 2018.3
+# Vivado 2020.1
 # RFSoC QPSK Transceiver Demo
 # Copyright (c) 2019, Louise Crockett, Josh Goldsmith, David Northcote, and Craig Ramsay
 # All rights reserved
