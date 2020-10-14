@@ -14,7 +14,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set FPGAClockPeriod 39.0625
 	set GenerateTestBench 0
 	set HDLLanguage {vhdl}
-	set IPOOCCacheRootPath {/home/josh/.Xilinx/Sysgen/SysgenVivado/lnx64.o/ip}
+	set IPOOCCacheRootPath {C:/Users/david/AppData/Local/Xilinx/Sysgen/SysgenVivado/win64.o/ip}
 	set IP_Auto_Infer {1}
 	set IP_Categories_Text {System Generator for DSP}
 	set IP_Common_Repos {0}
@@ -23,12 +23,12 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set IP_Library_Text {SysGen}
 	set IP_LifeCycle_Menu {2}
 	set IP_Logo {sysgen_icon_100.png}
-	set IP_Name {axi_qpsk_rx_coarse_sync}
-	set IP_Revision {214064858}
+	set IP_Name {axi_qpsk_rx_csync}
+	set IP_Revision {233582042}
 	set IP_Socket_IP {0}
 	set IP_Socket_IP_Proj_Path {}
 	set IP_Vendor_Text {UoS}
-	set IP_Version_Text {1.0}
+	set IP_Version_Text {1.1}
 	set ImplStrategyName {Vivado Implementation Defaults}
 	set PostProjectCreationProc {dsp_package_for_vivado_ip_integrator}
 	set Project {axi_qpsk_rx_csync}
@@ -42,9 +42,9 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 		{{single_reg_w_init.vhd} -lib {xil_defaultlib}}
 		{{xlclockdriver_rd.vhd} -lib {xil_defaultlib}}
 		{{vivado_ip.tcl}}
-		{{axi_qpsk_rx_csync_blk_mem_gen_i0_vivado.coe}}
-		{{axi_qpsk_rx_csync_blk_mem_gen_i1_vivado.coe}}
-		{{axi_qpsk_rx_csync_blk_mem_gen_i2_vivado.coe}}
+		{{xpm_288ad8_vivado.mem}}
+		{{xpm_62270a_vivado.mem}}
+		{{xpm_3986c8_vivado.mem}}
 		{{axi_qpsk_rx_csync_axi_lite_interface_verilog.v}}
 		{{conv_pkg.v}}
 		{{synth_reg.v}}
@@ -69,9 +69,9 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set SimulationTime {10000000239.06249809 ns}
 	set SynthStrategyName {Vivado Synthesis Defaults}
 	set SynthesisTool {Vivado}
-	set TargetDir {/home/josh/git/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/rx/rx_csync}
+	set TargetDir {C:/GitHub/strath_sdr/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/rx/rx_csync}
 	set TopLevelModule {axi_qpsk_rx_csync}
-	set TopLevelSimulinkHandle 2.00037
+	set TopLevelSimulinkHandle 837
 	set VHDLLib {xil_defaultlib}
 	set TopLevelPortInterface {}
 	dict set TopLevelPortInterface m_axis_tap_tready Name {m_axis_tap_tready}
