@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------
-// System Generator version 2018.3 Verilog source file.
+// System Generator version 2020.1 Verilog source file.
 //
-// Copyright(C) 2018 by Xilinx, Inc.  All rights reserved.  This
+// Copyright(C) 2020 by Xilinx, Inc.  All rights reserved.  This
 // text/file contains proprietary, confidential information of Xilinx,
 // Inc., is distributed under license from Xilinx, Inc., and may be used,
 // copied and/or disclosed only pursuant to the terms of a valid license
@@ -30,7 +30,7 @@
 // sole risk and will be unsupported.
 //
 // This copyright and support notice must be retained as part of this
-// text at all times.  (c) Copyright 1995-2018 Xilinx, Inc.  All rights
+// text at all times.  (c) Copyright 1995-2020 Xilinx, Inc.  All rights
 // reserved.
 //-----------------------------------------------------------------
 

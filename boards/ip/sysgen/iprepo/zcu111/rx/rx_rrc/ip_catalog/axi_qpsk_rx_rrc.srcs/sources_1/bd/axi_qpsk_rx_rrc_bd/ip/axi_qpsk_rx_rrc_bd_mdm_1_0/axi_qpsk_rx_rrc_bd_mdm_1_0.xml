@@ -1051,6 +1051,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_0.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_0.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_0.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -1170,6 +1174,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_1.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_1.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -1293,6 +1301,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_2.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_2.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_2.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -1412,6 +1424,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_3.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_3.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -1535,6 +1551,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_4.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_4.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_4.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -1654,6 +1674,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_5.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_5.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -1777,6 +1801,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_6.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_6.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_6.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -1896,6 +1924,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_7.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_7.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -2019,6 +2051,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_8.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_8.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_8.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -2138,6 +2174,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_9.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_9.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -2261,6 +2301,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_10.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_10.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_10.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -2380,6 +2424,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_11.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_11.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -2503,6 +2551,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_12.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_12.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_12.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -2622,6 +2674,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_13.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_13.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -2745,6 +2801,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_14.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_14.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_14.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -2864,6 +2924,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_15.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_15.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -2987,6 +3051,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_16.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_16.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_16.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -3106,6 +3174,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_17.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_17.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -3229,6 +3301,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_18.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_18.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_18.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -3348,6 +3424,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_19.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_19.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -3471,6 +3551,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_20.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_20.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_20.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -3590,6 +3674,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_21.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_21.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -3713,6 +3801,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_22.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_22.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_22.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -3832,6 +3924,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_23.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_23.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -3955,6 +4051,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_24.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_24.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_24.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -4074,6 +4174,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_25.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_25.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -4197,6 +4301,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_26.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_26.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_26.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -4316,6 +4424,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_27.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_27.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -4439,6 +4551,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_28.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_28.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_28.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -4558,6 +4674,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_29.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_29.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -4681,6 +4801,10 @@
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_30.DATA_WIDTH">32</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_30.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
           <spirit:value spirit:id="BUSIFPARAM_VALUE.LMB_30.READ_WRITE_MODE">READ_WRITE</spirit:value>
         </spirit:parameter>
@@ -4800,6 +4924,10 @@
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
           <spirit:value spirit:format="long" spirit:id="BUSIFPARAM_VALUE.LMB_31.DATA_WIDTH">32</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PROTOCOL</spirit:name>
+          <spirit:value spirit:resolve="dependent" spirit:id="BUSIFPARAM_VALUE.LMB_31.PROTOCOL" spirit:dependency="substring(&quot;STANDARDFREQUENCY&quot;, 9 * number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))), 8 + number((spirit:decode(id(&apos;MODELPARAM_VALUE.C_LMB_PROTOCOL&apos;)))) )">STANDARD</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
@@ -5064,6 +5192,15 @@
           <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.CLK.S_AXI_ACLK.FREQ_HZ">100000000</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>FREQ_TOLERANCE_HZ</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.CLK.S_AXI_ACLK.FREQ_TOLERANCE_HZ">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>PHASE</spirit:name>
           <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.CLK.S_AXI_ACLK.PHASE">0.000</spirit:value>
           <spirit:vendorExtensions>
@@ -5172,6 +5309,15 @@
           <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.CLK.M_AXI_ACLK.FREQ_HZ">100000000</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
+          <spirit:name>FREQ_TOLERANCE_HZ</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.CLK.M_AXI_ACLK.FREQ_TOLERANCE_HZ">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
+        </spirit:parameter>
+        <spirit:parameter>
           <spirit:name>PHASE</spirit:name>
           <spirit:value spirit:format="float" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.CLK.M_AXI_ACLK.PHASE">0.000</spirit:value>
           <spirit:vendorExtensions>
@@ -5278,6 +5424,15 @@
           <spirit:displayName>M_AXIS_ACLK frequency</spirit:displayName>
           <spirit:description>M_AXIS_ACLK frequency</spirit:description>
           <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.CLK.M_AXIS_ACLK.FREQ_HZ">100000000</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>FREQ_TOLERANCE_HZ</spirit:name>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.CLK.M_AXIS_ACLK.FREQ_TOLERANCE_HZ">0</spirit:value>
+          <spirit:vendorExtensions>
+            <xilinx:parameterInfo>
+              <xilinx:parameterUsage>none</xilinx:parameterUsage>
+            </xilinx:parameterInfo>
+          </spirit:vendorExtensions>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PHASE</spirit:name>
@@ -28387,6 +28542,14 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
+            <spirit:name>TMS</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>bscan_ext_tms</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
             <spirit:name>UPDATE</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
@@ -29187,7 +29350,7 @@
         <spirit:usage>register</spirit:usage>
         <spirit:access>read-write</spirit:access>
         <spirit:register>
-          <spirit:name>UART Receive</spirit:name>
+          <spirit:name>UART_Receive</spirit:name>
           <spirit:displayName>JTAG UART Receive Data</spirit:displayName>
           <spirit:description>JTAG UART Receive Data</spirit:description>
           <spirit:addressOffset>0x0</spirit:addressOffset>
@@ -29215,13 +29378,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.UART Receive" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_UART&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.UART_Receive" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_UART&apos;)) = 1)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>UART Transmit</spirit:name>
+          <spirit:name>UART_Transmit</spirit:name>
           <spirit:displayName>JTAG UART Transmit Data</spirit:displayName>
           <spirit:description>JTAG UART Transmit Data</spirit:description>
           <spirit:addressOffset>0x4</spirit:addressOffset>
@@ -29248,13 +29411,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.UART Transmit" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_UART&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.UART_Transmit" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_UART&apos;)) = 1)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>UART Status</spirit:name>
+          <spirit:name>UART_Status</spirit:name>
           <spirit:displayName>JTAG UART Status Register</spirit:displayName>
           <spirit:description>JTAG UART Status Register</spirit:description>
           <spirit:addressOffset>0x8</spirit:addressOffset>
@@ -29265,7 +29428,7 @@
             <spirit:value spirit:format="long">0x0</spirit:value>
           </spirit:reset>
           <spirit:field>
-            <spirit:name>RX FIFO Valid Data</spirit:name>
+            <spirit:name>RX_FIFO_Valid_Data</spirit:name>
             <spirit:displayName>RX FIFO Valid Data</spirit:displayName>
             <spirit:description>Indicates if the receive FIFO has valid data:
   0 - Receive FIFO is empty.
@@ -29282,7 +29445,7 @@
             <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
           </spirit:field>
           <spirit:field>
-            <spirit:name>RX FIFO Full</spirit:name>
+            <spirit:name>RX_FIFO_Full</spirit:name>
             <spirit:displayName>RX FIFO Full</spirit:displayName>
             <spirit:description>Indicates if the receive FIFO is full:
   0 - Receive FIFO is not full.
@@ -29299,7 +29462,7 @@
             <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
           </spirit:field>
           <spirit:field>
-            <spirit:name>TX FIFO Empty</spirit:name>
+            <spirit:name>TX_FIFO_Empty</spirit:name>
             <spirit:displayName>TX FIFO Empty</spirit:displayName>
             <spirit:description>Indicates if the transmit FIFO is empty:
   0 - Transmit FIFO is not empty.
@@ -29316,7 +29479,7 @@
             <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
           </spirit:field>
           <spirit:field>
-            <spirit:name>TX FIFO Full</spirit:name>
+            <spirit:name>TX_FIFO_Full</spirit:name>
             <spirit:displayName>TX FIFO Full</spirit:displayName>
             <spirit:description>Indicates if the transmit FIFO is full:
   0 - Transmit FIFO is not full.
@@ -29333,7 +29496,7 @@
             <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
           </spirit:field>
           <spirit:field>
-            <spirit:name>Interrupt Enabled</spirit:name>
+            <spirit:name>Interrupt_Enabled</spirit:name>
             <spirit:displayName>Interrupt Enabled</spirit:displayName>
             <spirit:description>Indicates that interrupt is enabled:
   0 - Interrupt is disabled.
@@ -29352,13 +29515,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.UART Status" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_UART&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.UART_Status" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_UART&apos;)) = 1)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>UART Control</spirit:name>
+          <spirit:name>UART_Control</spirit:name>
           <spirit:displayName>JTAG UART Control Register</spirit:displayName>
           <spirit:description>JTAG UART Control Register</spirit:description>
           <spirit:addressOffset>0xC</spirit:addressOffset>
@@ -29369,7 +29532,7 @@
             <spirit:value spirit:format="long">0x0</spirit:value>
           </spirit:reset>
           <spirit:field>
-            <spirit:name>Reset TX FIFO</spirit:name>
+            <spirit:name>Reset_TX_FIFO</spirit:name>
             <spirit:displayName>Reset TX FIFO</spirit:displayName>
             <spirit:description>Reset/clear the transmit FIFO:
   0 - Do nothing.
@@ -29386,7 +29549,7 @@
             <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
           </spirit:field>
           <spirit:field>
-            <spirit:name>Reset RX FIFO</spirit:name>
+            <spirit:name>Reset_RX_FIFO</spirit:name>
             <spirit:displayName>Reset RX FIFO</spirit:displayName>
             <spirit:description>Reset/clear the receive FIFO:
   0 - Do nothing.
@@ -29403,7 +29566,7 @@
             <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
           </spirit:field>
           <spirit:field>
-            <spirit:name>Clear EXT_BRK</spirit:name>
+            <spirit:name>Clear_EXT_BRK</spirit:name>
             <spirit:displayName>Clear EXT_BRK</spirit:displayName>
             <spirit:description>Clear the EXT_BRK signal set by JTAG:
   0 - Do nothing.
@@ -29420,7 +29583,7 @@
             <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
           </spirit:field>
           <spirit:field>
-            <spirit:name>Interrupt Enabled</spirit:name>
+            <spirit:name>Interrupt_Enabled</spirit:name>
             <spirit:displayName>Interrupt Enabled</spirit:displayName>
             <spirit:description>Indicates interrupt for the MDM JTAG UART:
   0 - Disable interrupt interrupt.
@@ -29439,13 +29602,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.UART Control" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_UART&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.UART_Control" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_USE_UART&apos;)) = 1)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Debug Status</spirit:name>
+          <spirit:name>Debug_Status</spirit:name>
           <spirit:displayName>Debug Register Access Status Register</spirit:displayName>
           <spirit:description>Debug Register Access Status Register</spirit:description>
           <spirit:addressOffset>0x10</spirit:addressOffset>
@@ -29475,13 +29638,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Debug Status" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Debug_Status" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Debug Control</spirit:name>
+          <spirit:name>Debug_Control</spirit:name>
           <spirit:displayName>Debug Register Access Control Register</spirit:displayName>
           <spirit:description>Debug Register Access Control Register</spirit:description>
           <spirit:addressOffset>0x10</spirit:addressOffset>
@@ -29492,7 +29655,7 @@
             <spirit:value spirit:format="long">0x0</spirit:value>
           </spirit:reset>
           <spirit:field>
-            <spirit:name>Bit Size</spirit:name>
+            <spirit:name>Bit_Size</spirit:name>
             <spirit:displayName>Bit Size</spirit:displayName>
             <spirit:description>Number of bits in the accessed debug register - 1</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
@@ -29506,7 +29669,7 @@
             <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
           </spirit:field>
           <spirit:field>
-            <spirit:name>MDM Command</spirit:name>
+            <spirit:name>MDM_Command</spirit:name>
             <spirit:displayName>MDM Command</spirit:displayName>
             <spirit:description>MDM command.</spirit:description>
             <spirit:bitOffset>9</spirit:bitOffset>
@@ -29520,7 +29683,7 @@
             <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
           </spirit:field>
           <spirit:field>
-            <spirit:name>Access MDM</spirit:name>
+            <spirit:name>Access_MDM</spirit:name>
             <spirit:displayName>Access MDM</spirit:displayName>
             <spirit:description>Access MDM or MicroBlaze Debug register:
   0 - MicroBlaze debug register access.
@@ -29537,7 +29700,7 @@
             <spirit:testable spirit:testConstraint="unconstrained">false</spirit:testable>
           </spirit:field>
           <spirit:field>
-            <spirit:name>Access Lock Type</spirit:name>
+            <spirit:name>Access_Lock_Type</spirit:name>
             <spirit:displayName>Access Lock Type</spirit:displayName>
             <spirit:description>Access lock type write:
   0 - Release access lock to abort atomic sequence.
@@ -29558,13 +29721,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Debug Control" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Debug_Control" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Debug Data</spirit:name>
+          <spirit:name>Debug_Data</spirit:name>
           <spirit:displayName>Debug Register Access Data Register</spirit:displayName>
           <spirit:description>Debug Register Access Data Register</spirit:description>
           <spirit:addressOffset>0x14</spirit:addressOffset>
@@ -29575,7 +29738,7 @@
             <spirit:value spirit:format="long">0x0</spirit:value>
           </spirit:reset>
           <spirit:field>
-            <spirit:name>DBG Data</spirit:name>
+            <spirit:name>DBG_Data</spirit:name>
             <spirit:displayName>DBG Data</spirit:displayName>
             <spirit:description>Read or write debug register data indicated by DBG_CTRL.</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
@@ -29592,13 +29755,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Debug Data" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Debug_Data" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Debug Lock</spirit:name>
+          <spirit:name>Debug_Lock</spirit:name>
           <spirit:displayName>Debug Register Access Locking Register</spirit:displayName>
           <spirit:description>Debug Register Access Locking Register</spirit:description>
           <spirit:addressOffset>0x18</spirit:addressOffset>
@@ -29625,13 +29788,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Debug Lock" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Debug_Lock" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Performance Counter Control</spirit:name>
+          <spirit:name>Performance_Counter_Control</spirit:name>
           <spirit:displayName>Debug Register Performance Counter Control Register</spirit:displayName>
           <spirit:description>Debug Register Performance Counter Control Register</spirit:description>
           <spirit:addressOffset>0x5440</spirit:addressOffset>
@@ -29658,13 +29821,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Performance Counter Control" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Performance_Counter_Control" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Performance Counter Command</spirit:name>
+          <spirit:name>Performance_Counter_Command</spirit:name>
           <spirit:displayName>Debug Register Performance Counter Command Register</spirit:displayName>
           <spirit:description>Debug Register Performance Counter Command Register</spirit:description>
           <spirit:addressOffset>0x5480</spirit:addressOffset>
@@ -29747,13 +29910,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Performance Counter Command" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Performance_Counter_Command" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Performance Counter Status</spirit:name>
+          <spirit:name>Performance_Counter_Status</spirit:name>
           <spirit:displayName>Debug Register Performance Counter Status Register</spirit:displayName>
           <spirit:description>Debug Register Performance Counter Status Register</spirit:description>
           <spirit:addressOffset>0x54C0</spirit:addressOffset>
@@ -29796,13 +29959,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Performance Counter Status" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Performance_Counter_Status" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Performance Counter Data Read</spirit:name>
+          <spirit:name>Performance_Counter_Data_Read</spirit:name>
           <spirit:displayName>Performance Counter Data Read Register</spirit:displayName>
           <spirit:description>Performance Counter Data Read Register</spirit:description>
           <spirit:addressOffset>0x5580</spirit:addressOffset>
@@ -29830,13 +29993,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Performance Counter Data Read" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Performance_Counter_Data_Read" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Performance Counter Data Write</spirit:name>
+          <spirit:name>Performance_Counter_Data_Write</spirit:name>
           <spirit:displayName>Performance Counter Data Write Register</spirit:displayName>
           <spirit:description>Performance Counter Data Write Register</spirit:description>
           <spirit:addressOffset>0x55C0</spirit:addressOffset>
@@ -29863,13 +30026,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Performance Counter Data Write" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Performance_Counter_Data_Write" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Trace Control</spirit:name>
+          <spirit:name>Trace_Control</spirit:name>
           <spirit:displayName>Debug Register Trace Control Register</spirit:displayName>
           <spirit:description>Debug Register Trace Control Register</spirit:description>
           <spirit:addressOffset>0x5840</spirit:addressOffset>
@@ -29970,13 +30133,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Trace Control" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Trace_Control" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Trace Command</spirit:name>
+          <spirit:name>Trace_Command</spirit:name>
           <spirit:displayName>Debug Register Trace Command Register</spirit:displayName>
           <spirit:description>Debug Register Trace Command Register</spirit:description>
           <spirit:addressOffset>0x5880</spirit:addressOffset>
@@ -30045,13 +30208,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Trace Command" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Trace_Command" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Trace Status</spirit:name>
+          <spirit:name>Trace_Status</spirit:name>
           <spirit:displayName>Debug Register Trace Status Register</spirit:displayName>
           <spirit:description>Debug Register Trace Status Register</spirit:description>
           <spirit:addressOffset>0x58C0</spirit:addressOffset>
@@ -30106,13 +30269,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Trace Status" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Trace_Status" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Trace Data Read</spirit:name>
+          <spirit:name>Trace_Data_Read</spirit:name>
           <spirit:displayName>Trace Data Read Register</spirit:displayName>
           <spirit:description>Trace Data Read Register</spirit:description>
           <spirit:addressOffset>0x5980</spirit:addressOffset>
@@ -30140,13 +30303,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Trace Data Read" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Trace_Data_Read" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Profiling Control</spirit:name>
+          <spirit:name>Profiling_Control</spirit:name>
           <spirit:displayName>Debug Register Profiling Control Register</spirit:displayName>
           <spirit:description>Debug Register Profiling Control Register</spirit:description>
           <spirit:addressOffset>0x5C40</spirit:addressOffset>
@@ -30215,13 +30378,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Profiling Control" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Profiling_Control" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Profiling Low Address</spirit:name>
+          <spirit:name>Profiling_Low_Address</spirit:name>
           <spirit:displayName>Profiling Low Address Register</spirit:displayName>
           <spirit:description>Profiling Low Address Register</spirit:description>
           <spirit:addressOffset>0x5C80</spirit:addressOffset>
@@ -30232,7 +30395,7 @@
             <spirit:value spirit:format="long">0x0</spirit:value>
           </spirit:reset>
           <spirit:field>
-            <spirit:name>Low word address</spirit:name>
+            <spirit:name>Low_word_address</spirit:name>
             <spirit:displayName>Low word address</spirit:displayName>
             <spirit:description>Low word address of the profiled area</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
@@ -30248,13 +30411,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Profiling Low Address" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Profiling_Low_Address" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Profiling High Address</spirit:name>
+          <spirit:name>Profiling_High_Address</spirit:name>
           <spirit:displayName>Profiling High Address Register</spirit:displayName>
           <spirit:description>Profiling High Address Register</spirit:description>
           <spirit:addressOffset>0x5CC0</spirit:addressOffset>
@@ -30265,7 +30428,7 @@
             <spirit:value spirit:format="long">0x0</spirit:value>
           </spirit:reset>
           <spirit:field>
-            <spirit:name>High word address</spirit:name>
+            <spirit:name>High_word_address</spirit:name>
             <spirit:displayName>High word address</spirit:displayName>
             <spirit:description>High word address of the profiled area</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
@@ -30281,13 +30444,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Profiling High Address" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Profiling_High_Address" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Profiling Buffer Address</spirit:name>
+          <spirit:name>Profiling_Buffer_Address</spirit:name>
           <spirit:displayName>Profiling Buffer Address Register</spirit:displayName>
           <spirit:description>Profiling Buffer Address Register</spirit:description>
           <spirit:addressOffset>0x5D00</spirit:addressOffset>
@@ -30298,7 +30461,7 @@
             <spirit:value spirit:format="long">0x0</spirit:value>
           </spirit:reset>
           <spirit:field>
-            <spirit:name>Buffer word address</spirit:name>
+            <spirit:name>Buffer_word_address</spirit:name>
             <spirit:displayName>Buffer word address</spirit:displayName>
             <spirit:description>Buffer word address of the profiled area</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
@@ -30314,13 +30477,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Profiling Buffer Address" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Profiling_Buffer_Address" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Profiling Data Read 0</spirit:name>
+          <spirit:name>Profiling_Data_Read_0</spirit:name>
           <spirit:displayName>Profiling Data Read Register 0</spirit:displayName>
           <spirit:description>Profiling Data Read Register, 32 LSB</spirit:description>
           <spirit:addressOffset>0x5D80</spirit:addressOffset>
@@ -30331,7 +30494,7 @@
             <spirit:value spirit:format="long">0x0</spirit:value>
           </spirit:reset>
           <spirit:field>
-            <spirit:name>Read Data</spirit:name>
+            <spirit:name>Read_Data</spirit:name>
             <spirit:displayName>Read Data</spirit:displayName>
             <spirit:description>Number of executed instructions or clock cycles in the bin, 32 LSB</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
@@ -30347,13 +30510,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Profiling Data Read 0" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Profiling_Data_Read_0" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Profiling Data Read 1</spirit:name>
+          <spirit:name>Profiling_Data_Read_1</spirit:name>
           <spirit:displayName>Profiling Data Read Register 1</spirit:displayName>
           <spirit:description>Profiling Data Read Register, 4 MSB</spirit:description>
           <spirit:addressOffset>0x5D84</spirit:addressOffset>
@@ -30364,7 +30527,7 @@
             <spirit:value spirit:format="long">0x0</spirit:value>
           </spirit:reset>
           <spirit:field>
-            <spirit:name>Read Data</spirit:name>
+            <spirit:name>Read_Data</spirit:name>
             <spirit:displayName>Read Data</spirit:displayName>
             <spirit:description>Number of executed instructions or clock cycles in the bin, 4 MSB</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
@@ -30380,13 +30543,13 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Profiling Data Read 1" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Profiling_Data_Read_1" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
         </spirit:register>
         <spirit:register>
-          <spirit:name>Profiling Data Write</spirit:name>
+          <spirit:name>Profiling_Data_Write</spirit:name>
           <spirit:displayName>Profiling Data Write Register</spirit:displayName>
           <spirit:description>Profiling Data Write Register</spirit:description>
           <spirit:addressOffset>0x5DC0</spirit:addressOffset>
@@ -30397,7 +30560,7 @@
             <spirit:value spirit:format="long">0x0</spirit:value>
           </spirit:reset>
           <spirit:field>
-            <spirit:name>Write Data</spirit:name>
+            <spirit:name>Write_Data</spirit:name>
             <spirit:displayName>Write Data</spirit:displayName>
             <spirit:description>Data to write to a bin</spirit:description>
             <spirit:bitOffset>0</spirit:bitOffset>
@@ -30413,7 +30576,7 @@
           <spirit:vendorExtensions>
             <xilinx:registerInfo>
               <xilinx:enablement>
-                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Profiling Data Write" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
+                <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="REGISTER_ENABLEMENT.S_AXI.REG.Profiling_Data_Write" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_REG_ACCESS&apos;)) = 1) &amp;&amp; (spirit:decode(id(&apos;MODELPARAM_VALUE.C_DEBUG_INTERFACE&apos;)) >= 1))">false</xilinx:isEnabled>
               </xilinx:enablement>
             </xilinx:registerInfo>
           </spirit:vendorExtensions>
@@ -63134,7 +63297,29 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.bscan_ext_tck" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.C_USE_BSCAN&apos;)) = 2) and (spirit:decode(id(&apos;PARAM_VALUE.C_BSCANID&apos;)) != 0)">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.bscan_ext_tck" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.C_USE_BSCAN&apos;)) = 2">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>bscan_ext_tms</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.bscan_ext_tms" xilinx:dependency="spirit:decode(id(&apos;PARAM_VALUE.C_USE_BSCAN&apos;)) = 2">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -63573,6 +63758,18 @@
         </spirit:vendorExtensions>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_LMB_PROTOCOL</spirit:name>
+        <spirit:displayName>LMB Master Protocol</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_LMB_PROTOCOL" spirit:choiceRef="choice_pairs_0873e75e">0</spirit:value>
+        <spirit:vendorExtensions>
+          <xilinx:parameterInfo>
+            <xilinx:enablement>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="MODELPARAM_ENABLEMENT.C_LMB_PROTOCOL" xilinx:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_DBG_MEM_ACCESS&apos;)) = 1)">false</xilinx:isEnabled>
+            </xilinx:enablement>
+          </xilinx:parameterInfo>
+        </spirit:vendorExtensions>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_M_AXIS_DATA_WIDTH</spirit:name>
         <spirit:displayName>AXI Stream Master Data Width</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M_AXIS_DATA_WIDTH" spirit:maximum="32" spirit:rangeType="long">32</spirit:value>
@@ -63624,6 +63821,11 @@
       <spirit:enumeration>0</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
+      <spirit:name>choice_pairs_0873e75e</spirit:name>
+      <spirit:enumeration spirit:text="STANDARD">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="FREQUENCY">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
       <spirit:name>choice_pairs_13879a79</spirit:name>
       <spirit:enumeration spirit:text="DEFAULT">0</spirit:enumeration>
       <spirit:enumeration spirit:text="ALTERNATE">1</spirit:enumeration>
@@ -63654,6 +63856,12 @@
       <spirit:name>choice_pairs_926edc6a</spirit:name>
       <spirit:enumeration spirit:text="NONE">0</spirit:enumeration>
       <spirit:enumeration spirit:text="SRL16">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_pairs_9c65e391</spirit:name>
+      <spirit:enumeration spirit:text="INTERNAL">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="EXTERNAL">2</spirit:enumeration>
+      <spirit:enumeration spirit:text="EXTERNAL_HIDDEN">4</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
       <spirit:name>choice_pairs_d6ac2a69</spirit:name>
@@ -63690,7 +63898,7 @@
     <spirit:parameter>
       <spirit:name>C_USE_BSCAN</spirit:name>
       <spirit:displayName>Select BSCAN location</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_BSCAN" spirit:choiceRef="choice_pairs_e2045ec0" spirit:order="1400" spirit:configGroups="1 Advanced">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_BSCAN" spirit:choiceRef="choice_pairs_9c65e391" spirit:order="1400" spirit:configGroups="1 Advanced">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_BSCANID</spirit:name>
@@ -63835,6 +64043,18 @@
         <xilinx:parameterInfo>
           <xilinx:enablement>
             <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_DATA_SIZE" xilinx:dependency="true">true</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_LMB_PROTOCOL</spirit:name>
+      <spirit:displayName>LMB Master Protocol</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_LMB_PROTOCOL" spirit:choiceRef="choice_pairs_0873e75e" spirit:order="2155" spirit:configGroups="2 NoDisplay">0</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_LMB_PROTOCOL" xilinx:dependency="true">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -64023,21 +64243,24 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>MicroBlaze Debug Module (MDM)</xilinx:displayName>
-      <xilinx:coreRevision>15</xilinx:coreRevision>
+      <xilinx:coreRevision>18</xilinx:coreRevision>
       <xilinx:configElementInfos>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RST.DEBUG_SYS_RST.POLARITY" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_ADDR_SIZE" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_DEBUG_INTERFACE" xilinx:valuePermission="bd_and_user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_LMB_PROTOCOL" xilinx:valuePermission="bd_and_user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_M_AXI_ADDR_WIDTH" xilinx:valueSource="propagated" xilinx:valuePermission="bd_and_user"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="ae274401"/>
+      <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="8d3d3565"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="69b881a3"/>
-      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="2b6a4576"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="0f586574"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="734de475"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="f829a9dd"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="e35b888c"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="fe51abd5"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="efee277d"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="b4056615"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="8adba431"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="f3b751b2"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>
