@@ -96,21 +96,21 @@ class RxDecimator(DataInspector):
     def __init__(self, description):
         super().__init__(description, 128)
     
-    bindto = ['UoS:SysGen:axi_qpsk_rx_dec:1.0']
+    bindto = ['UoS:SysGen:axi_qpsk_rx_dec:1.1']
 
     
 class RxCSync(DataInspector):
     def __init__(self, description):
         super().__init__(description, 128)
     
-    bindto = ['UoS:SysGen:axi_qpsk_rx_csync:1.0']
+    bindto = ['UoS:SysGen:axi_qpsk_rx_csync:1.1']
     
     
 class RxRRC(DataInspector):
     def __init__(self, description):
         super().__init__(description, 512)
     
-    bindto = ['UoS:SysGen:axi_qpsk_rx_rrc:1.0']
+    bindto = ['UoS:SysGen:axi_qpsk_rx_rrc:1.1']
     
     
 class RxTSync(DataInspector):
@@ -120,6 +120,6 @@ class RxTSync(DataInspector):
         # (@ 16kHz)
         self.sync_reset=0
 
-    bindto = ['UoS:SysGen:axi_qpsk_rx_tsync:1.0']
+    bindto = ['UoS:SysGen:axi_qpsk_rx_tsync:1.1']
 setattr(RxTSync, 'sync_reset', _create_mmio_property(20))
 

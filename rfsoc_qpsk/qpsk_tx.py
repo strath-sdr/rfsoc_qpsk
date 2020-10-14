@@ -125,7 +125,7 @@ class QPSKTxCore(DefaultIP):
     def __init__(self, description):
         super().__init__(description=description)
 
-    bindto = ['UoS:RFSoC:axi_qpsk_tx:5.1']
+    bindto = ['UoS:RFSoC:axi_qpsk_tx:5.2']
 
 
 # LUT of property addresses for our data-driven properties
