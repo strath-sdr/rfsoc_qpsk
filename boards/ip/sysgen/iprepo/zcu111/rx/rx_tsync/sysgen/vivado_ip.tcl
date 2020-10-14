@@ -1,7 +1,7 @@
 #-----------------------------------------------------------------
-# System Generator version 2018.3 IP Tcl source file.
+# System Generator version 2020.1 IP Tcl source file.
 #
-# Copyright(C) 2018 by Xilinx, Inc.  All rights reserved.  This
+# Copyright(C) 2020 by Xilinx, Inc.  All rights reserved.  This
 # text/file contains proprietary, confidential information of Xilinx,
 # Inc., is distributed under license from Xilinx, Inc., and may be used,
 # copied and/or disclosed only pursuant to the terms of a valid license
@@ -30,7 +30,7 @@
 # sole risk and will be unsupported.
 #
 # This copyright and support notice must be retained as part of this
-# text at all times.  (c) Copyright 1995-2018 Xilinx, Inc.  All rights
+# text at all times.  (c) Copyright 1995-2020 Xilinx, Inc.  All rights
 # reserved.
 #-----------------------------------------------------------------
 
@@ -187,53 +187,6 @@ set_property -dict $params_list [get_ips axi_qpsk_rx_tsync_c_addsub_v12_0_i2]
 
 
 set existingipslist [get_ips]
-if {[lsearch $existingipslist axi_qpsk_rx_tsync_blk_mem_gen_i0] < 0} {
-create_ip -name blk_mem_gen -vendor xilinx.com -library ip -module_name axi_qpsk_rx_tsync_blk_mem_gen_i0
-set params_list [list]
-lappend params_list CONFIG.Component_Name {axi_qpsk_rx_tsync_blk_mem_gen_i0}
-lappend params_list CONFIG.algorithm {Minimum_Area}
-lappend params_list CONFIG.assume_synchronous_clk {false}
-lappend params_list CONFIG.byte_size {9}
-lappend params_list CONFIG.collision_warnings {ALL}
-lappend params_list CONFIG.disable_collision_warnings {false}
-lappend params_list CONFIG.ecc {false}
-lappend params_list CONFIG.en_safety_ckt {false}
-lappend params_list CONFIG.enable_a {Use_ENA_Pin}
-lappend params_list CONFIG.enable_b {Always_Enabled}
-lappend params_list CONFIG.error_injection_type {Single_Bit_Error_Injection}
-lappend params_list CONFIG.fill_remaining_memory_locations {false}
-lappend params_list CONFIG.load_init_file {TRUE}
-lappend params_list CONFIG.memory_type {Single_Port_ROM}
-lappend params_list CONFIG.operating_mode_a {WRITE_FIRST}
-lappend params_list CONFIG.operating_mode_b {WRITE_FIRST}
-lappend params_list CONFIG.output_reset_value_a {0}
-lappend params_list CONFIG.output_reset_value_b {0}
-lappend params_list CONFIG.pipeline_stages {0}
-lappend params_list CONFIG.primitive {8kx2}
-lappend params_list CONFIG.read_width_a {16}
-lappend params_list CONFIG.read_width_b {16}
-lappend params_list CONFIG.register_porta_output_of_memory_core {false}
-lappend params_list CONFIG.register_porta_output_of_memory_primitives {false}
-lappend params_list CONFIG.register_portb_output_of_memory_core {false}
-lappend params_list CONFIG.register_portb_output_of_memory_primitives {false}
-lappend params_list CONFIG.remaining_memory_locations {0}
-lappend params_list CONFIG.reset_type {SYNC}
-lappend params_list CONFIG.use_byte_write_enable {false}
-lappend params_list CONFIG.use_error_injection_pins {false}
-lappend params_list CONFIG.use_regcea_pin {false}
-lappend params_list CONFIG.use_regceb_pin {false}
-lappend params_list CONFIG.use_rsta_pin {false}
-lappend params_list CONFIG.use_rstb_pin {false}
-lappend params_list CONFIG.write_depth_a {4}
-lappend params_list CONFIG.write_width_a {16}
-lappend params_list CONFIG.write_width_b {16}
-lappend params_list CONFIG.coe_file {../axi_qpsk_rx_tsync_blk_mem_gen_i0_vivado.coe}
-
-set_property -dict $params_list [get_ips axi_qpsk_rx_tsync_blk_mem_gen_i0]
-}
-
-
-set existingipslist [get_ips]
 if {[lsearch $existingipslist axi_qpsk_rx_tsync_c_addsub_v12_0_i3] < 0} {
 create_ip -name c_addsub -version 12.0 -vendor xilinx.com -library ip -module_name axi_qpsk_rx_tsync_c_addsub_v12_0_i3
 set params_list [list]
@@ -370,100 +323,6 @@ lappend params_list CONFIG.syncclear {false}
 lappend params_list CONFIG.use_custom_output_width {true}
 
 set_property -dict $params_list [get_ips axi_qpsk_rx_tsync_mult_gen_v12_0_i3]
-}
-
-
-set existingipslist [get_ips]
-if {[lsearch $existingipslist axi_qpsk_rx_tsync_blk_mem_gen_i1] < 0} {
-create_ip -name blk_mem_gen -vendor xilinx.com -library ip -module_name axi_qpsk_rx_tsync_blk_mem_gen_i1
-set params_list [list]
-lappend params_list CONFIG.Component_Name {axi_qpsk_rx_tsync_blk_mem_gen_i1}
-lappend params_list CONFIG.algorithm {Minimum_Area}
-lappend params_list CONFIG.assume_synchronous_clk {false}
-lappend params_list CONFIG.byte_size {9}
-lappend params_list CONFIG.collision_warnings {ALL}
-lappend params_list CONFIG.disable_collision_warnings {false}
-lappend params_list CONFIG.ecc {false}
-lappend params_list CONFIG.en_safety_ckt {false}
-lappend params_list CONFIG.enable_a {Use_ENA_Pin}
-lappend params_list CONFIG.enable_b {Always_Enabled}
-lappend params_list CONFIG.error_injection_type {Single_Bit_Error_Injection}
-lappend params_list CONFIG.fill_remaining_memory_locations {false}
-lappend params_list CONFIG.load_init_file {TRUE}
-lappend params_list CONFIG.memory_type {Single_Port_ROM}
-lappend params_list CONFIG.operating_mode_a {WRITE_FIRST}
-lappend params_list CONFIG.operating_mode_b {WRITE_FIRST}
-lappend params_list CONFIG.output_reset_value_a {0}
-lappend params_list CONFIG.output_reset_value_b {0}
-lappend params_list CONFIG.pipeline_stages {0}
-lappend params_list CONFIG.primitive {8kx2}
-lappend params_list CONFIG.read_width_a {16}
-lappend params_list CONFIG.read_width_b {16}
-lappend params_list CONFIG.register_porta_output_of_memory_core {false}
-lappend params_list CONFIG.register_porta_output_of_memory_primitives {false}
-lappend params_list CONFIG.register_portb_output_of_memory_core {false}
-lappend params_list CONFIG.register_portb_output_of_memory_primitives {false}
-lappend params_list CONFIG.remaining_memory_locations {0}
-lappend params_list CONFIG.reset_type {SYNC}
-lappend params_list CONFIG.use_byte_write_enable {false}
-lappend params_list CONFIG.use_error_injection_pins {false}
-lappend params_list CONFIG.use_regcea_pin {false}
-lappend params_list CONFIG.use_regceb_pin {false}
-lappend params_list CONFIG.use_rsta_pin {false}
-lappend params_list CONFIG.use_rstb_pin {false}
-lappend params_list CONFIG.write_depth_a {256}
-lappend params_list CONFIG.write_width_a {16}
-lappend params_list CONFIG.write_width_b {16}
-lappend params_list CONFIG.coe_file {../axi_qpsk_rx_tsync_blk_mem_gen_i1_vivado.coe}
-
-set_property -dict $params_list [get_ips axi_qpsk_rx_tsync_blk_mem_gen_i1]
-}
-
-
-set existingipslist [get_ips]
-if {[lsearch $existingipslist axi_qpsk_rx_tsync_blk_mem_gen_i2] < 0} {
-create_ip -name blk_mem_gen -vendor xilinx.com -library ip -module_name axi_qpsk_rx_tsync_blk_mem_gen_i2
-set params_list [list]
-lappend params_list CONFIG.Component_Name {axi_qpsk_rx_tsync_blk_mem_gen_i2}
-lappend params_list CONFIG.algorithm {Minimum_Area}
-lappend params_list CONFIG.assume_synchronous_clk {false}
-lappend params_list CONFIG.byte_size {9}
-lappend params_list CONFIG.collision_warnings {ALL}
-lappend params_list CONFIG.disable_collision_warnings {false}
-lappend params_list CONFIG.ecc {false}
-lappend params_list CONFIG.en_safety_ckt {false}
-lappend params_list CONFIG.enable_a {Use_ENA_Pin}
-lappend params_list CONFIG.enable_b {Always_Enabled}
-lappend params_list CONFIG.error_injection_type {Single_Bit_Error_Injection}
-lappend params_list CONFIG.fill_remaining_memory_locations {false}
-lappend params_list CONFIG.load_init_file {TRUE}
-lappend params_list CONFIG.memory_type {Single_Port_ROM}
-lappend params_list CONFIG.operating_mode_a {WRITE_FIRST}
-lappend params_list CONFIG.operating_mode_b {WRITE_FIRST}
-lappend params_list CONFIG.output_reset_value_a {0}
-lappend params_list CONFIG.output_reset_value_b {0}
-lappend params_list CONFIG.pipeline_stages {0}
-lappend params_list CONFIG.primitive {8kx2}
-lappend params_list CONFIG.read_width_a {16}
-lappend params_list CONFIG.read_width_b {16}
-lappend params_list CONFIG.register_porta_output_of_memory_core {false}
-lappend params_list CONFIG.register_porta_output_of_memory_primitives {false}
-lappend params_list CONFIG.register_portb_output_of_memory_core {false}
-lappend params_list CONFIG.register_portb_output_of_memory_primitives {false}
-lappend params_list CONFIG.remaining_memory_locations {0}
-lappend params_list CONFIG.reset_type {SYNC}
-lappend params_list CONFIG.use_byte_write_enable {false}
-lappend params_list CONFIG.use_error_injection_pins {false}
-lappend params_list CONFIG.use_regcea_pin {false}
-lappend params_list CONFIG.use_regceb_pin {false}
-lappend params_list CONFIG.use_rsta_pin {false}
-lappend params_list CONFIG.use_rstb_pin {false}
-lappend params_list CONFIG.write_depth_a {256}
-lappend params_list CONFIG.write_width_a {16}
-lappend params_list CONFIG.write_width_b {16}
-lappend params_list CONFIG.coe_file {../axi_qpsk_rx_tsync_blk_mem_gen_i2_vivado.coe}
-
-set_property -dict $params_list [get_ips axi_qpsk_rx_tsync_blk_mem_gen_i2]
 }
 
 

@@ -3467,6 +3467,7 @@ namespace eval ::xilinx::dsp::planaheadworker {
       set_property display_name [dsp_ip_packager_get_top_name] $ip_core
       set_property description [dsp_ip_packager_get_description] $ip_core
       set_property company_url {} $ip_core
+      set_property XPM_LIBRARIES {XPM_MEMORY XPM_FIFO XPM_CDC} $ip_core
       set_property taxonomy [dsp_ip_packager_get_taxonomy] $ip_core
       set_property XML_FILE_NAME "[dsp_ipp_get_ip_directory]/component.xml" $ip_core
       set_property payment_required false $ip_core
@@ -4384,6 +4385,8 @@ namespace eval ::xilinx::dsp::planaheadworker {
     # to make both the reset and the diff pairs external
     set clk_wiz_inst clk_wiz_1
     create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:diff_clock_rtl:1.0 CLK_IN1_D
+    set sys_clk_freq [expr {1/([dsp_get_param_value_in_driver_tcl_namespace FPGAClockPeriod] * 1e-9)}]
+    set_property -dict [list CONFIG.FREQ_HZ $sys_clk_freq] [get_bd_intf_ports CLK_IN1_D]
     connect_bd_intf_net [get_bd_intf_ports /CLK_IN1_D] [get_bd_intf_pins /$clk_wiz_inst/CLK_IN1_D]
     # By default Block Automation of Microblaze instances a proc_sys_reset port
     # with dangling ext_reset_in and aux_reset_in. aux_reset_in is left unconnected
