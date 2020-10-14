@@ -8,3 +8,6 @@ vivado.log
 
 .ipynb_checkpoints
 .idea
+*.slxc
+*\slprj
+*.autosave

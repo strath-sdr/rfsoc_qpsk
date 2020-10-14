@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
--- System Generator version 2018.3 VHDL source file.
+-- System Generator version 2020.1 VHDL source file.
 --
--- Copyright(C) 2018 by Xilinx, Inc.  All rights reserved.  This
+-- Copyright(C) 2020 by Xilinx, Inc.  All rights reserved.  This
 -- text/file contains proprietary, confidential information of Xilinx,
 -- Inc., is distributed under license from Xilinx, Inc., and may be used,
 -- copied and/or disclosed only pursuant to the terms of a valid license
@@ -30,7 +30,7 @@
 -- sole risk and will be unsupported.
 --
 -- This copyright and support notice must be retained as part of this
--- text at all times.  (c) Copyright 1995-2018 Xilinx, Inc.  All rights
+-- text at all times.  (c) Copyright 1995-2020 Xilinx, Inc.  All rights
 -- reserved.
 -------------------------------------------------------------------
 
@@ -1041,6 +1041,7 @@ entity axi_qpsk_rx_dec_xlfifogen_u is
      has_ae : integer := 0;
      has_af : integer := 0;
      extra_registers: integer := 0;
+     ignore_din_for_gcd: boolean := false;
      has_rst : boolean := false
    );
    port (
@@ -1077,6 +1078,17 @@ entity axi_qpsk_rx_dec_xlfifogen_u is
  o: out std_logic_vector(width - 1 downto 0)
  );
  end component;
+ component synth_reg_w_init 
+ generic (width : integer;
+ init_index : integer; 
+ init_value : bit_vector; 
+ latency : integer); 
+ port (i : in std_logic_vector(width-1 downto 0); 
+ ce : in std_logic; 
+ clr : in std_logic; 
+ clk : in std_logic; 
+ o : out std_logic_vector(width-1 downto 0)); 
+ end component; 
  
 
 
@@ -1105,6 +1117,10 @@ entity axi_qpsk_rx_dec_xlfifogen_u is
    signal empty_net: std_logic; 
    signal ae_net: std_logic; 
    signal af_net: std_logic; 
+   signal ae_vec: std_logic_vector(0 downto 0); 
+   signal af_vec: std_logic_vector(0 downto 0); 
+   signal ae_out: std_logic_vector(0 downto 0); 
+   signal af_out: std_logic_vector(0 downto 0); 
  
  begin
  
@@ -1161,18 +1177,47 @@ latency_gt_0: if (extra_registers > 0) generate
      srst <= srst_vec(0);
  end generate;
  
+  ae_vec(0) <= ae_net;
+  af_vec(0) <= af_net;
+ multi_sample: if (ignore_din_for_gcd) generate 
+    reg1: synth_reg_w_init 
+    generic map (width      => 1, 
+    init_index => 2, 
+    init_value => "1", 
+    latency    => 1) 
+    port map (i   => ae_vec, 
+    ce  => ce, 
+    clr => srst_vec(0), 
+    clk => clk, 
+    o   => ae_out); 
+    reg2: synth_reg_w_init 
+    generic map (width      => 1, 
+    init_index => 2, 
+    init_value => "0", 
+    latency    => 1) 
+    port map (i   => af_vec, 
+    ce  => ce, 
+    clr => srst_vec(0), 
+    clk => clk, 
+    o   => af_out); 
+  end generate; 
+  not_multi: if (ignore_din_for_gcd = false) generate 
+ begin 
+ af_out <= af_vec; 
+  ae_out <= ae_vec; 
+  end generate; 
  latency_eq_0: if (extra_registers = 0) generate
    srst <= rst and ce;
  end generate;
  
-    process (dout_net, empty_net, core_full, core_dcount, ae_net, af_net, re, we, en, re_ce, we_ce) is 
+    process (dout_net, empty_net, core_full, core_dcount, ae_out(0), af_out(0), re, we, en, re_ce, we_ce) is 
     begin 
         dout <= dout_net; 
         empty <= empty_net; 
         full <= core_full; 
         dcount <= core_dcount;
-        ae <= ae_net;
-        af <= af_net;
+        ae <= ae_out(0);
+        af <= af_out(0);
         rd_en <= re and en and re_ce;
         wr_en <= we and en and we_ce;
     end process; 
