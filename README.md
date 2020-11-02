@@ -15,9 +15,14 @@ This repository is only compatible with [PYNQ images v2.5 and greater](https://g
 
 Connect to the board with **Jupyter Lab** in a browser (not Jupyter Notebook) @ `http://<IP address>/lab`. 
 
-Open a terminal in Jupyter Lab and run:
+Open a terminal in Jupyter Lab. If you are using PYNQ v2.6, run the following command:
 ```sh
-pip3 install --upgrade git+https://github.com/strath-sdr/rfsoc_qpsk.git --no-dependencies
+pip3 install git+https://github.com/strath-sdr/rfsoc_qpsk --no-deps
+```
+
+If you are using PYNQ v2.5, simply specify the target branch as shown in the command below:
+```sh
+pip3 install git+https://github.com/strath-sdr/rfsoc_qpsk@pynq_v2.5.0 --no-deps
 ```
 
 The notebook should now be available in the `rfsoc_qpsk/` folder.
