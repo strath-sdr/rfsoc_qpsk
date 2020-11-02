@@ -10,4 +10,6 @@ vivado.log
 .idea
 *.slxc
 *\slprj
+*\wavedata
 *.autosave
+boards/ip/sysgen/tx/wavedata/AXI_QPSK_Tx.tcl

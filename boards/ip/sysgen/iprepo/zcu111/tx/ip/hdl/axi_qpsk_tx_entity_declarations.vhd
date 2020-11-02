@@ -974,44 +974,6 @@ use xil_defaultlib.conv_pkg.all;
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
-entity sysgen_constant_bbde368b86 is
-  port (
-    op : out std_logic_vector((10 - 1) downto 0);
-    clk : in std_logic;
-    ce : in std_logic;
-    clr : in std_logic);
-end sysgen_constant_bbde368b86;
-architecture behavior of sysgen_constant_bbde368b86
-is
-begin
-  op <= "0000000000";
-end behavior;
-
-library xil_defaultlib;
-use xil_defaultlib.conv_pkg.all;
-
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
-entity sysgen_constant_fab097cb51 is
-  port (
-    op : out std_logic_vector((1 - 1) downto 0);
-    clk : in std_logic;
-    ce : in std_logic;
-    clr : in std_logic);
-end sysgen_constant_fab097cb51;
-architecture behavior of sysgen_constant_fab097cb51
-is
-begin
-  op <= "0";
-end behavior;
-
-library xil_defaultlib;
-use xil_defaultlib.conv_pkg.all;
-
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
 entity sysgen_constant_8381b2b165 is
   port (
     op : out std_logic_vector((32 - 1) downto 0);
@@ -1126,66 +1088,6 @@ use xil_defaultlib.conv_pkg.all;
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
-entity xlaxi_qpsk_tx_xfft_v9_1_i0_721f9082826645792fb18bff206302d6_wrapper is 
-  port(
-    op_re : out std_logic_vector(31 downto 0);
-    in_re : in std_logic_vector(31 downto 0);
-    op_im : out std_logic_vector(31 downto 0);
-    in_im : in std_logic_vector(31 downto 0);
-    start_frame_in : in std_logic_vector(0 downto 0);
-    start_frame_out : out std_logic_vector(0 downto 0);
-    clk : in std_logic;
-    ce : in std_logic
-  );
-end xlaxi_qpsk_tx_xfft_v9_1_i0_721f9082826645792fb18bff206302d6_wrapper;
-architecture structural of xlaxi_qpsk_tx_xfft_v9_1_i0_721f9082826645792fb18bff206302d6_wrapper is 
-  signal op_re_net : std_logic_vector(31 downto 0);
-  signal in_re_net : std_logic_vector(31 downto 0);
-  signal op_im_net : std_logic_vector(31 downto 0);
-  signal in_im_net : std_logic_vector(31 downto 0);
-  signal start_frame_in_net : std_logic_vector(0 downto 0);
-  signal start_frame_out_net : std_logic_vector(0 downto 0);
-  signal clk_net : std_logic;
-  signal ce_net : std_logic;
-  component xlaxi_qpsk_tx_xfft_v9_1_i0_721f9082826645792fb18bff206302d6 is
-    port(
-      op_re : out std_logic_vector(31 downto 0);
-      in_re : in std_logic_vector(31 downto 0);
-      op_im : out std_logic_vector(31 downto 0);
-      in_im : in std_logic_vector(31 downto 0);
-      start_frame_in : in std_logic_vector(0 downto 0);
-      start_frame_out : out std_logic_vector(0 downto 0);
-      clk : in std_logic;
-      ce : in std_logic
-    );
-  end component;
-begin
-  op_re <= op_re_net;
-  in_re_net <= in_re;
-  op_im <= op_im_net;
-  in_im_net <= in_im;
-  start_frame_in_net <= start_frame_in;
-  start_frame_out <= start_frame_out_net;
-  clk_net <= clk;
-  ce_net <= ce;
-  xlaxi_qpsk_tx_xfft_v9_1_i0_721f9082826645792fb18bff206302d6_inst : xlaxi_qpsk_tx_xfft_v9_1_i0_721f9082826645792fb18bff206302d6
-    port map(
-      op_re => op_re_net,
-      in_re => in_re_net,
-      op_im => op_im_net,
-      in_im => in_im_net,
-      start_frame_in => start_frame_in_net,
-      start_frame_out => start_frame_out_net,
-      clk => clk_net,
-      ce => ce_net
-    );
-end structural;
-library xil_defaultlib;
-use xil_defaultlib.conv_pkg.all;
-
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
 entity sysgen_mux_176ff5c7ea is
   port (
     sel : in std_logic_vector((1 - 1) downto 0);
@@ -1238,47 +1140,6 @@ begin
   pipe_16_22_front_din <= unregy_join_6_1;
   pipe_16_22_push_front_pop_back_en <= '1';
   y <= pipe_16_22_back;
-end behavior;
-
-library xil_defaultlib;
-use xil_defaultlib.conv_pkg.all;
-
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
-entity sysgen_mux_695c2c1342 is
-  port (
-    sel : in std_logic_vector((1 - 1) downto 0);
-    d0 : in std_logic_vector((1 - 1) downto 0);
-    d1 : in std_logic_vector((1 - 1) downto 0);
-    y : out std_logic_vector((1 - 1) downto 0);
-    clk : in std_logic;
-    ce : in std_logic;
-    clr : in std_logic);
-end sysgen_mux_695c2c1342;
-architecture behavior of sysgen_mux_695c2c1342
-is
-  signal sel_1_20: std_logic;
-  signal d0_1_24: std_logic;
-  signal d1_1_27: std_logic;
-  signal sel_internal_2_1_convert: std_logic_vector((1 - 1) downto 0);
-  signal unregy_join_6_1: std_logic;
-begin
-  sel_1_20 <= sel(0);
-  d0_1_24 <= d0(0);
-  d1_1_27 <= d1(0);
-  sel_internal_2_1_convert <= cast(std_logic_to_vector(sel_1_20), 0, 1, 0, xlUnsigned);
-  proc_switch_6_1: process (d0_1_24, d1_1_27, sel_internal_2_1_convert)
-  is
-  begin
-    case sel_internal_2_1_convert is 
-      when "0" =>
-        unregy_join_6_1 <= d0_1_24;
-      when others =>
-        unregy_join_6_1 <= d1_1_27;
-    end case;
-  end process proc_switch_6_1;
-  y <= std_logic_to_vector(unregy_join_6_1);
 end behavior;
 
 library xil_defaultlib;
@@ -1393,6 +1254,25 @@ begin
   op_mem_37_22_front_din <= result_12_3_rel;
   op_mem_37_22_push_front_pop_back_en <= '1';
   op <= boolean_to_vector(op_mem_37_22_back);
+end behavior;
+
+library xil_defaultlib;
+use xil_defaultlib.conv_pkg.all;
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+entity sysgen_constant_bbde368b86 is
+  port (
+    op : out std_logic_vector((10 - 1) downto 0);
+    clk : in std_logic;
+    ce : in std_logic;
+    clr : in std_logic);
+end sysgen_constant_bbde368b86;
+architecture behavior of sysgen_constant_bbde368b86
+is
+begin
+  op <= "0000000000";
 end behavior;
 
 library xil_defaultlib;
@@ -7001,6 +6881,75 @@ latency_gt_0: if (extra_registers > 0) generate
  
 library xil_defaultlib;
 use xil_defaultlib.conv_pkg.all;
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+library xil_defaultlib;
+use xil_defaultlib.conv_pkg.all;
+
+entity xlaxi_qpsk_tx_xfft_v9_1_i0_9e77893c2c1664cd2aaf98da31d19f65 is 
+  port(
+    ce:in std_logic;
+    clk:in std_logic;
+    in_im:in std_logic_vector(31 downto 0);
+    in_re:in std_logic_vector(31 downto 0);
+    op_im:out std_logic_vector(31 downto 0);
+    op_re:out std_logic_vector(31 downto 0)
+  );
+end xlaxi_qpsk_tx_xfft_v9_1_i0_9e77893c2c1664cd2aaf98da31d19f65; 
+
+architecture behavior of xlaxi_qpsk_tx_xfft_v9_1_i0_9e77893c2c1664cd2aaf98da31d19f65  is
+  component axi_qpsk_tx_xfft_v9_1_i0
+    port(
+      aclk:in std_logic;
+      aclken:in std_logic;
+      event_frame_started:out std_logic;
+      m_axis_data_tdata:out std_logic_vector(63 downto 0);
+      m_axis_data_tlast:out std_logic;
+      m_axis_data_tready:in std_logic;
+      m_axis_data_tvalid:out std_logic;
+      s_axis_config_tdata:in std_logic_vector(15 downto 0);
+      s_axis_config_tready:out std_logic;
+      s_axis_config_tvalid:in std_logic;
+      s_axis_data_tdata:in std_logic_vector(63 downto 0);
+      s_axis_data_tlast:in std_logic;
+      s_axis_data_tready:out std_logic;
+      s_axis_data_tvalid:in std_logic
+    );
+end component;
+signal event_frame_started: std_logic := '0';
+signal m_axis_data_tdata_net: std_logic_vector(63 downto 0) := (others=>'0');
+signal m_axis_data_tlast: std_logic := '0';
+signal m_axis_data_tvalid: std_logic := '0';
+signal s_axis_config_tready: std_logic := '0';
+signal s_axis_data_tdata_net: std_logic_vector(63 downto 0) := (others=>'0');
+signal s_axis_data_tready: std_logic := '0';
+begin
+  op_im <= m_axis_data_tdata_net(63 downto 32);
+  op_re <= m_axis_data_tdata_net(31 downto 0);
+  s_axis_data_tdata_net(63 downto 32) <= in_im;
+  s_axis_data_tdata_net(31 downto 0) <= in_re;
+  axi_qpsk_tx_xfft_v9_1_i0_instance : axi_qpsk_tx_xfft_v9_1_i0
+    port map(
+      aclk=>clk,
+      aclken=>ce,
+      event_frame_started=>event_frame_started,
+      m_axis_data_tdata=>m_axis_data_tdata_net,
+      m_axis_data_tlast=>m_axis_data_tlast,
+      m_axis_data_tready=>'1',
+      m_axis_data_tvalid=>m_axis_data_tvalid,
+      s_axis_config_tdata=>b"0000010101010111",
+      s_axis_config_tready=>s_axis_config_tready,
+      s_axis_config_tvalid=>'1',
+      s_axis_data_tdata=>s_axis_data_tdata_net,
+      s_axis_data_tlast=>'0',
+      s_axis_data_tready=>s_axis_data_tready,
+      s_axis_data_tvalid=>'1'
+    );
+end behavior;
+
 
 library IEEE;
 use IEEE.std_logic_1164.all;

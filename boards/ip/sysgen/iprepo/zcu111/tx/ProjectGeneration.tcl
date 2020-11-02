@@ -24,11 +24,11 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set IP_LifeCycle_Menu {2}
 	set IP_Logo {sysgen_icon_100.png}
 	set IP_Name {AXI_QPSK_Tx}
-	set IP_Revision {233583364}
+	set IP_Revision {235221097}
 	set IP_Socket_IP {0}
 	set IP_Socket_IP_Proj_Path {}
 	set IP_Vendor_Text {UoS}
-	set IP_Version_Text {5.2}
+	set IP_Version_Text {5.3}
 	set ImplStrategyName {Vivado Implementation Defaults}
 	set PostProjectCreationProc {dsp_package_for_vivado_ip_integrator}
 	set Project {axi_qpsk_tx}
@@ -42,11 +42,6 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 		{{single_reg_w_init.vhd} -lib {xil_defaultlib}}
 		{{xlclockdriver_rd.vhd} -lib {xil_defaultlib}}
 		{{vivado_ip.tcl}}
-		{{xlaxi_qpsk_tx_xfft_v9_1_i0_721f9082826645792fb18bff206302d6.v}}
-		{{conv_pkg.v}}
-		{{synth_reg.v}}
-		{{synth_reg_w_init.v}}
-		{{convert_type.v}}
 		{{axi_qpsk_tx_axi_lite_interface_verilog.v}}
 		{{conv_pkg.v}}
 		{{synth_reg.v}}
@@ -73,7 +68,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set SynthesisTool {Vivado}
 	set TargetDir {C:/GitHub/strath_sdr/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/tx}
 	set TopLevelModule {axi_qpsk_tx}
-	set TopLevelSimulinkHandle 0.000732422
+	set TopLevelSimulinkHandle 0.00170898
 	set VHDLLib {xil_defaultlib}
 	set TopLevelPortInterface {}
 	dict set TopLevelPortInterface m_time_axis_tready Name {m_time_axis_tready}

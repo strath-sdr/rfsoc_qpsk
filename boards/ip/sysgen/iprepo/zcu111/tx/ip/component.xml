@@ -3,7 +3,7 @@
   <spirit:vendor>UoS</spirit:vendor>
   <spirit:library>RFSoC</spirit:library>
   <spirit:name>axi_qpsk_tx</spirit:name>
-  <spirit:version>5.2</spirit:version>
+  <spirit:version>5.3</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
       <spirit:name>m_fft_axis</spirit:name>
@@ -1167,7 +1167,7 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/xlaxi_qpsk_tx_xfft_v9_1_i0_721f9082826645792fb18bff206302d6.v</spirit:name>
+        <spirit:name>hdl/axi_qpsk_tx_axi_lite_interface_verilog.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
@@ -1190,12 +1190,7 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
       <spirit:file>
         <spirit:name>hdl/convert_type.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>work</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/axi_qpsk_tx_axi_lite_interface_verilog.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_42a50273</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_285fe6d0</spirit:userFileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
@@ -1318,7 +1313,7 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/xlaxi_qpsk_tx_xfft_v9_1_i0_721f9082826645792fb18bff206302d6.v</spirit:name>
+        <spirit:name>hdl/axi_qpsk_tx_axi_lite_interface_verilog.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:logicalName>work</spirit:logicalName>
@@ -1348,56 +1343,50 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:logicalName>work</spirit:logicalName>
       </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/axi_qpsk_tx_axi_lite_interface_verilog.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:logicalName>work</spirit:logicalName>
-      </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_softwaredriver_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_tx_v5_2/src/axi_qpsk_tx_hw.h</spirit:name>
+        <spirit:name>drivers/axi_qpsk_tx_v5_3/src/axi_qpsk_tx_hw.h</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_tx_v5_2/src/axi_qpsk_tx.h</spirit:name>
+        <spirit:name>drivers/axi_qpsk_tx_v5_3/src/axi_qpsk_tx.h</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_tx_v5_2/src/axi_qpsk_tx_sinit.c</spirit:name>
+        <spirit:name>drivers/axi_qpsk_tx_v5_3/src/axi_qpsk_tx_sinit.c</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_tx_v5_2/src/axi_qpsk_tx.c</spirit:name>
+        <spirit:name>drivers/axi_qpsk_tx_v5_3/src/axi_qpsk_tx.c</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_tx_v5_2/src/axi_qpsk_tx_linux.c</spirit:name>
+        <spirit:name>drivers/axi_qpsk_tx_v5_3/src/axi_qpsk_tx_linux.c</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_tx_v5_2/data/axi_qpsk_tx.mdd</spirit:name>
+        <spirit:name>drivers/axi_qpsk_tx_v5_3/data/axi_qpsk_tx.mdd</spirit:name>
         <spirit:userFileType>driver_mdd</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_tx_v5_2/data/axi_qpsk_tx.tcl</spirit:name>
+        <spirit:name>drivers/axi_qpsk_tx_v5_3/data/axi_qpsk_tx.tcl</spirit:name>
         <spirit:userFileType>driver_tcl</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_tx_v5_2/src/Makefile</spirit:name>
+        <spirit:name>drivers/axi_qpsk_tx_v5_3/src/Makefile</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_tx_v5_2/doc/html/api/index.html</spirit:name>
+        <spirit:name>drivers/axi_qpsk_tx_v5_3/doc/html/api/index.html</spirit:name>
         <spirit:userFileType>html</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xgui/axi_qpsk_tx_v5_2.tcl</spirit:name>
+        <spirit:name>xgui/axi_qpsk_tx_v5_3.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_f64a5dae</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
@@ -1416,7 +1405,7 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">axi_qpsk_tx_v5_2</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">axi_qpsk_tx_v5_3</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
@@ -1434,8 +1423,8 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
         <xilinx:xpmLibrary>XPM_FIFO</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>233583364</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2020-10-14T11:16:17Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>235221097</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2020-11-02T11:11:59Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
