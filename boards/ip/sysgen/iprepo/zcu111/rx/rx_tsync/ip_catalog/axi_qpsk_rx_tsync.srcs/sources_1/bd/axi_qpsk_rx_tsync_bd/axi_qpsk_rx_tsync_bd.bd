@@ -1,12 +1,13 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x54F8A2D72C7DE72E",
+      "boundary_crc": "0x54F8A2D7ADD2F12F",
       "design_src": "SYSGEN",
       "device": "xczu28dr-ffvg1517-2-e",
       "name": "axi_qpsk_rx_tsync_bd",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2018.3",
+      "tool_version": "2020.1",
       "validated": "true"
     },
     "design_tree": {
@@ -36,8 +37,7 @@
             "value_src": "default"
           },
           "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "default"
+            "value": "25599999.999999996"
           }
         }
       },
@@ -45,38 +45,6 @@
         "mode": "Master",
         "vlnv": "xilinx.com:interface:axis_rtl:1.0",
         "parameters": {
-          "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "default"
-          },
-          "HAS_TKEEP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "HAS_TLAST": {
-            "value": "1",
-            "value_src": "default"
-          },
-          "HAS_TREADY": {
-            "value": "1",
-            "value_src": "default"
-          },
-          "HAS_TSTRB": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "LAYERED_METADATA": {
-            "value": "xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.000",
-            "value_src": "default"
-          },
           "TDATA_NUM_BYTES": {
             "value": "4",
             "value_src": "default"
@@ -92,6 +60,38 @@
           "TUSER_WIDTH": {
             "value": "0",
             "value_src": "default"
+          },
+          "HAS_TREADY": {
+            "value": "1",
+            "value_src": "default"
+          },
+          "HAS_TSTRB": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "HAS_TKEEP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "HAS_TLAST": {
+            "value": "1",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          },
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
           }
         }
       },
@@ -99,33 +99,6 @@
         "mode": "Slave",
         "vlnv": "xilinx.com:interface:axis_rtl:1.0",
         "parameters": {
-          "FREQ_HZ": {
-            "value": "100000000",
-            "value_src": "default"
-          },
-          "HAS_TKEEP": {
-            "value": "0"
-          },
-          "HAS_TLAST": {
-            "value": "0"
-          },
-          "HAS_TREADY": {
-            "value": "1"
-          },
-          "HAS_TSTRB": {
-            "value": "0"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "LAYERED_METADATA": {
-            "value": "xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}"
-          },
-          "PHASE": {
-            "value": "0.000",
-            "value_src": "default"
-          },
           "TDATA_NUM_BYTES": {
             "value": "4"
           },
@@ -137,6 +110,33 @@
           },
           "TUSER_WIDTH": {
             "value": "0"
+          },
+          "HAS_TREADY": {
+            "value": "1"
+          },
+          "HAS_TSTRB": {
+            "value": "0"
+          },
+          "HAS_TKEEP": {
+            "value": "0"
+          },
+          "HAS_TLAST": {
+            "value": "0"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          },
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 32} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} real {fixed {fractwidth {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}}}}"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
           }
         }
       }
@@ -158,7 +158,7 @@
     },
     "components": {
       "axi_qpsk_rx_tsync_1": {
-        "vlnv": "UoS:SysGen:axi_qpsk_rx_tsync:1.0",
+        "vlnv": "UoS:SysGen:axi_qpsk_rx_tsync:1.1",
         "xci_name": "axi_qpsk_rx_tsync_bd_axi_qpsk_rx_tsync_1_0"
       },
       "microblaze_1": {
@@ -176,6 +176,44 @@
           },
           "C_I_LMB": {
             "value": "1"
+          }
+        },
+        "addressing": {
+          "address_spaces": {
+            "Data": {
+              "range": "4G",
+              "width": "32"
+            },
+            "Instruction": {
+              "range": "4G",
+              "width": "32"
+            }
+          },
+          "interface_ports": {
+            "DLMB": {
+              "mode": "Master",
+              "address_space_ref": "Data",
+              "base_address": {
+                "minimum": "0x00000000",
+                "maximum": "0xFFFFFFFF"
+              }
+            },
+            "ILMB": {
+              "mode": "Master",
+              "address_space_ref": "Instruction",
+              "base_address": {
+                "minimum": "0x00000000",
+                "maximum": "0xFFFFFFFF"
+              }
+            },
+            "M_AXI_DP": {
+              "mode": "Master",
+              "address_space_ref": "Data",
+              "base_address": {
+                "minimum": "0x00000000",
+                "maximum": "0xFFFFFFFF"
+              }
+            }
           }
         },
         "hdl_attributes": {
@@ -213,11 +251,31 @@
         "components": {
           "dlmb_v10": {
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
-            "xci_name": "axi_qpsk_rx_tsync_bd_dlmb_v10_0"
+            "xci_name": "axi_qpsk_rx_tsync_bd_dlmb_v10_0",
+            "addressing": {
+              "interface_ports": {
+                "LMB_M": {
+                  "mode": "MirroredMaster",
+                  "bridges": [
+                    "LMB_Sl_0"
+                  ]
+                }
+              }
+            }
           },
           "ilmb_v10": {
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
-            "xci_name": "axi_qpsk_rx_tsync_bd_ilmb_v10_0"
+            "xci_name": "axi_qpsk_rx_tsync_bd_ilmb_v10_0",
+            "addressing": {
+              "interface_ports": {
+                "LMB_M": {
+                  "mode": "MirroredMaster",
+                  "bridges": [
+                    "LMB_Sl_0"
+                  ]
+                }
+              }
+            }
           },
           "dlmb_bram_if_cntlr": {
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
@@ -261,16 +319,10 @@
           }
         },
         "interface_nets": {
-          "microblaze_1_dlmb": {
+          "microblaze_1_ilmb_bus": {
             "interface_ports": [
-              "DLMB",
-              "dlmb_v10/LMB_M"
-            ]
-          },
-          "microblaze_1_ilmb": {
-            "interface_ports": [
-              "ILMB",
-              "ilmb_v10/LMB_M"
+              "ilmb_v10/LMB_Sl_0",
+              "ilmb_bram_if_cntlr/SLMB"
             ]
           },
           "microblaze_1_ilmb_cntlr": {
@@ -285,16 +337,22 @@
               "dlmb_bram_if_cntlr/SLMB"
             ]
           },
-          "microblaze_1_ilmb_bus": {
-            "interface_ports": [
-              "ilmb_v10/LMB_Sl_0",
-              "ilmb_bram_if_cntlr/SLMB"
-            ]
-          },
           "microblaze_1_dlmb_cntlr": {
             "interface_ports": [
               "dlmb_bram_if_cntlr/BRAM_PORT",
               "lmb_bram/BRAM_PORTA"
+            ]
+          },
+          "microblaze_1_ilmb": {
+            "interface_ports": [
+              "ILMB",
+              "ilmb_v10/LMB_M"
+            ]
+          },
+          "microblaze_1_dlmb": {
+            "interface_ports": [
+              "DLMB",
+              "dlmb_v10/LMB_M"
             ]
           }
         },
@@ -500,12 +558,6 @@
       }
     },
     "interface_nets": {
-      "microblaze_1_axi_dp": {
-        "interface_ports": [
-          "microblaze_1_axi_periph/S00_AXI",
-          "microblaze_1/M_AXI_DP"
-        ]
-      },
       "microblaze_1_ilmb_1": {
         "interface_ports": [
           "microblaze_1/ILMB",
@@ -518,16 +570,22 @@
           "microblaze_1_local_memory/DLMB"
         ]
       },
+      "microblaze_1_axi_dp": {
+        "interface_ports": [
+          "microblaze_1_axi_periph/S00_AXI",
+          "microblaze_1/M_AXI_DP"
+        ]
+      },
       "microblaze_1_debug": {
         "interface_ports": [
           "mdm_1/MBDEBUG_0",
           "microblaze_1/DEBUG"
         ]
       },
-      "s_axis_1": {
+      "CLK_IN1_D_1": {
         "interface_ports": [
-          "s_axis",
-          "axi_qpsk_rx_tsync_1/s_axis"
+          "CLK_IN1_D",
+          "clk_wiz_1/CLK_IN1_D"
         ]
       },
       "axi_qpsk_rx_tsync_1_m_axis_tap": {
@@ -536,16 +594,16 @@
           "axi_qpsk_rx_tsync_1/m_axis_tap"
         ]
       },
+      "s_axis_1": {
+        "interface_ports": [
+          "s_axis",
+          "axi_qpsk_rx_tsync_1/s_axis"
+        ]
+      },
       "microblaze_1_axi_periph_M00_AXI": {
         "interface_ports": [
           "microblaze_1_axi_periph/M00_AXI",
           "axi_qpsk_rx_tsync_1/axi_qpsk_rx_tsync_s_axi"
-        ]
-      },
-      "CLK_IN1_D_1": {
-        "interface_ports": [
-          "CLK_IN1_D",
-          "clk_wiz_1/CLK_IN1_D"
         ]
       }
     },

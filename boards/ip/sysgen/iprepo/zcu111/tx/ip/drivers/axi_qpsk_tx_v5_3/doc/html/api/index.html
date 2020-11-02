@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<style type="text/css">
+body {margin-top:6.35em; 
+      margin-left:6.35em; 
+      width:62.5em;
+      text-align:justify;
+      font-size:1em; 
+      font-family:"Arial", Serif;
+      color:#000000;}
+
+h1 {font-size:1.125em;
+    font-family:"Arial", Sans-serif;
+    color:#943634;}
+
+p {font-size:inherit;
+   width:62.5em;
+   font-family:inherit;
+   color:inherit;}
+
+ul {font-size:inherit;
+    width:62.5em;
+    font-family:inherit;
+    color:inherit;}
+
+li {width:46.15em;}
+
+.image {position: relative;
+        width: 100%;}
+
+table {border-collapse:collapse;
+       border-spacing:0;
+       caption-side:bottom;
+       border-style:solid;
+       border-width:thin;
+       font-size:1em;
+       width:62.5em;
+       font-family:inherit;
+       color:inherit;}
+
+.title_table {border-collapse:collapse;
+       border-spacing:0;
+       caption-side:bottom;
+       font-size:1em;
+       width:62.5em;
+       border-style:none;}
+
+.title_table_image_cell {border-bottom:thin solid #000000;}
+
+.title_table_design_cell {vertical-align:bottom;
+        font-size:1.875em;
+        text-align:right;
+        border-bottom:thin solid #000000;}
+
+.title_table_date_cell{font-size:1.25em;
+        vertical-align:bottom;
+        text-align:left;
+        border-bottom:thick solid #943634}
+
+.sg_row {font-size:inherit;
+         font-family:inherit;
+         color:inherit;
+         border-style:solid;
+         border-width:thin;}
+
+.sg_cell {margin:0;
+          padding:1em;
+          border-width:inherit;
+          border-style:inherit;
+          font-size:inherit;
+          font-family:inherit;
+          color:inherit;}
+
+.sg_cell_first_row {margin:0;
+          padding:1em;
+          border-width:inherit;
+          border-style:inherit;
+          border-bottom:thick solid #943634;
+          font-size:inherit;
+          font-family:inherit;
+          color:inherit;}
+
+.sg_caption {text-align:left;
+             caption-side:bottom;
+             font-family:inherit;
+             font-size:inherit;}
+</style>
+</head>
+<body>
+<table class="title_table">
+<tr>
+<td class="title_table_image_cell"></td>
+<td class="title_table_design_cell">axi_qpsk_tx</td>
+</tr>
+<tr>
+<td colspan=2 class="title_table_date_cell"><b></b></td>
+</tr>
+</table>
+<h1>int axi_qpsk_tx_Initialize(axi_qpsk_tx* InstancePtr, u16 DeviceId)</h1>
+<p>
+Initialize axi_qpsk_tx pointer with a specifc instance of the device based device id.
+<br/>
+  @param InstancePtr to be initialized
+<br/>
+  @param DeviceId device id assigned to the device in xparameters.h
+<br/>
+<br/>
+  @return int XST_SUCCESS if initialization is successful
+<br/>
+</p>
+<h1>void axi_qpsk_tx_transfertime_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to transfertime gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the transfertime instance to operate on.<br/>
+ @param	Data is value to be written to gateway transfertime.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_transfertime_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from transfertime gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the transfertime instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_transfersymbol_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to transfersymbol gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the transfersymbol instance to operate on.<br/>
+ @param	Data is value to be written to gateway transfersymbol.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_transfersymbol_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from transfersymbol gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the transfersymbol instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_transferfft_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to transferfft gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the transferfft instance to operate on.<br/>
+ @param	Data is value to be written to gateway transferfft.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_transferfft_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from transferfft gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the transferfft instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_simulateinterface_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to simulateinterface gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the simulateinterface instance to operate on.<br/>
+ @param	Data is value to be written to gateway simulateinterface.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_simulateinterface_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from simulateinterface gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the simulateinterface instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_resettime_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to resettime gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the resettime instance to operate on.<br/>
+ @param	Data is value to be written to gateway resettime.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_resettime_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from resettime gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the resettime instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_resetsymbol_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to resetsymbol gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the resetsymbol instance to operate on.<br/>
+ @param	Data is value to be written to gateway resetsymbol.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_resetsymbol_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from resetsymbol gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the resetsymbol instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_resetfft_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to resetfft gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the resetfft instance to operate on.<br/>
+ @param	Data is value to be written to gateway resetfft.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_resetfft_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from resetfft gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the resetfft instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_packetsizetime_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to packetsizetime gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the packetsizetime instance to operate on.<br/>
+ @param	Data is value to be written to gateway packetsizetime.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_packetsizetime_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from packetsizetime gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the packetsizetime instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_packetsizesymbol_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to packetsizesymbol gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the packetsizesymbol instance to operate on.<br/>
+ @param	Data is value to be written to gateway packetsizesymbol.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_packetsizesymbol_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from packetsizesymbol gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the packetsizesymbol instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_packetsizerf_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to packetsizerf gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the packetsizerf instance to operate on.<br/>
+ @param	Data is value to be written to gateway packetsizerf.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_packetsizerf_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from packetsizerf gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the packetsizerf instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_packetsizefft_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to packetsizefft gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the packetsizefft instance to operate on.<br/>
+ @param	Data is value to be written to gateway packetsizefft.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_packetsizefft_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from packetsizefft gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the packetsizefft instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_outputgain_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to outputgain gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the outputgain instance to operate on.<br/>
+ @param	Data is value to be written to gateway outputgain.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_outputgain_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from outputgain gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the outputgain instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_lfsr_rst_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to lfsr_rst gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the lfsr_rst instance to operate on.<br/>
+ @param	Data is value to be written to gateway lfsr_rst.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_lfsr_rst_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from lfsr_rst gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the lfsr_rst instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_enable_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to enable gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the enable instance to operate on.<br/>
+ @param	Data is value to be written to gateway enable.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_enable_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from enable gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the enable instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_bypassgain_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to bypassgain gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the bypassgain instance to operate on.<br/>
+ @param	Data is value to be written to gateway bypassgain.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_bypassgain_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from bypassgain gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the bypassgain instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_autorestarttime_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to autorestarttime gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the autorestarttime instance to operate on.<br/>
+ @param	Data is value to be written to gateway autorestarttime.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_autorestarttime_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from autorestarttime gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the autorestarttime instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_autorestartsymbol_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to autorestartsymbol gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the autorestartsymbol instance to operate on.<br/>
+ @param	Data is value to be written to gateway autorestartsymbol.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_autorestartsymbol_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from autorestartsymbol gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the autorestartsymbol instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+<h1>void axi_qpsk_tx_autorestartfft_write(axi_qpsk_tx *InstancePtr, u32 Data);</h1>
+<p>
+ Write to autorestartfft gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the autorestartfft instance to operate on.<br/>
+ @param	Data is value to be written to gateway autorestartfft.<br/>
+<br/>
+ @return	None.<br/>
+<br/>
+ @note    .<br/>
+<br/>
+</p>
+<h1>u32 axi_qpsk_tx_autorestartfft_read(axi_qpsk_tx *InstancePtr);</h1>
+<p>
+ Read from autorestartfft gateway of axi_qpsk_tx. Assignments are LSB-justified.<br/>
+<br/>
+ @param	InstancePtr is the autorestartfft instance to operate on.<br/>
+<br/>
+ @return	u32<br/>
+
+ @note    .<br/>
+<br/>
+</p>
+</body>
+</html>

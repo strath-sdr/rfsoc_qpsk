@@ -3,7 +3,7 @@
   <spirit:vendor>UoS</spirit:vendor>
   <spirit:library>SysGen</spirit:library>
   <spirit:name>axi_qpsk_rx_rrc</spirit:name>
-  <spirit:version>1.0</spirit:version>
+  <spirit:version>1.1</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
       <spirit:name>m_axis</spirit:name>
@@ -1082,46 +1082,46 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
     <spirit:fileSet>
       <spirit:name>xilinx_softwaredriver_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_0/src/axi_qpsk_rx_rrc_hw.h</spirit:name>
+        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_1/src/axi_qpsk_rx_rrc_hw.h</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_0/src/axi_qpsk_rx_rrc.h</spirit:name>
+        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_1/src/axi_qpsk_rx_rrc.h</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_0/src/axi_qpsk_rx_rrc_sinit.c</spirit:name>
+        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_1/src/axi_qpsk_rx_rrc_sinit.c</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_0/src/axi_qpsk_rx_rrc.c</spirit:name>
+        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_1/src/axi_qpsk_rx_rrc.c</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_0/src/axi_qpsk_rx_rrc_linux.c</spirit:name>
+        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_1/src/axi_qpsk_rx_rrc_linux.c</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_0/data/axi_qpsk_rx_rrc.mdd</spirit:name>
+        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_1/data/axi_qpsk_rx_rrc.mdd</spirit:name>
         <spirit:userFileType>driver_mdd</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_0/data/axi_qpsk_rx_rrc.tcl</spirit:name>
+        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_1/data/axi_qpsk_rx_rrc.tcl</spirit:name>
         <spirit:userFileType>driver_tcl</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_0/src/Makefile</spirit:name>
+        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_1/src/Makefile</spirit:name>
         <spirit:userFileType>driver_src</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_0/doc/html/api/index.html</spirit:name>
+        <spirit:name>drivers/axi_qpsk_rx_rrc_v1_1/doc/html/api/index.html</spirit:name>
         <spirit:userFileType>html</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xgui/axi_qpsk_rx_rrc_v1_0.tcl</spirit:name>
+        <spirit:name>xgui/axi_qpsk_rx_rrc_v1_1.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_f64a5dae</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
@@ -1140,7 +1140,7 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">axi_qpsk_rx_rrc_v1_0</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">axi_qpsk_rx_rrc_v1_1</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
@@ -1153,11 +1153,16 @@ mmediate dependency {} format bool minimum {} maximum {}} value false}}}}}}</spi
       </xilinx:taxonomies>
       <xilinx:displayName>axi_qpsk_rx_rrc</xilinx:displayName>
       <xilinx:definitionSource>sysgen</xilinx:definitionSource>
-      <xilinx:coreRevision>185724099</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-04-09T20:02:52Z</xilinx:coreCreationDateTime>
+      <xilinx:xpmLibraries>
+        <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
+        <xilinx:xpmLibrary>XPM_FIFO</xilinx:xpmLibrary>
+        <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
+      </xilinx:xpmLibraries>
+      <xilinx:coreRevision>233582353</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2020-10-14T10:59:27Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

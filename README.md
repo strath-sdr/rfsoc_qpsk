@@ -3,7 +3,7 @@
 # RFSoC QPSK Transceiver 
 
 ## Introduction
-This repo contains all the files needed to build and run the RFSoC QPSK demonstrator that was presented at both [FPL](https://fpl2018.org/) and [XDF](http://www.xilinx.com/xdf) conferences in 2018. The design is a full QPSK transceiver, which transmits and receives randomly-generated pulse-shaped symbols with full carrier and timing synchronisation. [PYNQ](https://github.com/xilinx/pynq) is used to visualise the data at both the DAC and ADC side of the RFSoC data converters, as well as visualising various DSP stages throughout the transmit and receive signal path.
+This repo contains all the files needed to build and run the RFSoC QPSK demonstrator that was published in [IEEE Access](https://ieeexplore.ieee.org/document/9139483) and was presented at both [FPL](https://fpl2018.org/) and [XDF](http://www.xilinx.com/xdf) conferences in 2018. The design is a full QPSK transceiver, which transmits and receives randomly-generated pulse-shaped symbols with full carrier and timing synchronisation. [PYNQ](https://github.com/xilinx/pynq) is used to visualise the data at both the DAC and ADC side of the RFSoC data converters, as well as visualising various DSP stages throughout the transmit and receive signal path.
 
 <p align="center">
   <img src="https://github.com/strath-sdr/rfsoc_qpsk/blob/master/img/constellation_small.gif" width="400" height="400" />
@@ -11,16 +11,19 @@ This repo contains all the files needed to build and run the RFSoC QPSK demonstr
 
 ## Quick Start
 
-This repository is only compatible with [PYNQ images v2.4 and greater](https://github.com/Xilinx/PYNQ/releases) for [ZCU111](https://www.xilinx.com/products/boards-and-kits/zcu111.html).
+This repository is only compatible with [PYNQ images v2.5 and greater](https://github.com/Xilinx/PYNQ/releases) for [ZCU111](https://www.xilinx.com/products/boards-and-kits/zcu111.html).
 
 Connect to the board with **Jupyter Lab** in a browser (not Jupyter Notebook) @ `http://<IP address>/lab`. 
 
-Open a terminal in Jupyter Lab and run:
+Open a terminal in Jupyter Lab. If you are using PYNQ v2.6, run the following command:
 ```sh
-pip3 install --upgrade git+https://github.com/strath-sdr/rfsoc_qpsk.git
+pip3 install git+https://github.com/strath-sdr/rfsoc_qpsk --no-deps
 ```
 
-**Note:** If using PYNQ image v2.5, include `--no-dependencies` as this image already has all the neccessary packages. 
+If you are using PYNQ v2.5, simply specify the target branch as shown in the command below:
+```sh
+pip3 install git+https://github.com/strath-sdr/rfsoc_qpsk@pynq_v2.5.0 --no-deps
+```
 
 The notebook should now be available in the `rfsoc_qpsk/` folder.
 Use Chrome if possible — the rendering performance is important.
@@ -33,11 +36,11 @@ We use DAC2 from tile 229 to transmit and ADC0 from tile 224 to receive. These c
 <p/>
 
 ## Using the Project Files
-All software builds have been tested on Ubuntu 16.04
+All software builds have been tested on Microsoft Windows 10.
 #### Requirements
-- Vivado Design Suite 2018.3
+- Vivado Design Suite 2020.1
 - System Generator for DSP
-- MATLAB 2017b
+- MATLAB 2020a
 
 ### System Generator
 The Tx and Rx IPs are in separate directories in `rfsoc_qpsk/boards/sysgen/` that can be opened using the appropriate System Generator dialogue. Due to the large amount of decimation and interpolation in both IPs, simulating the output can take an extraordinarily long time. A less extreme multirate system would simulate much faster! 
@@ -46,7 +49,6 @@ The Tx and Rx IPs are in separate directories in `rfsoc_qpsk/boards/sysgen/` tha
 This project can be built with Vivado from the command line:
 ```sh
 cd rfsoc_qpsk/boards/ZCU111/
-source <Xilinx_dir>/Vivado/2018.3/settings64.sh
 vivado -mode batch -nojournal -nolog -source write_project.tcl
 ```
 

@@ -73,10 +73,10 @@ copy_notebooks()
 
 setup(
     name="rfsoc_qpsk",
-    version='1.0',
+    version='1.2',
     install_requires=[
-        'pynq>=2.4',
-        'plotly==3.9.0',
+        'pynq==2.6',
+        'plotly==4.5.2',
     ],
     url='https://github.com/strath-sdr/rfsoc_qpsk.git',
     license='BSD 3-Clause License',

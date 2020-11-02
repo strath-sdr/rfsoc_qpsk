@@ -1,7 +1,7 @@
 #-----------------------------------------------------------------
-# System Generator version 2018.3 IP Tcl source file.
+# System Generator version 2020.1 IP Tcl source file.
 #
-# Copyright(C) 2018 by Xilinx, Inc.  All rights reserved.  This
+# Copyright(C) 2020 by Xilinx, Inc.  All rights reserved.  This
 # text/file contains proprietary, confidential information of Xilinx,
 # Inc., is distributed under license from Xilinx, Inc., and may be used,
 # copied and/or disclosed only pursuant to the terms of a valid license
@@ -30,7 +30,7 @@
 # sole risk and will be unsupported.
 #
 # This copyright and support notice must be retained as part of this
-# text at all times.  (c) Copyright 1995-2018 Xilinx, Inc.  All rights
+# text at all times.  (c) Copyright 1995-2020 Xilinx, Inc.  All rights
 # reserved.
 #-----------------------------------------------------------------
 
@@ -116,6 +116,7 @@ lappend params_list CONFIG.Clock_Frequency {300.0}
 lappend params_list CONFIG.CoefficientSource {Vector}
 lappend params_list CONFIG.CoefficientVector {binary:820CBA1CE28F41BFEA516D3669F9503FD6BCBA427DC0633FADEA7A366B8D6A3F18971D0DCFED6A3FF98EAA2B715E643FA753B4848B1F503F8FA3E68454F24CBF99BFB9265FBB65BF5EBCA9F4E86D6FBF0E99CCABF58D70BFF7279E89483969BF0CA0C119D0FD50BF6805FA4D91EC5B3F1107B9FEE88A723FC009207951697B3F6E9645B2CBBB7E3F93470C6E538B7A3F83FC41EADFC16C3F35C11097698051BFC60619649A7F7ABFB732DA6C80B087BFFE93C9EE7AEA8EBFC62868E8DF4A90BF7A2F68F0362A8BBFFF23800C73D27CBFA38D0DD34071613F6BDBBCDFFC488A3F4744107351A4973FDE0A926D74599F3F47A95AD63809A13FD357DFDD60379E3F027E6B4F5F35933F44659B3428915C3F49AB5C4088E993BF714CE9C51E3EA5BF6912CED177D4AEBFCC560F719937B2BF1EFAA5D9CAFCB1BFB391DDC495EDABBF1584C604294297BFA7BE65F64D10993F5A19BAC1DE87B53FD5F7AED26F5EC33F9F57FB845224CC3F2C54FB538319D23F74F9DC2FE457D53FD31611576072D73F0E9E0827DF2CD83FD31611576072D73F74F9DC2FE457D53F2C54FB538319D23F9F57FB845224CC3FD5F7AED26F5EC33F5A19BAC1DE87B53FA7BE65F64D10993F1584C604294297BFB391DDC495EDABBF1EFAA5D9CAFCB1BFCC560F719937B2BF6912CED177D4AEBF714CE9C51E3EA5BF49AB5C4088E993BF44659B3428915C3F027E6B4F5F35933FD357DFDD60379E3F47A95AD63809A13FDE0A926D74599F3F4744107351A4973F6BDBBCDFFC488A3FA38D0DD34071613FFF23800C73D27CBF7A2F68F0362A8BBFC62868E8DF4A90BFFE93C9EE7AEA8EBFB732DA6C80B087BFC60619649A7F7ABF35C11097698051BF83FC41EADFC16C3F93470C6E538B7A3F6E9645B2CBBB7E3FC009207951697B3F1107B9FEE88A723F6805FA4D91EC5B3F0CA0C119D0FD50BFF7279E89483969BF0E99CCABF58D70BF5EBCA9F4E86D6FBF99BFB9265FBB65BF8FA3E68454F24CBFA753B4848B1F503FF98EAA2B715E643F18971D0DCFED6A3FADEA7A366B8D6A3FD6BCBA427DC0633FEA516D3669F9503F820CBA1CE28F41BF}
 lappend params_list CONFIG.Coefficient_Buffer_Type {Automatic}
+lappend params_list CONFIG.Coefficient_Fanout {false}
 lappend params_list CONFIG.Coefficient_File {no_coe_file_loaded}
 lappend params_list CONFIG.Coefficient_Fractional_Bits {16}
 lappend params_list CONFIG.Coefficient_Reload {false}
@@ -124,13 +125,20 @@ lappend params_list CONFIG.Coefficient_Sign {Signed}
 lappend params_list CONFIG.Coefficient_Structure {Inferred}
 lappend params_list CONFIG.Coefficient_Width {16}
 lappend params_list CONFIG.ColumnConfig {1}
+lappend params_list CONFIG.Control_Broadcast_Fanout {false}
+lappend params_list CONFIG.Control_Column_Fanout {false}
+lappend params_list CONFIG.Control_LUT_Pipeline {false}
+lappend params_list CONFIG.Control_Path_Fanout {false}
 lappend params_list CONFIG.DATA_Has_TLAST {Not_Required}
 lappend params_list CONFIG.DATA_TUSER_Width {1}
 lappend params_list CONFIG.Data_Buffer_Type {Automatic}
 lappend params_list CONFIG.Data_Fractional_Bits {14}
+lappend params_list CONFIG.Data_Path_Broadcast {false}
+lappend params_list CONFIG.Data_Path_Fanout {false}
 lappend params_list CONFIG.Data_Sign {Signed}
 lappend params_list CONFIG.Data_Width {16}
 lappend params_list CONFIG.Decimation_Rate {1}
+lappend params_list CONFIG.Disable_Half_Band_Centre_Tap {false}
 lappend params_list CONFIG.DisplayReloadOrder {false}
 lappend params_list CONFIG.Filter_Architecture {Systolic_Multiply_Accumulate}
 lappend params_list CONFIG.Filter_Selection {1}
@@ -148,18 +156,23 @@ lappend params_list CONFIG.Interpolation_Rate {1}
 lappend params_list CONFIG.M_DATA_Has_TREADY {false}
 lappend params_list CONFIG.M_DATA_Has_TUSER {Not_Required}
 lappend params_list CONFIG.Multi_Column_Support {Automatic}
+lappend params_list CONFIG.No_BRAM_Read_First_Mode {false}
+lappend params_list CONFIG.No_SRL_Attributes {false}
 lappend params_list CONFIG.Num_Reload_Slots {1}
 lappend params_list CONFIG.Number_Channels {1}
 lappend params_list CONFIG.Number_Paths {1}
+lappend params_list CONFIG.Optimal_Column_Lengths {false}
 lappend params_list CONFIG.Optimization_Goal {Area}
 lappend params_list CONFIG.Optimization_List {None}
 lappend params_list CONFIG.Optimization_Selection {None}
+lappend params_list CONFIG.Other {false}
 lappend params_list CONFIG.Output_Buffer_Type {Automatic}
 lappend params_list CONFIG.Output_Rounding_Mode {Full_Precision}
 lappend params_list CONFIG.Output_Width {35}
 lappend params_list CONFIG.Passband_Max {0.50000000}
 lappend params_list CONFIG.Passband_Min {0.00000000}
 lappend params_list CONFIG.Pattern_List {P4-0,P4-1,P4-2,P4-3,P4-4}
+lappend params_list CONFIG.Pre_Adder_Pipeline {false}
 lappend params_list CONFIG.Preference_For_Other_Storage {Automatic}
 lappend params_list CONFIG.Quantization {Quantize_Only}
 lappend params_list CONFIG.RateSpecification {Maximum_Possible}
@@ -193,6 +206,7 @@ lappend params_list CONFIG.Clock_Frequency {300.0}
 lappend params_list CONFIG.CoefficientSource {Vector}
 lappend params_list CONFIG.CoefficientVector {binary:6616AAF46CE529BF000000000000000067223EE06DE0423F0000000000000000D665E45F672256BF0000000000000000017930360458663F0000000000000000B39AD3F93E6C74BF000000000000000017F5CB22DC66813F000000000000000078914769BF3B8CBF0000000000000000B405175B433B963F00000000000000005A68BCE78165A1BF00000000000000009A9E90387921AC3F000000000000000092C930E698C4B9BF0000000000000000E526E892D440D43F000000000000E03FE526E892D440D43F000000000000000092C930E698C4B9BF00000000000000009A9E90387921AC3F00000000000000005A68BCE78165A1BF0000000000000000B405175B433B963F000000000000000078914769BF3B8CBF000000000000000017F5CB22DC66813F0000000000000000B39AD3F93E6C74BF0000000000000000017930360458663F0000000000000000D665E45F672256BF000000000000000067223EE06DE0423F00000000000000006616AAF46CE529BF}
 lappend params_list CONFIG.Coefficient_Buffer_Type {Automatic}
+lappend params_list CONFIG.Coefficient_Fanout {false}
 lappend params_list CONFIG.Coefficient_File {no_coe_file_loaded}
 lappend params_list CONFIG.Coefficient_Fractional_Bits {15}
 lappend params_list CONFIG.Coefficient_Reload {false}
@@ -201,13 +215,20 @@ lappend params_list CONFIG.Coefficient_Sign {Signed}
 lappend params_list CONFIG.Coefficient_Structure {Inferred}
 lappend params_list CONFIG.Coefficient_Width {16}
 lappend params_list CONFIG.ColumnConfig {1}
+lappend params_list CONFIG.Control_Broadcast_Fanout {false}
+lappend params_list CONFIG.Control_Column_Fanout {false}
+lappend params_list CONFIG.Control_LUT_Pipeline {false}
+lappend params_list CONFIG.Control_Path_Fanout {false}
 lappend params_list CONFIG.DATA_Has_TLAST {Not_Required}
 lappend params_list CONFIG.DATA_TUSER_Width {1}
 lappend params_list CONFIG.Data_Buffer_Type {Automatic}
 lappend params_list CONFIG.Data_Fractional_Bits {14}
+lappend params_list CONFIG.Data_Path_Broadcast {false}
+lappend params_list CONFIG.Data_Path_Fanout {false}
 lappend params_list CONFIG.Data_Sign {Signed}
 lappend params_list CONFIG.Data_Width {16}
 lappend params_list CONFIG.Decimation_Rate {1}
+lappend params_list CONFIG.Disable_Half_Band_Centre_Tap {false}
 lappend params_list CONFIG.DisplayReloadOrder {false}
 lappend params_list CONFIG.Filter_Architecture {Systolic_Multiply_Accumulate}
 lappend params_list CONFIG.Filter_Selection {1}
@@ -225,18 +246,23 @@ lappend params_list CONFIG.Interpolation_Rate {2}
 lappend params_list CONFIG.M_DATA_Has_TREADY {false}
 lappend params_list CONFIG.M_DATA_Has_TUSER {Not_Required}
 lappend params_list CONFIG.Multi_Column_Support {Automatic}
+lappend params_list CONFIG.No_BRAM_Read_First_Mode {false}
+lappend params_list CONFIG.No_SRL_Attributes {false}
 lappend params_list CONFIG.Num_Reload_Slots {1}
 lappend params_list CONFIG.Number_Channels {1}
 lappend params_list CONFIG.Number_Paths {1}
+lappend params_list CONFIG.Optimal_Column_Lengths {false}
 lappend params_list CONFIG.Optimization_Goal {Area}
 lappend params_list CONFIG.Optimization_List {None}
 lappend params_list CONFIG.Optimization_Selection {None}
+lappend params_list CONFIG.Other {false}
 lappend params_list CONFIG.Output_Buffer_Type {Automatic}
 lappend params_list CONFIG.Output_Rounding_Mode {Full_Precision}
 lappend params_list CONFIG.Output_Width {32}
 lappend params_list CONFIG.Passband_Max {0.50000000}
 lappend params_list CONFIG.Passband_Min {0.00000000}
 lappend params_list CONFIG.Pattern_List {P4-0,P4-1,P4-2,P4-3,P4-4}
+lappend params_list CONFIG.Pre_Adder_Pipeline {false}
 lappend params_list CONFIG.Preference_For_Other_Storage {Automatic}
 lappend params_list CONFIG.Quantization {Quantize_Only}
 lappend params_list CONFIG.RateSpecification {Maximum_Possible}
@@ -270,6 +296,7 @@ lappend params_list CONFIG.Clock_Frequency {300.0}
 lappend params_list CONFIG.CoefficientSource {Vector}
 lappend params_list CONFIG.CoefficientVector {binary:6616AAF46CE529BF000000000000000067223EE06DE0423F0000000000000000D665E45F672256BF0000000000000000017930360458663F0000000000000000B39AD3F93E6C74BF000000000000000017F5CB22DC66813F000000000000000078914769BF3B8CBF0000000000000000B405175B433B963F00000000000000005A68BCE78165A1BF00000000000000009A9E90387921AC3F000000000000000092C930E698C4B9BF0000000000000000E526E892D440D43F000000000000E03FE526E892D440D43F000000000000000092C930E698C4B9BF00000000000000009A9E90387921AC3F00000000000000005A68BCE78165A1BF0000000000000000B405175B433B963F000000000000000078914769BF3B8CBF000000000000000017F5CB22DC66813F0000000000000000B39AD3F93E6C74BF0000000000000000017930360458663F0000000000000000D665E45F672256BF000000000000000067223EE06DE0423F00000000000000006616AAF46CE529BF}
 lappend params_list CONFIG.Coefficient_Buffer_Type {Automatic}
+lappend params_list CONFIG.Coefficient_Fanout {false}
 lappend params_list CONFIG.Coefficient_File {no_coe_file_loaded}
 lappend params_list CONFIG.Coefficient_Fractional_Bits {15}
 lappend params_list CONFIG.Coefficient_Reload {false}
@@ -278,13 +305,20 @@ lappend params_list CONFIG.Coefficient_Sign {Signed}
 lappend params_list CONFIG.Coefficient_Structure {Inferred}
 lappend params_list CONFIG.Coefficient_Width {16}
 lappend params_list CONFIG.ColumnConfig {1}
+lappend params_list CONFIG.Control_Broadcast_Fanout {false}
+lappend params_list CONFIG.Control_Column_Fanout {false}
+lappend params_list CONFIG.Control_LUT_Pipeline {false}
+lappend params_list CONFIG.Control_Path_Fanout {false}
 lappend params_list CONFIG.DATA_Has_TLAST {Not_Required}
 lappend params_list CONFIG.DATA_TUSER_Width {1}
 lappend params_list CONFIG.Data_Buffer_Type {Automatic}
 lappend params_list CONFIG.Data_Fractional_Bits {14}
+lappend params_list CONFIG.Data_Path_Broadcast {false}
+lappend params_list CONFIG.Data_Path_Fanout {false}
 lappend params_list CONFIG.Data_Sign {Signed}
 lappend params_list CONFIG.Data_Width {16}
 lappend params_list CONFIG.Decimation_Rate {1}
+lappend params_list CONFIG.Disable_Half_Band_Centre_Tap {false}
 lappend params_list CONFIG.DisplayReloadOrder {false}
 lappend params_list CONFIG.Filter_Architecture {Systolic_Multiply_Accumulate}
 lappend params_list CONFIG.Filter_Selection {1}
@@ -302,18 +336,23 @@ lappend params_list CONFIG.Interpolation_Rate {2}
 lappend params_list CONFIG.M_DATA_Has_TREADY {false}
 lappend params_list CONFIG.M_DATA_Has_TUSER {Not_Required}
 lappend params_list CONFIG.Multi_Column_Support {Automatic}
+lappend params_list CONFIG.No_BRAM_Read_First_Mode {false}
+lappend params_list CONFIG.No_SRL_Attributes {false}
 lappend params_list CONFIG.Num_Reload_Slots {1}
 lappend params_list CONFIG.Number_Channels {1}
 lappend params_list CONFIG.Number_Paths {1}
+lappend params_list CONFIG.Optimal_Column_Lengths {false}
 lappend params_list CONFIG.Optimization_Goal {Area}
 lappend params_list CONFIG.Optimization_List {None}
 lappend params_list CONFIG.Optimization_Selection {None}
+lappend params_list CONFIG.Other {false}
 lappend params_list CONFIG.Output_Buffer_Type {Automatic}
 lappend params_list CONFIG.Output_Rounding_Mode {Full_Precision}
 lappend params_list CONFIG.Output_Width {32}
 lappend params_list CONFIG.Passband_Max {0.50000000}
 lappend params_list CONFIG.Passband_Min {0.00000000}
 lappend params_list CONFIG.Pattern_List {P4-0,P4-1,P4-2,P4-3,P4-4}
+lappend params_list CONFIG.Pre_Adder_Pipeline {false}
 lappend params_list CONFIG.Preference_For_Other_Storage {Automatic}
 lappend params_list CONFIG.Quantization {Quantize_Only}
 lappend params_list CONFIG.RateSpecification {Maximum_Possible}

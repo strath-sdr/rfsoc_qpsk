@@ -1,60 +1,60 @@
 {
-  'Line_1050' => {
+  'Line_1051' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector',
     'Instance' => 'data_inspector',
-    'SimulinkInstance' => 'Data Inspector'
+    'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector'
   },
-  'Line_1067' => {
+  'Line_1068' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages',
     'Instance' => 'decimation_filtering_stages',
-    'SimulinkInstance' => 'Decimation Filtering Stages'
+    'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering Stages'
   },
-  'Line_1087' => {
+  'Line_1088' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/m_axis_tap',
     'Instance' => 'm_axis_tap',
-    'SimulinkInstance' => 'M_AXIS_TAP'
+    'SimulinkInstance' => 'axi_qpsk_rx_dec/M_AXIS_TAP'
   },
-  'Line_1094' => {
+  'Line_1095' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/concat',
     'Instance' => 'concat',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Concat'
   },
-  'Line_1103' => {
+  'Line_1104' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/logical',
     'Instance' => 'logical',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Logical'
   },
-  'Line_1112' => {
+  'Line_1113' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/reinterpret',
     'Instance' => 'reinterpret',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Reinterpret'
   },
-  'Line_1120' => {
+  'Line_1121' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/reinterpret1',
     'Instance' => 'reinterpret1',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Reinterpret1'
   },
-  'Line_1128' => {
+  'Line_1129' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/slice',
     'Instance' => 'slice',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Slice'
   },
-  'Line_1139' => {
+  'Line_1140' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/slice1',
     'Instance' => 'slice1',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Slice1'
   },
-  'Line_1150' => {
+  'Line_1151' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/slice2',
     'Instance' => 'slice2',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Slice2'
   },
-  'Line_1161' => {
+  'Line_1162' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/slice3',
     'Instance' => 'slice3',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Slice3'
   },
-  'Line_1197' => {
+  'Line_1198' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_default_clock_driver/clockdriver_x3',
     'Instance' => 'clockdriver_x3',
     'SimulinkInstance' => ''
@@ -64,37 +64,37 @@
     'Instance' => 'convert2',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Convert2'
   },
-  'Line_1209' => {
+  'Line_1210' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_default_clock_driver/clockdriver_x2',
     'Instance' => 'clockdriver_x2',
     'SimulinkInstance' => ''
   },
-  'Line_1221' => {
+  'Line_1222' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_default_clock_driver/clockdriver_x1',
     'Instance' => 'clockdriver_x1',
     'SimulinkInstance' => ''
   },
-  'Line_1233' => {
+  'Line_1234' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_default_clock_driver/clockdriver_x0',
     'Instance' => 'clockdriver_x0',
     'SimulinkInstance' => ''
   },
-  'Line_1245' => {
+  'Line_1246' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_default_clock_driver/clockdriver',
     'Instance' => 'clockdriver',
     'SimulinkInstance' => ''
   },
-  'Line_1318' => {
+  'Line_1319' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_axi_lite_interface',
     'Instance' => 'axi_qpsk_rx_dec_axi_lite_interface',
     'SimulinkInstance' => ''
   },
-  'Line_1346' => {
+  'Line_1347' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_default_clock_driver',
     'Instance' => 'axi_qpsk_rx_dec_default_clock_driver',
     'SimulinkInstance' => ''
   },
-  'Line_1362' => {
+  'Line_1363' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct',
     'Instance' => 'axi_qpsk_rx_dec_struct',
     'SimulinkInstance' => 'axi_qpsk_rx_dec'
@@ -119,121 +119,121 @@
     'Instance' => 'fifo',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/FIFO'
   },
-  'Line_223' => {
+  'Line_224' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/inverter',
     'Instance' => 'inverter',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Inverter'
   },
-  'Line_231' => {
+  'Line_232' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/inverter1',
     'Instance' => 'inverter1',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Inverter1'
   },
-  'Line_239' => {
+  'Line_240' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/logical',
     'Instance' => 'logical',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Logical'
   },
-  'Line_248' => {
+  'Line_249' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/logical1',
     'Instance' => 'logical1',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Logical1'
   },
-  'Line_257' => {
+  'Line_258' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/logical2',
     'Instance' => 'logical2',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Logical2'
   },
-  'Line_266' => {
+  'Line_267' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/logical3',
     'Instance' => 'logical3',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Logical3'
   },
-  'Line_275' => {
+  'Line_276' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/mcode',
     'Instance' => 'mcode',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/MCode'
   },
-  'Line_286' => {
+  'Line_287' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/register3',
     'Instance' => 'register3',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Register3'
   },
-  'Line_299' => {
+  'Line_300' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/register4',
     'Instance' => 'register4',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Register4'
   },
-  'Line_312' => {
+  'Line_313' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/register5',
     'Instance' => 'register5',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Register5'
   },
-  'Line_325' => {
+  'Line_326' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/relational',
     'Instance' => 'relational',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Relational'
   },
-  'Line_334' => {
+  'Line_335' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface/relational1',
     'Instance' => 'relational1',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Relational1'
   },
-  'Line_401' => {
+  'Line_402' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/axi_write_interface',
     'Instance' => 'axi_write_interface',
-    'SimulinkInstance' => 'AXI_Write_Interface'
+    'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface'
   },
-  'Line_417' => {
+  'Line_418' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/concat',
     'Instance' => 'concat',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/Concat'
   },
-  'Line_426' => {
+  'Line_427' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/convert4',
     'Instance' => 'convert4',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/Convert4'
   },
-  'Line_447' => {
+  'Line_448' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/reinterpret',
     'Instance' => 'reinterpret',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/Reinterpret'
   },
-  'Line_455' => {
+  'Line_456' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl/reinterpret1',
     'Instance' => 'reinterpret1',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/Reinterpret1'
   },
-  'Line_517' => {
+  'Line_518' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/data_inspector/m_axis_symbol_ctrl',
     'Instance' => 'm_axis_symbol_ctrl',
-    'SimulinkInstance' => 'M_AXIS_SYMBOL_CTRL'
+    'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL'
   },
-  'Line_630' => {
+  'Line_631' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/cic_compiler_4_0',
     'Instance' => 'cic_compiler_4_0',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/CIC Compiler 4.0 '
   },
-  'Line_644' => {
+  'Line_645' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/cic_compiler_4_0_1',
     'Instance' => 'cic_compiler_4_0_1',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/CIC Compiler 4.0 1'
   },
-  'Line_658' => {
+  'Line_659' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/cic_compiler_4_0_2',
     'Instance' => 'cic_compiler_4_0_2',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/CIC Compiler 4.0 2'
   },
-  'Line_674' => {
+  'Line_675' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/cic_compiler_4_0_3',
     'Instance' => 'cic_compiler_4_0_3',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/CIC Compiler 4.0 3'
   },
-  'Line_690' => {
+  'Line_691' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/convert',
     'Instance' => 'convert',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
@@ -244,25 +244,25 @@ Stages/Convert'
     'Instance' => 'constant_x0',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Constant'
   },
-  'Line_711' => {
+  'Line_712' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/convert1',
     'Instance' => 'convert1',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/Convert1'
   },
-  'Line_732' => {
+  'Line_733' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/convert4',
     'Instance' => 'convert4',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/Convert4'
   },
-  'Line_753' => {
+  'Line_754' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/convert5',
     'Instance' => 'convert5',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/Convert5'
   },
-  'Line_774' => {
+  'Line_775' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/delay2',
     'Instance' => 'delay2',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
@@ -273,67 +273,67 @@ Stages/Delay2'
     'Instance' => 'convert',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Data Inspector/M_AXIS_SYMBOL_CTRL/AXI_Write_Interface/Convert'
   },
-  'Line_789' => {
+  'Line_790' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/delay3',
     'Instance' => 'delay3',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/Delay3'
   },
-  'Line_804' => {
+  'Line_805' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/fir_compiler_7_2_1',
     'Instance' => 'fir_compiler_7_2_1',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/FIR Compiler 7.2 1'
   },
-  'Line_822' => {
+  'Line_823' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/fir_compiler_7_2_2',
     'Instance' => 'fir_compiler_7_2_2',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/FIR Compiler 7.2 2'
   },
-  'Line_840' => {
+  'Line_841' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/fir_compiler_7_2_3',
     'Instance' => 'fir_compiler_7_2_3',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/FIR Compiler 7.2 3'
   },
-  'Line_858' => {
+  'Line_859' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/fir_compiler_7_2_4',
     'Instance' => 'fir_compiler_7_2_4',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/FIR Compiler 7.2 4'
   },
-  'Line_876' => {
+  'Line_877' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/logical',
     'Instance' => 'logical',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/Logical'
   },
-  'Line_885' => {
+  'Line_886' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/logical1',
     'Instance' => 'logical1',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/Logical1'
   },
-  'Line_894' => {
+  'Line_895' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/shift1',
     'Instance' => 'shift1',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/Shift1'
   },
-  'Line_902' => {
+  'Line_903' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/shift2',
     'Instance' => 'shift2',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/Shift2'
   },
-  'Line_910' => {
+  'Line_911' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/shift3',
     'Instance' => 'shift3',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering
 Stages/Shift3'
   },
-  'Line_918' => {
+  'Line_919' => {
     'CodeInstance' => 'axi_qpsk_rx_dec_struct/decimation_filtering_stages/shift4',
     'Instance' => 'shift4',
     'SimulinkInstance' => 'axi_qpsk_rx_dec/Decimation Filtering

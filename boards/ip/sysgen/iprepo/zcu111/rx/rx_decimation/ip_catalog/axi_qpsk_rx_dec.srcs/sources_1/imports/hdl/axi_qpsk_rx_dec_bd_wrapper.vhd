@@ -1,8 +1,8 @@
---Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Mon Mar  2 14:34:35 2020
---Host        : eee-dsp22 running 64-bit Ubuntu 18.04.3 LTS
+--Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+--Date        : Wed Oct 14 11:57:16 2020
+--Host        : DESKTOP-2K5Q0I9 running 64-bit major release  (build 9200)
 --Command     : generate_target axi_qpsk_rx_dec_bd_wrapper.bd
 --Design      : axi_qpsk_rx_dec_bd_wrapper
 --Purpose     : IP block netlist
