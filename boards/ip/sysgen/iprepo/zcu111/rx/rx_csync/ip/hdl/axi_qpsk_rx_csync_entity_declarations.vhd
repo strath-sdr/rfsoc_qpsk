@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
--- System Generator version 2018.3 VHDL source file.
+-- System Generator version 2020.1 VHDL source file.
 --
--- Copyright(C) 2018 by Xilinx, Inc.  All rights reserved.  This
+-- Copyright(C) 2020 by Xilinx, Inc.  All rights reserved.  This
 -- text/file contains proprietary, confidential information of Xilinx,
 -- Inc., is distributed under license from Xilinx, Inc., and may be used,
 -- copied and/or disclosed only pursuant to the terms of a valid license
@@ -30,7 +30,7 @@
 -- sole risk and will be unsupported.
 --
 -- This copyright and support notice must be retained as part of this
--- text at all times.  (c) Copyright 1995-2018 Xilinx, Inc.  All rights
+-- text at all times.  (c) Copyright 1995-2020 Xilinx, Inc.  All rights
 -- reserved.
 -------------------------------------------------------------------
 
@@ -815,6 +815,104 @@ begin
   op <= "111111111";
 end behavior;
 
+library xil_defaultlib;
+use xil_defaultlib.conv_pkg.all;
+
+library xpm;
+use xpm.vcomponents.all;
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity axi_qpsk_rx_csync_xlsprom is
+   generic(c_address_width   : integer := -1;
+           c_width             : integer := -1;
+           mem_size          : integer := 0;
+           mem_init_file     : string  := "none";
+           read_reset_val    : string  := "0";
+           mem_type          : string  := "auto";
+           latency           : integer := 0);
+   port(addr: in std_logic_vector(c_address_width-1 downto 0);
+        en: in std_logic_vector(0 downto 0);
+        rst: in std_logic_vector(0 downto 0);
+        ce: in std_logic;
+        clk: in std_logic;
+        data: out std_logic_vector(c_width-1 downto 0)
+);
+
+end axi_qpsk_rx_csync_xlsprom;
+
+architecture behavior of axi_qpsk_rx_csync_xlsprom is
+signal a_en: std_logic_vector(0 downto 0);
+signal a_rst: std_logic_vector(0 downto 0);
+signal core_data_out, dly_data_out: std_logic_vector(c_width-1 downto 0);
+ component synth_reg
+     generic (
+       width: integer;
+       latency: integer
+     );
+     port (
+       i: in std_logic_vector(width - 1 downto 0);
+       ce: in std_logic;
+       clr: in std_logic;
+       clk: in std_logic;
+       o: out std_logic_vector(width - 1 downto 0)
+     );
+ end component;
+begin
+a_en(0) <= en(0) and ce;
+a_rst(0) <= rst(0) and ce;
+ data <= dly_data_out;
+xpm_memory_sprom_inst : xpm_memory_sprom
+
+generic map (
+   -- Common module generics
+     MEMORY_SIZE        => mem_size,        --positive integer
+     MEMORY_PRIMITIVE   => mem_type,
+     MEMORY_INIT_FILE   => mem_init_file,
+     MEMORY_INIT_PARAM  => "",
+     USE_MEM_INIT       => 1,
+     WAKEUP_TIME        => "disable_sleep",
+     MESSAGE_CONTROL    => 0,
+
+     -- Port A module generics
+     READ_DATA_WIDTH_A  => c_width,
+     ADDR_WIDTH_A       => c_address_width,
+     READ_RESET_VALUE_A => read_reset_val,
+     READ_LATENCY_A     => latency
+ )
+ port map (
+     -- Common module ports
+     sleep          =>  '0',
+     -- Port A module ports
+     clka           =>  clk,
+     rsta           =>  a_rst(0),
+     ena            =>  a_en(0),
+     regcea         =>  '1',
+	  addra          =>  addr,
+	  injectsbiterra =>  '0',  --do not change
+	  injectdbiterra =>  '0',  --do not change
+	  douta          =>  core_data_out,
+	  sbiterra       =>  open, --do not change
+	  dbiterra       =>  open  --do not change
+);
+ latency_test:if (latency > 1)  generate
+   reg1: synth_reg
+     generic map (
+     width => c_width,
+     latency => latency - 1
+     )
+     port map (
+     i => core_data_out,
+     ce => ce,
+     clr => '0',
+     clk => clk,
+     o => dly_data_out
+     );
+    end generate;
+    latency_1 : if (latency<=1) generate
+     dly_data_out <= core_data_out;
+   end generate;
+end behavior;
 library xil_defaultlib;
 use xil_defaultlib.conv_pkg.all;
 
@@ -2780,6 +2878,7 @@ entity axi_qpsk_rx_csync_xlfifogen_u is
      has_ae : integer := 0;
      has_af : integer := 0;
      extra_registers: integer := 0;
+     ignore_din_for_gcd: boolean := false;
      has_rst : boolean := false
    );
    port (
@@ -2816,6 +2915,17 @@ entity axi_qpsk_rx_csync_xlfifogen_u is
  o: out std_logic_vector(width - 1 downto 0)
  );
  end component;
+ component synth_reg_w_init 
+ generic (width : integer;
+ init_index : integer; 
+ init_value : bit_vector; 
+ latency : integer); 
+ port (i : in std_logic_vector(width-1 downto 0); 
+ ce : in std_logic; 
+ clr : in std_logic; 
+ clk : in std_logic; 
+ o : out std_logic_vector(width-1 downto 0)); 
+ end component; 
  
 
 
@@ -2844,6 +2954,10 @@ entity axi_qpsk_rx_csync_xlfifogen_u is
    signal empty_net: std_logic; 
    signal ae_net: std_logic; 
    signal af_net: std_logic; 
+   signal ae_vec: std_logic_vector(0 downto 0); 
+   signal af_vec: std_logic_vector(0 downto 0); 
+   signal ae_out: std_logic_vector(0 downto 0); 
+   signal af_out: std_logic_vector(0 downto 0); 
  
  begin
  
@@ -2900,18 +3014,47 @@ latency_gt_0: if (extra_registers > 0) generate
      srst <= srst_vec(0);
  end generate;
  
+  ae_vec(0) <= ae_net;
+  af_vec(0) <= af_net;
+ multi_sample: if (ignore_din_for_gcd) generate 
+    reg1: synth_reg_w_init 
+    generic map (width      => 1, 
+    init_index => 2, 
+    init_value => "1", 
+    latency    => 1) 
+    port map (i   => ae_vec, 
+    ce  => ce, 
+    clr => srst_vec(0), 
+    clk => clk, 
+    o   => ae_out); 
+    reg2: synth_reg_w_init 
+    generic map (width      => 1, 
+    init_index => 2, 
+    init_value => "0", 
+    latency    => 1) 
+    port map (i   => af_vec, 
+    ce  => ce, 
+    clr => srst_vec(0), 
+    clk => clk, 
+    o   => af_out); 
+  end generate; 
+  not_multi: if (ignore_din_for_gcd = false) generate 
+ begin 
+ af_out <= af_vec; 
+  ae_out <= ae_vec; 
+  end generate; 
  latency_eq_0: if (extra_registers = 0) generate
    srst <= rst and ce;
  end generate;
  
-    process (dout_net, empty_net, core_full, core_dcount, ae_net, af_net, re, we, en, re_ce, we_ce) is 
+    process (dout_net, empty_net, core_full, core_dcount, ae_out(0), af_out(0), re, we, en, re_ce, we_ce) is 
     begin 
         dout <= dout_net; 
         empty <= empty_net; 
         full <= core_full; 
         dcount <= core_dcount;
-        ae <= ae_net;
-        af <= af_net;
+        ae <= ae_out(0);
+        af <= af_out(0);
         rd_en <= re and en and re_ce;
         wr_en <= we and en and we_ce;
     end process; 
@@ -3376,133 +3519,4 @@ latency_gt_0: if (extra_registers > 0) generate
  p <= conv_p;
  end generate;
  end architecture behavior;
-
-library xil_defaultlib;
-use xil_defaultlib.conv_pkg.all;
-
-library IEEE;
- use IEEE.std_logic_1164.all;
- use IEEE.std_logic_arith.all;
-
-entity axi_qpsk_rx_csync_xlsprom is 
-   generic (
-     core_name0: string := "";
-     c_width: integer := 12;             -- equal to data_width
-     c_address_width: integer := 4;      -- Block RAM address width (might not
-                                         -- be equal to addr_width, but
-                                         -- addr_width <= c_address_width)
-     latency: integer := 1
-   );
-   port (
-     addr: in std_logic_vector(c_address_width - 1 downto 0);
-     en: in std_logic_vector(0 downto 0);
-     rst: in std_logic_vector(0 downto 0);
-     ce: in std_logic;
-     clk: in std_logic;
-     data: out std_logic_vector(c_width - 1 downto 0)
-   );
- end axi_qpsk_rx_csync_xlsprom;
- 
- architecture behavior of axi_qpsk_rx_csync_xlsprom is
- component synth_reg
- generic (
- width: integer;
- latency: integer
- );
- port (
- i: in std_logic_vector(width - 1 downto 0);
- ce: in std_logic;
- clr: in std_logic;
- clk: in std_logic;
- o: out std_logic_vector(width - 1 downto 0)
- );
- end component;
- 
- signal core_addr: std_logic_vector(c_address_width - 1 downto 0);
- signal core_data_out: std_logic_vector(c_width - 1 downto 0);
- signal core_ce, sinit: std_logic;
-
-
- component axi_qpsk_rx_csync_blk_mem_gen_i0
-    port ( 
-      addra: in std_logic_vector(c_address_width - 1 downto 0);
-      clka: in std_logic;
-      ena: in std_logic;
-      douta: out std_logic_vector(c_width - 1 downto 0) 
- 		  ); 
- end component;
-
- component axi_qpsk_rx_csync_blk_mem_gen_i1
-    port ( 
-      addra: in std_logic_vector(c_address_width - 1 downto 0);
-      clka: in std_logic;
-      ena: in std_logic;
-      douta: out std_logic_vector(c_width - 1 downto 0) 
- 		  ); 
- end component;
-
- component axi_qpsk_rx_csync_blk_mem_gen_i2
-    port ( 
-      addra: in std_logic_vector(c_address_width - 1 downto 0);
-      clka: in std_logic;
-      ena: in std_logic;
-      douta: out std_logic_vector(c_width - 1 downto 0) 
- 		  ); 
- end component;
-
-begin
- core_addr <= addr;
- core_ce <= ce and en(0);
- sinit <= rst(0) and ce;
-
-
- comp0: if ((core_name0 = "axi_qpsk_rx_csync_blk_mem_gen_i0")) generate 
-  core_instance0:axi_qpsk_rx_csync_blk_mem_gen_i0
-   port map ( 
-        addra => core_addr,
-        clka => clk,
-        ena => core_ce,
-        douta => core_data_out
-  ); 
-   end generate;
-
- comp1: if ((core_name0 = "axi_qpsk_rx_csync_blk_mem_gen_i1")) generate 
-  core_instance1:axi_qpsk_rx_csync_blk_mem_gen_i1
-   port map ( 
-        addra => core_addr,
-        clka => clk,
-        ena => core_ce,
-        douta => core_data_out
-  ); 
-   end generate;
-
- comp2: if ((core_name0 = "axi_qpsk_rx_csync_blk_mem_gen_i2")) generate 
-  core_instance2:axi_qpsk_rx_csync_blk_mem_gen_i2
-   port map ( 
-        addra => core_addr,
-        clka => clk,
-        ena => core_ce,
-        douta => core_data_out
-  ); 
-   end generate;
-
-latency_test: if (latency > 1) generate
- reg: synth_reg
- generic map (
- width => c_width,
- latency => latency - 1
- )
- port map (
- i => core_data_out,
- ce => core_ce,
- clr => '0',
- clk => clk,
- o => data
- );
- end generate;
- 
- latency_1: if (latency <= 1) generate
- data <= core_data_out;
- end generate;
- end behavior;
 

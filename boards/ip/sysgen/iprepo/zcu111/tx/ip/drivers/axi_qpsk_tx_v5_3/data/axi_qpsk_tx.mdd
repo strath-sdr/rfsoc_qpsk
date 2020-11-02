@@ -1,0 +1,8 @@
+OPTION psf_version = 2.1;
+BEGIN driver axi_qpsk_tx
+ OPTION supported_peripherals = (axi_qpsk_tx_v5_3);
+ OPTION driver_state = ACTIVE;
+ OPTION copyfiles = all;
+ OPTION name = axi_qpsk_tx;
+ OPTION version = 5.3;
+END driver

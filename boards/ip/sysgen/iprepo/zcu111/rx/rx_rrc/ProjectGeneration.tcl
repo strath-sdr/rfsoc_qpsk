@@ -14,7 +14,7 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set FPGAClockPeriod 39.0625
 	set GenerateTestBench 0
 	set HDLLanguage {vhdl}
-	set IPOOCCacheRootPath {C:/Users/jgoldsmi/AppData/Local/Xilinx/Sysgen/SysgenVivado/win64.o/ip}
+	set IPOOCCacheRootPath {C:/Users/david/AppData/Local/Xilinx/Sysgen/SysgenVivado/win64.o/ip}
 	set IP_Auto_Infer {1}
 	set IP_Categories_Text {System Generator for DSP}
 	set IP_Common_Repos {0}
@@ -23,12 +23,12 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set IP_Library_Text {SysGen}
 	set IP_LifeCycle_Menu {2}
 	set IP_Logo {sysgen_icon_100.png}
-	set IP_Name {axi_qpsk_rx_coarse_sync}
-	set IP_Revision {185724099}
+	set IP_Name {axi_qpsk_rx_rrc}
+	set IP_Revision {233582353}
 	set IP_Socket_IP {0}
 	set IP_Socket_IP_Proj_Path {}
 	set IP_Vendor_Text {UoS}
-	set IP_Version_Text {1.0}
+	set IP_Version_Text {1.1}
 	set ImplStrategyName {Vivado Implementation Defaults}
 	set PostProjectCreationProc {dsp_package_for_vivado_ip_integrator}
 	set Project {axi_qpsk_rx_rrc}
@@ -66,9 +66,9 @@ namespace eval ::xilinx::dsp::planaheaddriver {
 	set SimulationTime {10000000239.06249809 ns}
 	set SynthStrategyName {Vivado Synthesis Defaults}
 	set SynthesisTool {Vivado}
-	set TargetDir {Y:/git/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/rx/rx_rrc}
+	set TargetDir {C:/GitHub/strath_sdr/rfsoc_qpsk/boards/ip/sysgen/iprepo/zcu111/rx/rx_rrc}
 	set TopLevelModule {axi_qpsk_rx_rrc}
-	set TopLevelSimulinkHandle 2.09717
+	set TopLevelSimulinkHandle 0.000366211
 	set VHDLLib {xil_defaultlib}
 	set TopLevelPortInterface {}
 	dict set TopLevelPortInterface m_axis_tap_tready Name {m_axis_tap_tready}

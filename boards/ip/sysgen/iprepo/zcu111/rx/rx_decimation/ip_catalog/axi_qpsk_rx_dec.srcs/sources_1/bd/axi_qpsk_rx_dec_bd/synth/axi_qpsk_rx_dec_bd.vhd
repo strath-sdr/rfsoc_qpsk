@@ -1,8 +1,8 @@
---Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Mon Mar  2 14:34:34 2020
---Host        : eee-dsp22 running 64-bit Ubuntu 18.04.3 LTS
+--Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+--Date        : Wed Oct 14 11:57:16 2020
+--Host        : DESKTOP-2K5Q0I9 running 64-bit major release  (build 9200)
 --Command     : generate_target axi_qpsk_rx_dec_bd.bd
 --Design      : axi_qpsk_rx_dec_bd
 --Purpose     : IP block netlist
@@ -1087,7 +1087,7 @@ architecture STRUCTURE of axi_qpsk_rx_dec_bd is
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of CLK_IN1_D_clk_n : signal is "xilinx.com:interface:diff_clock:1.0 CLK_IN1_D CLK_N";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of CLK_IN1_D_clk_n : signal is "XIL_INTERFACENAME CLK_IN1_D, CAN_DEBUG false, FREQ_HZ 100000000";
+  attribute X_INTERFACE_PARAMETER of CLK_IN1_D_clk_n : signal is "XIL_INTERFACENAME CLK_IN1_D, CAN_DEBUG false, FREQ_HZ 25599999.999999996";
   attribute X_INTERFACE_INFO of CLK_IN1_D_clk_p : signal is "xilinx.com:interface:diff_clock:1.0 CLK_IN1_D CLK_P";
   attribute X_INTERFACE_INFO of reset_rtl : signal is "xilinx.com:signal:reset:1.0 RST.RESET_RTL RST";
   attribute X_INTERFACE_PARAMETER of reset_rtl : signal is "XIL_INTERFACENAME RST.RESET_RTL, INSERT_VIP 0, POLARITY ACTIVE_HIGH";
