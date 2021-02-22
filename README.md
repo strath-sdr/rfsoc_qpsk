@@ -25,7 +25,7 @@ If you are using PYNQ v2.5, simply specify the target branch as shown in the com
 pip3 install git+https://github.com/strath-sdr/rfsoc_qpsk@pynq_v2.5.0 --no-deps
 ```
 
-The notebook should now be available in the `rfsoc_qpsk/` folder.
+The notebook should now be available in the `strath-sdr/standalone/rfsoc_qpsk/` folder.
 Use Chrome if possible — the rendering performance is important.
 
 ## ZCU111 Setup

@@ -1,5 +1,4 @@
 from pynq import Overlay
-from pynq import Xlnk
 import xrfclk
 import xrfdc
 import os
@@ -93,22 +92,26 @@ class QpskOverlay(Overlay):
 
         # Create Overlay
         super().__init__(bitfile_name, **kwargs)
-
-        # Initialise I2C control drivers
-        if os.getenv('BOARD')=='XUPRFSOC':
-            self.init_i2c()
-
+        
         # Extact in-use dataconverter objects with friendly names
         self.rf = self.usp_rf_data_converter_0
-        self.dac_tile = self.rf.dac_tiles[1]
-        self.dac_block = self.dac_tile.blocks[2]
-
         self.adc_tile = self.rf.adc_tiles[0]
         self.adc_block = self.adc_tile.blocks[0]
 
-        # Start up LMX clock
-        if init_rf_clks:
-            xrfclk.set_all_ref_clks(409.6)
+        # Initialise I2C control drivers and set the appropriate DAC
+        if os.getenv('BOARD')=='RFSoC2x2':
+            self.init_i2c()
+            self.dac_tile = self.rf.dac_tiles[0]
+            self.dac_block = self.dac_tile.blocks[0]
+            # Start up LMX clock
+            if init_rf_clks:
+                xrfclk.set_ref_clks()
+        else:
+            self.dac_tile = self.rf.dac_tiles[1]
+            self.dac_block = self.dac_tile.blocks[2]
+            # Start up LMX clock
+            if init_rf_clks:
+                xrfclk.set_all_ref_clks(409.6)
 
         # Set sane DAC defaults
         self.dac_tile.DynamicPLLConfig(1, 409.6, 1228.8)
@@ -150,7 +153,7 @@ class QpskOverlay(Overlay):
         self.timers = TimerRegistry()
 
     def init_i2c(self):
-        """Initialize the I2C control drivers on XUPRFSOC.
+        """Initialize the I2C control drivers on RFSoC2x2.
         This should happen after a bitstream is loaded since I2C reset
         is connected to PL pins. The I2C-related drivers are made loadable
         modules so they can be removed or inserted.

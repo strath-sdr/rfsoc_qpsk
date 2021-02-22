@@ -1,6 +1,6 @@
 from pynq import DefaultIP
 from pynq import DefaultHierarchy
-from pynq import Xlnk
+from pynq import allocate
 
 import numpy as np
 
@@ -50,8 +50,7 @@ class DataInspector(DefaultIP):
         self.reset = 0
         
         # Init buffer
-        xlnk = Xlnk()
-        self.buf = xlnk.cma_array(shape=(pkt_size * buf_words_per_pkt, ), dtype=np.int16)
+        self.buf = allocate(shape=(pkt_size * buf_words_per_pkt, ), dtype=np.int16)
     
     def _process_frame(self, frame):
         # By default treat frame as interleaved IQ stream.

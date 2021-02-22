@@ -1,6 +1,6 @@
 from pynq import DefaultIP
 from pynq import DefaultHierarchy
-from pynq import Xlnk
+from pynq import allocate
 import numpy as np
 
 
@@ -14,10 +14,9 @@ class QPSKTx(DefaultHierarchy):
 
         super().__init__(description)
 
-        xlnk = Xlnk()
-        self.buf_fft = xlnk.cma_array(shape=(pkt_fft, ), dtype=np.uint32)
-        self.buf_sym = xlnk.cma_array(shape=(pkt_sym, ), dtype=np.uint8)
-        self.buf_time = xlnk.cma_array(shape=(pkt_time * 2, ), dtype=np.int16)
+        self.buf_fft = allocate(shape=(pkt_fft, ), dtype=np.uint32)
+        self.buf_sym = allocate(shape=(pkt_sym, ), dtype=np.uint8)
+        self.buf_time = allocate(shape=(pkt_time * 2, ), dtype=np.int16)
 
         # QPSK IP General Config
         self.qpsk_tx.lfsr_rst = 1

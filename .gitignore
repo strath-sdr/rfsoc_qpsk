@@ -1,15 +1,12 @@
-boards/ZCU111/rfsoc_pynq/
+*\rfsoc_pynq
 .Xil
 vivado.jou
 vivado.log
-
 *.log
 *.htm
-
 .ipynb_checkpoints
 .idea
 *.slxc
 *\slprj
 *\wavedata
 *.autosave
-boards/ip/sysgen/tx/wavedata/AXI_QPSK_Tx.tcl
