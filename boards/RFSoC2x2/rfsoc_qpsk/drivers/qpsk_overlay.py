@@ -272,4 +272,137 @@ class QpskOverlay(Overlay):
 
         tabs.observe(callback, names='selected_index')
 
-Overlay = QpskOverlay
+    def _tx_display_generator(self):
+        tx_plot_names = ['Symbols', 'Post TX RRC']
+        plot_tx_symbol = self.plot_group(
+            'tx_symbol', ['time-binary'], self.qpsk_tx.get_symbols, fs=500
+        )
+        plot_tx_shaped = self.plot_group(
+            'tx_shaped', ['time', 'frequency'], self.qpsk_tx.get_shaped_time, fs=4000,
+            get_freq_data=self.qpsk_tx.get_shaped_fft
+        )
+        tx_display_widgets = ipw.Accordion(children=[plot_tx_symbol,
+                                                     plot_tx_shaped])
+        for i in range(0, 2):
+            tx_display_widgets.set_title(i, tx_plot_names[i])
+        return tx_display_widgets
+
+    def _rx_display_generator(self):
+
+        def classify_bits(frame):
+            bit_quantise    = lambda b: 1 if b>0 else 0
+            symbol_quantise = lambda i, q: bit_quantise(i) + 1j*bit_quantise(q)
+            return np.fromiter(
+                map(symbol_quantise, np.real(frame), np.imag(frame)),
+                dtype=np.complex
+            )
+
+        rx_domains = ['time', 'frequency', 'constellation']
+        rx_plot_names = ['Decimation', 'Coarse Sync', 'Post RX RRC', 'Time Sync']
+        plot_rx_decimated = self.plot_group(
+            'rx_decimated', rx_domains, self.qpsk_rx.get_decimated, fs=4000 
+        )
+        plot_rx_coarse_sync = self.plot_group(
+            'rx_coarse_sync', rx_domains, self.qpsk_rx.get_coarse_synced, fs=4000
+        )
+        plot_rx_rrced = self.plot_group(
+            'rx_rrced', rx_domains, self.qpsk_rx.get_rrced, fs=16000
+        )
+        plot_rx_constellation = self.plot_group(
+            'rx_data', ['constellation', 'time-binary'],
+            lambda : classify_bits(self.qpsk_rx.get_data()), fs=500,
+            get_const_data=self.qpsk_rx.get_data
+        )
+        rx_display_widgets = ipw.Accordion(children=[plot_rx_decimated,
+                                                     plot_rx_coarse_sync,
+                                                     plot_rx_rrced,
+                                                     plot_rx_constellation])
+        for i in range(0, 4):
+            rx_display_widgets.set_title(i, rx_plot_names[i])
+        return rx_display_widgets
+
+    def _rx_simple_display_generator(self):
+        plot_rx_constellation = self.plot_group(
+            'rx_data', ['constellation'], self.qpsk_rx.get_data, fs=500,
+            get_const_data=self.qpsk_rx.get_data
+        )
+        return plot_rx_constellation
+
+    def _tx_simple_display_generator(self):
+        plot_tx_shaped = self.plot_group(
+            'tx_shaped', ['time', 'frequency'], self.qpsk_tx.get_shaped_time, fs=4000,
+            get_freq_data=self.qpsk_tx.get_shaped_fft
+        )
+        return plot_tx_shaped
+
+    def _common_control_generator(self):
+
+        def unwrap_slider_val(callback):
+            return lambda slider_val : callback(slider_val['new'])
+
+        def update_nco(rf_block, nco_freq):
+            mixer_cfg = rf_block.MixerSettings
+            mixer_cfg['Freq'] = nco_freq
+            rf_block.MixerSettings = mixer_cfg
+            rf_block.UpdateEvent(xrfdc.EVENT_MIXER)
+
+        def new_nco_slider(title):
+            return ipw.FloatSlider(
+                value=1000,
+                min=620,
+                max=1220,
+                step=20,
+                description=title,
+                disabled=False,
+                continuous_update=False,
+                orientation='horizontal',
+                readout=True,
+                readout_format='.1f',
+                style = {'description_width': 'initial'}
+            )
+
+        pow_slider = ipw.SelectionSlider(
+            options=[0.1, 0.3, 0.6, 1],
+            value=1,
+            description='Transmit Power:',
+            style = {'description_width': 'initial'}
+        )
+        pow_slider.observe(unwrap_slider_val(self.qpsk_tx.set_gain), names='value')
+
+        tx_nco_slider = new_nco_slider('TX Centre Frequency (MHz)')
+        rx_nco_slider = new_nco_slider('RX Centre Frequency (MHz)')
+
+        ipw.link((rx_nco_slider, 'value'), (tx_nco_slider, 'value'))
+        tx_nco_slider.observe(
+            unwrap_slider_val(lambda v: update_nco(self.dac_block, v)),
+            names='value'
+        )
+        rx_nco_slider.observe(
+            unwrap_slider_val(lambda v: update_nco(self.adc_block, v)),
+            names='value'
+        )
+
+        control_widgets = ipw.Accordion(children=[ipw.VBox([
+            pow_slider,
+            tx_nco_slider,
+            rx_nco_slider])])
+        control_widgets.set_title(0, 'System Control')
+
+        return control_widgets
+
+    def _qpsk_generator(self):
+        tx_display_widget = self._tx_simple_display_generator()
+        rx_display_widget = self._rx_simple_display_generator()
+        common_control_widget = self._common_control_generator()
+        control_accordion = ipw.Accordion(children=[common_control_widget])
+        tx_display_accordion = ipw.Accordion(children=[tx_display_widget])
+        control_accordion.set_title(0, 'System Control')
+        tx_display_accordion.set_title(0, 'Transmitter Visualisation')
+        side_bar = ipw.VBox([control_accordion, tx_display_accordion])
+        main_app = ipw.Accordion(children=[rx_display_widget])
+        main_app.set_title(0, 'Receiver Visualisation')
+        return ipw.HBox([side_bar, main_app])
+
+    def qpsk_demonstrator_application(self):
+        app = self._qpsk_generator()
+        return app
