@@ -6,7 +6,7 @@
 This repo contains all the files needed to build and run the RFSoC QPSK demonstrator that was published in [IEEE Access](https://ieeexplore.ieee.org/document/9139483) and was presented at both [FPL](https://fpl2018.org/) and [XDF](http://www.xilinx.com/xdf) conferences in 2018. The design is a full QPSK transceiver, which transmits and receives randomly-generated pulse-shaped symbols with full carrier and timing synchronisation. [PYNQ](https://github.com/xilinx/pynq) is used to visualise the data at both the DAC and ADC side of the RFSoC data converters, as well as visualising various DSP stages throughout the transmit and receive signal path.
 
 <p align="center">
-  <img src="https://github.com/strath-sdr/rfsoc_qpsk/blob/master/img/constellation_small.gif" width="400" height="400" />
+  <img src="demonstration.gif" width="787" height="513" />
 <p/>
 
 ## Quick Start
