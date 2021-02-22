@@ -1,4 +1,4 @@
-<img src="https://www.strath.ac.uk/media/1newwebsite/webteam/logos/xUoS_Logo_Horizontal.png.pagespeed.ic.M6gv_BmDx1.png" width="350">
+<img src="strathclyde_banner.png" width="100%">
 
 # RFSoC QPSK Transceiver 
 
