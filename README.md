@@ -59,7 +59,7 @@ The Tx and Rx IPs are in separate directories in `rfsoc_qpsk/boards/sysgen/` tha
 This project can be built with Vivado from the command line. Open Vivado 2020.1 and execute the following into the tcl console:
 
 ```sh
-cd /<repository-location>/boards/<board-name>/rfsoc_sam/
+cd /<repository-location>/boards/<board-name>/rfsoc_qpsk/
 ```
 
 Now that we have moved into the correct directory, make the Vivado project by running the make commands below sequentially.
