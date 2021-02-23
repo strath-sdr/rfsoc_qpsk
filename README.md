@@ -37,6 +37,8 @@ pip3 install git+https://github.com/strath-sdr/rfsoc_qpsk
 
 Once installation has complete, you will find the QPSK demonstrator notebooks located in the jupyter home workspace in the `qpsk-demonstrator` folder.
 
+This repository uses Voila to create simple web applications using Jupyter notebooks. Your RFSoC2x2 development board should already be preinstalled with a version of Voila and no further setup is required.
+
 ## ZCU111 Setup
 The ZCU111 PYNQ image already comes preinstalled with the QPSK demonstrator package. To use this repository correctly you should force reinstall the rfsoc-qpsk package by executing the following command in the terminal:
 
@@ -45,6 +47,8 @@ pip3 install --force-reinstall --no-deps git+https://github.com/strath-sdr/rfsoc
 ```
 
 Once installation has complete, you will find the QPSK demonstrator notebooks located in the jupyter home workspace in the `qpsk-demonstrator` folder.
+
+This repository uses Voila to create simple web applications using Jupyter notebooks. If you would like to use Voila on your ZCU111 development board, simply follow the instructions outlined in this [blog post](https://strath-sdr.github.io/pynq/linux/zynq/fpga/voila/2021/02/22/install-voila-on-pynq-v2-6.html).
 
 ## Using the Project Files
 The following software is required to use the project files in this repository.
