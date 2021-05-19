@@ -88,7 +88,7 @@ copy_notebooks()
 
 setup(
     name="rfsoc_qpsk",
-    version='1.3',
+    version='1.3.1',
     install_requires=[
         'pynq==2.6',
         'plotly==4.5.2',

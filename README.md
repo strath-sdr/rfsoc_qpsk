@@ -1,4 +1,4 @@
-<img src="strathclyde_banner.png" width="100%">
+<img src="strathsdr_banner.png" width="100%">
 
 # RFSoC QPSK Transceiver
 This repository is only compatible with [PYNQ images v2.6](https://github.com/Xilinx/PYNQ/releases) for the [ZCU111](https://www.xilinx.com/products/boards-and-kits/zcu111.html) and [RFSoC2x2](http://rfsoc-pynq.io/).
@@ -7,7 +7,7 @@ This repository is only compatible with [PYNQ images v2.6](https://github.com/Xi
 This repo contains all the files needed to build and run the RFSoC QPSK demonstrator that was published in [IEEE Access](https://ieeexplore.ieee.org/document/9139483) and was presented at both [FPL](https://fpl2018.org/) and [XDF](http://www.xilinx.com/xdf) conferences in 2018. The design is a full QPSK transceiver, which transmits and receives randomly-generated pulse-shaped symbols with full carrier and timing synchronisation. [PYNQ](https://github.com/xilinx/pynq) is used to visualise the data at both the DAC and ADC side of the RFSoC data converters, as well as visualising various DSP stages throughout the transmit and receive signal path.
 
 <p align="center">
-  <img src="demonstration.gif" width="787" height="513" />
+  <img src="demonstration.gif" />
 <p/>
 
 ## Quick Start
@@ -57,7 +57,7 @@ The following software is required to use the project files in this repository.
 - MATLAB R2020a
 
 ### System Generator
-The Tx and Rx IPs are in separate directories in `rfsoc_qpsk/boards/sysgen/` that can be opened using the appropriate System Generator dialogue. Due to the large amount of decimation and interpolation in both IPs, simulating the output can take an extraordinarily long time. A less extreme multirate system would simulate much faster! 
+The Tx and Rx IPs are in separate directories in `rfsoc_qpsk/boards/ip/sysgen/` that can be opened using the appropriate System Generator dialogue. Due to the large amount of decimation and interpolation in both IPs, simulating the output can take an extraordinarily long time. A less extreme multirate system would simulate much faster! 
 
 ### Vivado
 This project can be built with Vivado from the command line. Open Vivado 2020.1 and execute the following into the tcl console:
