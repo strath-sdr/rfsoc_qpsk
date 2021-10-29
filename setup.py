@@ -43,7 +43,6 @@ board_project_dir = os.path.join(board_notebooks_dir, 'qpsk-demonstrator')
 
 data_files = []
 
-
 # check whether board is supported
 def check_env():
     if not os.path.isdir(repo_board_folder):
@@ -88,10 +87,10 @@ copy_notebooks()
 
 setup(
     name="rfsoc_qpsk",
-    version='1.3.1',
+    version='1.4.0',
     install_requires=[
-        'pynq==2.6',
-        'plotly==4.5.2',
+        'pynq==2.7',
+        'plotly==5.1.0',
     ],
     url='https://github.com/strath-sdr/rfsoc_qpsk.git',
     license='BSD 3-Clause License',

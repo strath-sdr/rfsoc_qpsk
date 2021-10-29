@@ -1,7 +1,7 @@
 <img src="strathsdr_banner.png" width="100%">
 
 # RFSoC QPSK Transceiver
-This repository is only compatible with [PYNQ images v2.6](https://github.com/Xilinx/PYNQ/releases) for the [ZCU111](https://www.xilinx.com/products/boards-and-kits/zcu111.html) and [RFSoC2x2](http://rfsoc-pynq.io/).
+This repository is only compatible with [PYNQ images v2.7](https://github.com/Xilinx/PYNQ/releases) for the [ZCU111](https://www.xilinx.com/products/boards-and-kits/zcu111.html) and [RFSoC2x2](http://rfsoc-pynq.io/).
 
 ## Introduction
 This repo contains all the files needed to build and run the RFSoC QPSK demonstrator that was published in [IEEE Access](https://ieeexplore.ieee.org/document/9139483) and was presented at both [FPL](https://fpl2018.org/) and [XDF](http://www.xilinx.com/xdf) conferences in 2018. The design is a full QPSK transceiver, which transmits and receives randomly-generated pulse-shaped symbols with full carrier and timing synchronisation. [PYNQ](https://github.com/xilinx/pynq) is used to visualise the data at both the DAC and ADC side of the RFSoC data converters, as well as visualising various DSP stages throughout the transmit and receive signal path.
@@ -12,7 +12,7 @@ This repo contains all the files needed to build and run the RFSoC QPSK demonstr
 
 ## Quick Start
 Follow the instructions below to install the QPSK demonstrator on your development board. **You will need to give your board access to the internet**.
-* Power on your RFSoC2x2 or ZCU111 development board with an SD Card containing a fresh PYNQ v2.6 image.
+* Power on your RFSoC2x2 or ZCU111 development board with an SD Card containing a fresh PYNQ v2.7 image.
 * Navigate to Jupyter Labs by opening a browser (preferably Chrome) and connecting to `http://<board_ip_address>:9090/lab`.
 * We need to open a terminal in Jupyter Lab. Firstly, open a launcher window as shown in the figure below:
 
@@ -26,10 +26,7 @@ Follow the instructions below to install the QPSK demonstrator on your developme
   <img src="../master/open_terminal_window.jpg" width="50%" height="50%" />
 <p/>
 
-Now follow the board specific instructions as follows.
-
-## RFSoC2x2 Setup
-Your RFSoC2x2 development board does not come preinstalled with the QPSK demonstrator package (rfsoc-qpsk). You can install it by executing the command below in the terminal.
+* Now simply install the QPSK demonstrator through PIP by executing the following command in the terminal:
 
 ```sh
 pip3 install git+https://github.com/strath-sdr/rfsoc_qpsk
@@ -37,18 +34,7 @@ pip3 install git+https://github.com/strath-sdr/rfsoc_qpsk
 
 Once installation has complete, you will find the QPSK demonstrator notebooks located in the jupyter home workspace in the `qpsk-demonstrator` folder.
 
-This repository uses Voila to create simple web applications using Jupyter notebooks. Your RFSoC2x2 development board should already be preinstalled with a version of Voila and no further setup is required.
-
-## ZCU111 Setup
-The ZCU111 PYNQ image already comes preinstalled with the QPSK demonstrator package. To use this repository correctly you should force reinstall the rfsoc-qpsk package by executing the following command in the terminal:
-
-```sh
-pip3 install --force-reinstall --no-deps git+https://github.com/strath-sdr/rfsoc_qpsk
-```
-
-Once installation has complete, you will find the QPSK demonstrator notebooks located in the jupyter home workspace in the `qpsk-demonstrator` folder.
-
-This repository uses Voila to create simple web applications using Jupyter notebooks. If you would like to use Voila on your ZCU111 development board, simply follow the instructions outlined in this [blog post](https://strath-sdr.github.io/pynq/linux/zynq/fpga/voila/2021/02/22/install-voila-on-pynq-v2-6.html).
+This repository uses Voila to create simple web applications using Jupyter notebooks. Your RFSoC2x2 or ZCU111 development board should already be preinstalled with a version of Voila and no further setup is required.
 
 ## Using the Project Files
 The following software is required to use the project files in this repository.
