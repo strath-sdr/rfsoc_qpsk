@@ -1,43 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Nov  9 13:49:57 2020" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Feb 18 10:20:48 2022" VIVADOVERSION="2020.2">
 
   <SYSTEMINFO ARCH="zynquplusRFSOC" DEVICE="xczu28dr" NAME="block_design" PACKAGE="ffvg1517" SPEEDGRADE="-2"/>
 
   <EXTERNALPORTS>
-    <PORT DIR="O" LEFT="0" NAME="lmk_reset" RIGHT="0" SIGIS="undef" SIGNAME="lmk_reset_low_dout">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="lmk_reset_low" PORT="dout"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="O" LEFT="1" NAME="leds_clk_lock" RIGHT="0" SIGIS="undef" SIGNAME="pl_leds_concat_dout">
       <CONNECTIONS>
         <CONNECTION INSTANCE="pl_leds_concat" PORT="dout"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="lmk_reset" RIGHT="0" SIGIS="undef" SIGNAME="lmk_reset_low_dout">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="lmk_reset_low" PORT="dout"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_reset">
       <CONNECTIONS>
         <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="resetn"/>
         <CONNECTION INSTANCE="qpsk_tx_clk_tx" PORT="resetn"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="vin0_01_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin0_01_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin0_01_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="vin0_01_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin0_01_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin0_01_p"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc0_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc0_clk_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc0_clk_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc0_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc0_clk_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc0_clk_p"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="sysref_in_diff_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_sysref_in_n">
@@ -70,15 +50,29 @@
         <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vout00_p"/>
       </CONNECTIONS>
     </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc0_clk_clk_n" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc0_clk_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc0_clk_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="adc0_clk_clk_p" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_adc0_clk_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="adc0_clk_p"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="vin0_01_v_n" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin0_01_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin0_01_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="vin0_01_v_p" SIGIS="undef" SIGNAME="usp_rf_data_converter_0_vin0_01_p">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="vin0_01_p"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
-    <BUSINTERFACE BUSNAME="External_Interface_sysref_in" NAME="sysref_in" TYPE="TARGET">
-      <PORTMAPS>
-        <PORTMAP LOGICAL="diff_n" PHYSICAL="sysref_in_diff_n"/>
-        <PORTMAP LOGICAL="diff_p" PHYSICAL="sysref_in_diff_p"/>
-      </PORTMAPS>
-    </BUSINTERFACE>
     <BUSINTERFACE BUSNAME="External_Interface_adc0_clk" NAME="adc0_clk" TYPE="TARGET">
       <PARAMETER NAME="CAN_DEBUG" VALUE="false"/>
       <PARAMETER NAME="FREQ_HZ" VALUE="409600000.0"/>
@@ -87,18 +81,24 @@
         <PORTMAP LOGICAL="CLK_P" PHYSICAL="adc0_clk_clk_p"/>
       </PORTMAPS>
     </BUSINTERFACE>
-    <BUSINTERFACE BUSNAME="External_Interface_vin0_01" NAME="vin0_01" TYPE="TARGET">
-      <PORTMAPS>
-        <PORTMAP LOGICAL="V_N" PHYSICAL="vin0_01_v_n"/>
-        <PORTMAP LOGICAL="V_P" PHYSICAL="vin0_01_v_p"/>
-      </PORTMAPS>
-    </BUSINTERFACE>
     <BUSINTERFACE BUSNAME="External_Interface_dac0_clk" NAME="dac0_clk" TYPE="TARGET">
       <PARAMETER NAME="CAN_DEBUG" VALUE="false"/>
       <PARAMETER NAME="FREQ_HZ" VALUE="409600000.0"/>
       <PORTMAPS>
         <PORTMAP LOGICAL="CLK_N" PHYSICAL="dac0_clk_clk_n"/>
         <PORTMAP LOGICAL="CLK_P" PHYSICAL="dac0_clk_clk_p"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_sysref_in" NAME="sysref_in" TYPE="TARGET">
+      <PORTMAPS>
+        <PORTMAP LOGICAL="diff_n" PHYSICAL="sysref_in_diff_n"/>
+        <PORTMAP LOGICAL="diff_p" PHYSICAL="sysref_in_diff_p"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_vin0_01" NAME="vin0_01" TYPE="TARGET">
+      <PORTMAPS>
+        <PORTMAP LOGICAL="V_N" PHYSICAL="vin0_01_v_n"/>
+        <PORTMAP LOGICAL="V_P" PHYSICAL="vin0_01_v_p"/>
       </PORTMAPS>
     </BUSINTERFACE>
     <BUSINTERFACE BUSNAME="usp_rf_data_converter_0_vout00" NAME="vout00" TYPE="INITIATOR">
@@ -110,7 +110,7 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="14" FULLNAME="/axi_intc_fpd" HWVERSION="4.1" INSTANCE="axi_intc_fpd" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="INTERRUPT_CNTLR" MODTYPE="axi_intc" VLNV="xilinx.com:ip:axi_intc:4.1">
+    <MODULE COREREVISION="15" FULLNAME="/axi_intc_fpd" HWVERSION="4.1" INSTANCE="axi_intc_fpd" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="INTERRUPT_CNTLR" MODTYPE="axi_intc" VLNV="xilinx.com:ip:axi_intc:4.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_intc;v=v4_1;d=pg099-axi-intc.pdf"/>
       </DOCUMENTS>
@@ -1810,7 +1810,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/interrupt_concat_fpd" HWVERSION="2.1" INSTANCE="interrupt_concat_fpd" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
+    <MODULE COREREVISION="4" FULLNAME="/interrupt_concat_fpd" HWVERSION="2.1" INSTANCE="interrupt_concat_fpd" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
@@ -1845,6 +1845,102 @@
         <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
         <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
         <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN32_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN33_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN34_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN35_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN36_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN37_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN38_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN39_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN40_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN41_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN42_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN43_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN44_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN45_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN46_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN47_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN48_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN49_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN50_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN51_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN52_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN53_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN54_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN55_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN56_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN57_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN58_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN59_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN60_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN61_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN62_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN63_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN64_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN65_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN66_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN67_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN68_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN69_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN70_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN71_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN72_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN73_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN74_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN75_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN76_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN77_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN78_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN79_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN80_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN81_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN82_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN83_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN84_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN85_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN86_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN87_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN88_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN89_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN90_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN91_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN92_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN93_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN94_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN95_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN96_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN97_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN98_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN99_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN100_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN101_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN102_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN103_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN104_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN105_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN106_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN107_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN108_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN109_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN110_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN111_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN112_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN113_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN114_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN115_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN116_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN117_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN118_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN119_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN120_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN121_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN122_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN123_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN124_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN125_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN126_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN127_WIDTH" VALUE="1"/>
         <PARAMETER NAME="dout_width" VALUE="8"/>
         <PARAMETER NAME="NUM_PORTS" VALUE="3"/>
         <PARAMETER NAME="Component_Name" VALUE="block_design_interrupt_concat_fpd_0"/>
@@ -1879,7 +1975,7 @@
       <PARAMETERS>
         <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
         <PARAMETER NAME="CONST_VAL" VALUE="0x0"/>
-        <PARAMETER NAME="Component_Name" VALUE="block_design_xlconstant_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="block_design_lmk_reset_low_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -1891,7 +1987,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/pl_leds_concat" HWVERSION="2.1" INSTANCE="pl_leds_concat" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
+    <MODULE COREREVISION="4" FULLNAME="/pl_leds_concat" HWVERSION="2.1" INSTANCE="pl_leds_concat" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
@@ -1926,9 +2022,105 @@
         <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
         <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
         <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN32_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN33_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN34_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN35_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN36_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN37_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN38_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN39_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN40_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN41_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN42_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN43_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN44_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN45_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN46_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN47_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN48_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN49_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN50_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN51_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN52_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN53_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN54_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN55_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN56_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN57_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN58_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN59_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN60_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN61_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN62_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN63_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN64_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN65_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN66_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN67_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN68_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN69_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN70_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN71_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN72_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN73_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN74_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN75_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN76_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN77_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN78_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN79_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN80_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN81_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN82_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN83_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN84_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN85_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN86_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN87_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN88_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN89_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN90_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN91_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN92_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN93_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN94_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN95_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN96_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN97_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN98_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN99_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN100_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN101_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN102_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN103_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN104_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN105_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN106_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN107_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN108_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN109_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN110_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN111_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN112_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN113_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN114_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN115_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN116_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN117_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN118_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN119_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN120_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN121_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN122_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN123_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN124_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN125_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN126_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN127_WIDTH" VALUE="1"/>
         <PARAMETER NAME="dout_width" VALUE="2"/>
         <PARAMETER NAME="NUM_PORTS" VALUE="2"/>
-        <PARAMETER NAME="Component_Name" VALUE="block_design_xlconcat_0_2"/>
+        <PARAMETER NAME="Component_Name" VALUE="block_design_pl_leds_concat_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -1950,7 +2142,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="22" FULLNAME="/qpsk_rx/axi_interconnect_0" HWVERSION="2.1" INSTANCE="qpsk_rx_axi_interconnect_0" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
+    <MODULE COREREVISION="23" FULLNAME="/qpsk_rx/axi_interconnect_0" HWVERSION="2.1" INSTANCE="qpsk_rx_axi_interconnect_0" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_interconnect;v=v2_1;d=pg059-axi-interconnect.pdf"/>
       </DOCUMENTS>
@@ -2293,9 +2485,9 @@
             <CONNECTION INSTANCE="qpsk_rx_reset_pl" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M00_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT DIR="I" NAME="M00_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M00_ARESETN" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
@@ -2303,9 +2495,9 @@
             <CONNECTION INSTANCE="qpsk_rx_reset_256" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT DIR="I" NAME="M01_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M01_ARESETN" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
@@ -2313,9 +2505,9 @@
             <CONNECTION INSTANCE="qpsk_rx_reset_256" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT DIR="I" NAME="M02_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M02_ARESETN" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
@@ -2323,9 +2515,9 @@
             <CONNECTION INSTANCE="qpsk_rx_reset_256" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT DIR="I" NAME="M03_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M03_ARESETN" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
@@ -2333,9 +2525,9 @@
             <CONNECTION INSTANCE="qpsk_rx_reset_256" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M04_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT DIR="I" NAME="M04_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M04_ARESETN" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
@@ -2343,9 +2535,9 @@
             <CONNECTION INSTANCE="qpsk_rx_reset_256" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M05_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT DIR="I" NAME="M05_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M05_ARESETN" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
@@ -2353,9 +2545,9 @@
             <CONNECTION INSTANCE="qpsk_rx_reset_256" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M06_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT DIR="I" NAME="M06_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M06_ARESETN" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
@@ -2363,14 +2555,212 @@
             <CONNECTION INSTANCE="qpsk_rx_reset_256" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M07_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT DIR="I" NAME="M07_ACLK" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M07_ARESETN" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="qpsk_rx_reset_256" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="9" NAME="M07_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_awlen" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_awsize" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_awburst" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_awlock" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_awcache" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_awregion" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_awqos" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_awvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M07_AXI_awready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M07_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_wstrb" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_wlast" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_wvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M07_AXI_wready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M07_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M07_AXI_bvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_bready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="9" NAME="M07_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_arlen" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_arsize" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_arburst" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_arlock" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_arcache" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_arregion" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_arqos" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M07_AXI_arvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M07_AXI_arready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M07_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M07_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M07_AXI_rlast" SIGIS="undef"/>
+        <PORT DIR="I" NAME="M07_AXI_rvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_rready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="9" NAME="M06_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_awlen" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_awsize" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_awburst" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_awlock" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_awcache" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_awregion" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_awqos" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_awvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_awready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_wstrb" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_wlast" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_wvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_wready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_bvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_bready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="9" NAME="M06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_arlen" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_arsize" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_arburst" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_arlock" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_arcache" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_arregion" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_arqos" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M06_AXI_arvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_arready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_rlast" SIGIS="undef"/>
+        <PORT DIR="I" NAME="M06_AXI_rvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_rready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="39" NAME="S00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_S00_AXI_awaddr">
@@ -2408,7 +2798,6 @@
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxigp1_awprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S00_AXI_awregion" SIGIS="undef"/>
         <PORT DIR="I" LEFT="3" NAME="S00_AXI_awqos" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_S00_AXI_awqos">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxigp1_awqos"/>
@@ -2499,7 +2888,6 @@
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxigp1_arprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S00_AXI_arregion" SIGIS="undef"/>
         <PORT DIR="I" LEFT="3" NAME="S00_AXI_arqos" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_S00_AXI_arqos">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxigp1_arqos"/>
@@ -2849,105 +3237,6 @@
             <CONNECTION INSTANCE="qpsk_rx_qpsk_rx_rrc" PORT="axi_qpsk_rx_rrc_s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="9" NAME="M04_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M04_AXI_awlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_awsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_awburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_awlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_awcache" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_awregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_awqos" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_awvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M04_AXI_awready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M04_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M04_AXI_wstrb" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_wlast" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_wvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M04_AXI_wready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M04_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M04_AXI_bvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M04_AXI_bready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="9" NAME="M04_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M04_AXI_arlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_arsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_arburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_arlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_arcache" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_arregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_arqos" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M04_AXI_arvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M04_AXI_arready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M04_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M04_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M04_AXI_rlast" SIGIS="undef"/>
-        <PORT DIR="I" NAME="M04_AXI_rvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M04_AXI_rready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_rready"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="4" NAME="M03_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M03_AXI_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="qpsk_rx_qpsk_rx_tsync" PORT="axi_qpsk_rx_tsync_s_axi_awaddr"/>
@@ -3051,6 +3340,105 @@
             <CONNECTION INSTANCE="qpsk_rx_qpsk_rx_tsync" PORT="axi_qpsk_rx_tsync_s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" LEFT="9" NAME="M04_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M04_AXI_awlen" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_awsize" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_awburst" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_awlock" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_awcache" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_awregion" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_awqos" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_awvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M04_AXI_awready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M04_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M04_AXI_wstrb" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_wlast" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_wvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M04_AXI_wready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M04_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M04_AXI_bvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M04_AXI_bready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="9" NAME="M04_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M04_AXI_arlen" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_arsize" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_arburst" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_arlock" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_arcache" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_arregion" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_arqos" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M04_AXI_arvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M04_AXI_arready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M04_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M04_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M04_AXI_rlast" SIGIS="undef"/>
+        <PORT DIR="I" NAME="M04_AXI_rvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M04_AXI_rready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M04_AXI_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axi_lite_rready"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" LEFT="9" NAME="M05_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M05_AXI_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="qpsk_rx_dma_rx_csync" PORT="s_axi_lite_awaddr"/>
@@ -3150,204 +3538,6 @@
             <CONNECTION INSTANCE="qpsk_rx_dma_rx_csync" PORT="s_axi_lite_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="9" NAME="M06_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_awlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_awsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_awburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_awlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_awcache" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_awregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_awqos" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_awvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_awready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_wstrb" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_wlast" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_wvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_wready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M06_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_bvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_bready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="9" NAME="M06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_arlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_arsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_arburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_arlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_arcache" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_arregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_arqos" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M06_AXI_arvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_arready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_rlast" SIGIS="undef"/>
-        <PORT DIR="I" NAME="M06_AXI_rvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_rready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M06_AXI_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="9" NAME="M07_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_awlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_awsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_awburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_awlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_awcache" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_awregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_awqos" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_awvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M07_AXI_awready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M07_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_wstrb" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_wlast" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_wvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M07_AXI_wready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M07_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M07_AXI_bvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_bready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="9" NAME="M07_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_arlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_arsize" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_arburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_arlock" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_arcache" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_arregion" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_arqos" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M07_AXI_arvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M07_AXI_arready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M07_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M07_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M07_AXI_rlast" SIGIS="undef"/>
-        <PORT DIR="I" NAME="M07_AXI_rvalid" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_rready" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_M07_AXI_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_rready"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" LEFT="15" NAME="S00_AXI_arid" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_rx_axi_interconnect_0_S00_AXI_arid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxigp1_arid"/>
@@ -3379,7 +3569,6 @@
             <PORTMAP LOGICAL="AWLOCK" PHYSICAL="S00_AXI_awlock"/>
             <PORTMAP LOGICAL="AWCACHE" PHYSICAL="S00_AXI_awcache"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="S00_AXI_awprot"/>
-            <PORTMAP LOGICAL="AWREGION" PHYSICAL="S00_AXI_awregion"/>
             <PORTMAP LOGICAL="AWQOS" PHYSICAL="S00_AXI_awqos"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="S00_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="S00_AXI_awready"/>
@@ -3398,7 +3587,6 @@
             <PORTMAP LOGICAL="ARLOCK" PHYSICAL="S00_AXI_arlock"/>
             <PORTMAP LOGICAL="ARCACHE" PHYSICAL="S00_AXI_arcache"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="S00_AXI_arprot"/>
-            <PORTMAP LOGICAL="ARREGION" PHYSICAL="S00_AXI_arregion"/>
             <PORTMAP LOGICAL="ARQOS" PHYSICAL="S00_AXI_arqos"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="S00_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="S00_AXI_arready"/>
@@ -3727,7 +3915,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="5" FULLNAME="/qpsk_rx/clk_rx" HWVERSION="6.0" INSTANCE="qpsk_rx_clk_rx" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_wiz" VLNV="xilinx.com:ip:clk_wiz:6.0">
+    <MODULE COREREVISION="6" FULLNAME="/qpsk_rx/clk_rx" HWVERSION="6.0" INSTANCE="qpsk_rx_clk_rx" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_wiz" VLNV="xilinx.com:ip:clk_wiz:6.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=clk_wiz;v=v6_0;d=pg065-clk-wiz.pdf"/>
       </DOCUMENTS>
@@ -3805,14 +3993,14 @@
         <PARAMETER NAME="C_OUTCLK_SUM_ROW0A" VALUE="Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW0B" VALUE="Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW1" VALUE="clk_out1__128.00000______0.000______50.0______125.232____126.718"/>
-        <PARAMETER NAME="C_OUTCLK_SUM_ROW2" VALUE="clk_25_6__25.60000______0.000______50.0______183.627____126.718"/>
+        <PARAMETER NAME="C_OUTCLK_SUM_ROW2" VALUE="clk_out2__25.60000______0.000______50.0______183.627____126.718"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW3" VALUE="no_CLK_OUT3_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW4" VALUE="no_CLK_OUT4_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW5" VALUE="no_CLK_OUT5_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW6" VALUE="no_CLK_OUT6_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW7" VALUE="no_CLK_OUT7_output"/>
         <PARAMETER NAME="C_CLKOUT1_REQUESTED_OUT_FREQ" VALUE="128"/>
-        <PARAMETER NAME="C_CLKOUT2_REQUESTED_OUT_FREQ" VALUE="25.60"/>
+        <PARAMETER NAME="C_CLKOUT2_REQUESTED_OUT_FREQ" VALUE="25.6"/>
         <PARAMETER NAME="C_CLKOUT3_REQUESTED_OUT_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT4_REQUESTED_OUT_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT5_REQUESTED_OUT_FREQ" VALUE="100.000"/>
@@ -3937,7 +4125,7 @@
         <PARAMETER NAME="C_PRIMARY_PORT" VALUE="clk_in1"/>
         <PARAMETER NAME="C_SECONDARY_PORT" VALUE="clk_in2"/>
         <PARAMETER NAME="C_CLK_OUT1_PORT" VALUE="clk_out1"/>
-        <PARAMETER NAME="C_CLK_OUT2_PORT" VALUE="clk_25_6"/>
+        <PARAMETER NAME="C_CLK_OUT2_PORT" VALUE="clk_out2"/>
         <PARAMETER NAME="C_CLK_OUT3_PORT" VALUE="clk_out3"/>
         <PARAMETER NAME="C_CLK_OUT4_PORT" VALUE="clk_out4"/>
         <PARAMETER NAME="C_CLK_OUT5_PORT" VALUE="clk_out5"/>
@@ -4106,7 +4294,7 @@
         <PARAMETER NAME="CLK_OUT7_USE_FINE_PS_GUI" VALUE="false"/>
         <PARAMETER NAME="PRIMARY_PORT" VALUE="clk_in1"/>
         <PARAMETER NAME="CLK_OUT1_PORT" VALUE="clk_out1"/>
-        <PARAMETER NAME="CLK_OUT2_PORT" VALUE="clk_25_6"/>
+        <PARAMETER NAME="CLK_OUT2_PORT" VALUE="clk_out2"/>
         <PARAMETER NAME="CLK_OUT3_PORT" VALUE="clk_out3"/>
         <PARAMETER NAME="CLK_OUT4_PORT" VALUE="clk_out4"/>
         <PARAMETER NAME="CLK_OUT5_PORT" VALUE="clk_out5"/>
@@ -4126,7 +4314,7 @@
         <PARAMETER NAME="CLKOUT1_REQUESTED_OUT_FREQ" VALUE="128"/>
         <PARAMETER NAME="CLKOUT1_REQUESTED_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="CLKOUT1_REQUESTED_DUTY_CYCLE" VALUE="50.000"/>
-        <PARAMETER NAME="CLKOUT2_REQUESTED_OUT_FREQ" VALUE="25.60"/>
+        <PARAMETER NAME="CLKOUT2_REQUESTED_OUT_FREQ" VALUE="25.6"/>
         <PARAMETER NAME="CLKOUT2_REQUESTED_PHASE" VALUE="0.000"/>
         <PARAMETER NAME="CLKOUT2_REQUESTED_DUTY_CYCLE" VALUE="50.000"/>
         <PARAMETER NAME="CLKOUT3_REQUESTED_OUT_FREQ" VALUE="100.000"/>
@@ -4326,7 +4514,7 @@
             <CONNECTION INSTANCE="qpsk_rx_smartconnect_0" PORT="aclk1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="25600000" DIR="O" NAME="clk_25_6" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="O" NAME="clk_out2" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="saxihp1_fpd_aclk"/>
             <CONNECTION INSTANCE="qpsk_rx_axi_interconnect_0" PORT="M00_ACLK"/>
@@ -4347,12 +4535,12 @@
             <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axi_lite_aclk"/>
             <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="m_axi_s2mm_aclk"/>
             <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axi_lite_aclk"/>
-            <CONNECTION INSTANCE="qpsk_rx_reset_256" PORT="slowest_sync_clk"/>
-            <CONNECTION INSTANCE="qpsk_rx_smartconnect_0" PORT="aclk"/>
-            <CONNECTION INSTANCE="qpsk_rx_qpsk_rx_dec" PORT="clk"/>
             <CONNECTION INSTANCE="qpsk_rx_qpsk_rx_csync" PORT="clk"/>
+            <CONNECTION INSTANCE="qpsk_rx_qpsk_rx_dec" PORT="clk"/>
             <CONNECTION INSTANCE="qpsk_rx_qpsk_rx_rrc" PORT="clk"/>
             <CONNECTION INSTANCE="qpsk_rx_qpsk_rx_tsync" PORT="clk"/>
+            <CONNECTION INSTANCE="qpsk_rx_reset_256" PORT="slowest_sync_clk"/>
+            <CONNECTION INSTANCE="qpsk_rx_smartconnect_0" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="locked" SIGIS="undef" SIGNAME="qpsk_rx_clk_rx_locked">
@@ -4364,7 +4552,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/qpsk_rx/decimate_logic/axis_data_fifo_0" HWVERSION="2.0" INSTANCE="qpsk_rx_decimate_logic_axis_data_fifo_0" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axis_data_fifo" VLNV="xilinx.com:ip:axis_data_fifo:2.0">
+    <MODULE COREREVISION="4" FULLNAME="/qpsk_rx/decimate_logic/axis_data_fifo_0" HWVERSION="2.0" INSTANCE="qpsk_rx_decimate_logic_axis_data_fifo_0" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axis_data_fifo" VLNV="xilinx.com:ip:axis_data_fifo:2.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=axis_data_fifo;v=v2_0;d=pg085-axi4stream-infrastructure.pdf"/>
       </DOCUMENTS>
@@ -4434,9 +4622,9 @@
             <CONNECTION INSTANCE="qpsk_rx_decimate_logic_fir_compiler_0" PORT="m_axis_data_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="m_axis_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="m_axis_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="qpsk_rx_decimate_logic_axis_data_fifo_0_m_axis_tvalid">
@@ -4500,7 +4688,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/qpsk_rx/decimate_logic/axis_data_fifo_1" HWVERSION="2.0" INSTANCE="qpsk_rx_decimate_logic_axis_data_fifo_1" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axis_data_fifo" VLNV="xilinx.com:ip:axis_data_fifo:2.0">
+    <MODULE COREREVISION="4" FULLNAME="/qpsk_rx/decimate_logic/axis_data_fifo_1" HWVERSION="2.0" INSTANCE="qpsk_rx_decimate_logic_axis_data_fifo_1" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axis_data_fifo" VLNV="xilinx.com:ip:axis_data_fifo:2.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=axis_data_fifo;v=v2_0;d=pg085-axi4stream-infrastructure.pdf"/>
       </DOCUMENTS>
@@ -4570,9 +4758,9 @@
             <CONNECTION INSTANCE="qpsk_rx_decimate_logic_fir_compiler_1" PORT="m_axis_data_tdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="m_axis_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="m_axis_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="qpsk_rx_decimate_logic_axis_data_fifo_1_m_axis_tvalid">
@@ -4636,7 +4824,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="14" FULLNAME="/qpsk_rx/decimate_logic/fir_compiler_0" HWVERSION="7.2" INSTANCE="qpsk_rx_decimate_logic_fir_compiler_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="fir_compiler" VLNV="xilinx.com:ip:fir_compiler:7.2">
+    <MODULE COREREVISION="15" FULLNAME="/qpsk_rx/decimate_logic/fir_compiler_0" HWVERSION="7.2" INSTANCE="qpsk_rx_decimate_logic_fir_compiler_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="fir_compiler" VLNV="xilinx.com:ip:fir_compiler:7.2">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=fir_compiler;v=v7_2;d=pg149-fir-compiler.pdf"/>
       </DOCUMENTS>
@@ -4868,7 +5056,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="14" FULLNAME="/qpsk_rx/decimate_logic/fir_compiler_1" HWVERSION="7.2" INSTANCE="qpsk_rx_decimate_logic_fir_compiler_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="fir_compiler" VLNV="xilinx.com:ip:fir_compiler:7.2">
+    <MODULE COREREVISION="15" FULLNAME="/qpsk_rx/decimate_logic/fir_compiler_1" HWVERSION="7.2" INSTANCE="qpsk_rx_decimate_logic_fir_compiler_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="fir_compiler" VLNV="xilinx.com:ip:fir_compiler:7.2">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=fir_compiler;v=v7_2;d=pg149-fir-compiler.pdf"/>
       </DOCUMENTS>
@@ -5100,7 +5288,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="22" FULLNAME="/qpsk_rx/dma_rx_csync" HWVERSION="7.1" INSTANCE="qpsk_rx_dma_rx_csync" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
+    <MODULE COREREVISION="23" FULLNAME="/qpsk_rx/dma_rx_csync" HWVERSION="7.1" INSTANCE="qpsk_rx_dma_rx_csync" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_dma;v=v7_1;d=pg021_axi_dma.pdf"/>
       </DOCUMENTS>
@@ -5984,14 +6172,14 @@
         <PARAMETER NAME="C_HIGHADDR" VALUE="0xB000FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="s_axi_lite_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="s_axi_lite_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="m_axi_s2mm_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="m_axi_s2mm_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="axi_resetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
@@ -6322,7 +6510,7 @@
         <PERIPHERAL INSTANCE="zynq_ultra_ps_e_0"/>
       </PERIPHERALS>
     </MODULE>
-    <MODULE COREREVISION="22" FULLNAME="/qpsk_rx/dma_rx_dec" HWVERSION="7.1" INSTANCE="qpsk_rx_dma_rx_dec" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
+    <MODULE COREREVISION="23" FULLNAME="/qpsk_rx/dma_rx_dec" HWVERSION="7.1" INSTANCE="qpsk_rx_dma_rx_dec" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_dma;v=v7_1;d=pg021_axi_dma.pdf"/>
       </DOCUMENTS>
@@ -7206,14 +7394,14 @@
         <PARAMETER NAME="C_HIGHADDR" VALUE="0xB001FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="s_axi_lite_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="s_axi_lite_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="m_axi_s2mm_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="m_axi_s2mm_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="axi_resetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
@@ -7544,7 +7732,7 @@
         <PERIPHERAL INSTANCE="zynq_ultra_ps_e_0"/>
       </PERIPHERALS>
     </MODULE>
-    <MODULE COREREVISION="22" FULLNAME="/qpsk_rx/dma_rx_rrc" HWVERSION="7.1" INSTANCE="qpsk_rx_dma_rx_rrc" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
+    <MODULE COREREVISION="23" FULLNAME="/qpsk_rx/dma_rx_rrc" HWVERSION="7.1" INSTANCE="qpsk_rx_dma_rx_rrc" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_dma;v=v7_1;d=pg021_axi_dma.pdf"/>
       </DOCUMENTS>
@@ -8428,14 +8616,14 @@
         <PARAMETER NAME="C_HIGHADDR" VALUE="0xB002FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="s_axi_lite_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="s_axi_lite_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="m_axi_s2mm_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="m_axi_s2mm_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="axi_resetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
@@ -8766,7 +8954,7 @@
         <PERIPHERAL INSTANCE="zynq_ultra_ps_e_0"/>
       </PERIPHERALS>
     </MODULE>
-    <MODULE COREREVISION="22" FULLNAME="/qpsk_rx/dma_rx_tsync" HWVERSION="7.1" INSTANCE="qpsk_rx_dma_rx_tsync" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
+    <MODULE COREREVISION="23" FULLNAME="/qpsk_rx/dma_rx_tsync" HWVERSION="7.1" INSTANCE="qpsk_rx_dma_rx_tsync" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_dma;v=v7_1;d=pg021_axi_dma.pdf"/>
       </DOCUMENTS>
@@ -9650,14 +9838,14 @@
         <PARAMETER NAME="C_HIGHADDR" VALUE="0xB003FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="s_axi_lite_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="s_axi_lite_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="m_axi_s2mm_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="m_axi_s2mm_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="axi_resetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
@@ -9994,7 +10182,7 @@
         <ADDRESSBLOCK ACCESS="" INTERFACE="axi_qpsk_rx_csync_s_axi" NAME="reg0" RANGE="4096" USAGE="register"/>
       </ADDRESSBLOCKS>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="block_design_axi_qpsk_rx_csync_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="block_design_qpsk_rx_csync_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_AXI_QPSK_RX_CSYNC_S_AXI_BASEADDR" VALUE="0xB0040000"/>
         <PARAMETER NAME="C_AXI_QPSK_RX_CSYNC_S_AXI_HIGHADDR" VALUE="0xB004FFFF"/>
@@ -10016,9 +10204,9 @@
             <CONNECTION INSTANCE="qpsk_rx_dma_rx_csync" PORT="s_axis_s2mm_tready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="axi_qpsk_rx_csync_aresetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
@@ -10258,7 +10446,7 @@
         <ADDRESSBLOCK ACCESS="" INTERFACE="axi_qpsk_rx_dec_s_axi" NAME="reg0" RANGE="4096" USAGE="register"/>
       </ADDRESSBLOCKS>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="block_design_axi_qpsk_rx_dec_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="block_design_qpsk_rx_dec_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_AXI_QPSK_RX_DEC_S_AXI_BASEADDR" VALUE="0xB0050000"/>
         <PARAMETER NAME="C_AXI_QPSK_RX_DEC_S_AXI_HIGHADDR" VALUE="0xB005FFFF"/>
@@ -10289,9 +10477,9 @@
             <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="s_axis_s2mm_tready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="axi_qpsk_rx_dec_aresetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
@@ -10561,7 +10749,7 @@
         <ADDRESSBLOCK ACCESS="" INTERFACE="axi_qpsk_rx_rrc_s_axi" NAME="reg0" RANGE="4096" USAGE="register"/>
       </ADDRESSBLOCKS>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="block_design_axi_qpsk_rx_rrc_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="block_design_qpsk_rx_rrc_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_AXI_QPSK_RX_RRC_S_AXI_BASEADDR" VALUE="0xB0060000"/>
         <PARAMETER NAME="C_AXI_QPSK_RX_RRC_S_AXI_HIGHADDR" VALUE="0xB006FFFF"/>
@@ -10583,9 +10771,9 @@
             <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="s_axis_s2mm_tready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="axi_qpsk_rx_rrc_aresetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
@@ -10825,7 +11013,7 @@
         <ADDRESSBLOCK ACCESS="" INTERFACE="axi_qpsk_rx_tsync_s_axi" NAME="reg0" RANGE="4096" USAGE="register"/>
       </ADDRESSBLOCKS>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="block_design_axi_qpsk_rx_tsync_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="block_design_qpsk_rx_tsync_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_AXI_QPSK_RX_TSYNC_S_AXI_BASEADDR" VALUE="0xB0070000"/>
         <PARAMETER NAME="C_AXI_QPSK_RX_TSYNC_S_AXI_HIGHADDR" VALUE="0xB007FFFF"/>
@@ -10846,9 +11034,9 @@
             <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="s_axis_s2mm_tready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="axi_qpsk_rx_tsync_aresetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="qpsk_rx_reset_256_peripheral_aresetn">
@@ -11127,9 +11315,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="slowest_sync_clk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="slowest_sync_clk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="ext_reset_in" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="zynq_ultra_ps_e_0_pl_resetn0">
@@ -11162,11 +11350,11 @@
             <CONNECTION INSTANCE="qpsk_rx_dma_rx_dec" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="qpsk_rx_dma_rx_rrc" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="qpsk_rx_dma_rx_tsync" PORT="axi_resetn"/>
-            <CONNECTION INSTANCE="qpsk_rx_smartconnect_0" PORT="aresetn"/>
-            <CONNECTION INSTANCE="qpsk_rx_qpsk_rx_dec" PORT="axi_qpsk_rx_dec_aresetn"/>
             <CONNECTION INSTANCE="qpsk_rx_qpsk_rx_csync" PORT="axi_qpsk_rx_csync_aresetn"/>
+            <CONNECTION INSTANCE="qpsk_rx_qpsk_rx_dec" PORT="axi_qpsk_rx_dec_aresetn"/>
             <CONNECTION INSTANCE="qpsk_rx_qpsk_rx_rrc" PORT="axi_qpsk_rx_rrc_aresetn"/>
             <CONNECTION INSTANCE="qpsk_rx_qpsk_rx_tsync" PORT="axi_qpsk_rx_tsync_aresetn"/>
+            <CONNECTION INSTANCE="qpsk_rx_smartconnect_0" PORT="aresetn"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -11221,7 +11409,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE BD="block_design_smartconnect_0_0" BDTYPE="SBD" COREREVISION="13" DRIVERMODE="CORE" FULLNAME="/qpsk_rx/smartconnect_0" HWVERSION="1.0" INSTANCE="qpsk_rx_smartconnect_0" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="smartconnect" SIM_BD="block_design_smartconnect_0_0" VLNV="xilinx.com:ip:smartconnect:1.0">
+    <MODULE BD="block_design_smartconnect_0_0" BDTYPE="SBD" COREREVISION="14" DRIVERMODE="CORE" FULLNAME="/qpsk_rx/smartconnect_0" HWVERSION="1.0" INSTANCE="qpsk_rx_smartconnect_0" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="smartconnect" SIM_BD="block_design_smartconnect_0_0" VLNV="xilinx.com:ip:smartconnect:1.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=smartconnect;v=v1_0;d=pg247-smartconnect.pdf"/>
       </DOCUMENTS>
@@ -11237,9 +11425,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="BUS"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="128000000" DIR="I" NAME="aclk1" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out1">
@@ -11939,7 +12127,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/qpsk_rx/xlconcat_0" HWVERSION="2.1" INSTANCE="qpsk_rx_xlconcat_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
+    <MODULE COREREVISION="4" FULLNAME="/qpsk_rx/xlconcat_0" HWVERSION="2.1" INSTANCE="qpsk_rx_xlconcat_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
@@ -11974,6 +12162,102 @@
         <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
         <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
         <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN32_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN33_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN34_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN35_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN36_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN37_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN38_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN39_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN40_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN41_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN42_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN43_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN44_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN45_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN46_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN47_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN48_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN49_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN50_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN51_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN52_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN53_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN54_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN55_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN56_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN57_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN58_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN59_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN60_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN61_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN62_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN63_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN64_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN65_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN66_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN67_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN68_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN69_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN70_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN71_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN72_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN73_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN74_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN75_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN76_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN77_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN78_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN79_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN80_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN81_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN82_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN83_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN84_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN85_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN86_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN87_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN88_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN89_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN90_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN91_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN92_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN93_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN94_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN95_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN96_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN97_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN98_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN99_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN100_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN101_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN102_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN103_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN104_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN105_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN106_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN107_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN108_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN109_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN110_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN111_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN112_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN113_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN114_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN115_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN116_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN117_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN118_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN119_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN120_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN121_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN122_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN123_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN124_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN125_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN126_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN127_WIDTH" VALUE="1"/>
         <PARAMETER NAME="dout_width" VALUE="4"/>
         <PARAMETER NAME="NUM_PORTS" VALUE="4"/>
         <PARAMETER NAME="Component_Name" VALUE="block_design_xlconcat_0_0"/>
@@ -12008,7 +12292,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE BD="block_design_axi_smc_1_0" BDTYPE="SBD" COREREVISION="13" DRIVERMODE="CORE" FULLNAME="/qpsk_tx/axi_smc_1" HWVERSION="1.0" INSTANCE="qpsk_tx_axi_smc_1" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="smartconnect" SIM_BD="block_design_axi_smc_1_0" VLNV="xilinx.com:ip:smartconnect:1.0">
+    <MODULE BD="block_design_axi_smc_1_0" BDTYPE="SBD" COREREVISION="14" DRIVERMODE="CORE" FULLNAME="/qpsk_tx/axi_smc_1" HWVERSION="1.0" INSTANCE="qpsk_tx_axi_smc_1" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="smartconnect" SIM_BD="block_design_axi_smc_1_0" VLNV="xilinx.com:ip:smartconnect:1.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=smartconnect;v=v1_0;d=pg247-smartconnect.pdf"/>
       </DOCUMENTS>
@@ -12586,7 +12870,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="5" FULLNAME="/qpsk_tx/clk_tx" HWVERSION="6.0" INSTANCE="qpsk_tx_clk_tx" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_wiz" VLNV="xilinx.com:ip:clk_wiz:6.0">
+    <MODULE COREREVISION="6" FULLNAME="/qpsk_tx/clk_tx" HWVERSION="6.0" INSTANCE="qpsk_tx_clk_tx" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_wiz" VLNV="xilinx.com:ip:clk_wiz:6.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=clk_wiz;v=v6_0;d=pg065-clk-wiz.pdf"/>
       </DOCUMENTS>
@@ -13177,6 +13461,7 @@
         <PORT CLKFREQUENCY="25600000" DIR="O" NAME="clk_out1" SIGIS="clk" SIGNAME="qpsk_tx_clk_tx_clk_out1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="saxihp2_fpd_aclk"/>
+            <CONNECTION INSTANCE="qpsk_tx_axi_smc_1" PORT="aclk"/>
             <CONNECTION INSTANCE="qpsk_tx_dma_tx_fft" PORT="m_axi_s2mm_aclk"/>
             <CONNECTION INSTANCE="qpsk_tx_dma_tx_fft" PORT="s_axi_lite_aclk"/>
             <CONNECTION INSTANCE="qpsk_tx_dma_tx_symbol" PORT="m_axi_s2mm_aclk"/>
@@ -13190,9 +13475,8 @@
             <CONNECTION INSTANCE="qpsk_tx_ps8_0_axi_periph" PORT="M02_ACLK"/>
             <CONNECTION INSTANCE="qpsk_tx_ps8_0_axi_periph" PORT="M03_ACLK"/>
             <CONNECTION INSTANCE="qpsk_tx_ps8_0_axi_periph" PORT="M04_ACLK"/>
-            <CONNECTION INSTANCE="qpsk_tx_axi_smc_1" PORT="aclk"/>
-            <CONNECTION INSTANCE="qpsk_tx_reset_25_6" PORT="slowest_sync_clk"/>
             <CONNECTION INSTANCE="qpsk_tx_qpsk_tx" PORT="clk"/>
+            <CONNECTION INSTANCE="qpsk_tx_reset_25_6" PORT="slowest_sync_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="locked" SIGIS="undef" SIGNAME="qpsk_tx_clk_tx_locked">
@@ -13203,7 +13487,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="22" FULLNAME="/qpsk_tx/dma_tx_fft" HWVERSION="7.1" INSTANCE="qpsk_tx_dma_tx_fft" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
+    <MODULE COREREVISION="23" FULLNAME="/qpsk_tx/dma_tx_fft" HWVERSION="7.1" INSTANCE="qpsk_tx_dma_tx_fft" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_dma;v=v7_1;d=pg021_axi_dma.pdf"/>
       </DOCUMENTS>
@@ -14425,7 +14709,7 @@
         <PERIPHERAL INSTANCE="zynq_ultra_ps_e_0"/>
       </PERIPHERALS>
     </MODULE>
-    <MODULE COREREVISION="22" FULLNAME="/qpsk_tx/dma_tx_symbol" HWVERSION="7.1" INSTANCE="qpsk_tx_dma_tx_symbol" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
+    <MODULE COREREVISION="23" FULLNAME="/qpsk_tx/dma_tx_symbol" HWVERSION="7.1" INSTANCE="qpsk_tx_dma_tx_symbol" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_dma;v=v7_1;d=pg021_axi_dma.pdf"/>
       </DOCUMENTS>
@@ -15647,7 +15931,7 @@
         <PERIPHERAL INSTANCE="zynq_ultra_ps_e_0"/>
       </PERIPHERALS>
     </MODULE>
-    <MODULE COREREVISION="22" FULLNAME="/qpsk_tx/dma_tx_time" HWVERSION="7.1" INSTANCE="qpsk_tx_dma_tx_time" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
+    <MODULE COREREVISION="23" FULLNAME="/qpsk_tx/dma_tx_time" HWVERSION="7.1" INSTANCE="qpsk_tx_dma_tx_time" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_dma;v=v7_1;d=pg021_axi_dma.pdf"/>
       </DOCUMENTS>
@@ -16869,7 +17153,7 @@
         <PERIPHERAL INSTANCE="zynq_ultra_ps_e_0"/>
       </PERIPHERALS>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/qpsk_tx/interpolate_logic/axis_data_fifo_0" HWVERSION="2.0" INSTANCE="qpsk_tx_interpolate_logic_axis_data_fifo_0" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axis_data_fifo" VLNV="xilinx.com:ip:axis_data_fifo:2.0">
+    <MODULE COREREVISION="4" FULLNAME="/qpsk_tx/interpolate_logic/axis_data_fifo_0" HWVERSION="2.0" INSTANCE="qpsk_tx_interpolate_logic_axis_data_fifo_0" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axis_data_fifo" VLNV="xilinx.com:ip:axis_data_fifo:2.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=axis_data_fifo;v=v2_0;d=pg085-axi4stream-infrastructure.pdf"/>
       </DOCUMENTS>
@@ -17017,7 +17301,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/qpsk_tx/interpolate_logic/axis_data_fifo_1" HWVERSION="2.0" INSTANCE="qpsk_tx_interpolate_logic_axis_data_fifo_1" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axis_data_fifo" VLNV="xilinx.com:ip:axis_data_fifo:2.0">
+    <MODULE COREREVISION="4" FULLNAME="/qpsk_tx/interpolate_logic/axis_data_fifo_1" HWVERSION="2.0" INSTANCE="qpsk_tx_interpolate_logic_axis_data_fifo_1" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axis_data_fifo" VLNV="xilinx.com:ip:axis_data_fifo:2.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="https://www.xilinx.com/cgi-bin/docs/ipdoc?c=axis_data_fifo;v=v2_0;d=pg085-axi4stream-infrastructure.pdf"/>
       </DOCUMENTS>
@@ -17165,7 +17449,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/qpsk_tx/interpolate_logic/axis_signal_join_0" HWVERSION="1.0" INSTANCE="qpsk_tx_interpolate_logic_axis_signal_join_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_signal_join" VLNV="xilinx.com:user:axis_signal_join:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/qpsk_tx/interpolate_logic/axis_signal_join_0" HWVERSION="1.0" INSTANCE="qpsk_tx_interpolate_logic_axis_signal_join_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_signal_join" VLNV="xilinx.com:user:axis_signal_join:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="INPUT_WIDTH_U" VALUE="16"/>
@@ -17286,7 +17570,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/qpsk_tx/interpolate_logic/axis_signal_splitter_1" HWVERSION="1.0" INSTANCE="qpsk_tx_interpolate_logic_axis_signal_splitter_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_signal_splitter" VLNV="xilinx.com:user:axis_signal_splitter:1.0">
+    <MODULE COREREVISION="1" FULLNAME="/qpsk_tx/interpolate_logic/axis_signal_splitter_1" HWVERSION="1.0" INSTANCE="qpsk_tx_interpolate_logic_axis_signal_splitter_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axis_signal_splitter" VLNV="xilinx.com:user:axis_signal_splitter:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="INPUT_WIDTH" VALUE="32"/>
@@ -17426,7 +17710,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="14" FULLNAME="/qpsk_tx/interpolate_logic/fir_compiler_0" HWVERSION="7.2" INSTANCE="qpsk_tx_interpolate_logic_fir_compiler_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="fir_compiler" VLNV="xilinx.com:ip:fir_compiler:7.2">
+    <MODULE COREREVISION="15" FULLNAME="/qpsk_tx/interpolate_logic/fir_compiler_0" HWVERSION="7.2" INSTANCE="qpsk_tx_interpolate_logic_fir_compiler_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="fir_compiler" VLNV="xilinx.com:ip:fir_compiler:7.2">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=fir_compiler;v=v7_2;d=pg149-fir-compiler.pdf"/>
       </DOCUMENTS>
@@ -17658,7 +17942,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="14" FULLNAME="/qpsk_tx/interpolate_logic/fir_compiler_1" HWVERSION="7.2" INSTANCE="qpsk_tx_interpolate_logic_fir_compiler_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="fir_compiler" VLNV="xilinx.com:ip:fir_compiler:7.2">
+    <MODULE COREREVISION="15" FULLNAME="/qpsk_tx/interpolate_logic/fir_compiler_1" HWVERSION="7.2" INSTANCE="qpsk_tx_interpolate_logic_fir_compiler_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="fir_compiler" VLNV="xilinx.com:ip:fir_compiler:7.2">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=fir_compiler;v=v7_2;d=pg149-fir-compiler.pdf"/>
       </DOCUMENTS>
@@ -17890,7 +18174,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="22" FULLNAME="/qpsk_tx/ps8_0_axi_periph" HWVERSION="2.1" INSTANCE="qpsk_tx_ps8_0_axi_periph" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
+    <MODULE COREREVISION="23" FULLNAME="/qpsk_tx/ps8_0_axi_periph" HWVERSION="2.1" INSTANCE="qpsk_tx_ps8_0_axi_periph" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_interconnect;v=v2_1;d=pg059-axi-interconnect.pdf"/>
       </DOCUMENTS>
@@ -18328,7 +18612,6 @@
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxigp0_awprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S00_AXI_awregion" SIGIS="undef"/>
         <PORT DIR="I" LEFT="3" NAME="S00_AXI_awqos" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_tx_ps8_0_axi_periph_S00_AXI_awqos">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxigp0_awqos"/>
@@ -18419,7 +18702,6 @@
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxigp0_arprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S00_AXI_arregion" SIGIS="undef"/>
         <PORT DIR="I" LEFT="3" NAME="S00_AXI_arqos" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_tx_ps8_0_axi_periph_S00_AXI_arqos">
           <CONNECTIONS>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxigp0_arqos"/>
@@ -18559,93 +18841,6 @@
             <CONNECTION INSTANCE="qpsk_tx_dma_tx_time" PORT="s_axi_lite_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="39" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M01_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="39" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M01_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_rready"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="9" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_tx_dma_tx_fft_s_axi_lite_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="qpsk_tx_dma_tx_fft" PORT="s_axi_lite_awaddr"/>
@@ -18743,6 +18938,109 @@
         <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="qpsk_tx_dma_tx_fft_s_axi_lite_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="qpsk_tx_dma_tx_fft" PORT="s_axi_lite_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="39" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_awlen" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_awsize" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_awburst" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_awlock" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_awcache" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_awregion" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_awqos" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_wlast" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="39" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_arlen" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_arsize" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_arburst" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_arlock" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_arcache" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_arregion" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M01_AXI_arqos" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_rlast" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_intc_fpd_s_axi_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_fpd" PORT="s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="6" NAME="M03_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="qpsk_tx_ps8_0_axi_periph_M03_AXI_awaddr">
@@ -18952,7 +19250,14 @@
             <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="M05_AXI_awlen" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M05_AXI_awsize" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M05_AXI_awburst" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M05_AXI_awlock" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M05_AXI_awcache" SIGIS="undef"/>
         <PORT DIR="O" NAME="M05_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M05_AXI_awregion" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M05_AXI_awqos" SIGIS="undef"/>
         <PORT DIR="O" NAME="M05_AXI_awvalid" SIGIS="undef" SIGNAME="qpsk_tx_ps8_0_axi_periph_M05_AXI_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_awvalid"/>
@@ -18973,6 +19278,7 @@
             <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="M05_AXI_wlast" SIGIS="undef"/>
         <PORT DIR="O" NAME="M05_AXI_wvalid" SIGIS="undef" SIGNAME="qpsk_tx_ps8_0_axi_periph_M05_AXI_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_wvalid"/>
@@ -19003,7 +19309,14 @@
             <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="M05_AXI_arlen" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M05_AXI_arsize" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M05_AXI_arburst" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M05_AXI_arlock" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M05_AXI_arcache" SIGIS="undef"/>
         <PORT DIR="O" NAME="M05_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M05_AXI_arregion" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M05_AXI_arqos" SIGIS="undef"/>
         <PORT DIR="O" NAME="M05_AXI_arvalid" SIGIS="undef" SIGNAME="qpsk_tx_ps8_0_axi_periph_M05_AXI_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_arvalid"/>
@@ -19024,6 +19337,7 @@
             <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rresp"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="M05_AXI_rlast" SIGIS="undef"/>
         <PORT DIR="I" NAME="M05_AXI_rvalid" SIGIS="undef" SIGNAME="qpsk_tx_ps8_0_axi_periph_M05_AXI_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_rvalid"/>
@@ -19065,7 +19379,6 @@
             <PORTMAP LOGICAL="AWLOCK" PHYSICAL="S00_AXI_awlock"/>
             <PORTMAP LOGICAL="AWCACHE" PHYSICAL="S00_AXI_awcache"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="S00_AXI_awprot"/>
-            <PORTMAP LOGICAL="AWREGION" PHYSICAL="S00_AXI_awregion"/>
             <PORTMAP LOGICAL="AWQOS" PHYSICAL="S00_AXI_awqos"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="S00_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="S00_AXI_awready"/>
@@ -19084,7 +19397,6 @@
             <PORTMAP LOGICAL="ARLOCK" PHYSICAL="S00_AXI_arlock"/>
             <PORTMAP LOGICAL="ARCACHE" PHYSICAL="S00_AXI_arcache"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="S00_AXI_arprot"/>
-            <PORTMAP LOGICAL="ARREGION" PHYSICAL="S00_AXI_arregion"/>
             <PORTMAP LOGICAL="ARQOS" PHYSICAL="S00_AXI_arqos"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="S00_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="S00_AXI_arready"/>
@@ -19141,22 +19453,38 @@
         <BUSINTERFACE BUSNAME="qpsk_tx_ps8_0_axi_periph_M01_AXI" DATAWIDTH="32" NAME="M01_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M01_AXI_awaddr"/>
+            <PORTMAP LOGICAL="AWLEN" PHYSICAL="M01_AXI_awlen"/>
+            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M01_AXI_awsize"/>
+            <PORTMAP LOGICAL="AWBURST" PHYSICAL="M01_AXI_awburst"/>
+            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="M01_AXI_awlock"/>
+            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="M01_AXI_awcache"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="M01_AXI_awprot"/>
+            <PORTMAP LOGICAL="AWREGION" PHYSICAL="M01_AXI_awregion"/>
+            <PORTMAP LOGICAL="AWQOS" PHYSICAL="M01_AXI_awqos"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M01_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M01_AXI_awready"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M01_AXI_wdata"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="M01_AXI_wstrb"/>
+            <PORTMAP LOGICAL="WLAST" PHYSICAL="M01_AXI_wlast"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="M01_AXI_wvalid"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="M01_AXI_wready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M01_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M01_AXI_bvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M01_AXI_bready"/>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M01_AXI_araddr"/>
+            <PORTMAP LOGICAL="ARLEN" PHYSICAL="M01_AXI_arlen"/>
+            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="M01_AXI_arsize"/>
+            <PORTMAP LOGICAL="ARBURST" PHYSICAL="M01_AXI_arburst"/>
+            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="M01_AXI_arlock"/>
+            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="M01_AXI_arcache"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="M01_AXI_arprot"/>
+            <PORTMAP LOGICAL="ARREGION" PHYSICAL="M01_AXI_arregion"/>
+            <PORTMAP LOGICAL="ARQOS" PHYSICAL="M01_AXI_arqos"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M01_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M01_AXI_arready"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M01_AXI_rdata"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M01_AXI_rresp"/>
+            <PORTMAP LOGICAL="RLAST" PHYSICAL="M01_AXI_rlast"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M01_AXI_rvalid"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="M01_AXI_rready"/>
           </PORTMAPS>
@@ -19281,22 +19609,38 @@
         <BUSINTERFACE BUSNAME="qpsk_tx_ps8_0_axi_periph_M05_AXI" DATAWIDTH="32" NAME="M05_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M05_AXI_awaddr"/>
+            <PORTMAP LOGICAL="AWLEN" PHYSICAL="M05_AXI_awlen"/>
+            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M05_AXI_awsize"/>
+            <PORTMAP LOGICAL="AWBURST" PHYSICAL="M05_AXI_awburst"/>
+            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="M05_AXI_awlock"/>
+            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="M05_AXI_awcache"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="M05_AXI_awprot"/>
+            <PORTMAP LOGICAL="AWREGION" PHYSICAL="M05_AXI_awregion"/>
+            <PORTMAP LOGICAL="AWQOS" PHYSICAL="M05_AXI_awqos"/>
             <PORTMAP LOGICAL="AWVALID" PHYSICAL="M05_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M05_AXI_awready"/>
             <PORTMAP LOGICAL="WDATA" PHYSICAL="M05_AXI_wdata"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="M05_AXI_wstrb"/>
+            <PORTMAP LOGICAL="WLAST" PHYSICAL="M05_AXI_wlast"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="M05_AXI_wvalid"/>
             <PORTMAP LOGICAL="WREADY" PHYSICAL="M05_AXI_wready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M05_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M05_AXI_bvalid"/>
             <PORTMAP LOGICAL="BREADY" PHYSICAL="M05_AXI_bready"/>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="M05_AXI_araddr"/>
+            <PORTMAP LOGICAL="ARLEN" PHYSICAL="M05_AXI_arlen"/>
+            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="M05_AXI_arsize"/>
+            <PORTMAP LOGICAL="ARBURST" PHYSICAL="M05_AXI_arburst"/>
+            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="M05_AXI_arlock"/>
+            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="M05_AXI_arcache"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="M05_AXI_arprot"/>
+            <PORTMAP LOGICAL="ARREGION" PHYSICAL="M05_AXI_arregion"/>
+            <PORTMAP LOGICAL="ARQOS" PHYSICAL="M05_AXI_arqos"/>
             <PORTMAP LOGICAL="ARVALID" PHYSICAL="M05_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="M05_AXI_arready"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M05_AXI_rdata"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M05_AXI_rresp"/>
+            <PORTMAP LOGICAL="RLAST" PHYSICAL="M05_AXI_rlast"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M05_AXI_rvalid"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="M05_AXI_rready"/>
           </PORTMAPS>
@@ -19309,7 +19653,7 @@
         <ADDRESSBLOCK ACCESS="" INTERFACE="axi_qpsk_tx_s_axi" NAME="reg0" RANGE="4096" USAGE="register"/>
       </ADDRESSBLOCKS>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="block_design_axi_qpsk_tx_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="block_design_qpsk_tx_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_AXI_QPSK_TX_S_AXI_BASEADDR" VALUE="0xA0040000"/>
         <PARAMETER NAME="C_AXI_QPSK_TX_S_AXI_HIGHADDR" VALUE="0xA004FFFF"/>
@@ -19721,9 +20065,9 @@
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>
         <PORT DIR="O" LEFT="0" NAME="interconnect_aresetn" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="rst" SIGNAME="qpsk_tx_reset_25_6_interconnect_aresetn">
           <CONNECTIONS>
+            <CONNECTION INSTANCE="qpsk_tx_axi_smc_1" PORT="aresetn"/>
             <CONNECTION INSTANCE="qpsk_tx_interpolate_logic_axis_data_fifo_0" PORT="s_axis_aresetn"/>
             <CONNECTION INSTANCE="qpsk_tx_interpolate_logic_axis_data_fifo_1" PORT="s_axis_aresetn"/>
-            <CONNECTION INSTANCE="qpsk_tx_axi_smc_1" PORT="aresetn"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="rst" SIGNAME="qpsk_tx_reset_25_6_peripheral_aresetn">
@@ -19790,7 +20134,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/qpsk_tx/xlconcat_0" HWVERSION="2.1" INSTANCE="qpsk_tx_xlconcat_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
+    <MODULE COREREVISION="4" FULLNAME="/qpsk_tx/xlconcat_0" HWVERSION="2.1" INSTANCE="qpsk_tx_xlconcat_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
@@ -19825,6 +20169,102 @@
         <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
         <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
         <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN32_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN33_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN34_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN35_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN36_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN37_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN38_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN39_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN40_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN41_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN42_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN43_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN44_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN45_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN46_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN47_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN48_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN49_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN50_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN51_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN52_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN53_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN54_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN55_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN56_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN57_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN58_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN59_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN60_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN61_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN62_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN63_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN64_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN65_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN66_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN67_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN68_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN69_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN70_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN71_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN72_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN73_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN74_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN75_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN76_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN77_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN78_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN79_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN80_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN81_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN82_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN83_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN84_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN85_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN86_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN87_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN88_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN89_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN90_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN91_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN92_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN93_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN94_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN95_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN96_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN97_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN98_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN99_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN100_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN101_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN102_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN103_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN104_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN105_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN106_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN107_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN108_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN109_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN110_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN111_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN112_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN113_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN114_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN115_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN116_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN117_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN118_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN119_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN120_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN121_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN122_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN123_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN124_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN125_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN126_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="IN127_WIDTH" VALUE="1"/>
         <PARAMETER NAME="dout_width" VALUE="3"/>
         <PARAMETER NAME="NUM_PORTS" VALUE="3"/>
         <PARAMETER NAME="Component_Name" VALUE="block_design_xlconcat_0_1"/>
@@ -19902,9 +20342,9 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="0" FULLNAME="/usp_rf_data_converter_0" HWVERSION="2.3" INSTANCE="usp_rf_data_converter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="usp_rf_data_converter" VLNV="xilinx.com:ip:usp_rf_data_converter:2.3">
+    <MODULE COREREVISION="0" FULLNAME="/usp_rf_data_converter_0" HWVERSION="2.4" INSTANCE="usp_rf_data_converter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="usp_rf_data_converter" VLNV="xilinx.com:ip:usp_rf_data_converter:2.4">
       <DOCUMENTS>
-        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=usp_rf_data_converter;v=v2_3;d=pg269-rf-data-converter.pdf"/>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=usp_rf_data_converter;v=v2_4;d=pg269-rf-data-converter.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
         <PARAMETER NAME="C_AMS_Factory_Var" VALUE="0"/>
@@ -19963,6 +20403,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal00" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_00" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS00" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS00" VALUE="false"/>
         <PARAMETER NAME="C_ADC00_Dig_Port" VALUE="1"/>
         <PARAMETER NAME="C_ADC_Slice01_Enable" VALUE="true"/>
         <PARAMETER NAME="C_ADC_Dither01" VALUE="true"/>
@@ -19980,6 +20421,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal01" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_01" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS01" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS01" VALUE="false"/>
         <PARAMETER NAME="C_ADC01_Dig_Port" VALUE="1"/>
         <PARAMETER NAME="C_ADC_Slice02_Enable" VALUE="false"/>
         <PARAMETER NAME="C_ADC_Dither02" VALUE="true"/>
@@ -19997,6 +20439,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal02" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_02" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS02" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS02" VALUE="false"/>
         <PARAMETER NAME="C_ADC02_Dig_Port" VALUE="0"/>
         <PARAMETER NAME="C_ADC_Slice03_Enable" VALUE="false"/>
         <PARAMETER NAME="C_ADC_Dither03" VALUE="true"/>
@@ -20014,6 +20457,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal03" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_03" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS03" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS03" VALUE="false"/>
         <PARAMETER NAME="C_ADC03_Dig_Port" VALUE="0"/>
         <PARAMETER NAME="C_ADC1_Enable" VALUE="0"/>
         <PARAMETER NAME="C_ADC1_PLL_Enable" VALUE="false"/>
@@ -20049,6 +20493,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal10" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_10" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS10" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS10" VALUE="false"/>
         <PARAMETER NAME="C_ADC10_Dig_Port" VALUE="0"/>
         <PARAMETER NAME="C_ADC_Slice11_Enable" VALUE="false"/>
         <PARAMETER NAME="C_ADC_Dither11" VALUE="true"/>
@@ -20066,6 +20511,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal11" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_11" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS11" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS11" VALUE="false"/>
         <PARAMETER NAME="C_ADC11_Dig_Port" VALUE="0"/>
         <PARAMETER NAME="C_ADC_Slice12_Enable" VALUE="false"/>
         <PARAMETER NAME="C_ADC_Dither12" VALUE="true"/>
@@ -20083,6 +20529,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal12" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_12" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS12" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS12" VALUE="false"/>
         <PARAMETER NAME="C_ADC12_Dig_Port" VALUE="0"/>
         <PARAMETER NAME="C_ADC_Slice13_Enable" VALUE="false"/>
         <PARAMETER NAME="C_ADC_Dither13" VALUE="true"/>
@@ -20100,6 +20547,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal13" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_13" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS13" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS13" VALUE="false"/>
         <PARAMETER NAME="C_ADC13_Dig_Port" VALUE="0"/>
         <PARAMETER NAME="C_ADC2_Enable" VALUE="0"/>
         <PARAMETER NAME="C_ADC2_PLL_Enable" VALUE="false"/>
@@ -20135,6 +20583,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal20" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_20" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS20" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS20" VALUE="false"/>
         <PARAMETER NAME="C_ADC20_Dig_Port" VALUE="0"/>
         <PARAMETER NAME="C_ADC_Slice21_Enable" VALUE="false"/>
         <PARAMETER NAME="C_ADC_Dither21" VALUE="true"/>
@@ -20152,6 +20601,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal21" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_21" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS21" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS21" VALUE="false"/>
         <PARAMETER NAME="C_ADC21_Dig_Port" VALUE="0"/>
         <PARAMETER NAME="C_ADC_Slice22_Enable" VALUE="false"/>
         <PARAMETER NAME="C_ADC_Dither22" VALUE="true"/>
@@ -20169,6 +20619,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal22" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_22" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS22" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS22" VALUE="false"/>
         <PARAMETER NAME="C_ADC22_Dig_Port" VALUE="0"/>
         <PARAMETER NAME="C_ADC_Slice23_Enable" VALUE="false"/>
         <PARAMETER NAME="C_ADC_Dither23" VALUE="true"/>
@@ -20186,6 +20637,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal23" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_23" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS23" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS23" VALUE="false"/>
         <PARAMETER NAME="C_ADC23_Dig_Port" VALUE="0"/>
         <PARAMETER NAME="C_ADC3_Enable" VALUE="0"/>
         <PARAMETER NAME="C_ADC3_PLL_Enable" VALUE="false"/>
@@ -20221,6 +20673,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal30" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_30" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS30" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS30" VALUE="false"/>
         <PARAMETER NAME="C_ADC30_Dig_Port" VALUE="0"/>
         <PARAMETER NAME="C_ADC_Slice31_Enable" VALUE="false"/>
         <PARAMETER NAME="C_ADC_Dither31" VALUE="true"/>
@@ -20238,6 +20691,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal31" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_31" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS31" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS31" VALUE="false"/>
         <PARAMETER NAME="C_ADC31_Dig_Port" VALUE="0"/>
         <PARAMETER NAME="C_ADC_Slice32_Enable" VALUE="false"/>
         <PARAMETER NAME="C_ADC_Dither32" VALUE="true"/>
@@ -20255,6 +20709,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal32" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_32" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS32" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS32" VALUE="false"/>
         <PARAMETER NAME="C_ADC32_Dig_Port" VALUE="0"/>
         <PARAMETER NAME="C_ADC_Slice33_Enable" VALUE="false"/>
         <PARAMETER NAME="C_ADC_Dither33" VALUE="true"/>
@@ -20272,6 +20727,7 @@
         <PARAMETER NAME="C_ADC_Bypass_BG_Cal33" VALUE="false"/>
         <PARAMETER NAME="C_ADC_RESERVED_1_33" VALUE="false"/>
         <PARAMETER NAME="C_ADC_TDD_RTS33" VALUE="0"/>
+        <PARAMETER NAME="C_ADC_OBS33" VALUE="false"/>
         <PARAMETER NAME="C_ADC33_Dig_Port" VALUE="0"/>
         <PARAMETER NAME="C_DAC0_Enable" VALUE="1"/>
         <PARAMETER NAME="C_DAC0_PLL_Enable" VALUE="true"/>
@@ -20357,13 +20813,13 @@
         <PARAMETER NAME="C_DAC_TDD_RTS03" VALUE="0"/>
         <PARAMETER NAME="C_DAC1_Enable" VALUE="0"/>
         <PARAMETER NAME="C_DAC1_PLL_Enable" VALUE="false"/>
-        <PARAMETER NAME="C_DAC1_Sampling_Rate" VALUE="1.024"/>
+        <PARAMETER NAME="C_DAC1_Sampling_Rate" VALUE="6.4"/>
         <PARAMETER NAME="C_DAC1_Fs_Max" VALUE="6.554"/>
-        <PARAMETER NAME="C_DAC1_Refclk_Freq" VALUE="1024.000"/>
-        <PARAMETER NAME="C_DAC1_Outclk_Freq" VALUE="128.000"/>
-        <PARAMETER NAME="C_DAC1_FBDIV" VALUE="25"/>
-        <PARAMETER NAME="C_DAC1_OutDiv" VALUE="10"/>
-        <PARAMETER NAME="C_DAC1_Vco" VALUE="10240.0"/>
+        <PARAMETER NAME="C_DAC1_Refclk_Freq" VALUE="6400.000"/>
+        <PARAMETER NAME="C_DAC1_Outclk_Freq" VALUE="50.000"/>
+        <PARAMETER NAME="C_DAC1_FBDIV" VALUE="10"/>
+        <PARAMETER NAME="C_DAC1_OutDiv" VALUE="2"/>
+        <PARAMETER NAME="C_DAC1_Vco" VALUE="8500.0"/>
         <PARAMETER NAME="C_DAC1_Fabric_Freq" VALUE="0.0"/>
         <PARAMETER NAME="C_DAC1_Multi_Tile_Sync" VALUE="false"/>
         <PARAMETER NAME="C_DAC1_Band" VALUE="0"/>
@@ -20375,7 +20831,7 @@
         <PARAMETER NAME="C_DAC1_Clock_Dist" VALUE="0"/>
         <PARAMETER NAME="C_DAC_Slice10_Enable" VALUE="false"/>
         <PARAMETER NAME="C_DAC_Data_Type10" VALUE="0"/>
-        <PARAMETER NAME="C_DAC_Data_Width10" VALUE="3"/>
+        <PARAMETER NAME="C_DAC_Data_Width10" VALUE="16"/>
         <PARAMETER NAME="C_DAC_Interpolation_Mode10" VALUE="0"/>
         <PARAMETER NAME="C_DAC_Decoder_Mode10" VALUE="0"/>
         <PARAMETER NAME="C_DAC_Mixer_Type10" VALUE="3"/>
@@ -20407,7 +20863,7 @@
         <PARAMETER NAME="C_DAC_TDD_RTS11" VALUE="0"/>
         <PARAMETER NAME="C_DAC_Slice12_Enable" VALUE="false"/>
         <PARAMETER NAME="C_DAC_Data_Type12" VALUE="0"/>
-        <PARAMETER NAME="C_DAC_Data_Width12" VALUE="3"/>
+        <PARAMETER NAME="C_DAC_Data_Width12" VALUE="16"/>
         <PARAMETER NAME="C_DAC_Interpolation_Mode12" VALUE="0"/>
         <PARAMETER NAME="C_DAC_Decoder_Mode12" VALUE="0"/>
         <PARAMETER NAME="C_DAC_Mixer_Type12" VALUE="3"/>
@@ -20606,6 +21062,8 @@
         <PARAMETER NAME="disable_bg_cal_en" VALUE="1"/>
         <PARAMETER NAME="C_VNC_Testing" VALUE="false"/>
         <PARAMETER NAME="C_RESERVED_3" VALUE="110000"/>
+        <PARAMETER NAME="C_VNC_Include_OIS_Change" VALUE="false"/>
+        <PARAMETER NAME="C_VNC_Include_Fs2_Change" VALUE="false"/>
         <PARAMETER NAME="C_RF_Analyzer" VALUE="0"/>
         <PARAMETER NAME="C_PL_Clock_Freq" VALUE="100.0"/>
         <PARAMETER NAME="tb_dac_fft" VALUE="true"/>
@@ -20651,6 +21109,7 @@
         <PARAMETER NAME="ADC0_Band" VALUE="0"/>
         <PARAMETER NAME="ADC0_Refclk_Div" VALUE="1"/>
         <PARAMETER NAME="ADC0_Clock_Source" VALUE="0"/>
+        <PARAMETER NAME="ADC0_Clock_Source_MX" VALUE="0"/>
         <PARAMETER NAME="ADC0_Clock_Dist" VALUE="0"/>
         <PARAMETER NAME="ADC_Slice00_Enable" VALUE="true"/>
         <PARAMETER NAME="ADC_Dither00" VALUE="true"/>
@@ -20668,6 +21127,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal00" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_00" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS00" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS00" VALUE="false"/>
         <PARAMETER NAME="ADC_Slice01_Enable" VALUE="true"/>
         <PARAMETER NAME="ADC_Dither01" VALUE="true"/>
         <PARAMETER NAME="ADC_Data_Type01" VALUE="1"/>
@@ -20684,6 +21144,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal01" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_01" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS01" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS01" VALUE="false"/>
         <PARAMETER NAME="ADC_Slice02_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC_Dither02" VALUE="true"/>
         <PARAMETER NAME="ADC_Data_Type02" VALUE="0"/>
@@ -20700,6 +21161,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal02" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_02" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS02" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS02" VALUE="false"/>
         <PARAMETER NAME="ADC_Slice03_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC_Dither03" VALUE="true"/>
         <PARAMETER NAME="ADC_Data_Type03" VALUE="0"/>
@@ -20716,6 +21178,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal03" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_03" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS03" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS03" VALUE="false"/>
         <PARAMETER NAME="ADC1_Enable" VALUE="0"/>
         <PARAMETER NAME="ADC1_PLL_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC1_Sampling_Rate" VALUE="2.0"/>
@@ -20727,6 +21190,7 @@
         <PARAMETER NAME="ADC1_Band" VALUE="0"/>
         <PARAMETER NAME="ADC1_Refclk_Div" VALUE="1"/>
         <PARAMETER NAME="ADC1_Clock_Source" VALUE="1"/>
+        <PARAMETER NAME="ADC1_Clock_Source_MX" VALUE="1"/>
         <PARAMETER NAME="ADC1_Clock_Dist" VALUE="0"/>
         <PARAMETER NAME="ADC_Slice10_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC_Dither10" VALUE="true"/>
@@ -20744,6 +21208,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal10" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_10" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS10" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS10" VALUE="false"/>
         <PARAMETER NAME="ADC_Slice11_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC_Dither11" VALUE="true"/>
         <PARAMETER NAME="ADC_Data_Type11" VALUE="0"/>
@@ -20760,6 +21225,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal11" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_11" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS11" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS11" VALUE="false"/>
         <PARAMETER NAME="ADC_Slice12_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC_Dither12" VALUE="true"/>
         <PARAMETER NAME="ADC_Data_Type12" VALUE="0"/>
@@ -20776,6 +21242,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal12" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_12" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS12" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS12" VALUE="false"/>
         <PARAMETER NAME="ADC_Slice13_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC_Dither13" VALUE="true"/>
         <PARAMETER NAME="ADC_Data_Type13" VALUE="0"/>
@@ -20792,6 +21259,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal13" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_13" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS13" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS13" VALUE="false"/>
         <PARAMETER NAME="ADC2_Enable" VALUE="0"/>
         <PARAMETER NAME="ADC2_PLL_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC2_Sampling_Rate" VALUE="2.0"/>
@@ -20803,6 +21271,7 @@
         <PARAMETER NAME="ADC2_Band" VALUE="0"/>
         <PARAMETER NAME="ADC2_Refclk_Div" VALUE="1"/>
         <PARAMETER NAME="ADC2_Clock_Source" VALUE="2"/>
+        <PARAMETER NAME="ADC2_Clock_Source_MX" VALUE="2"/>
         <PARAMETER NAME="ADC2_Clock_Dist" VALUE="0"/>
         <PARAMETER NAME="ADC_Slice20_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC_Dither20" VALUE="true"/>
@@ -20820,6 +21289,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal20" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_20" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS20" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS20" VALUE="false"/>
         <PARAMETER NAME="ADC_Slice21_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC_Dither21" VALUE="true"/>
         <PARAMETER NAME="ADC_Data_Type21" VALUE="0"/>
@@ -20836,6 +21306,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal21" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_21" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS21" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS21" VALUE="false"/>
         <PARAMETER NAME="ADC_Slice22_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC_Dither22" VALUE="true"/>
         <PARAMETER NAME="ADC_Data_Type22" VALUE="0"/>
@@ -20852,6 +21323,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal22" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_22" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS22" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS22" VALUE="false"/>
         <PARAMETER NAME="ADC_Slice23_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC_Dither23" VALUE="true"/>
         <PARAMETER NAME="ADC_Data_Type23" VALUE="0"/>
@@ -20868,6 +21340,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal23" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_23" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS23" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS23" VALUE="false"/>
         <PARAMETER NAME="ADC3_Enable" VALUE="0"/>
         <PARAMETER NAME="ADC3_PLL_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC3_Sampling_Rate" VALUE="2.0"/>
@@ -20879,6 +21352,7 @@
         <PARAMETER NAME="ADC3_Band" VALUE="0"/>
         <PARAMETER NAME="ADC3_Refclk_Div" VALUE="1"/>
         <PARAMETER NAME="ADC3_Clock_Source" VALUE="3"/>
+        <PARAMETER NAME="ADC3_Clock_Source_MX" VALUE="3"/>
         <PARAMETER NAME="ADC3_Clock_Dist" VALUE="0"/>
         <PARAMETER NAME="ADC_Slice30_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC_Dither30" VALUE="true"/>
@@ -20896,6 +21370,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal30" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_30" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS30" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS30" VALUE="false"/>
         <PARAMETER NAME="ADC_Slice31_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC_Dither31" VALUE="true"/>
         <PARAMETER NAME="ADC_Data_Type31" VALUE="0"/>
@@ -20912,6 +21387,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal31" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_31" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS31" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS31" VALUE="false"/>
         <PARAMETER NAME="ADC_Slice32_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC_Dither32" VALUE="true"/>
         <PARAMETER NAME="ADC_Data_Type32" VALUE="0"/>
@@ -20928,6 +21404,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal32" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_32" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS32" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS32" VALUE="false"/>
         <PARAMETER NAME="ADC_Slice33_Enable" VALUE="false"/>
         <PARAMETER NAME="ADC_Dither33" VALUE="true"/>
         <PARAMETER NAME="ADC_Data_Type33" VALUE="0"/>
@@ -20944,6 +21421,7 @@
         <PARAMETER NAME="ADC_Bypass_BG_Cal33" VALUE="false"/>
         <PARAMETER NAME="ADC_RESERVED_1_33" VALUE="false"/>
         <PARAMETER NAME="ADC_TDD_RTS33" VALUE="0"/>
+        <PARAMETER NAME="ADC_OBS33" VALUE="false"/>
         <PARAMETER NAME="mADC_Enable" VALUE="0"/>
         <PARAMETER NAME="mADC_PLL_Enable" VALUE="false"/>
         <PARAMETER NAME="mADC_Sampling_Rate" VALUE="2.0"/>
@@ -20970,6 +21448,7 @@
         <PARAMETER NAME="mADC_Bypass_BG_Cal00" VALUE="false"/>
         <PARAMETER NAME="mADC_RESERVED_1_00" VALUE="false"/>
         <PARAMETER NAME="mADC_TDD_RTS00" VALUE="0"/>
+        <PARAMETER NAME="mADC_OBS00" VALUE="false"/>
         <PARAMETER NAME="mADC_Slice01_Enable" VALUE="false"/>
         <PARAMETER NAME="mADC_Dither01" VALUE="true"/>
         <PARAMETER NAME="mADC_Data_Type01" VALUE="0"/>
@@ -20986,6 +21465,7 @@
         <PARAMETER NAME="mADC_Bypass_BG_Cal01" VALUE="false"/>
         <PARAMETER NAME="mADC_RESERVED_1_01" VALUE="false"/>
         <PARAMETER NAME="mADC_TDD_RTS01" VALUE="0"/>
+        <PARAMETER NAME="mADC_OBS01" VALUE="false"/>
         <PARAMETER NAME="mADC_Slice02_Enable" VALUE="false"/>
         <PARAMETER NAME="mADC_Dither02" VALUE="true"/>
         <PARAMETER NAME="mADC_Data_Type02" VALUE="0"/>
@@ -21002,6 +21482,7 @@
         <PARAMETER NAME="mADC_Bypass_BG_Cal02" VALUE="false"/>
         <PARAMETER NAME="mADC_RESERVED_1_02" VALUE="false"/>
         <PARAMETER NAME="mADC_TDD_RTS02" VALUE="0"/>
+        <PARAMETER NAME="mADC_OBS02" VALUE="false"/>
         <PARAMETER NAME="mADC_Slice03_Enable" VALUE="false"/>
         <PARAMETER NAME="mADC_Dither03" VALUE="true"/>
         <PARAMETER NAME="mADC_Data_Type03" VALUE="0"/>
@@ -21018,6 +21499,7 @@
         <PARAMETER NAME="mADC_Bypass_BG_Cal03" VALUE="false"/>
         <PARAMETER NAME="mADC_RESERVED_1_03" VALUE="false"/>
         <PARAMETER NAME="mADC_TDD_RTS03" VALUE="0"/>
+        <PARAMETER NAME="mADC_OBS03" VALUE="false"/>
         <PARAMETER NAME="DAC0_Enable" VALUE="1"/>
         <PARAMETER NAME="DAC0_PLL_Enable" VALUE="true"/>
         <PARAMETER NAME="DAC0_Sampling_Rate" VALUE="1.024"/>
@@ -21029,6 +21511,7 @@
         <PARAMETER NAME="DAC0_VOP" VALUE="20.0"/>
         <PARAMETER NAME="DAC0_Refclk_Div" VALUE="1"/>
         <PARAMETER NAME="DAC0_Clock_Source" VALUE="4"/>
+        <PARAMETER NAME="DAC0_Clock_Source_MX" VALUE="4"/>
         <PARAMETER NAME="DAC0_Clock_Dist" VALUE="0"/>
         <PARAMETER NAME="DAC_Slice00_Enable" VALUE="true"/>
         <PARAMETER NAME="DAC_Data_Type00" VALUE="0"/>
@@ -21096,19 +21579,20 @@
         <PARAMETER NAME="DAC_TDD_RTS03" VALUE="0"/>
         <PARAMETER NAME="DAC1_Enable" VALUE="0"/>
         <PARAMETER NAME="DAC1_PLL_Enable" VALUE="false"/>
-        <PARAMETER NAME="DAC1_Sampling_Rate" VALUE="1.024"/>
-        <PARAMETER NAME="DAC1_Refclk_Freq" VALUE="1024.000"/>
-        <PARAMETER NAME="DAC1_Outclk_Freq" VALUE="128.000"/>
+        <PARAMETER NAME="DAC1_Sampling_Rate" VALUE="6.4"/>
+        <PARAMETER NAME="DAC1_Refclk_Freq" VALUE="6400.000"/>
+        <PARAMETER NAME="DAC1_Outclk_Freq" VALUE="50.000"/>
         <PARAMETER NAME="DAC1_Fabric_Freq" VALUE="0.0"/>
         <PARAMETER NAME="DAC1_Multi_Tile_Sync" VALUE="false"/>
         <PARAMETER NAME="DAC1_Band" VALUE="0"/>
         <PARAMETER NAME="DAC1_VOP" VALUE="20.0"/>
         <PARAMETER NAME="DAC1_Refclk_Div" VALUE="1"/>
         <PARAMETER NAME="DAC1_Clock_Source" VALUE="5"/>
+        <PARAMETER NAME="DAC1_Clock_Source_MX" VALUE="5"/>
         <PARAMETER NAME="DAC1_Clock_Dist" VALUE="0"/>
         <PARAMETER NAME="DAC_Slice10_Enable" VALUE="false"/>
         <PARAMETER NAME="DAC_Data_Type10" VALUE="0"/>
-        <PARAMETER NAME="DAC_Data_Width10" VALUE="3"/>
+        <PARAMETER NAME="DAC_Data_Width10" VALUE="16"/>
         <PARAMETER NAME="DAC_Interpolation_Mode10" VALUE="0"/>
         <PARAMETER NAME="DAC_Decoder_Mode10" VALUE="0"/>
         <PARAMETER NAME="DAC_Mixer_Type10" VALUE="3"/>
@@ -21140,7 +21624,7 @@
         <PARAMETER NAME="DAC_TDD_RTS11" VALUE="0"/>
         <PARAMETER NAME="DAC_Slice12_Enable" VALUE="false"/>
         <PARAMETER NAME="DAC_Data_Type12" VALUE="0"/>
-        <PARAMETER NAME="DAC_Data_Width12" VALUE="3"/>
+        <PARAMETER NAME="DAC_Data_Width12" VALUE="16"/>
         <PARAMETER NAME="DAC_Interpolation_Mode12" VALUE="0"/>
         <PARAMETER NAME="DAC_Decoder_Mode12" VALUE="0"/>
         <PARAMETER NAME="DAC_Mixer_Type12" VALUE="3"/>
@@ -21181,6 +21665,7 @@
         <PARAMETER NAME="DAC2_VOP" VALUE="20.0"/>
         <PARAMETER NAME="DAC2_Refclk_Div" VALUE="1"/>
         <PARAMETER NAME="DAC2_Clock_Source" VALUE="6"/>
+        <PARAMETER NAME="DAC2_Clock_Source_MX" VALUE="6"/>
         <PARAMETER NAME="DAC2_Clock_Dist" VALUE="0"/>
         <PARAMETER NAME="DAC_Slice20_Enable" VALUE="false"/>
         <PARAMETER NAME="DAC_Data_Type20" VALUE="0"/>
@@ -21257,6 +21742,7 @@
         <PARAMETER NAME="DAC3_VOP" VALUE="20.0"/>
         <PARAMETER NAME="DAC3_Refclk_Div" VALUE="1"/>
         <PARAMETER NAME="DAC3_Clock_Source" VALUE="7"/>
+        <PARAMETER NAME="DAC3_Clock_Source_MX" VALUE="7"/>
         <PARAMETER NAME="DAC3_Clock_Dist" VALUE="0"/>
         <PARAMETER NAME="DAC_Slice30_Enable" VALUE="false"/>
         <PARAMETER NAME="DAC_Data_Type30" VALUE="0"/>
@@ -21399,6 +21885,8 @@
         <PARAMETER NAME="Clock_Forwarding" VALUE="false"/>
         <PARAMETER NAME="VNC_Testing" VALUE="false"/>
         <PARAMETER NAME="RESERVED_3" VALUE="110000"/>
+        <PARAMETER NAME="VNC_Include_OIS_Change" VALUE="true"/>
+        <PARAMETER NAME="VNC_Include_Fs2_Change" VALUE="true"/>
         <PARAMETER NAME="RF_Analyzer" VALUE="0"/>
         <PARAMETER NAME="PL_Clock_Freq" VALUE="100.0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
@@ -21434,12 +21922,12 @@
         <PORT CLKFREQUENCY="128000000" DIR="O" NAME="clk_dac0" SIGIS="clk" SIGNAME="usp_rf_data_converter_0_clk_dac0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s0_axis_aclk"/>
+            <CONNECTION INSTANCE="qpsk_tx_clk_tx" PORT="clk_in1"/>
             <CONNECTION INSTANCE="qpsk_tx_interpolate_logic_axis_data_fifo_0" PORT="m_axis_aclk"/>
             <CONNECTION INSTANCE="qpsk_tx_interpolate_logic_axis_data_fifo_1" PORT="m_axis_aclk"/>
             <CONNECTION INSTANCE="qpsk_tx_interpolate_logic_axis_signal_join_0" PORT="clk"/>
             <CONNECTION INSTANCE="qpsk_tx_interpolate_logic_fir_compiler_0" PORT="aclk"/>
             <CONNECTION INSTANCE="qpsk_tx_interpolate_logic_fir_compiler_1" PORT="aclk"/>
-            <CONNECTION INSTANCE="qpsk_tx_clk_tx" PORT="clk_in1"/>
             <CONNECTION INSTANCE="qpsk_tx_reset_128" PORT="slowest_sync_clk"/>
           </CONNECTIONS>
         </PORT>
@@ -21788,7 +22276,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE CONFIGURABLE="TRUE" COREREVISION="2" FULLNAME="/zynq_ultra_ps_e_0" HWVERSION="3.3" INSTANCE="zynq_ultra_ps_e_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" IS_PL="FALSE" MODTYPE="zynq_ultra_ps_e" VLNV="xilinx.com:ip:zynq_ultra_ps_e:3.3">
+    <MODULE CONFIGURABLE="TRUE" COREREVISION="3" FULLNAME="/zynq_ultra_ps_e_0" HWVERSION="3.3" INSTANCE="zynq_ultra_ps_e_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" IS_PL="FALSE" MODTYPE="zynq_ultra_ps_e" VLNV="xilinx.com:ip:zynq_ultra_ps_e:3.3">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=zynq_ultra_ps_e;v=v3_3;d=pg201-zynq-ultrascale-plus-processing-system.pdf"/>
       </DOCUMENTS>
@@ -22044,9 +22532,9 @@
         <PARAMETER NAME="PSU__PROTECTION__DDR_SEGMENTS" VALUE="NONE"/>
         <PARAMETER NAME="PSU__PROTECTION__OCM_SEGMENTS" VALUE="NONE"/>
         <PARAMETER NAME="PSU__PROTECTION__LPD_SEGMENTS" VALUE="SA:0xFF980000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware|SA:0xFF5E0000 ;SIZE:2560;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware|SA:0xFFCC0000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware|SA:0xFF180000 ;SIZE:768;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware|SA:0xFF410000 ;SIZE:640;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware|SA:0xFFA70000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware|SA:0xFF9A0000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware"/>
-        <PARAMETER NAME="PSU__PROTECTION__FPD_SEGMENTS" VALUE="SA:0xFD1A0000 ;SIZE:1280;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware  |  SA:0xFD000000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware  |  SA:0xFD010000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware  |  SA:0xFD020000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware  |  SA:0xFD030000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware  |  SA:0xFD040000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware  |  SA:0xFD050000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware  |  SA:0xFD610000 ;SIZE:512;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware  |  SA:0xFD5D0000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware"/>
+        <PARAMETER NAME="PSU__PROTECTION__FPD_SEGMENTS" VALUE="SA:0xFD1A0000 ;SIZE:1280;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware   |   SA:0xFD000000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware   |   SA:0xFD010000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware   |   SA:0xFD020000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware   |   SA:0xFD030000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware   |   SA:0xFD040000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware   |   SA:0xFD050000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware   |   SA:0xFD610000 ;SIZE:512;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware   |   SA:0xFD5D0000 ;SIZE:64;UNIT:KB ;RegionTZ:Secure ;WrAllowed:Read/Write;subsystemId:PMU Firmware"/>
         <PARAMETER NAME="PSU__PROTECTION__DEBUG" VALUE="0"/>
-        <PARAMETER NAME="PSU__PROTECTION__SLAVES" VALUE="LPD;USB3_1_XHCI;FE300000;FE3FFFFF;0|LPD;USB3_1;FF9E0000;FF9EFFFF;0|LPD;USB3_0_XHCI;FE200000;FE2FFFFF;1|LPD;USB3_0;FF9D0000;FF9DFFFF;1|LPD;UART1;FF010000;FF01FFFF;0|LPD;UART0;FF000000;FF00FFFF;1|LPD;TTC3;FF140000;FF14FFFF;1|LPD;TTC2;FF130000;FF13FFFF;1|LPD;TTC1;FF120000;FF12FFFF;1|LPD;TTC0;FF110000;FF11FFFF;1|FPD;SWDT1;FD4D0000;FD4DFFFF;1|LPD;SWDT0;FF150000;FF15FFFF;1|LPD;SPI1;FF050000;FF05FFFF;0|LPD;SPI0;FF040000;FF04FFFF;0|FPD;SMMU_REG;FD5F0000;FD5FFFFF;1|FPD;SMMU;FD800000;FDFFFFFF;1|FPD;SIOU;FD3D0000;FD3DFFFF;1|FPD;SERDES;FD400000;FD47FFFF;1|LPD;SD1;FF170000;FF17FFFF;1|LPD;SD0;FF160000;FF16FFFF;0|FPD;SATA;FD0C0000;FD0CFFFF;1|LPD;RTC;FFA60000;FFA6FFFF;1|LPD;RSA_CORE;FFCE0000;FFCEFFFF;1|LPD;RPU;FF9A0000;FF9AFFFF;1|LPD;R5_TCM_RAM_GLOBAL;FFE00000;FFE3FFFF;1|LPD;R5_1_Instruction_Cache;FFEC0000;FFECFFFF;1|LPD;R5_1_Data_Cache;FFED0000;FFEDFFFF;1|LPD;R5_1_BTCM_GLOBAL;FFEB0000;FFEBFFFF;1|LPD;R5_1_ATCM_GLOBAL;FFE90000;FFE9FFFF;1|LPD;R5_0_Instruction_Cache;FFE40000;FFE4FFFF;1|LPD;R5_0_Data_Cache;FFE50000;FFE5FFFF;1|LPD;R5_0_BTCM_GLOBAL;FFE20000;FFE2FFFF;1|LPD;R5_0_ATCM_GLOBAL;FFE00000;FFE0FFFF;1|LPD;QSPI_Linear_Address;C0000000;DFFFFFFF;1|LPD;QSPI;FF0F0000;FF0FFFFF;1|LPD;PMU_RAM;FFDC0000;FFDDFFFF;1|LPD;PMU_GLOBAL;FFD80000;FFDBFFFF;1|FPD;PCIE_MAIN;FD0E0000;FD0EFFFF;0|FPD;PCIE_LOW;E0000000;EFFFFFFF;0|FPD;PCIE_HIGH2;8000000000;BFFFFFFFFF;0|FPD;PCIE_HIGH1;600000000;7FFFFFFFF;0|FPD;PCIE_DMA;FD0F0000;FD0FFFFF;0|FPD;PCIE_ATTRIB;FD480000;FD48FFFF;0|LPD;OCM_XMPU_CFG;FFA70000;FFA7FFFF;1|LPD;OCM_SLCR;FF960000;FF96FFFF;1|OCM;OCM;FFFC0000;FFFFFFFF;1|LPD;NAND;FF100000;FF10FFFF;0|LPD;MBISTJTAG;FFCF0000;FFCFFFFF;1|LPD;LPD_XPPU_SINK;FF9C0000;FF9CFFFF;1|LPD;LPD_XPPU;FF980000;FF98FFFF;1|LPD;LPD_SLCR_SECURE;FF4B0000;FF4DFFFF;1|LPD;LPD_SLCR;FF410000;FF4AFFFF;1|LPD;LPD_GPV;FE100000;FE1FFFFF;1|LPD;LPD_DMA_7;FFAF0000;FFAFFFFF;1|LPD;LPD_DMA_6;FFAE0000;FFAEFFFF;1|LPD;LPD_DMA_5;FFAD0000;FFADFFFF;1|LPD;LPD_DMA_4;FFAC0000;FFACFFFF;1|LPD;LPD_DMA_3;FFAB0000;FFABFFFF;1|LPD;LPD_DMA_2;FFAA0000;FFAAFFFF;1|LPD;LPD_DMA_1;FFA90000;FFA9FFFF;1|LPD;LPD_DMA_0;FFA80000;FFA8FFFF;1|LPD;IPI_CTRL;FF380000;FF3FFFFF;1|LPD;IOU_SLCR;FF180000;FF23FFFF;1|LPD;IOU_SECURE_SLCR;FF240000;FF24FFFF;1|LPD;IOU_SCNTRS;FF260000;FF26FFFF;1|LPD;IOU_SCNTR;FF250000;FF25FFFF;1|LPD;IOU_GPV;FE000000;FE0FFFFF;1|LPD;I2C1;FF030000;FF03FFFF;1|LPD;I2C0;FF020000;FF02FFFF;1|FPD;GPU;FD4B0000;FD4BFFFF;0|LPD;GPIO;FF0A0000;FF0AFFFF;1|LPD;GEM3;FF0E0000;FF0EFFFF;1|LPD;GEM2;FF0D0000;FF0DFFFF;0|LPD;GEM1;FF0C0000;FF0CFFFF;0|LPD;GEM0;FF0B0000;FF0BFFFF;0|FPD;FPD_XMPU_SINK;FD4F0000;FD4FFFFF;1|FPD;FPD_XMPU_CFG;FD5D0000;FD5DFFFF;1|FPD;FPD_SLCR_SECURE;FD690000;FD6CFFFF;1|FPD;FPD_SLCR;FD610000;FD68FFFF;1|FPD;FPD_GPV;FD700000;FD7FFFFF;1|FPD;FPD_DMA_CH7;FD570000;FD57FFFF;1|FPD;FPD_DMA_CH6;FD560000;FD56FFFF;1|FPD;FPD_DMA_CH5;FD550000;FD55FFFF;1|FPD;FPD_DMA_CH4;FD540000;FD54FFFF;1|FPD;FPD_DMA_CH3;FD530000;FD53FFFF;1|FPD;FPD_DMA_CH2;FD520000;FD52FFFF;1|FPD;FPD_DMA_CH1;FD510000;FD51FFFF;1|FPD;FPD_DMA_CH0;FD500000;FD50FFFF;1|LPD;EFUSE;FFCC0000;FFCCFFFF;1|FPD;Display Port;FD4A0000;FD4AFFFF;1|FPD;DPDMA;FD4C0000;FD4CFFFF;1|FPD;DDR_XMPU5_CFG;FD050000;FD05FFFF;1|FPD;DDR_XMPU4_CFG;FD040000;FD04FFFF;1|FPD;DDR_XMPU3_CFG;FD030000;FD03FFFF;1|FPD;DDR_XMPU2_CFG;FD020000;FD02FFFF;1|FPD;DDR_XMPU1_CFG;FD010000;FD01FFFF;1|FPD;DDR_XMPU0_CFG;FD000000;FD00FFFF;1|FPD;DDR_QOS_CTRL;FD090000;FD09FFFF;1|FPD;DDR_PHY;FD080000;FD08FFFF;1|DDR;DDR_LOW;0;7FFFFFFF;1|DDR;DDR_HIGH;800000000;87FFFFFFF;1|FPD;DDDR_CTRL;FD070000;FD070FFF;1|LPD;Coresight;FE800000;FEFFFFFF;1|LPD;CSU_DMA;FFC80000;FFC9FFFF;1|LPD;CSU;FFCA0000;FFCAFFFF;1|LPD;CRL_APB;FF5E0000;FF85FFFF;1|FPD;CRF_APB;FD1A0000;FD2DFFFF;1|FPD;CCI_REG;FD5E0000;FD5EFFFF;1|FPD;CCI_GPV;FD6E0000;FD6EFFFF;1|LPD;CAN1;FF070000;FF07FFFF;0|LPD;CAN0;FF060000;FF06FFFF;0|FPD;APU;FD5C0000;FD5CFFFF;1|LPD;APM_INTC_IOU;FFA20000;FFA2FFFF;1|LPD;APM_FPD_LPD;FFA30000;FFA3FFFF;1|FPD;APM_5;FD490000;FD49FFFF;1|FPD;APM_0;FD0B0000;FD0BFFFF;1|LPD;APM2;FFA10000;FFA1FFFF;1|LPD;APM1;FFA00000;FFA0FFFF;1|LPD;AMS;FFA50000;FFA5FFFF;1|FPD;AFI_5;FD3B0000;FD3BFFFF;1|FPD;AFI_4;FD3A0000;FD3AFFFF;1|FPD;AFI_3;FD390000;FD39FFFF;1|FPD;AFI_2;FD380000;FD38FFFF;1|FPD;AFI_1;FD370000;FD37FFFF;1|FPD;AFI_0;FD360000;FD36FFFF;1|LPD;AFIFM6;FF9B0000;FF9BFFFF;1|FPD;ACPU_GIC;F9010000;F907FFFF;1"/>
+        <PARAMETER NAME="PSU__PROTECTION__SLAVES" VALUE="LPD;USB3_1_XHCI;FE300000;FE3FFFFF;0|LPD;USB3_1;FF9E0000;FF9EFFFF;0|LPD;USB3_0_XHCI;FE200000;FE2FFFFF;1|LPD;USB3_0;FF9D0000;FF9DFFFF;1|LPD;UART1;FF010000;FF01FFFF;0|LPD;UART0;FF000000;FF00FFFF;1|LPD;TTC3;FF140000;FF14FFFF;1|LPD;TTC2;FF130000;FF13FFFF;1|LPD;TTC1;FF120000;FF12FFFF;1|LPD;TTC0;FF110000;FF11FFFF;1|FPD;SWDT1;FD4D0000;FD4DFFFF;1|LPD;SWDT0;FF150000;FF15FFFF;1|LPD;SPI1;FF050000;FF05FFFF;0|LPD;SPI0;FF040000;FF04FFFF;0|FPD;SMMU_REG;FD5F0000;FD5FFFFF;1|FPD;SMMU;FD800000;FDFFFFFF;1|FPD;SIOU;FD3D0000;FD3DFFFF;1|FPD;SERDES;FD400000;FD47FFFF;1|LPD;SD1;FF170000;FF17FFFF;1|LPD;SD0;FF160000;FF16FFFF;0|FPD;SATA;FD0C0000;FD0CFFFF;1|LPD;RTC;FFA60000;FFA6FFFF;1|LPD;RSA_CORE;FFCE0000;FFCEFFFF;1|LPD;RPU;FF9A0000;FF9AFFFF;1|LPD;R5_TCM_RAM_GLOBAL;FFE00000;FFE3FFFF;1|LPD;R5_1_Instruction_Cache;FFEC0000;FFECFFFF;1|LPD;R5_1_Data_Cache;FFED0000;FFEDFFFF;1|LPD;R5_1_BTCM_GLOBAL;FFEB0000;FFEBFFFF;1|LPD;R5_1_ATCM_GLOBAL;FFE90000;FFE9FFFF;1|LPD;R5_0_Instruction_Cache;FFE40000;FFE4FFFF;1|LPD;R5_0_Data_Cache;FFE50000;FFE5FFFF;1|LPD;R5_0_BTCM_GLOBAL;FFE20000;FFE2FFFF;1|LPD;R5_0_ATCM_GLOBAL;FFE00000;FFE0FFFF;1|LPD;QSPI_Linear_Address;C0000000;DFFFFFFF;1|LPD;QSPI;FF0F0000;FF0FFFFF;1|LPD;PMU_RAM;FFDC0000;FFDDFFFF;1|LPD;PMU_GLOBAL;FFD80000;FFDBFFFF;1|FPD;PCIE_MAIN;FD0E0000;FD0EFFFF;0|FPD;PCIE_LOW;E0000000;EFFFFFFF;0|FPD;PCIE_HIGH2;8000000000;BFFFFFFFFF;0|FPD;PCIE_HIGH1;600000000;7FFFFFFFF;0|FPD;PCIE_DMA;FD0F0000;FD0FFFFF;0|FPD;PCIE_ATTRIB;FD480000;FD48FFFF;0|LPD;OCM_XMPU_CFG;FFA70000;FFA7FFFF;1|LPD;OCM_SLCR;FF960000;FF96FFFF;1|OCM;OCM;FFFC0000;FFFFFFFF;1|LPD;NAND;FF100000;FF10FFFF;0|LPD;MBISTJTAG;FFCF0000;FFCFFFFF;1|LPD;LPD_XPPU_SINK;FF9C0000;FF9CFFFF;1|LPD;LPD_XPPU;FF980000;FF98FFFF;1|LPD;LPD_SLCR_SECURE;FF4B0000;FF4DFFFF;1|LPD;LPD_SLCR;FF410000;FF4AFFFF;1|LPD;LPD_GPV;FE100000;FE1FFFFF;1|LPD;LPD_DMA_7;FFAF0000;FFAFFFFF;1|LPD;LPD_DMA_6;FFAE0000;FFAEFFFF;1|LPD;LPD_DMA_5;FFAD0000;FFADFFFF;1|LPD;LPD_DMA_4;FFAC0000;FFACFFFF;1|LPD;LPD_DMA_3;FFAB0000;FFABFFFF;1|LPD;LPD_DMA_2;FFAA0000;FFAAFFFF;1|LPD;LPD_DMA_1;FFA90000;FFA9FFFF;1|LPD;LPD_DMA_0;FFA80000;FFA8FFFF;1|LPD;IPI_CTRL;FF380000;FF3FFFFF;1|LPD;IOU_SLCR;FF180000;FF23FFFF;1|LPD;IOU_SECURE_SLCR;FF240000;FF24FFFF;1|LPD;IOU_SCNTRS;FF260000;FF26FFFF;1|LPD;IOU_SCNTR;FF250000;FF25FFFF;1|LPD;IOU_GPV;FE000000;FE0FFFFF;1|LPD;I2C1;FF030000;FF03FFFF;1|LPD;I2C0;FF020000;FF02FFFF;1|FPD;GPU;FD4B0000;FD4BFFFF;0|LPD;GPIO;FF0A0000;FF0AFFFF;1|LPD;GEM3;FF0E0000;FF0EFFFF;1|LPD;GEM2;FF0D0000;FF0DFFFF;0|LPD;GEM1;FF0C0000;FF0CFFFF;0|LPD;GEM0;FF0B0000;FF0BFFFF;0|FPD;FPD_XMPU_SINK;FD4F0000;FD4FFFFF;1|FPD;FPD_XMPU_CFG;FD5D0000;FD5DFFFF;1|FPD;FPD_SLCR_SECURE;FD690000;FD6CFFFF;1|FPD;FPD_SLCR;FD610000;FD68FFFF;1|FPD;FPD_DMA_CH7;FD570000;FD57FFFF;1|FPD;FPD_DMA_CH6;FD560000;FD56FFFF;1|FPD;FPD_DMA_CH5;FD550000;FD55FFFF;1|FPD;FPD_DMA_CH4;FD540000;FD54FFFF;1|FPD;FPD_DMA_CH3;FD530000;FD53FFFF;1|FPD;FPD_DMA_CH2;FD520000;FD52FFFF;1|FPD;FPD_DMA_CH1;FD510000;FD51FFFF;1|FPD;FPD_DMA_CH0;FD500000;FD50FFFF;1|LPD;EFUSE;FFCC0000;FFCCFFFF;1|FPD;Display Port;FD4A0000;FD4AFFFF;1|FPD;DPDMA;FD4C0000;FD4CFFFF;1|FPD;DDR_XMPU5_CFG;FD050000;FD05FFFF;1|FPD;DDR_XMPU4_CFG;FD040000;FD04FFFF;1|FPD;DDR_XMPU3_CFG;FD030000;FD03FFFF;1|FPD;DDR_XMPU2_CFG;FD020000;FD02FFFF;1|FPD;DDR_XMPU1_CFG;FD010000;FD01FFFF;1|FPD;DDR_XMPU0_CFG;FD000000;FD00FFFF;1|FPD;DDR_QOS_CTRL;FD090000;FD09FFFF;1|FPD;DDR_PHY;FD080000;FD08FFFF;1|DDR;DDR_LOW;0;7FFFFFFF;1|DDR;DDR_HIGH;800000000;87FFFFFFF;1|FPD;DDDR_CTRL;FD070000;FD070FFF;1|LPD;Coresight;FE800000;FEFFFFFF;1|LPD;CSU_DMA;FFC80000;FFC9FFFF;1|LPD;CSU;FFCA0000;FFCAFFFF;1|LPD;CRL_APB;FF5E0000;FF85FFFF;1|FPD;CRF_APB;FD1A0000;FD2DFFFF;1|FPD;CCI_REG;FD5E0000;FD5EFFFF;1|LPD;CAN1;FF070000;FF07FFFF;0|LPD;CAN0;FF060000;FF06FFFF;0|FPD;APU;FD5C0000;FD5CFFFF;1|LPD;APM_INTC_IOU;FFA20000;FFA2FFFF;1|LPD;APM_FPD_LPD;FFA30000;FFA3FFFF;1|FPD;APM_5;FD490000;FD49FFFF;1|FPD;APM_0;FD0B0000;FD0BFFFF;1|LPD;APM2;FFA10000;FFA1FFFF;1|LPD;APM1;FFA00000;FFA0FFFF;1|LPD;AMS;FFA50000;FFA5FFFF;1|FPD;AFI_5;FD3B0000;FD3BFFFF;1|FPD;AFI_4;FD3A0000;FD3AFFFF;1|FPD;AFI_3;FD390000;FD39FFFF;1|FPD;AFI_2;FD380000;FD38FFFF;1|FPD;AFI_1;FD370000;FD37FFFF;1|FPD;AFI_0;FD360000;FD36FFFF;1|LPD;AFIFM6;FF9B0000;FF9BFFFF;1|FPD;ACPU_GIC;F9010000;F907FFFF;1"/>
         <PARAMETER NAME="PSU__PROTECTION__PRESUBSYSTEMS" VALUE="NONE"/>
         <PARAMETER NAME="PSU__PROTECTION__ENABLE" VALUE="0"/>
         <PARAMETER NAME="PSU__DDR_SW_REFRESH_ENABLED" VALUE="1"/>
@@ -23897,9 +24385,9 @@
             <CONNECTION INSTANCE="qpsk_rx_axi_interconnect_0" PORT="S00_AXI_arqos"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="saxihp1_fpd_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_25_6">
+        <PORT CLKFREQUENCY="25600000" DIR="I" NAME="saxihp1_fpd_aclk" SIGIS="clk" SIGNAME="qpsk_rx_clk_rx_clk_out2">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_25_6"/>
+            <CONNECTION INSTANCE="qpsk_rx_clk_rx" PORT="clk_out2"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="saxigp3_aruser" SIGIS="undef"/>
@@ -24156,10 +24644,10 @@
             <CONNECTION INSTANCE="qpsk_tx_ps8_0_axi_periph" PORT="M05_ACLK"/>
             <CONNECTION INSTANCE="qpsk_tx_ps8_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="qpsk_tx_reset_pl" PORT="slowest_sync_clk"/>
+            <CONNECTION INSTANCE="rst_ps8_0_99M" PORT="slowest_sync_clk"/>
             <CONNECTION INSTANCE="usp_rf_data_converter_0" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxihpm0_fpd_aclk"/>
             <CONNECTION INSTANCE="zynq_ultra_ps_e_0" PORT="maxihpm1_fpd_aclk"/>
-            <CONNECTION INSTANCE="rst_ps8_0_99M" PORT="slowest_sync_clk"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
