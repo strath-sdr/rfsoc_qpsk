@@ -38,7 +38,7 @@ This repository uses Voila to create simple web applications using Jupyter noteb
 
 ## Using the Project Files
 The following software is required to use the project files in this repository.
-- Vivado Design Suite 2020.1
+- Vivado Design Suite 2020.2
 - System Generator for DSP
 - MATLAB R2020a
 
@@ -46,7 +46,7 @@ The following software is required to use the project files in this repository.
 The Tx and Rx IPs are in separate directories in `rfsoc_qpsk/boards/ip/sysgen/` that can be opened using the appropriate System Generator dialogue. Due to the large amount of decimation and interpolation in both IPs, simulating the output can take an extraordinarily long time. A less extreme multirate system would simulate much faster! 
 
 ### Vivado
-This project can be built with Vivado from the command line. Open Vivado 2020.1 and execute the following into the tcl console:
+This project can be built with Vivado from the command line. Open Vivado 2020.2 and execute the following into the tcl console:
 
 ```sh
 cd /<repository-location>/boards/<board-name>/rfsoc_qpsk/
