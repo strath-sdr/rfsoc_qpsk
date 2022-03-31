@@ -22,6 +22,4 @@
 *vivado.log
 
 # Ignore ./rfstrath/rfstrath/
-**/rfsoc_qpsk/rfstrath
-**/rfsoc_qpsk/rfsoc_pynq
-**/rfsoc_qpsk/rfsoc_qpsk
+**/block_design
