@@ -55,9 +55,8 @@ cd /<repository-location>/boards/<board-name>/rfsoc_qpsk/
 Now that we have moved into the correct directory, make the Vivado project by running the make commands below sequentially.
 
 ```sh
-make project
 make block_design
-make bitstream_file
+make bitstream
 ```
 
 Alternatively, you can run the entire project build by executing the following into the tcl console:
