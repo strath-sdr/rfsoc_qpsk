@@ -32,7 +32,7 @@ Follow the instructions below to install the QPSK demonstrator on your developme
 pip3 install git+https://github.com/strath-sdr/rfsoc_qpsk
 ```
 
-Once installation has complete, you will find the QPSK demonstrator notebooks located in the jupyter home workspace in the `qpsk-demonstrator` folder.
+Once installation has complete, you will find the QPSK demonstrator notebooks located in the jupyter home workspace in the `rfsoc-studio/qpsk-demonstrator` folder.
 
 This repository uses Voila to create simple web applications using Jupyter notebooks. Your RFSoC2x2 or ZCU111 development board should already be preinstalled with a version of Voila and no further setup is required.
 
