@@ -49,16 +49,24 @@ def copy_drivers():
     data_files.extend(
         [os.path.join("..", dst_dr_dir, f) for f in os.listdir(dst_dr_dir)])
 
+# copy xrfclk file to python package (gen3 devices only)
+def copy_xrfclk():
+    src_at_dir = os.path.join(repo_board_folder, 'xrfclk')
+    if os.path.exists(src_at_dir):
+        dst_at_dir = os.path.join('xrfclk')
+        copy_tree(src_at_dir, dst_at_dir)
+        data_files.extend(
+            [os.path.join("..", dst_at_dir, f) for f in os.listdir(dst_at_dir)])
 
 check_env()
 copy_overlays()
 copy_drivers()
 copy_notebooks()
-
+copy_xrfclk()
 
 setup(
     name="rfsoc_qpsk",
-    version='1.4.2',
+    version='1.4.3',
     install_requires=[
         'pynq==2.7',
     ],
