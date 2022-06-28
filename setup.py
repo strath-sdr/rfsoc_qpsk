@@ -66,7 +66,7 @@ copy_xrfclk()
 
 setup(
     name="rfsoc_qpsk",
-    version='1.4.2',
+    version='1.4.3',
     install_requires=[
         'pynq==2.7',
     ],
