@@ -16,6 +16,7 @@ launch_runs impl_1 -to_step write_bitstream -jobs 12
 wait_on_run impl_1
 
 # Move and rename bitstream to final location
+file mkdir ./bitstream
 file copy -force ./${overlay_name}/${overlay_name}.runs/impl_1/${design_name}_wrapper.bit ./bitstream/${design_name}.bit
 
 # copy hwh files
