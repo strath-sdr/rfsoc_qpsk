@@ -4,7 +4,7 @@ set iprepo_dir ./../../ip/iprepo
 
 # Create project
 create_project ${overlay_name} ./${overlay_name} -part xczu48dr-ffvg1517-2-e
-set_property BOARD_PART realdigital.org:rfsoc4x2:part0:1.0 [current_project]
+set_property BOARD_PART xilinx.com:zcu208:part0:2.0 [current_project]
 set_property target_language VHDL [current_project]
 
 # Set IP repository paths
