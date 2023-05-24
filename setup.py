@@ -58,7 +58,7 @@ class package_installer():
               description=self.description)
 
 package_installer(name = "rfsoc_qpsk",
-                  version = "1.4.4",
+                  version = "1.4.5",
                   description  = "PYNQ example of using the RFSoC as a QPSK transceiver.",
                   author = "Craig Ramsay",
                   email = "craig.ramsay.100@strath.ac.uk",
