@@ -6,7 +6,7 @@ import numpy as np
 import ipywidgets as ipw
 from time import sleep
 
-from rfsoc_qpsk import dma_timer, sdr_plots, qpsk_rx, qpsk_tx
+from rfsoc_qpsk import dma_timer, sdr_plots, qpsk_rx, qpsk_tx, clocks
 
 
 class TimerRegistry():
@@ -55,8 +55,6 @@ class QpskOverlay(Overlay):
                            bigger font
 
         """
-        GEN3 = ['RFSoC4x2', 'ZCU208', 'ZCU216']
-        GEN1 = ['RFSoC2x2', 'ZCU111']
 
         # Generate default bitfile name
         if bitfile_name is None:
@@ -96,14 +94,8 @@ class QpskOverlay(Overlay):
         # Create Overlay
         super().__init__(bitfile_name, **kwargs)
 
-        # Determine board and set PLL appropriately
+        # Determine board
         board = os.environ['BOARD']
-        if board in GEN3:
-            lmk_clk = 245.76
-        elif board in GEN1:
-            lmk_clk = 122.88
-        else:
-            raise RuntimeError('Platform not supported.') # shouldn't get here
         
         # Extact in-use dataconverter objects with friendly names
         self.rf = self.usp_rf_data_converter_0
@@ -132,7 +124,7 @@ class QpskOverlay(Overlay):
         
         # Start up LMX clock
         if init_rf_clks:
-            xrfclk.set_ref_clks(lmk_clk, 409.6)
+            clocks.set_custom_lmclks()
 
         # Set sane DAC defaults
         self.dac_tile.DynamicPLLConfig(1, 409.6, 1024)
@@ -174,28 +166,6 @@ class QpskOverlay(Overlay):
         self.qpsk_rx.qpsk_rx_tsync.enable=1
 
         self.timers = TimerRegistry()
-
-    def init_i2c(self):
-        """Initialize the I2C control drivers on RFSoC2x2.
-        This should happen after a bitstream is loaded since I2C reset
-        is connected to PL pins. The I2C-related drivers are made loadable
-        modules so they can be removed or inserted.
-        """
-        module_list = ['i2c_dev', 'i2c_mux_pca954x', 'i2c_mux']
-        for module in module_list:
-            cmd = "if lsmod | grep {0}; then rmmod {0}; fi".format(module)
-            ret = os.system(cmd)
-            if ret:
-                raise RuntimeError(
-                    'Removing kernel module {} failed.'.format(module))
-
-        module_list.reverse()
-        for module in module_list:
-            cmd = "modprobe {}".format(module)
-            ret = os.system(cmd)
-            if ret:
-                raise RuntimeError(
-                    'Inserting kernel module {} failed.'.format(module))
 
     def plot_group(self, group_name, domains, get_time_data, fs, get_freq_data=None, get_const_data=None):
         """Create a group of plots for a given set of data generators.
