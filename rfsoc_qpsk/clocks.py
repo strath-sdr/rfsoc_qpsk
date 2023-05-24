@@ -127,7 +127,7 @@ def set_custom_lmclks():
     _get_lmclk_devices()
     
     # Get custom ref clock locs
-    cwd = os.getcwd()
+    cwd = os.path.dirname(os.path.realpath(__file__))
     lmk_loc, lmx_loc = _get_custom_lmclks(cwd)
     
     # Get custom ref clock props
