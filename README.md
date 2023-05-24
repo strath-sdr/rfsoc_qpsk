@@ -45,7 +45,7 @@ Follow the instructions below to install the QPSK demonstrator on your developme
 * Now simply install the QPSK demonstrator through PIP by executing the following command in the terminal:
 
 ```sh
-pip3 install https://github.com/strath-sdr/rfsoc_qpsk/releases/download/v1.4.4/rfsoc_qpsk.tar.gz
+pip3 install https://github.com/strath-sdr/rfsoc_qpsk/releases/download/v1.4.5/rfsoc_qpsk.tar.gz
 python -m rfsoc_qpsk install
 ```
 
