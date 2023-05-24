@@ -38,21 +38,6 @@ def install():
     logfile = os.path.abspath(os.path.join(os.path.realpath(__file__), '..', 'install.txt'))
     with open(logfile, 'w') as f:
         f.write(dst)
-    install_xrfclk_files()
-
-def install_xrfclk_files():
-    src = os.path.abspath(os.path.join(os.path.realpath(__file__), '..', package_name, 'xrfclk'))
-    if os.path.exists(src):
-        dst = os.path.abspath(os.path.join(os.path.realpath(__file__), '..', '..', 'xrfclk'))
-        for file in os.listdir(src):
-            shutil.copyfile(os.path.join(src, file), os.path.join(dst, file))
-
-def uninstall_xrfclk_files():
-    src = os.path.abspath(os.path.join(os.path.realpath(__file__), '..', package_name, 'xrfclk'))
-    if os.path.exists(src):
-        dst = os.path.abspath(os.path.join(os.path.realpath(__file__), '..', '..', 'xrfclk'))
-        for file in os.listdir(src):
-            os.remove(os.path.join(dst, file))
 
 def uninstall():
     logfile = os.path.abspath(os.path.join(os.path.realpath(__file__), '..', 'install.txt'))
@@ -64,7 +49,6 @@ def uninstall():
         raise RuntimeError('Package is not installed. Nothing has been removed.\r\n')
     shutil.rmtree(dst)
     os.remove(logfile)
-    uninstall_xrfclk_files()
 
 def clean():
     uninstall()
