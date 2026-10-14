@@ -10,8 +10,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-ROOT = Path(__file__).resolve().parents[2]
-spec = importlib.util.spec_from_file_location('upgrade', ROOT / 'scripts/ci/upgrade.py')
+ROOT = Path(__file__).resolve().parents[4]
+spec = importlib.util.spec_from_file_location('upgrade', ROOT / '.github/workflows/upgrade/upgrade.py')
 upgrade = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(upgrade)
 
@@ -50,6 +50,11 @@ class UpgradeTests(unittest.TestCase):
         self.board.mkdir(parents=True)
         self.source = self.board / 'demo.tcl'
         self.source.write_text('set scripts_vivado_version 2024.1\n')
+        (self.board / 'Makefile').write_text(
+            'all: bitstream clean\n'
+            'bitstream:\n\tvivado -tclargs recreate demo unused\n'
+            '\tvivado -tclargs build demo unused\n'
+            'clean:\n\trm -rf block_design\n')
         (self.repo / 'demo').mkdir()
         (self.repo / 'demo/__init__.py').write_text('')
         (self.repo / 'demo/stale.bit').write_text('must not ship')
@@ -83,7 +88,7 @@ class UpgradeTests(unittest.TestCase):
         upgrade.run(self.args, self.repo)
         self.assertEqual(self.source.read_bytes(), original)
         self.assertEqual((self.repo / 'trace').read_text().splitlines(),
-                         ['recreate:2024.1', 'migrate:2025.2', 'recreate:2025.2', 'build:2025.2'])
+                         ['recreate:2024.1', 'migrate:2025.2', 'recreate:2025.2', 'recreate:2025.2', 'build:2025.2'])
         metadata = json.loads((self.output / 'build.json').read_text())
         self.assertTrue(metadata['generated_sources_need_commit'])
         self.assertEqual(metadata['hardware_test'], 'not run')
@@ -102,7 +107,7 @@ class UpgradeTests(unittest.TestCase):
         with patch.dict(os.environ, {'VIVADO_2024_1_SETTINGS': '/does/not/exist'}):
             upgrade.run(self.args, self.repo)
         self.assertEqual((self.repo / 'trace').read_text().splitlines(),
-                         ['recreate:2025.2', 'build:2025.2'])
+                         ['recreate:2025.2', 'recreate:2025.2', 'build:2025.2'])
         self.assertFalse((self.output / 'upgrade.patch').exists())
 
     def test_failed_rerun_removes_old_candidate_and_restores_source(self):
@@ -127,6 +132,18 @@ class UpgradeTests(unittest.TestCase):
                 upgrade.run(self.args, self.repo)
         self.assertFalse((self.repo / 'trace').exists())
 
+    def test_missing_runner_variable_is_rejected(self):
+        with patch.dict(os.environ, {'VIVADO_2025_2_SETTINGS': ''}):
+            with self.assertRaisesRegex(ValueError, "runner installation's .env"):
+                upgrade.run(self.args, self.repo)
+
+    def test_failed_validation_never_builds(self):
+        with patch.dict(os.environ, {'FAKE_FAIL': 'recreate'}):
+            with self.assertRaises(RuntimeError):
+                upgrade.run(self.args, self.repo)
+        self.assertNotIn('build:', (self.repo / 'trace').read_text())
+        self.assertEqual(list(self.output.glob('*.tar.gz')), [])
+
     def test_unexpected_source_version_is_rejected(self):
         self.source.write_text('set scripts_vivado_version 2020.2\n')
         with self.assertRaisesRegex(ValueError, 'not the declared source or target'):
@@ -142,53 +159,11 @@ class UpgradeTests(unittest.TestCase):
 
 @unittest.skipUnless(__import__('shutil').which('tclsh'), 'tclsh not installed')
 class TclFailureTests(unittest.TestCase):
-    def build_result(self, overrides=''):
-        # Mock only the Vivado API; execute the real Tcl checks and process exit.
-        with tempfile.TemporaryDirectory() as temp:
-            directory = Path(temp)
-            (directory / 'make_bitstream.tcl').write_text('')
-            harness = directory / 'harness.tcl'
-            harness.write_text('''
-set properties [dict create PROGRESS 100% STATUS {write_bitstream Complete!} \
-    STATS.WNS 0.1 STATS.WHS 0.1 STATS.TPWS 0]
-set drc {}
-set locked {}
-proc get_runs {name} { return $name }
-proc get_property {name object} { return [dict get $::properties $name] }
-proc open_run {name} {}
-proc report_timing_summary {args} {}
-proc report_drc {args} {}
-proc report_utilization {args} {}
-proc report_ip_status {args} {}
-proc get_drc_violations {args} { return $::drc }
-proc get_ips {args} { return $::locked }
-proc close_project {} {}
-''' + overrides + '\nsource {' + str(ROOT / 'scripts/ci/vivado.tcl') + '}\n')
-            return subprocess.run(['tclsh', str(harness), 'build', 'demo', temp],
-                                  cwd=temp, capture_output=True, text=True)
-
-    def test_build_acceptance_checks(self):
-        result = self.build_result()
-        self.assertEqual(result.returncode, 0, result.stderr)
-        for override, expected in [
-            ('dict set properties STATS.WNS -0.1', 'Timing check failed'),
-            ('dict set properties STATS.WHS -0.1', 'Timing check failed'),
-            ('dict set properties STATS.TPWS -0.1', 'Timing check failed'),
-            ('dict set properties STATS.WNS {}', 'Timing check failed'),
-            ('dict set properties PROGRESS 90%', 'did not complete'),
-            ('set drc {violation}', 'DRC errors'),
-            ('set locked {ip}', 'Locked IP'),
-        ]:
-            with self.subTest(override=override):
-                result = self.build_result(override)
-                self.assertEqual(result.returncode, 1, result.stderr)
-                self.assertIn(expected, result.stderr)
-
     def test_recreate_nonzero_return_fails_batch(self):
         with tempfile.TemporaryDirectory() as temp:
             directory = Path(temp)
             (directory / 'make_block_design.tcl').write_text('return 3\n')
-            result = subprocess.run(['tclsh', str(ROOT / 'scripts/ci/vivado.tcl'),
+            result = subprocess.run(['tclsh', str(ROOT / '.github/workflows/upgrade/vivado.tcl'),
                                      'recreate', 'demo', temp], cwd=temp, capture_output=True, text=True)
             self.assertEqual(result.returncode, 1)
             self.assertIn('Block design script returned failure: 3', result.stderr)

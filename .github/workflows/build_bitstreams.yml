@@ -7,18 +7,34 @@ on:
       - 'boards/**'
       - 'rfsoc_qpsk/**'
       - 'setup.py'
-      - 'scripts/ci/**'
-      - 'tests/ci/**'
+      - '.github/workflows/upgrade/**'
       - '.github/workflows/build_bitstreams.yml'
   workflow_dispatch:
+    inputs:
+      board:
+        description: Board to upgrade and build
+        type: choice
+        options: [RFSoC4x2, RFSoC2x2, ZCU111, ZCU208, ZCU216]
+        default: RFSoC4x2
+        required: true
+      source_version:
+        description: Original Vivado version (must match the design Tcl)
+        type: string
+        default: '2024.1'
+        required: true
+      target_version:
+        description: Target Vivado version
+        type: string
+        default: '2025.2'
+        required: true
 
 permissions:
   contents: read
 
 # These are upgrade targets, not a declaration of tested board compatibility.
 env:
-  SOURCE_VIVADO: '2024.1'
-  TARGET_VIVADO: '2025.2'
+  SOURCE_VIVADO: ${{ inputs.source_version || '2024.1' }}
+  TARGET_VIVADO: ${{ inputs.target_version || '2025.2' }}
   TARGET_PYNQ: '4.0'
 
 jobs:
@@ -29,7 +45,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Test migration orchestration
-        run: python3 -m unittest discover -s tests/ci -v
+        run: python3 -m unittest discover -s .github/workflows/upgrade/tests -v
 
   build-bitstream:
     needs: check-scripts
@@ -41,7 +57,7 @@ jobs:
       fail-fast: false
       max-parallel: 1
       matrix:
-        board: [RFSoC4x2] # Pilot; expand only after board/image readiness is confirmed.
+        board: ["${{ inputs.board || 'RFSoC4x2' }}"]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -50,7 +66,7 @@ jobs:
         env:
           BOARD: ${{ matrix.board }}
         run: >-
-          python3 scripts/ci/upgrade.py
+          python3 .github/workflows/upgrade/upgrade.py
           --design rfsoc_qpsk --board "$BOARD"
           --source-version "$SOURCE_VIVADO" --target-version "$TARGET_VIVADO"
           --pynq-version "$TARGET_PYNQ"

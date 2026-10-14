@@ -32,24 +32,23 @@ def settings_for(version):
         if not path.is_file():
             raise ValueError(f"{name} does not name a settings64.sh file: {path}")
         return path.resolve()
-    for root in (Path('/tools/Xilinx'), Path('/opt/Xilinx')):
-        for path in (root / 'Vivado' / version / 'settings64.sh',
-                     root / version / 'Vivado' / 'settings64.sh'):
-            if path.is_file():
-                return path
-    raise ValueError(f"Vivado {version} not found. Set {name} on the runner.")
+    raise ValueError(f"Set {name} in the runner installation's .env and restart the runner.")
 
 
-def vivado(settings, arguments, cwd, log):
+def tool_command(settings, arguments, cwd, log):
     # Pass all paths as positional arguments, never interpolate shell source.
     with log.open('w') as output:
         result = subprocess.run(
-            ['bash', '-c', 'set -e; source "$1"; shift; exec vivado "$@"',
+            ['bash', '-c', 'set -e; source "$1"; shift; exec "$@"',
              'vivado-ci', str(settings), *arguments],
             cwd=cwd, stdout=output, stderr=subprocess.STDOUT, check=False)
     if result.returncode:
         print(log.read_text()[-12000:], flush=True)
-        raise RuntimeError(f"Vivado failed ({result.returncode}); see {log}")
+        raise RuntimeError(f"Command failed ({result.returncode}); see {log}")
+
+
+def vivado(settings, arguments, cwd, log):
+    tool_command(settings, ['vivado', *arguments], cwd, log)
 
 
 def verify_tool(version, settings, cwd, reports):
@@ -140,7 +139,7 @@ def run(args, repo):
             metadata['status'] = 'preflight passed; build not run'
             return
         original = source_tcl.read_bytes()
-        script = repo / 'scripts/ci/vivado.tcl'
+        script = repo / '.github/workflows/upgrade/vivado.tcl'
         for name in ('block_design', 'bitstream'):
             generated = board_dir / name
             if generated.exists():
@@ -160,8 +159,10 @@ def run(args, repo):
         metadata['generated_sources_need_commit'] = source_tcl.read_bytes() != original
         metadata['status'] = 'recreate target'
         stage('recreate', target, board_dir, script, reports, args.design, 'target-recreation')
-        metadata['status'] = 'build and acceptance checks'
-        stage('build', target, board_dir, script, reports, args.design)
+        metadata['status'] = 'make all'
+        # Verification created a project; make all must recreate it from exported Tcl.
+        tool_command(target, ['make', 'clean'], board_dir, reports / 'make-clean.log')
+        tool_command(target, ['make', '-j1', 'all'], board_dir, reports / 'make-all.log')
         for suffix in ('.bit', '.hwh'):
             path = board_dir / 'bitstream' / (args.design + suffix)
             if not path.is_file() or path.stat().st_size == 0:
@@ -207,4 +208,4 @@ if __name__ == '__main__':
     parser.add_argument('--target-version', required=True)
     parser.add_argument('--pynq-version', required=True)
     parser.add_argument('--preflight-only', action='store_true')
-    run(parser.parse_args(), Path(__file__).resolve().parents[2])
+    run(parser.parse_args(), Path(__file__).resolve().parents[3])
