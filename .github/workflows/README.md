@@ -29,44 +29,36 @@ then start it. For a foreground runner, stop and restart `./run.sh` instead.
 Every eligible runner needs the selected tools and variables. Each stage sources
 only its selected version; shell aliases and `.bashrc` changes are unnecessary.
 
-## Run the workflow
+## Which workflow to run
 
-1. Commit/push these workflow and script changes yourself. GitHub requires the
-   dispatch workflow on the default branch before showing **Run workflow**.
-2. Open **Actions → Vivado Build → Run workflow**; choose your branch and board.
-3. Enter source and target versions, e.g. **2024.1 → 2025.2**, then run.
-4. Wait for success; download **upgrade-<board>-<run>-<attempt>** under Artifacts.
-5. Extract the candidate `.tar.gz` into a fresh directory on the board running
-   PYNQ (e.g. 4.0). Follow the existing installation instructions there, then test the
-   notebooks/overlay. Record your manual result.
+**Vivado Build** runs on same-repository PRs into `main`/`master`. It reads the
+Vivado version from each board's checked-in design Tcl, recreates the BD,
+executes `make all`, and uploads a `bitstream-<board>-<run>-<attempt>` artifact.
+It does not upgrade the design. PRs build RFSoC4x2 by default. To build another
+board or branch without a PR, use **Actions → Vivado Build → Run workflow** and
+choose the board. Fork PRs run only script tests on GitHub-hosted runners.
 
-Versions are free-text fields so adding a Vivado release needs no YAML edit.
+**Vivado Upgrade** runs only when you choose **Actions → Vivado Upgrade → Run
+workflow**. Choose branch, board, source and target versions, then run. The
+source version must match the checked-in design Tcl. It recreates the source
+BD, upgrades IP and exports Tcl in the target version, recreates and validates
+the exported BD, executes `make all`, then uploads the
+`upgrade-<board>-<run>-<attempt>` artifact. It does not commit changes.
+
+Versions are free-text fields, so adding a Vivado release needs no YAML edit.
 Run once per board. Current ZCU216 Tcl uses **2020.2**: select that source version
 and configure `VIVADO_2020_2_SETTINGS` for that board.
 
-Pipeline:
-
-**recreate in source Vivado → upgrade IP/export Tcl in target → recreate and
-validate exported BD → make clean → make all → package/upload**.
-
-`make all` uses the existing board Makefile: BD creation, bitstream, cleanup.
-A failed stage or missing/empty `.bit` or `.hwh` prevents candidate packaging.
-The existing Makefile/Vivado scripts determine build acceptance; there is no
-additional timing-signoff or hardware test stage.
-
-If the design already declares the target version, migration and the source
-installation are skipped. An unexpected source version fails with an error.
-Relevant same-repository PRs retain the RFSoC4x2 run with defaults
-2024.1 → 2025.2; fork PRs run script tests only. Use manual runs for other boards
-or versions.
+Both workflows require a nonempty `.bit` and `.hwh` before packaging. A green
+build still needs manual testing on the intended PYNQ image.
 
 ## Keep the upgraded design
 
 Artifacts contain the board installation archive, checksum, `build.json`, logs,
-and (when migrated) exported Tcl plus `upgrade.patch`. Failed runs retain logs,
+and (for upgrades) exported Tcl plus `upgrade.patch`. Failed runs retain logs,
 not an installation candidate. Retention: 30 days.
 
-The job restores its original Tcl after packaging and does not commit or push.
+The upgrade job restores its original Tcl after packaging and does not commit or push.
 To keep the upgrade, apply the downloaded patch in the matching checkout:
 
 ```sh
@@ -89,5 +81,6 @@ python3 .github/workflows/upgrade/upgrade.py --design rfsoc_qpsk --board RFSoC4x
 
 Export the same settings variables in your terminal for local runs; the Python
 script uses the process environment, not a repository `.env`. Omit
-`--preflight-only` for the full pipeline. Use a disposable checkout: generated
+`--preflight-only` for the full upgrade pipeline. Use `--build-only` with no
+version arguments for the checked-in design. Use a disposable checkout: generated
 `block_design/` and `bitstream/` directories for that board are replaced.

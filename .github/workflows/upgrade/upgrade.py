@@ -100,13 +100,19 @@ def run(args, repo):
     for value in (args.design, args.board):
         if not re.fullmatch(r'[A-Za-z0-9_]+', value):
             raise ValueError('Design and board must contain only letters, digits and underscores')
+    board_dir = repo / 'boards' / args.board / args.design
+    source_tcl = board_dir / f'{args.design}.tcl'
+    checked_in_version = design_version(source_tcl)
+    if args.build_only:
+        args.source_version = checked_in_version
+        args.target_version = checked_in_version
+    elif not (args.source_version and args.target_version):
+        raise ValueError('Upgrade requires source and target Vivado versions')
     for value in (args.source_version, args.target_version):
         if not re.fullmatch(r'\d{4}\.\d+', value):
             raise ValueError('Vivado versions must have the form YYYY.N')
     if not re.fullmatch(r'\d+(?:\.\d+)+', args.pynq_version):
         raise ValueError('PYNQ version must be a numeric dotted version')
-    board_dir = repo / 'boards' / args.board / args.design
-    source_tcl = board_dir / f'{args.design}.tcl'
     output = repo / '.ci-artifacts' / args.board
     # Never publish an earlier successful candidate after a failed rerun.
     if output.exists():
@@ -124,7 +130,6 @@ def run(args, repo):
     }
     original = None
     try:
-        checked_in_version = design_version(source_tcl)
         metadata['checked_in_vivado'] = checked_in_version
         if checked_in_version not in (args.source_version, args.target_version):
             raise ValueError(f'Design uses {checked_in_version}, not the declared source or target')
@@ -204,8 +209,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--design', required=True)
     parser.add_argument('--board', required=True)
-    parser.add_argument('--source-version', required=True)
-    parser.add_argument('--target-version', required=True)
+    parser.add_argument('--source-version')
+    parser.add_argument('--target-version')
+    parser.add_argument('--build-only', action='store_true')
     parser.add_argument('--pynq-version', required=True)
     parser.add_argument('--preflight-only', action='store_true')
     run(parser.parse_args(), Path(__file__).resolve().parents[3])

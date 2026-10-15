@@ -12,29 +12,16 @@ on:
   workflow_dispatch:
     inputs:
       board:
-        description: Board to upgrade and build
+        description: Board to build
         type: choice
         options: [RFSoC4x2, RFSoC2x2, ZCU111, ZCU208, ZCU216]
         default: RFSoC4x2
-        required: true
-      source_version:
-        description: Original Vivado version (must match the design Tcl)
-        type: string
-        default: '2024.1'
-        required: true
-      target_version:
-        description: Target Vivado version
-        type: string
-        default: '2025.2'
         required: true
 
 permissions:
   contents: read
 
-# These are upgrade targets, not a declaration of tested board compatibility.
 env:
-  SOURCE_VIVADO: ${{ inputs.source_version || '2024.1' }}
-  TARGET_VIVADO: ${{ inputs.target_version || '2025.2' }}
   TARGET_PYNQ: '4.0'
 
 jobs:
@@ -62,19 +49,18 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Recreate, upgrade, validate, build and package
+      - name: Recreate, build and package
         env:
           BOARD: ${{ matrix.board }}
         run: >-
           python3 .github/workflows/upgrade/upgrade.py
           --design rfsoc_qpsk --board "$BOARD"
-          --source-version "$SOURCE_VIVADO" --target-version "$TARGET_VIVADO"
-          --pynq-version "$TARGET_PYNQ"
-      - name: Save candidate, migration patch and reports
+          --build-only --pynq-version "$TARGET_PYNQ"
+      - name: Save build candidate and reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: upgrade-${{ matrix.board }}-${{ github.run_id }}-${{ github.run_attempt }}
+          name: bitstream-${{ matrix.board }}-${{ github.run_id }}-${{ github.run_attempt }}
           path: .ci-artifacts/${{ matrix.board }}/
           include-hidden-files: true
           if-no-files-found: error

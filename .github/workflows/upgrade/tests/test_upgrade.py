@@ -78,7 +78,7 @@ class UpgradeTests(unittest.TestCase):
         self.addCleanup(self.env.stop)
         self.args = argparse.Namespace(design='demo', board='RFSoC4x2',
                                        source_version='2024.1', target_version='2025.2',
-                                       pynq_version='4.0', preflight_only=False)
+                                       pynq_version='4.0', preflight_only=False, build_only=False)
         self.output = self.repo / '.ci-artifacts/RFSoC4x2'
 
     def test_migration_rebuild_patch_and_single_board_candidate(self):
@@ -101,6 +101,18 @@ class UpgradeTests(unittest.TestCase):
             self.assertEqual(json.load(archive.extractfile('build.json')), metadata)
         self.assertTrue((self.output / 'reports/source-recreation/recreate-console.log').exists())
         self.assertTrue((self.output / 'reports/target-recreation/recreate-console.log').exists())
+
+    def test_build_only_uses_checked_in_version_without_migration(self):
+        self.args.build_only = True
+        self.args.source_version = None
+        self.args.target_version = None
+        with patch.dict(os.environ, {'VIVADO_2025_2_SETTINGS': '/does/not/exist'}):
+            upgrade.run(self.args, self.repo)
+        self.assertEqual((self.repo / 'trace').read_text().splitlines(),
+                         ['recreate:2024.1', 'recreate:2024.1', 'build:2024.1'])
+        self.assertFalse((self.output / 'upgrade.patch').exists())
+        metadata = json.loads((self.output / 'build.json').read_text())
+        self.assertEqual(metadata['target_vivado'], '2024.1')
 
     def test_already_upgraded_does_not_require_source_tool(self):
         self.source.write_text('set scripts_vivado_version 2025.2\n')
