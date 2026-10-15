@@ -4,18 +4,18 @@ on:
   workflow_dispatch:
     inputs:
       board:
-        description: Board to upgrade and build
+        description: Board to upgrade
         type: choice
         options: [RFSoC4x2, RFSoC2x2, ZCU111, ZCU208, ZCU216]
         default: RFSoC4x2
         required: true
       source_version:
-        description: Original Vivado version (must match the design Tcl)
+        description: Current Vivado version in the design Tcl
         type: string
         default: '2024.1'
         required: true
       target_version:
-        description: Target Vivado version
+        description: New Vivado version
         type: string
         default: '2025.2'
         required: true
@@ -23,49 +23,61 @@ on:
 permissions:
   contents: read
 
-# These are upgrade targets, not a declaration of tested board compatibility.
-env:
-  SOURCE_VIVADO: ${{ inputs.source_version || '2024.1' }}
-  TARGET_VIVADO: ${{ inputs.target_version || '2025.2' }}
-  TARGET_PYNQ: '4.0'
-
 jobs:
-  check-scripts:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - name: Test migration orchestration
-        run: python3 -m unittest discover -s .github/workflows/upgrade/tests -v
-
-  build-bitstream:
-    needs: check-scripts
+  upgrade:
     runs-on: [self-hosted, linux, x64]
     timeout-minutes: 360
-    strategy:
-      fail-fast: false
-      max-parallel: 1
-      matrix:
-        board: ["${{ inputs.board || 'RFSoC4x2' }}"]
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.repository.default_branch }}
           persist-credentials: false
-      - name: Recreate, upgrade, validate, build and package
+      - name: Upgrade and validate block design
         env:
-          BOARD: ${{ matrix.board }}
+          BOARD: ${{ inputs.board }}
+          SOURCE_VERSION: ${{ inputs.source_version }}
+          TARGET_VERSION: ${{ inputs.target_version }}
         run: >-
           python3 .github/workflows/upgrade/upgrade.py
           --design rfsoc_qpsk --board "$BOARD"
-          --source-version "$SOURCE_VIVADO" --target-version "$TARGET_VIVADO"
-          --pynq-version "$TARGET_PYNQ"
-      - name: Save candidate, migration patch and reports
+          --source-version "$SOURCE_VERSION" --target-version "$TARGET_VERSION"
+          --pynq-version 4.0 --upgrade-only
+      - name: Save upgrade reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: upgrade-${{ matrix.board }}-${{ github.run_id }}-${{ github.run_attempt }}
-          path: .ci-artifacts/${{ matrix.board }}/
+          name: upgrade-source-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .ci-artifacts/${{ inputs.board }}/
           include-hidden-files: true
           if-no-files-found: error
           retention-days: 30
+
+  open-pr:
+    needs: upgrade
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: upgrade-source-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .ci-artifacts/${{ inputs.board }}/
+      - name: Copy validated design Tcl
+        env:
+          BOARD: ${{ inputs.board }}
+        run: cp ".ci-artifacts/$BOARD/rfsoc_qpsk.tcl" "boards/$BOARD/rfsoc_qpsk/rfsoc_qpsk.tcl"
+      - name: Open upgrade pull request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: ci/vivado-${{ inputs.target_version }}-${{ inputs.board }}
+          add-paths: boards/${{ inputs.board }}/rfsoc_qpsk/rfsoc_qpsk.tcl
+          commit-message: 'Upgrade ${{ inputs.board }} block design to Vivado ${{ inputs.target_version }}'
+          title: 'Upgrade ${{ inputs.board }} block design to Vivado ${{ inputs.target_version }}'
+          body: |
+            Generated and validated from Vivado ${{ inputs.source_version }} to ${{ inputs.target_version }}.
+            The PR bitstream workflow builds the committed Tcl. Board testing remains manual.

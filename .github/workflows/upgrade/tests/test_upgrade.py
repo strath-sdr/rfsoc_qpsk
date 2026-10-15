@@ -78,7 +78,7 @@ class UpgradeTests(unittest.TestCase):
         self.addCleanup(self.env.stop)
         self.args = argparse.Namespace(design='demo', board='RFSoC4x2',
                                        source_version='2024.1', target_version='2025.2',
-                                       pynq_version='4.0', preflight_only=False, build_only=False)
+                                       pynq_version='4.0', preflight_only=False, build_only=False, upgrade_only=False)
         self.output = self.repo / '.ci-artifacts/RFSoC4x2'
 
     def test_migration_rebuild_patch_and_single_board_candidate(self):
@@ -101,6 +101,27 @@ class UpgradeTests(unittest.TestCase):
             self.assertEqual(json.load(archive.extractfile('build.json')), metadata)
         self.assertTrue((self.output / 'reports/source-recreation/recreate-console.log').exists())
         self.assertTrue((self.output / 'reports/target-recreation/recreate-console.log').exists())
+
+    def test_upgrade_only_when_already_target_has_no_change(self):
+        self.source.write_text('set scripts_vivado_version 2025.2\n')
+        self.args.upgrade_only = True
+        with patch.dict(os.environ, {'VIVADO_2024_1_SETTINGS': '/does/not/exist'}):
+            upgrade.run(self.args, self.repo)
+        self.assertFalse((self.repo / 'trace').exists())
+        self.assertEqual((self.output / 'demo.tcl').read_bytes(), self.source.read_bytes())
+        self.assertEqual(json.loads((self.output / 'build.json').read_text())['status'],
+                         'already at target version; no changes')
+
+    def test_upgrade_only_leaves_tcl_and_skips_bitstream_build(self):
+        self.args.upgrade_only = True
+        upgrade.run(self.args, self.repo)
+        self.assertEqual(upgrade.design_version(self.source), '2025.2')
+        self.assertEqual((self.repo / 'trace').read_text().splitlines(),
+                         ['recreate:2024.1', 'migrate:2025.2', 'recreate:2025.2'])
+        self.assertFalse((self.board / 'bitstream').exists())
+        self.assertFalse(list(self.output.glob('*.tar.gz')))
+        self.assertEqual(json.loads((self.output / 'build.json').read_text())['status'],
+                         'upgrade passed; commit generated Tcl')
 
     def test_build_only_uses_checked_in_version_without_migration(self):
         self.args.build_only = True

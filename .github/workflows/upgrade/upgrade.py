@@ -103,6 +103,8 @@ def run(args, repo):
     board_dir = repo / 'boards' / args.board / args.design
     source_tcl = board_dir / f'{args.design}.tcl'
     checked_in_version = design_version(source_tcl)
+    if args.build_only and args.upgrade_only:
+        raise ValueError('Choose build-only or upgrade-only')
     if args.build_only:
         args.source_version = checked_in_version
         args.target_version = checked_in_version
@@ -143,9 +145,13 @@ def run(args, repo):
         if args.preflight_only:
             metadata['status'] = 'preflight passed; build not run'
             return
+        if args.upgrade_only and checked_in_version == args.target_version:
+            shutil.copy2(source_tcl, output / source_tcl.name)
+            metadata['status'] = 'already at target version; no changes'
+            return
         original = source_tcl.read_bytes()
         script = repo / '.github/workflows/upgrade/vivado.tcl'
-        for name in ('block_design', 'bitstream'):
+        for name in (('block_design',) if args.upgrade_only else ('block_design', 'bitstream')):
             generated = board_dir / name
             if generated.exists():
                 shutil.rmtree(generated)
@@ -164,6 +170,12 @@ def run(args, repo):
         metadata['generated_sources_need_commit'] = source_tcl.read_bytes() != original
         metadata['status'] = 'recreate target'
         stage('recreate', target, board_dir, script, reports, args.design, 'target-recreation')
+        if args.upgrade_only:
+            metadata['status'] = 'upgrade passed; commit generated Tcl'
+            # Successful local upgrade leaves the verified Tcl in the checkout.
+            original = None
+            print(f'Upgraded: {source_tcl}\nReview and commit this file.', flush=True)
+            return
         metadata['status'] = 'make all'
         # Verification created a project; make all must recreate it from exported Tcl.
         tool_command(target, ['make', 'clean'], board_dir, reports / 'make-clean.log')
@@ -212,6 +224,7 @@ if __name__ == '__main__':
     parser.add_argument('--source-version')
     parser.add_argument('--target-version')
     parser.add_argument('--build-only', action='store_true')
+    parser.add_argument('--upgrade-only', action='store_true')
     parser.add_argument('--pynq-version', required=True)
     parser.add_argument('--preflight-only', action='store_true')
     run(parser.parse_args(), Path(__file__).resolve().parents[3])
