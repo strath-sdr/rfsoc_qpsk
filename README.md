@@ -84,11 +84,5 @@ Alternatively, you can run the entire project build by executing the following i
 make all
 ```
 
-## Upgrading PYNQ and Vivado
-
-See the [upgrade procedure and board-test checklist](docs/UPGRADING.md) for the
-RFSoC4x2 pilot targeting PYNQ 4.0 and Vivado 2025.2. This is an upgrade target,
-not a claim of tested compatibility.
-
-## License
+## License 
 [BSD 3-Clause](../../blob/master/LICENSE)
