@@ -25,3 +25,7 @@
 **/block_design
 **/bitstream
 rfsoc_qpsk.tar.gz
+
+# CI migration candidates, reports and Python caches
+.ci-artifacts/
+__pycache__/
