@@ -12,16 +12,17 @@
 </table>
 
 # RFSoC QPSK Transceiver
-This repository has been tested with [PYNQ image v3.1.1](https://github.com/Xilinx/PYNQ/releases) (Vivado 2024.1) for the following RFSoC development boards. Newer PYNQ versions may require different Vivado versions; please verify compatibility against the PYNQ release notes:
-* [ZCU208](https://www.xilinx.com/products/boards-and-kits/zcu208.html),
-* [ZCU111](https://www.xilinx.com/products/boards-and-kits/zcu111.html),
-* [RFSoC4x2](http://rfsoc-pynq.io/),
-* [RFSoC2x2](http://rfsoc-pynq.io/),
+Tested board and tool-version combinations:
 
-The following boards are limited to PYNQ version 2.7 and Vivado 2020.2 since this board is not officially supported by PYNQ and no official SD card image exists:
-* [ZCU216](https://www.xilinx.com/products/boards-and-kits/zcu216.html).
+| Board | PYNQ version | Vivado version |
+|---|---|---|
+| [ZCU208](https://www.xilinx.com/products/boards-and-kits/zcu208.html) | 3.1.1 | 2024.1 |
+| [ZCU111](https://www.xilinx.com/products/boards-and-kits/zcu111.html) | 3.1.1 | 2024.1 |
+| [RFSoC4x2](http://rfsoc-pynq.io/) | 3.1.1 | 2024.1 |
+| [RFSoC2x2](http://rfsoc-pynq.io/) | 3.1.1 | 2024.1 |
+| [ZCU216](https://www.xilinx.com/products/boards-and-kits/zcu216.html) | 2.7 | 2020.2 |
 
-The SD card image for this board has been made available from the following repository: [sarafs1926/ZCU216-PYNQ](https://github.com/sarafs1926/ZCU216-PYNQ).
+ZCU216 is not officially supported by PYNQ; its SD card image is available from [sarafs1926/ZCU216-PYNQ](https://github.com/sarafs1926/ZCU216-PYNQ). Other PYNQ/Vivado versions are not listed as tested.
 
 ## Introduction
 This repo contains all the files needed to build and run the RFSoC QPSK demonstrator that was published in [IEEE Access](https://ieeexplore.ieee.org/document/9139483) and was presented at both [FPL](https://fpl2018.org/) and [XDF](http://www.xilinx.com/xdf) conferences in 2018. The design is a full QPSK transceiver, which transmits and receives randomly-generated pulse-shaped symbols with full carrier and timing synchronisation. [PYNQ](https://github.com/xilinx/pynq) is used to visualise the data at both the DAC and ADC side of the RFSoC data converters, as well as visualising various DSP stages throughout the transmit and receive signal path.
@@ -32,7 +33,7 @@ This repo contains all the files needed to build and run the RFSoC QPSK demonstr
 
 ## Quick Start
 Follow the instructions below to install the QPSK demonstrator on your development board. **You will need to give your board access to the internet**.
-* Power on your RFSoC development board with an SD Card containing a fresh PYNQ v2.7 image or greater.
+* Power on your RFSoC development board with an SD card containing the PYNQ version listed above.
 * Navigate to Jupyter Labs by opening a browser (preferably Chrome) and connecting to `http://<board_ip_address>:9090/lab`.
 * We need to open a terminal in Jupyter Lab. Firstly, open a launcher window as shown in the figure below:
 
@@ -59,14 +60,14 @@ This repository uses Voila to create simple web applications using Jupyter noteb
 
 ## Using the Project Files
 The following software is required to use the project files in this repository.
-- Vivado Design Suite 2024.1
+- Vivado Design Suite version listed above for your board
 - System Generator for DSP (MATLAB R2020a with Vivado Design Suite 2020.2)
 
 ### System Generator
 The Tx and Rx IPs are in separate directories in `rfsoc_qpsk/boards/ip/sysgen/` that can be opened using the appropriate System Generator dialogue. Due to the large amount of decimation and interpolation in both IPs, simulating the output can take an extraordinarily long time. A less extreme multirate system would simulate much faster! 
 
 ### Vivado
-This project can be built with Vivado from the command line. Open Vivado 2024.1 and execute the following into the tcl console:
+This project can be built with Vivado from the command line. Open the Vivado version listed above for your board and execute the following into the tcl console:
 
 ```sh
 cd /<repository-location>/boards/<board-name>/rfsoc_qpsk/
